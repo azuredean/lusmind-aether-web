@@ -68,7 +68,7 @@ export const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="bg-white border-b border-border shadow-sm relative z-40">
+    <nav className="bg-[hsl(var(--brand-dark))] border-b border-white/10 shadow-lg sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -91,7 +91,7 @@ export const Navigation = () => {
               >
                 <a
                   href={item.href}
-                  className="flex items-center text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
+                  className="flex items-center text-white hover:text-primary transition-colors duration-200 font-medium py-2"
                 >
                   {item.title}
                   {item.dropdown && (
@@ -119,7 +119,7 @@ export const Navigation = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-foreground hover:text-primary transition-colors">
+            <button className="text-white hover:text-primary transition-colors">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>

@@ -26,6 +26,9 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
     --primary-glow: 190 100% 70%;
 
+    /* Brand dark background */
+    --brand-dark: 235 100% 6%;
+
     /* Secondary - Soft pink */
     --secondary: 320 70% 75%;
     --secondary-foreground: 0 0% 8%;

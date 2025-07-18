@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { VaporBackground } from '@/components/VaporBackground';
 import { MouseVaporTrail } from '@/components/MouseVaporTrail';
 import { AgeVerification } from '@/components/AgeVerification';
+import { BrandElements } from '@/components/BrandElements';
 
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(false);
@@ -34,6 +35,7 @@ export const MainPage = () => {
       {/* Background effects */}
       <VaporBackground />
       <MouseVaporTrail />
+      <BrandElements />
 
       {/* Age verification modal */}
       {showAgeVerification && (

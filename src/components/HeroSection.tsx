@@ -64,7 +64,7 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-mist relative overflow-hidden flex items-center justify-center">
+    <div className="min-h-screen bg-[hsl(var(--brand-dark))] relative overflow-hidden flex items-center justify-center">
       {/* Animated mist collision */}
       {showAnimation && (
         <div className="absolute inset-0">
