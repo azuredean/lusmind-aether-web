@@ -1,12 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { HeroSection } from '@/components/HeroSection';
+import { MainPage } from './MainPage';
+import { VaporBackground } from '@/components/VaporBackground';
+import { MouseVaporTrail } from '@/components/MouseVaporTrail';
 
 const Index = () => {
+  const [showMainPage, setShowMainPage] = useState(false);
+
+  if (showMainPage) {
+    return <MainPage />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen relative">
+      {/* Background effects */}
+      <VaporBackground />
+      <MouseVaporTrail />
+      
+      {/* Hero Section */}
+      <HeroSection onEnter={() => setShowMainPage(true)} />
     </div>
   );
 };
