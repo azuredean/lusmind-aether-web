@@ -31,27 +31,40 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
   const generateMistCollision = () => {
     const particles: MistParticle[] = [];
     
-    // Left side particles
-    for (let i = 0; i < 8; i++) {
+    // Left side particles - multiple layers for depth
+    for (let i = 0; i < 12; i++) {
       particles.push({
         id: i,
-        startX: -200,
-        endX: window.innerWidth / 2,
-        y: 40 + Math.random() * 20,
-        size: 60 + Math.random() * 40,
-        delay: Math.random() * 0.5,
+        startX: -300 - Math.random() * 100,
+        endX: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+        y: 30 + Math.random() * 40,
+        size: 40 + Math.random() * 80,
+        delay: Math.random() * 1.2,
       });
     }
 
-    // Right side particles
-    for (let i = 8; i < 16; i++) {
+    // Right side particles - multiple layers for depth
+    for (let i = 12; i < 24; i++) {
       particles.push({
         id: i,
-        startX: window.innerWidth + 200,
-        endX: window.innerWidth / 2,
-        y: 40 + Math.random() * 20,
-        size: 60 + Math.random() * 40,
-        delay: Math.random() * 0.5,
+        startX: window.innerWidth + 300 + Math.random() * 100,
+        endX: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+        y: 30 + Math.random() * 40,
+        size: 40 + Math.random() * 80,
+        delay: Math.random() * 1.2,
+      });
+    }
+
+    // Additional background mist particles
+    for (let i = 24; i < 40; i++) {
+      const isFromLeft = i % 2 === 0;
+      particles.push({
+        id: i,
+        startX: isFromLeft ? -400 : window.innerWidth + 400,
+        endX: window.innerWidth / 2 + (Math.random() - 0.5) * 300,
+        y: 20 + Math.random() * 60,
+        size: 80 + Math.random() * 120,
+        delay: Math.random() * 2,
       });
     }
 
@@ -60,7 +73,7 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
     // Show button after collision animation
     setTimeout(() => {
       setShowButton(true);
-    }, 2500);
+    }, 3500);
   };
 
   return (
@@ -71,23 +84,49 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
           {mistParticles.map((particle) => (
             <div
               key={particle.id}
-              className="absolute opacity-60"
+              className="absolute"
               style={{
                 left: particle.startX,
                 top: `${particle.y}%`,
                 width: `${particle.size}px`,
                 height: `${particle.size}px`,
-                background: `radial-gradient(circle, 
-                  hsla(190, 85%, 55%, 0.3) 0%, 
-                  hsla(320, 70%, 75%, 0.2) 40%, 
-                  transparent 70%)`,
+                background: particle.id < 24 
+                  ? `radial-gradient(ellipse at center, 
+                      hsla(190, 95%, 65%, 0.4) 0%, 
+                      hsla(200, 90%, 70%, 0.3) 20%,
+                      hsla(320, 80%, 75%, 0.25) 35%, 
+                      hsla(280, 70%, 80%, 0.15) 50%,
+                      hsla(260, 60%, 85%, 0.1) 65%,
+                      transparent 80%)`
+                  : `radial-gradient(ellipse at center, 
+                      hsla(180, 100%, 60%, 0.3) 0%, 
+                      hsla(190, 95%, 65%, 0.25) 15%,
+                      hsla(300, 85%, 70%, 0.2) 30%, 
+                      hsla(320, 75%, 75%, 0.15) 45%,
+                      hsla(280, 65%, 80%, 0.1) 60%,
+                      hsla(240, 55%, 85%, 0.05) 75%,
+                      transparent 90%)`,
                 borderRadius: '50%',
-                filter: 'blur(12px)',
-                animation: `mist-collision 3s ease-out infinite`,
+                filter: `blur(${8 + (particle.size / 20)}px)`,
+                animation: `mist-collision ${3 + Math.random() * 2}s ease-out infinite`,
                 animationDelay: `${particle.delay}s`,
                 transform: `translateX(${particle.endX - particle.startX}px)`,
+                opacity: particle.id < 24 ? 0.7 : 0.4,
               }}
-            />
+            >
+              {/* Inner glow effect */}
+              <div
+                className="absolute inset-2"
+                style={{
+                  background: `radial-gradient(circle, 
+                    hsla(190, 100%, 70%, 0.6) 0%, 
+                    hsla(320, 90%, 80%, 0.4) 30%, 
+                    transparent 60%)`,
+                  borderRadius: '50%',
+                  filter: `blur(${4 + (particle.size / 40)}px)`,
+                }}
+              />
+            </div>
           ))}
         </div>
       )}
