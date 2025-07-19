@@ -1,6 +1,6 @@
 export const BrandIntroduction = () => {
   return (
-    <section className="py-20 relative overflow-hidden vapor-bg">
+    <section className="py-20 relative overflow-hidden bg-[hsl(var(--brand-dark))]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -9,12 +9,12 @@ export const BrandIntroduction = () => {
               <h2 className="cyber-title text-4xl md:text-5xl neon-text animate-float">
                 Welcome to LusMind
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-white/80">
                 Where digital vapor meets unparalleled craftsmanship
               </p>
             </div>
 
-            <div className="space-y-6 text-lg leading-relaxed">
+            <div className="space-y-6 text-lg leading-relaxed text-white/90">
               <p>
                 At LusMind, we transcend the boundaries between reality and dreams, 
                 crafting premium e-liquid experiences that transport you to a world 
@@ -35,15 +35,15 @@ export const BrandIntroduction = () => {
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
                 <div className="cyber-title text-3xl neon-text mb-2">100+</div>
-                <div className="text-sm text-muted-foreground">Premium Flavors</div>
+                <div className="text-sm text-white/60">Premium Flavors</div>
               </div>
               <div className="text-center">
                 <div className="cyber-title text-3xl neon-text mb-2">50K+</div>
-                <div className="text-sm text-muted-foreground">Happy Customers</div>
+                <div className="text-sm text-white/60">Happy Customers</div>
               </div>
               <div className="text-center">
                 <div className="cyber-title text-3xl neon-text mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Quality Control</div>
+                <div className="text-sm text-white/60">Quality Control</div>
               </div>
             </div>
           </div>

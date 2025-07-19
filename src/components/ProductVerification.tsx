@@ -52,8 +52,36 @@ export const ProductVerification = () => {
   };
 
   return (
-    <section className="py-16 bg-muted/20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 relative overflow-hidden">
+      {/* Grid Pattern Background */}
+      <div className="absolute inset-0 opacity-30">
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundImage: `
+              linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px),
+              linear-gradient(hsl(var(--secondary) / 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, hsl(var(--secondary) / 0.2) 1px, transparent 1px),
+              linear-gradient(hsl(var(--accent) / 0.15) 1px, transparent 1px),
+              linear-gradient(90deg, hsl(var(--accent) / 0.15) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px, 60px 60px, 30px 30px, 30px 30px, 15px 15px, 15px 15px',
+            backgroundPosition: '0 0, 0 0, 5px 5px, 5px 5px, 10px 10px, 10px 10px'
+          }}
+        />
+        
+        {/* Animated geometric elements */}
+        <div className="absolute top-20 left-20 w-16 h-16 border-2 border-primary/40 rotate-45 animate-pulse"></div>
+        <div className="absolute top-40 right-32 w-12 h-12 border-2 border-secondary/40 animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-32 left-1/3 w-20 h-20 border-2 border-accent/40 rotate-12 animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 right-20 w-8 h-8 bg-primary/20 rotate-45 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+      </div>
+      
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95"></div>
+      
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="cyber-title text-3xl md:text-4xl mb-4 neon-text">
             Product Verification
