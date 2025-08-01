@@ -1,0 +1,12 @@
+name = "lusmind-worker"
+account_id = "<${CLOUDFLARE_ACCOUNT_ID}>"        # ← 由 CI Secret 提供
+compatibility_date = "2025-08-01"
+main = "src/index.ts"
+
+[env.production]
+workers_dev = false
+route = "lusmind.com/*"
+zone_id = "<${CLOUDFLARE_ZONE_ID}>"
+
+[env.preview]
+workers_dev = true
