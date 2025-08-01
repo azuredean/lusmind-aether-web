@@ -1,22 +1,21 @@
 #########################
-# wrangler.toml — LUSMIND Worker
+# wrangler.toml — Lusmind
 #########################
-
-name = "lusmind-worker"                      
+name = "lusmind-worker"
 account_id = "b1017ac840af8b716615e56a48ea599c"
 compatibility_date = "2025-08-01"
 
-# 入口脚本（请确保仓库存在 src/index.ts）
-main = "src/index.ts"
+# ---------- 静态产物 ---------- #
+[build]
+command = "npm ci && npm run build"   # 安装依赖并产出 dist
+upload.format = "directory"
+upload.dir    = "./dist"              # dist/ 为上传目录
 
 ############ ENVIRONMENTS ############
-
-# 生产环境：main / master 分支
 [env.production]
 workers_dev = false
-route    = "lusmind.com/*"                  
-zone_id  = "357c4caee95302d2e3ed22f6c3e63a90"
+route   = "lusmind.com/*"
+zone_id = "357c4caee95302d2e3ed22f6c3e63a90"
 
-# 预览环境：Pull Request / 非主分支
 [env.preview]
-workers_dev = true                           
+workers_dev = true
