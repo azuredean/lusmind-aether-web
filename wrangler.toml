@@ -1,12 +1,12 @@
 name = 'lusmind-page'
-account_id = "<${CLOUDFLARE_ACCOUNT_ID}>"        # ← 由 CI Secret 提供
+account_id = "<${b1017ac840af8b716615e56a48ea599c}>"        # ← 由 CI Secret 提供
 compatibility_date = "2025-08-01"
 main = "src/index.ts"
 
 [env.production]
 workers_dev = false
 route = "lusmind.com/*"
-zone_id = "<${CLOUDFLARE_ZONE_ID}>"
+zone_id = "<${357c4caee95302d2e3ed22f6c3e63a90}>"
 
 [env.preview]
 workers_dev = true
