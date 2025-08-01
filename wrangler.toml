@@ -2,19 +2,21 @@
 # wrangler.toml — LUSMIND Worker
 #########################
 
-name = "lusmind-worker"               # 你的 Worker 名，也会作为 *.workers.dev 前缀
+name = "lusmind-worker"                      
 account_id = "b1017ac840af8b716615e56a48ea599c"
 compatibility_date = "2025-08-01"
 
-# 入口脚本相对路径 —— 如实际文件不在 src/index.ts，请改成真实路径
+# 入口脚本（请确保仓库存在 src/index.ts）
 main = "src/index.ts"
 
 ############ ENVIRONMENTS ############
 
-[env.production]                      # main / master 分支发布用
+# 生产环境：main / master 分支
+[env.production]
 workers_dev = false
-route = "lusmind.com/*"               # 把所有请求映射到此 Worker
-zone_id = "357c4caee95302d2e3ed22f6c3e63a90"
+route    = "lusmind.com/*"                  
+zone_id  = "357c4caee95302d2e3ed22f6c3e63a90"
 
-[env.preview]                         # PR / 其他分支自动预览
-workers_dev = true                    # 会生成 xxxx--lusmind-worker.<account>.workers.dev
+# 预览环境：Pull Request / 非主分支
+[env.preview]
+workers_dev = true                           
