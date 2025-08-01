@@ -77,7 +77,15 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--brand-dark))] relative overflow-hidden flex items-center justify-center">
+    <div 
+      className="min-h-screen relative overflow-hidden flex items-center justify-center"
+      style={{
+        backgroundImage: 'url(/lovable-uploads/fb6ba6ca-9de9-4d01-a83a-92b431caadec.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       {/* Animated mist collision */}
       {showAnimation && (
         <div className="absolute inset-0">
@@ -92,19 +100,19 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
                 height: `${particle.size}px`,
                 background: particle.id < 24 
                   ? `radial-gradient(ellipse at center, 
-                      hsla(190, 95%, 65%, 0.4) 0%, 
-                      hsla(200, 90%, 70%, 0.3) 20%,
-                      hsla(320, 80%, 75%, 0.25) 35%, 
-                      hsla(280, 70%, 80%, 0.15) 50%,
-                      hsla(260, 60%, 85%, 0.1) 65%,
+                      hsla(190, 95%, 65%, 0.2) 0%, 
+                      hsla(200, 90%, 70%, 0.15) 20%,
+                      hsla(320, 80%, 75%, 0.1) 35%, 
+                      hsla(280, 70%, 80%, 0.08) 50%,
+                      hsla(260, 60%, 85%, 0.05) 65%,
                       transparent 80%)`
                   : `radial-gradient(ellipse at center, 
-                      hsla(180, 100%, 60%, 0.3) 0%, 
-                      hsla(190, 95%, 65%, 0.25) 15%,
-                      hsla(300, 85%, 70%, 0.2) 30%, 
-                      hsla(320, 75%, 75%, 0.15) 45%,
-                      hsla(280, 65%, 80%, 0.1) 60%,
-                      hsla(240, 55%, 85%, 0.05) 75%,
+                      hsla(180, 100%, 60%, 0.15) 0%, 
+                      hsla(190, 95%, 65%, 0.12) 15%,
+                      hsla(300, 85%, 70%, 0.1) 30%, 
+                      hsla(320, 75%, 75%, 0.08) 45%,
+                      hsla(280, 65%, 80%, 0.05) 60%,
+                      hsla(240, 55%, 85%, 0.03) 75%,
                       transparent 90%)`,
                 borderRadius: '50%',
                 filter: `blur(${8 + (particle.size / 20)}px)`,
@@ -156,8 +164,11 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
         )}
       </div>
 
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20 pointer-events-none" />
+      {/* Background overlay for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40 pointer-events-none" />
+      
+      {/* Additional center overlay for logo area */}
+      <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/20 to-transparent pointer-events-none" />
     </div>
   );
 };
