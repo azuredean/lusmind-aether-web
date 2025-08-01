@@ -80,7 +80,7 @@ export const HeroSection = ({ onEnter }: HeroSectionProps) => {
     <div 
       className="min-h-screen relative overflow-hidden flex items-center justify-center"
       style={{
-        backgroundImage: 'url(/lovable-uploads/fb6ba6ca-9de9-4d01-a83a-92b431caadec.png)',
+        backgroundImage: 'url(/lovable-uploads/6131077b-3c6e-41f2-85e6-4332d1c69fe2.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
