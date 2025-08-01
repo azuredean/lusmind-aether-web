@@ -2,7 +2,7 @@
 # wrangler.toml — LUSMIND Worker
 #########################
 
-name = "lusmind-worker"                      
+name = "lusmind-page"
 account_id = "b1017ac840af8b716615e56a48ea599c"
 compatibility_date = "2025-08-01"
 
