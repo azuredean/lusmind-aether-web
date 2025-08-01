@@ -1,4 +1,4 @@
-name = "lusmind-worker"
+name = 'lusmind-page'
 account_id = "<${CLOUDFLARE_ACCOUNT_ID}>"        # ← 由 CI Secret 提供
 compatibility_date = "2025-08-01"
 main = "src/index.ts"
