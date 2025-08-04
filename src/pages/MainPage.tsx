@@ -53,7 +53,7 @@ export const MainPage = () => {
         {/* Main content sections */}
         <main>
           {/* Hero Carousel */}
-          <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <section className="py-8 px-4 sm:px-6 lg:px-8 bg-slate-500/10">
             <div className="max-w-7xl mx-auto">
               <Carousel />
             </div>
