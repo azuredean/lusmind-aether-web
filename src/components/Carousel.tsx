@@ -39,7 +39,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-80 md:h-96 overflow-hidden rounded-2xl shadow-vapor">
+    <div className="relative w-full aspect-[16/9] max-h-[60vh] overflow-hidden rounded-2xl shadow-vapor">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
