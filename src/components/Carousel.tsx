@@ -5,14 +5,14 @@ import { Button } from '@/components/ui/button';
 const slides = [
   {
     id: 1,
-    image: '/lovable-uploads/fe38073f-1999-4ede-8c9c-f9c1feb7ef7d.png',
+    image: '/lovable-uploads/594f8c11-f444-45a5-8876-10bfc7569773.png',
     title: 'Blueberry Raspberry',
     subtitle: 'LUSMIND Premium Collection',
     description: 'Rich and vibrant berry symphony with luxurious blend of flavors',
   },
   {
     id: 2,
-    image: '/lovable-uploads/9f35ec30-03f5-4191-bd78-f80e6f3807c8.png',
+    image: '/lovable-uploads/8d9f00ee-a2e7-47ae-80f5-d43c5ab0e4f2.png',
     title: 'Strawberry Watermelon',
     subtitle: 'LUSMIND Fruit Fusion',
     description: 'Premium e-liquid with tropical fruit and berry essences',
@@ -39,7 +39,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-vapor">
+    <div className="relative w-full h-80 md:h-96 overflow-hidden rounded-2xl shadow-vapor">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
