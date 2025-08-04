@@ -1,23 +1,21 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import lunbo1 from '@/assets/lunbo1.jpg';
-import lunbo2 from '@/assets/lunbo2.jpg';
 
 const slides = [
   {
     id: 1,
-    image: lunbo1,
-    title: 'Tropical Paradise',
-    subtitle: 'Experience the exotic blend of tropical fruits',
-    description: 'Premium e-liquid with mango, pineapple, and passion fruit flavors',
+    image: '/lovable-uploads/fe38073f-1999-4ede-8c9c-f9c1feb7ef7d.png',
+    title: 'Blueberry Raspberry',
+    subtitle: 'LUSMIND Premium Collection',
+    description: 'Rich and vibrant berry symphony with luxurious blend of flavors',
   },
   {
     id: 2,
-    image: lunbo2,
-    title: 'Berry Fusion',
-    subtitle: 'Rich and vibrant berry symphony',
-    description: 'Luxurious blend of strawberry, blueberry, and raspberry essences',
+    image: '/lovable-uploads/9f35ec30-03f5-4191-bd78-f80e6f3807c8.png',
+    title: 'Strawberry Watermelon',
+    subtitle: 'LUSMIND Fruit Fusion',
+    description: 'Premium e-liquid with tropical fruit and berry essences',
   },
 ];
 
@@ -41,7 +39,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-2xl shadow-vapor">
+    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-vapor">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
