@@ -49,8 +49,8 @@ export const BrandIntroduction = () => {
 
           {/* Product Carousel */}
           <div className="relative">
-            <div className="aspect-[3/4] glass-panel rounded-3xl p-4 overflow-hidden">
-              <div className="relative w-full h-full">
+            <div className="aspect-[4/5] glass-panel rounded-3xl p-6 overflow-hidden">
+              <div className="relative w-full h-full bg-black/20 rounded-2xl p-2">
                 <div className="carousel-container">
                   <div className="carousel-track">
                     <img 
