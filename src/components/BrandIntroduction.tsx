@@ -1,5 +1,29 @@
+// 顶部导入部分
+import { useEffect, useState } from "react";
+
+// 组件开始
 export const BrandIntroduction = () => {
-  return <section className="py-20 relative overflow-hidden bg-[hsl(var(--brand-dark))]">
+  const images = [
+    "/lovable-uploads/270ea3d8-ed1d-4c0b-a551-522272098985.png",
+    "/lovable-uploads/aab56795-13f6-4155-8918-13711e3072bf.png",
+    "/lovable-uploads/d62f5e8b-c6a5-420f-bff2-00fb812524a5.png",
+    "/lovable-uploads/3e6c4ccd-f656-4d22-96a4-12959d0b82a4.png",
+    "/lovable-uploads/4e1450c1-8ee9-419d-b123-c06ef28ef2f1.png",
+    "/lovable-uploads/d14bbf72-adf3-4672-b5aa-191e8d24802e.png",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 自动播放逻辑
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <section className="py-20 relative overflow-hidden bg-[hsl(var(--brand-dark))]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -19,13 +43,11 @@ export const BrandIntroduction = () => {
                 crafting premium e-liquid experiences that transport you to a world 
                 of pure sensory bliss.
               </p>
-              
               <p>
                 Our vision is to create not just flavors, but entire digital universes 
                 where every puff becomes a journey through carefully curated taste 
                 landscapes, enhanced by cutting-edge technology and artisanal precision.
               </p>
-              
               <p className="text-primary font-medium">
                 "Innovation is our vapor, excellence is our essence."
               </p>
@@ -46,34 +68,6 @@ export const BrandIntroduction = () => {
               </div>
             </div>
           </div>
-import { useEffect, useState } from "react";
-
-export const BrandIntroduction = () => {
-  const images = [
-    "/lovable-uploads/270ea3d8-ed1d-4c0b-a551-522272098985.png",
-    "/lovable-uploads/aab56795-13f6-4155-8918-13711e3072bf.png",
-    "/lovable-uploads/d62f5e8b-c6a5-420f-bff2-00fb812524a5.png",
-    "/lovable-uploads/3e6c4ccd-f656-4d22-96a4-12959d0b82a4.png",
-    "/lovable-uploads/4e1450c1-8ee9-419d-b123-c06ef28ef2f1.png",
-    "/lovable-uploads/d14bbf72-adf3-4672-b5aa-191e8d24802e.png",
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // 自动播放逻辑
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // 每3秒切换一张
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  return (
-    <section className="py-20 relative overflow-hidden bg-[hsl(var(--brand-dark))]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          {/* ...此处省略左侧品牌介绍内容（保持你原来不动即可） */}
 
           {/* Product Carousel */}
           <div className="relative">
@@ -102,6 +96,7 @@ export const BrandIntroduction = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -109,9 +104,7 @@ export const BrandIntroduction = () => {
       <div className="absolute top-10 right-10 opacity-20">
         <div
           className="w-32 h-32 rounded-full bg-gradient-primary animate-drift"
-          style={{
-            animationDuration: "12s",
-          }}
+          style={{ animationDuration: "12s" }}
         />
       </div>
       <div className="absolute bottom-10 left-10 opacity-20">
