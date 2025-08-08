@@ -1,6 +1,5 @@
 export const BrandIntroduction = () => {
-  return (
-    <section className="py-20 relative overflow-hidden bg-[hsl(var(--brand-dark))]">
+  return <section className="py-20 relative overflow-hidden bg-[hsl(var(--brand-dark))]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -53,35 +52,22 @@ export const BrandIntroduction = () => {
             <div className="aspect-square glass-panel rounded-3xl p-8 flex items-center justify-center relative overflow-hidden">
               {/* Animated background elements */}
               <div className="absolute inset-0">
-                {[...Array(6)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute rounded-full opacity-30"
-                    style={{
-                      left: `${20 + (i % 3) * 30}%`,
-                      top: `${20 + Math.floor(i / 3) * 40}%`,
-                      width: `${40 + Math.random() * 20}px`,
-                      height: `${40 + Math.random() * 20}px`,
-                      background: `radial-gradient(circle, 
+                {[...Array(6)].map((_, i) => <div key={i} className="absolute rounded-full opacity-30" style={{
+                left: `${20 + i % 3 * 30}%`,
+                top: `${20 + Math.floor(i / 3) * 40}%`,
+                width: `${40 + Math.random() * 20}px`,
+                height: `${40 + Math.random() * 20}px`,
+                background: `radial-gradient(circle, 
                         hsla(${190 + i * 30}, 85%, 55%, 0.4) 0%, 
                         transparent 70%)`,
-                      animation: `float ${4 + i}s ease-in-out infinite`,
-                      animationDelay: `${i * 0.5}s`,
-                      filter: 'blur(8px)',
-                    }}
-                  />
-                ))}
+                animation: `float ${4 + i}s ease-in-out infinite`,
+                animationDelay: `${i * 0.5}s`,
+                filter: 'blur(8px)'
+              }} />)}
               </div>
 
               {/* Center logo/brand element */}
-              <div className="relative z-10 text-center">
-                <div className="cyber-title text-6xl neon-text mb-4 animate-glow">
-                  Lus
-                </div>
-                <div className="text-2xl text-accent font-light tracking-wider">
-                  Mind
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -89,11 +75,15 @@ export const BrandIntroduction = () => {
 
       {/* Background decorative elements */}
       <div className="absolute top-10 right-10 opacity-20">
-        <div className="w-32 h-32 rounded-full bg-gradient-primary animate-drift" style={{ animationDuration: '12s' }} />
+        <div className="w-32 h-32 rounded-full bg-gradient-primary animate-drift" style={{
+        animationDuration: '12s'
+      }} />
       </div>
       <div className="absolute bottom-10 left-10 opacity-20">
-        <div className="w-24 h-24 rounded-full bg-gradient-secondary animate-drift" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+        <div className="w-24 h-24 rounded-full bg-gradient-secondary animate-drift" style={{
+        animationDuration: '15s',
+        animationDirection: 'reverse'
+      }} />
       </div>
-    </section>
-  );
+    </section>;
 };
