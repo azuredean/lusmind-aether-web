@@ -47,27 +47,45 @@ export const BrandIntroduction = () => {
             </div>
           </div>
 
-          {/* Visual element */}
+          {/* Product Carousel */}
           <div className="relative">
-            <div className="aspect-square glass-panel rounded-3xl p-8 flex items-center justify-center relative overflow-hidden">
-              {/* Animated background elements */}
-              <div className="absolute inset-0">
-                {[...Array(6)].map((_, i) => <div key={i} className="absolute rounded-full opacity-30" style={{
-                left: `${20 + i % 3 * 30}%`,
-                top: `${20 + Math.floor(i / 3) * 40}%`,
-                width: `${40 + Math.random() * 20}px`,
-                height: `${40 + Math.random() * 20}px`,
-                background: `radial-gradient(circle, 
-                        hsla(${190 + i * 30}, 85%, 55%, 0.4) 0%, 
-                        transparent 70%)`,
-                animation: `float ${4 + i}s ease-in-out infinite`,
-                animationDelay: `${i * 0.5}s`,
-                filter: 'blur(8px)'
-              }} />)}
+            <div className="aspect-[3/4] glass-panel rounded-3xl p-4 overflow-hidden">
+              <div className="relative w-full h-full">
+                <div className="carousel-container">
+                  <div className="carousel-track">
+                    <img 
+                      src="/lovable-uploads/270ea3d8-ed1d-4c0b-a551-522272098985.png" 
+                      alt="LusMind Orange Soda Flavor" 
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                    <img 
+                      src="/lovable-uploads/aab56795-13f6-4155-8918-13711e3072bf.png" 
+                      alt="LusMind Niagara Grape Flavor" 
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                    <img 
+                      src="/lovable-uploads/d62f5e8b-c6a5-420f-bff2-00fb812524a5.png" 
+                      alt="LusMind Blueberry Raspberry Flavor" 
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                    <img 
+                      src="/lovable-uploads/3e6c4ccd-f656-4d22-96a4-12959d0b82a4.png" 
+                      alt="LusMind Niagara Grape with Molecular Structure" 
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                    <img 
+                      src="/lovable-uploads/4e1450c1-8ee9-419d-b123-c06ef28ef2f1.png" 
+                      alt="LusMind Blueberry Raspberry Flavor" 
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                    <img 
+                      src="/lovable-uploads/d14bbf72-adf3-4672-b5aa-191e8d24802e.png" 
+                      alt="LusMind Ingredients Information" 
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
               </div>
-
-              {/* Center logo/brand element */}
-              
             </div>
           </div>
         </div>
