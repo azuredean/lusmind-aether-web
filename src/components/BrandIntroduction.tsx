@@ -88,9 +88,6 @@ export const BrandIntroduction = () => {
                       <img
                         src={src}
                         alt={`LusMind Slide ${i + 1}`}
-                        loading="lazy"
-                        decoding="async"
-                        sizes="(max-width: 768px) 80vw, 480px"
                         className="max-w-full max-h-full object-contain rounded-2xl"
                       />
                     </div>
