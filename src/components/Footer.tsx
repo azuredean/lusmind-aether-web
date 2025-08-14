@@ -2,33 +2,39 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-
-const footerLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Wholesale', href: '/wholesale' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Verify Product', href: '#verification' },
-  { name: 'Contact Us', href: '/contact' },
-  { name: 'Online Reviews', href: '/reviews' },
-];
-
+const footerLinks = [{
+  name: 'Home',
+  href: '/'
+}, {
+  name: 'Wholesale',
+  href: '/wholesale'
+}, {
+  name: 'About Us',
+  href: '/about'
+}, {
+  name: 'Verify Product',
+  href: '#verification'
+}, {
+  name: 'Contact Us',
+  href: '/contact'
+}, {
+  name: 'Online Reviews',
+  href: '/reviews'
+}];
 export const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubscribing, setIsSubscribing] = useState(false);
-
   const handleSubscribe = async () => {
     if (!email.trim()) {
       toast.error('Please enter your email address');
       return;
     }
-
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       toast.error('Please enter a valid email address');
       return;
     }
-
     setIsSubscribing(true);
-    
+
     // Simulate subscription
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -40,51 +46,26 @@ export const Footer = () => {
       setIsSubscribing(false);
     }
   };
-
-  return (
-    <footer className="bg-black text-white py-12">
+  return <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mx-0">
           {/* Navigation Links */}
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {footerLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="hover:text-primary transition-colors duration-200 text-lg"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
+          
 
           {/* Newsletter Subscription */}
           <div className="space-y-4">
             <div>
-              <h3 className="cyber-title text-xl mb-2 neon-text">
+              <h3 className="cyber-title text-xl mb-2 neon-text text-center">
                 SUBSCRIBE FOR MORE UPDATES
               </h3>
-              <p className="text-sm text-white/80">
+              <p className="text-sm text-white/80 text-center">
                 Stay updated with our latest products and exclusive promotions instantly!
               </p>
             </div>
             
             <div className="space-y-3">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                onKeyPress={(e) => e.key === 'Enter' && handleSubscribe()}
-              />
-              <Button
-                onClick={handleSubscribe}
-                disabled={isSubscribing}
-                className="w-full bg-gradient-primary text-white glow-hover cyber-title"
-              >
+              <Input type="email" placeholder="Enter your email address" value={email} onChange={e => setEmail(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60" onKeyPress={e => e.key === 'Enter' && handleSubscribe()} />
+              <Button onClick={handleSubscribe} disabled={isSubscribing} className="w-full bg-gradient-primary text-white glow-hover cyber-title">
                 {isSubscribing ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
               </Button>
             </div>
@@ -109,6 +90,5 @@ export const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
