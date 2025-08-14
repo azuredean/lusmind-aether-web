@@ -9,22 +9,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* New cyberpunk color scheme matching template */
-    --bg: 0 0% 0%;
-    --text: 0 0% 100%;
-    --muted: 0 0% 100% / 0.75;
-    --muted-2: 0 0% 100% / 0.6;
-    --glass: 0 0% 100% / 0.06;
-    --ring: 0 0% 100% / 0.10;
-    --grad-1: 266 85% 66%; /* fuchsia-500 */
-    --grad-2: 198 93% 60%; /* sky-300 */
-    --grad-3: 258 90% 66%; /* violet-500 */
-    --cta-1: 258 92% 58%; /* indigo/violet */
-    --cta-2: 198 82% 60%; /* sky */
-
-    /* Base colors - dark theme */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Base colors - misty white backgrounds */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
 
     /* Card system with vapor transparency */
     --card: 0 0% 100%;
@@ -138,7 +125,7 @@ All colors MUST be HSL.
   }
 }
 
-  /* Enhanced cyberpunk animations */
+/* Cyberpunk Animation Keyframes */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -154,11 +141,6 @@ All colors MUST be HSL.
   100% { transform: translateX(100vw); }
 }
 
-@keyframes vapor {
-  0%, 100% { transform: translate3d(0,0,0); }
-  50% { transform: translate3d(2%,-1%,0); }
-}
-
 @keyframes vapor-rise {
   0% { 
     transform: translateY(100vh) scale(0.5);
@@ -171,16 +153,6 @@ All colors MUST be HSL.
     transform: translateY(30vh) scale(1.5);
     opacity: 0;
   }
-}
-
-@keyframes carousel-slide {
-  0%, 14% { transform: translateX(0); }
-  16.66%, 30.66% { transform: translateX(-25%); }
-  33.33%, 47.33% { transform: translateX(-50%); }
-  50%, 64% { transform: translateX(-75%); }
-  66.66%, 80.66% { transform: translateX(-100%); }
-  83.33%, 97.33% { transform: translateX(-125%); }
-  100% { transform: translateX(0); }
 }
 
 /* Enhanced Mist Collision Animation */
