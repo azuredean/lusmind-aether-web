@@ -48,7 +48,7 @@ export const Footer = () => {
   };
   return <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mx-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto text-center">{/* 这里将内容居中并适应页面宽度 */}
           {/* Navigation Links */}
           
 
