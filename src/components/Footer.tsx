@@ -3,15 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 
-const footerLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Wholesale', href: '/wholesale' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Verify Product', href: '#verification' },
-  { name: 'Contact Us', href: '/contact' },
-  { name: 'Online Reviews', href: '/reviews' },
-];
-
 export const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubscribing, setIsSubscribing] = useState(false);
@@ -28,7 +19,6 @@ export const Footer = () => {
 
     setIsSubscribing(true);
     try {
-      // simulate request
       await new Promise((r) => setTimeout(r, 1000));
       toast.success('Successfully subscribed to our newsletter!');
       setEmail('');
@@ -42,21 +32,8 @@ export const Footer = () => {
   return (
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top navigation - centered and responsive */}
-        <nav className="w-full" aria-label="Footer Navigation">
-          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/80">
-            {footerLinks.map((link) => (
-              <li key={link.name}>
-                <a href={link.href} className="hover:text-white transition-colors">
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
         {/* Newsletter Subscription - centered and adaptive width */}
-        <div className="mt-8 w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center">
           <div className="w-full max-w-3xl xl:max-w-4xl mx-auto text-center space-y-4">
             <div>
               <h3 className="cyber-title text-xl mb-2 neon-text">
