@@ -65,7 +65,7 @@ export const Footer = () => {
             
             <div className="space-y-3">
               <Input type="email" placeholder="Enter your email address" value={email} onChange={e => setEmail(e.target.value)} className="bg-white/10 border-white/20 text-white placeholder:text-white/60" onKeyPress={e => e.key === 'Enter' && handleSubscribe()} />
-              <Button onClick={handleSubscribe} disabled={isSubscribing} className="w-full bg-gradient-primary text-white glow-hover cyber-title">
+              <Button onClick={handleSubscribe} disabled={isSubscribing} className="w-full max-w-none bg-gradient-primary text-white glow-hover cyber-title">
                 {isSubscribing ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
               </Button>
             </div>
