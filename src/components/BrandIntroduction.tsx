@@ -83,12 +83,12 @@ export const BrandIntroduction = () => {
                   {images.map((src, i) => (
                     <div
                       key={i}
-                      className="w-full h-full flex-shrink-0 flex items-center justify-center"
+                      className="min-w-full h-full shrink-0 flex items-center justify-center p-2"
                     >
                       <img
                         src={src}
                         alt={`LusMind Slide ${i + 1}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain rounded-xl"
                       />
                     </div>
                   ))}

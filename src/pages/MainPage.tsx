@@ -268,29 +268,33 @@ export const MainPage = () => {
                       <div ref={trackRef} className="flex h-full transition-transform duration-700 ease-out" style={{
                       width: `${slides.length * 100}%`
                     }}>
-                        {slides.map((slide, index) => <div key={index} className="w-full h-full flex-shrink-0">
-                            <div className="relative w-full h-full overflow-hidden group/slide">
-                              <img src={slide.image} alt={slide.title} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/slide:scale-105" />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
-                              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20 opacity-80" />
-                              
-                              {/* Content overlay */}
-                              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
-                                <div className="transform transition-all duration-300 group-hover/slide:scale-105">
-                                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-wide mb-3 drop-shadow-2xl">
-                                    {slide.title}
-                                  </h3>
-                                  <p className="text-sm sm:text-base opacity-90 drop-shadow-lg font-medium">
-                                    {slide.desc}
-                                  </p>
-                                </div>
-                              </div>
+                        {slides.map((slide, index) => (
+                          <div key={index} className="min-w-full h-full shrink-0">
+                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
+                              <img
+                                src={slide.image}
+                                alt={slide.title}
+                                className="w-full h-full object-contain rounded-2xl"
+                                loading={index === 0 ? 'eager' : 'lazy'}
+                                decoding="async"
+                              />
 
-                              {/* Floating elements */}
-                              <div className="absolute top-4 right-4 w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
-                              <div className="absolute bottom-6 left-6 w-1 h-1 bg-blue-400/80 rounded-full animate-pulse delay-300"></div>
+                              {/* 渐变叠层 */}
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10" />
+
+                              {/* 文案覆盖 */}
+                              <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-xl">
+                                  {slide.title}
+                                </h3>
+                                <p className="text-xs sm:text-sm opacity-90 drop-shadow">
+                                  {slide.desc}
+                                </p>
+                              </div>
                             </div>
-                          </div>)}
+                          </div>
+                        ))}
                       </div>
 
                       {/* Enhanced Navigation */}
