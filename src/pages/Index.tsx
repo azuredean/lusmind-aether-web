@@ -7,6 +7,12 @@ import { MouseVaporTrail } from '@/components/MouseVaporTrail';
 const Index = () => {
   const [showMainPage, setShowMainPage] = useState(false);
 
+  const handleEnterMainPage = () => {
+    // 清除之前的年龄验证状态，确保每次进入都重新验证
+    sessionStorage.removeItem('ageVerified');
+    setShowMainPage(true);
+  };
+
   if (showMainPage) {
     return <MainPage />;
   }
@@ -18,7 +24,7 @@ const Index = () => {
       <MouseVaporTrail />
       
       {/* Hero Section */}
-      <HeroSection onEnter={() => setShowMainPage(true)} />
+      <HeroSection onEnter={handleEnterMainPage} />
     </div>
   );
 };

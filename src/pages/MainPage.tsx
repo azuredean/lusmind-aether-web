@@ -28,13 +28,8 @@ export const MainPage = () => {
     image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png"
   }];
   useEffect(() => {
-    // 总是显示年龄验证，除非在当前会话中已验证
-    const ageVerified = sessionStorage.getItem('ageVerified');
-    if (ageVerified === 'true') {
-      setShowAgeVerification(false);
-    } else {
-      setShowAgeVerification(true);
-    }
+    // 从首页进入时总是显示年龄验证
+    setShowAgeVerification(true);
   }, []);
   useEffect(() => {
     const startCarousel = () => {
