@@ -1,87 +1,69 @@
 import { useState, useEffect, useRef } from 'react';
 import { AgeVerification } from '@/components/AgeVerification';
-
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<NodeJS.Timeout>();
-
-  const slides = [
-    { 
-      title: "Blueberry Raspberry", 
-      desc: "Rich berry symphony", 
-      image: "/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png"
-    },
-    { 
-      title: "Niagara Grape", 
-      desc: "Elegant vine essence", 
-      image: "/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png"
-    },
-    { 
-      title: "Mixed Berry", 
-      desc: "Complex fruit blend", 
-      image: "/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png"
-    },
-    { 
-      title: "Niagara Grape Premium", 
-      desc: "Refined grape fusion", 
-      image: "/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png"
-    },
-    { 
-      title: "Orange Soda", 
-      desc: "Citrus laboratory creation", 
-      image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png"
-    }
-  ];
-
+  const slides = [{
+    title: "Blueberry Raspberry",
+    desc: "Rich berry symphony",
+    image: "/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png"
+  }, {
+    title: "Niagara Grape",
+    desc: "Elegant vine essence",
+    image: "/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png"
+  }, {
+    title: "Mixed Berry",
+    desc: "Complex fruit blend",
+    image: "/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png"
+  }, {
+    title: "Niagara Grape Premium",
+    desc: "Refined grape fusion",
+    image: "/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png"
+  }, {
+    title: "Orange Soda",
+    desc: "Citrus laboratory creation",
+    image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png"
+  }];
   useEffect(() => {
     const ageVerified = sessionStorage.getItem('ageVerified');
     if (!ageVerified) {
       setShowAgeVerification(true);
     }
   }, []);
-
   useEffect(() => {
     const startCarousel = () => {
       timerRef.current = setInterval(() => {
         setCurrentSlide(prev => (prev + 1) % slides.length);
       }, 3600);
     };
-
     startCarousel();
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [slides.length]);
-
   useEffect(() => {
     if (trackRef.current) {
       trackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
   }, [currentSlide]);
-
   const handleAgeVerified = () => {
     sessionStorage.setItem('ageVerified', 'true');
     setShowAgeVerification(false);
   };
-
   const handleAgeRejected = () => {
     window.location.href = '/';
   };
-
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
-
   const nextSlide = () => {
     setCurrentSlide(prev => (prev + 1) % slides.length);
   };
-
   const prevSlide = () => {
     setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
   };
-
   const handleVerify = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -92,7 +74,6 @@ export const MainPage = () => {
     }
     alert('Verifying: ' + code);
   };
-
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -111,13 +92,14 @@ export const MainPage = () => {
       alert('Subscribed!');
     }, 700);
   };
-
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white relative overflow-hidden" style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial' }}>
+  return <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white relative overflow-hidden" style={{
+    fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial'
+  }}>
       {/* Global ambient background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black"></div>
@@ -127,42 +109,31 @@ export const MainPage = () => {
       </div>
 
       {/* Age verification modal */}
-      {showAgeVerification && (
-        <AgeVerification
-          onVerified={handleAgeVerified}
-          onReject={handleAgeRejected}
-        />
-      )}
+      {showAgeVerification && <AgeVerification onVerified={handleAgeVerified} onReject={handleAgeRejected} />}
 
       <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center">
           {/* Enhanced Vapor Background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div 
-              className="absolute opacity-40 animate-pulse"
-              style={{
-                inset: '-30%',
-                filter: 'blur(60px)',
-                background: `
+            <div className="absolute opacity-40 animate-pulse" style={{
+            inset: '-30%',
+            filter: 'blur(60px)',
+            background: `
                   radial-gradient(circle at 25% 20%, rgba(168,85,247,0.25), transparent 70%),
                   radial-gradient(circle at 80% 25%, rgba(56,189,248,0.25), transparent 70%),
                   radial-gradient(circle at 55% 85%, rgba(139,92,246,0.20), transparent 80%),
                   radial-gradient(circle at 10% 90%, rgba(236,72,153,0.15), transparent 60%)
                 `
-              }}
-            ></div>
-            <div 
-              className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
-              style={{
-                backgroundImage: `
+          }}></div>
+            <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{
+            backgroundImage: `
                   linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), 
                   linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
                   radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px)
                 `,
-                backgroundSize: '40px 40px, 40px 40px, 20px 20px'
-              }}
-            ></div>
+            backgroundSize: '40px 40px, 40px 40px, 20px 20px'
+          }}></div>
             <div className="absolute inset-4 border border-white/5 rounded-3xl backdrop-blur-sm bg-gradient-to-br from-white/[0.02] to-transparent"></div>
           </div>
 
@@ -171,11 +142,7 @@ export const MainPage = () => {
             <nav className="flex items-center justify-between py-6 mb-16">
               <div className="flex items-center gap-3 group">
                 <div className="relative">
-                  <img 
-                    src="/lovable-uploads/4ad7e2db-c2a3-419d-b306-0ccc3574d298.png" 
-                    alt="LusMind Logo" 
-                    className="w-8 h-8 sm:w-10 sm:h-10 object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
+                  <img src="/lovable-uploads/4ad7e2db-c2a3-419d-b306-0ccc3574d298.png" alt="LusMind Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain transition-transform duration-300 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <a href="#top" className="font-black tracking-[3px] sm:tracking-[4px] text-lg sm:text-xl bg-gradient-to-r from-[#f0abfc] via-[#7dd3fc] to-[#c4b5fd] bg-clip-text text-transparent transition-all duration-300 hover:tracking-[5px]">
@@ -209,19 +176,13 @@ export const MainPage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center animate-fade-in delay-700">
-                <button 
-                  onClick={() => scrollToSection('products')}
-                  className="group relative w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
-                >
+                <button onClick={() => scrollToSection('products')} className="group relative w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-300 group-hover:from-purple-500 group-hover:to-blue-400"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-600/50 to-blue-500/50 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                   <span className="relative z-10">Explore Collection</span>
                 </button>
-                <button 
-                  onClick={() => scrollToSection('verify')}
-                  className="group w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 active:scale-95"
-                >
+                <button onClick={() => scrollToSection('verify')} className="group w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 active:scale-95">
                   <span className="group-hover:text-blue-300 transition-colors duration-300">Verify Product</span>
                 </button>
               </div>
@@ -297,24 +258,16 @@ export const MainPage = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
                 <div className="relative rounded-3xl p-1 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
-                  <div 
-                    className="rounded-3xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm"
-                    style={{ aspectRatio: '4/5' }}
-                  >
+                  <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
+                  aspectRatio: '4/5'
+                }}>
                     <div className="relative w-full h-full p-4">
-                      <div 
-                        ref={trackRef}
-                        className="flex h-full transition-transform duration-700 ease-out"
-                        style={{ width: `${slides.length * 100}%` }}
-                      >
-                        {slides.map((slide, index) => (
-                          <div key={index} className="w-full h-full flex-shrink-0 px-2">
+                      <div ref={trackRef} className="flex h-full transition-transform duration-700 ease-out" style={{
+                      width: `${slides.length * 100}%`
+                    }}>
+                        {slides.map((slide, index) => <div key={index} className="w-full h-full flex-shrink-0 px-2">
                             <div className="relative w-full h-full rounded-2xl overflow-hidden group/slide">
-                              <img 
-                                src={slide.image} 
-                                alt={slide.title}
-                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/slide:scale-105"
-                              />
+                              <img src={slide.image} alt={slide.title} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/slide:scale-105" />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
                               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20 opacity-80" />
                               
@@ -334,37 +287,20 @@ export const MainPage = () => {
                               <div className="absolute top-4 right-4 w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
                               <div className="absolute bottom-6 left-6 w-1 h-1 bg-blue-400/80 rounded-full animate-pulse delay-300"></div>
                             </div>
-                          </div>
-                        ))}
+                          </div>)}
                       </div>
 
                       {/* Enhanced Navigation */}
-                      <button 
-                        onClick={prevSlide}
-                        className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/30 hover:bg-black/60 hover:border-white/50 hover:scale-110 transition-all duration-300 flex items-center justify-center text-xl"
-                      >
+                      <button onClick={prevSlide} className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/30 hover:bg-black/60 hover:border-white/50 hover:scale-110 transition-all duration-300 flex items-center justify-center text-xl">
                         ‹
                       </button>
-                      <button 
-                        onClick={nextSlide}
-                        className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/30 hover:bg-black/60 hover:border-white/50 hover:scale-110 transition-all duration-300 flex items-center justify-center text-xl"
-                      >
+                      <button onClick={nextSlide} className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/30 hover:bg-black/60 hover:border-white/50 hover:scale-110 transition-all duration-300 flex items-center justify-center text-xl">
                         ›
                       </button>
 
                       {/* Enhanced Dots */}
                       <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-                        {slides.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => goToSlide(index)}
-                            className={`h-2 rounded-full transition-all duration-300 ${
-                              index === currentSlide 
-                                ? 'w-8 bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg' 
-                                : 'w-6 bg-white/30 hover:bg-white/50'
-                            }`}
-                          />
-                        ))}
+                        {slides.map((_, index) => <button key={index} onClick={() => goToSlide(index)} className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'w-8 bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg' : 'w-6 bg-white/30 hover:bg-white/50'}`} />)}
                       </div>
                     </div>
                   </div>
@@ -404,17 +340,10 @@ export const MainPage = () => {
                     <form onSubmit={handleVerify} className="space-y-6">
                       <div className="flex flex-col sm:flex-row gap-4">
                         <div className="flex-1 relative group/input">
-                          <input 
-                            name="code"
-                            className="w-full rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-4 text-white text-lg placeholder-white/50 outline-none transition-all duration-300 focus:border-blue-400/50 focus:bg-white/10 focus:shadow-lg focus:shadow-blue-500/20"
-                            placeholder="Enter verification code"
-                          />
+                          <input name="code" className="w-full rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-4 text-white text-lg placeholder-white/50 outline-none transition-all duration-300 focus:border-blue-400/50 focus:bg-white/10 focus:shadow-lg focus:shadow-blue-500/20" placeholder="Enter verification code" />
                           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         </div>
-                        <button 
-                          type="submit"
-                          className="group/btn relative px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
-                        >
+                        <button type="submit" className="group/btn relative px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95">
                           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-300 group-hover/btn:from-purple-500 group-hover/btn:to-blue-400"></div>
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
                           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-600/50 to-blue-500/50 blur-xl group-hover/btn:blur-2xl transition-all duration-300"></div>
@@ -424,35 +353,7 @@ export const MainPage = () => {
                     </form>
 
                     {/* Info cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      <div className="group relative p-4 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative z-10 text-center">
-                          <div className="w-8 h-8 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500/20 to-purple-600/20 flex items-center justify-center">
-                            <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-                          </div>
-                          <p className="text-white/80 text-sm font-medium">Find QR/text code on package</p>
-                        </div>
-                      </div>
-                      <div className="group relative p-4 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative z-10 text-center">
-                          <div className="w-8 h-8 mx-auto mb-3 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 flex items-center justify-center">
-                            <div className="w-3 h-3 rounded-full bg-blue-400"></div>
-                          </div>
-                          <p className="text-white/80 text-sm font-medium">Code length: 8–12 chars</p>
-                        </div>
-                      </div>
-                      <div className="group relative p-4 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative z-10 text-center">
-                          <div className="w-8 h-8 mx-auto mb-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 flex items-center justify-center">
-                            <div className="w-3 h-3 rounded-full bg-cyan-400"></div>
-                          </div>
-                          <p className="text-white/80 text-sm font-medium">Each product has a unique code</p>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -488,19 +389,11 @@ export const MainPage = () => {
                 <form onSubmit={handleSubscribe} className="relative space-y-6 p-8 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl border border-white/20">
                   <div className="space-y-4">
                     <div className="relative group/input">
-                      <input 
-                        name="email"
-                        type="email"
-                        className="w-full rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-4 text-white text-lg text-center placeholder-white/50 outline-none transition-all duration-300 focus:border-blue-400/50 focus:bg-white/10 focus:shadow-lg focus:shadow-blue-500/20"
-                        placeholder="Enter your email address"
-                      />
+                      <input name="email" type="email" className="w-full rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-4 text-white text-lg text-center placeholder-white/50 outline-none transition-all duration-300 focus:border-blue-400/50 focus:bg-white/10 focus:shadow-lg focus:shadow-blue-500/20" placeholder="Enter your email address" />
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     </div>
                     
-                    <button 
-                      type="submit"
-                      className="group/btn relative w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
-                    >
+                    <button type="submit" className="group/btn relative w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95">
                       <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 transition-all duration-300 group-hover/btn:from-purple-500 group-hover/btn:to-blue-400"></div>
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-600/50 to-blue-500/50 blur-xl group-hover/btn:blur-2xl transition-all duration-300"></div>
@@ -543,6 +436,5 @@ export const MainPage = () => {
           </div>
         </footer>
       </main>
-    </div>
-  );
+    </div>;
 };
