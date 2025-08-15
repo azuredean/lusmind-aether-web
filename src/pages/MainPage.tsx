@@ -260,16 +260,16 @@ export const MainPage = () => {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
-                <div className="relative rounded-3xl p-2 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
-                  <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
+                <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
+                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
                   aspectRatio: '4/5'
                 }}>
-                    <div className="relative w-full h-full p-2">
+                    <div className="relative w-full h-full">
                       <div ref={trackRef} className="flex h-full transition-transform duration-700 ease-out" style={{
                       width: `${slides.length * 100}%`
                     }}>
-                        {slides.map((slide, index) => <div key={index} className="w-full h-full flex-shrink-0 px-1">
-                            <div className="relative w-full h-full rounded-xl overflow-hidden group/slide">
+                        {slides.map((slide, index) => <div key={index} className="w-full h-full flex-shrink-0">
+                            <div className="relative w-full h-full overflow-hidden group/slide">
                               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/slide:scale-105" />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
                               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20 opacity-80" />
