@@ -18,6 +18,16 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
     "/lovable-uploads/a0e91021-c566-465f-b8ee-3199ed8babff.png", // Green Coconut alt
     "/lovable-uploads/1bf097ab-a34c-4cba-aa4d-edd263ee34ad.png", // Niagara Grape
     "/lovable-uploads/ce14503d-968f-4db5-97a4-1fea5155b9b2.png", // Pineapple Coconut Ice
+    "/lovable-uploads/921b58a6-5387-4f1d-a623-7fff0bc97de1.png", // Cool Yuzu Cedar
+    "/lovable-uploads/53f5cf2a-ecac-48ad-8337-b8b3541ccfdf.png", // Melon Yogurt Ice
+    "/lovable-uploads/3cb41497-2b9b-4df6-a1e4-c7f7a12be98a.png", // Green Apple
+    "/lovable-uploads/9aae58b7-c0aa-4725-b4f7-37fbe4fea19b.png", // Arctic Ice
+    "/lovable-uploads/4f592c06-ebfc-442c-8d15-4d8e4784322b.png", // Cool Peppermint
+    "/lovable-uploads/a897874d-dc7b-4680-8774-1140e6ce17a1.png", // Double Apple Shisha
+    "/lovable-uploads/e9491a8b-aa43-417a-a791-55f8372600ec.png", // Coffee Tobacco
+    "/lovable-uploads/73a6891b-a8cd-464b-be7c-15e6556a6aa2.png", // Tobacco & Nut
+    "/lovable-uploads/01c651f5-7333-4759-97d0-e3a26c1d1c10.png", // Monster Drink
+    "/lovable-uploads/cb774285-138a-4080-aa60-2b38edad96e3.png", // Orange Soda
   ];
 
   useEffect(() => {
@@ -49,45 +59,74 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
 
   return (
     <section className={`relative py-16 sm:py-20 lg:py-24 ${className}`}>
-      {/* 3D Mesh Background */}
+      {/* Distinguished Flavor Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Base gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-950"></div>
+        {/* Deep purple to cyan gradient base */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-950 via-indigo-950 to-cyan-950"></div>
         
-        {/* 3D Curved Mesh Effect */}
-        <div className="absolute inset-0 opacity-20" style={{
+        {/* Multiple layered radial gradients for depth */}
+        <div className="absolute inset-0 opacity-40" style={{
           backgroundImage: `
-            radial-gradient(circle at 20% 20%, rgba(168,85,247,0.3) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(56,189,248,0.3) 0%, transparent 50%),
-            radial-gradient(circle at 40% 70%, rgba(139,92,246,0.2) 0%, transparent 60%)
+            radial-gradient(ellipse at 10% 30%, rgba(147,51,234,0.4) 0%, transparent 45%),
+            radial-gradient(ellipse at 90% 70%, rgba(6,182,212,0.4) 0%, transparent 45%),
+            radial-gradient(ellipse at 50% 100%, rgba(168,85,247,0.3) 0%, transparent 50%),
+            radial-gradient(ellipse at 30% 0%, rgba(14,165,233,0.3) 0%, transparent 40%)
           `
         }}></div>
         
-        {/* Animated mesh grid */}
-        <div className="absolute inset-0 opacity-10" style={{
+        {/* Dynamic hexagonal pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+            radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+            radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 2px)
           `,
-          backgroundSize: '40px 40px',
-          transform: 'perspective(500px) rotateX(60deg)',
-          transformOrigin: 'center bottom'
+          backgroundSize: '60px 60px',
+          backgroundPosition: '0 0, 30px 30px'
         }}></div>
         
-        {/* Floating particles */}
+        {/* Flowing wave pattern */}
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `
+            repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 35px,
+              rgba(147,51,234,0.1) 35px,
+              rgba(147,51,234,0.1) 70px
+            ),
+            repeating-linear-gradient(
+              -45deg,
+              transparent,
+              transparent 35px,
+              rgba(6,182,212,0.1) 35px,
+              rgba(6,182,212,0.1) 70px
+            )
+          `
+        }}></div>
+        
+        {/* Enhanced floating particles with varied sizes */}
         <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
+          {Array.from({ length: 30 }).map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-white/20 rounded-full animate-pulse"
+              className="absolute bg-white/30 rounded-full animate-pulse"
               style={{
+                width: `${Math.random() * 4 + 1}px`,
+                height: `${Math.random() * 4 + 1}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+                filter: `hue-rotate(${Math.random() * 360}deg)`
               }}
             />
           ))}
+        </div>
+        
+        {/* Subtle moving light rays */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/4 w-0.5 h-full bg-gradient-to-b from-purple-400 via-transparent to-transparent transform -skew-x-12 animate-pulse"></div>
+          <div className="absolute top-0 right-1/3 w-0.5 h-full bg-gradient-to-b from-cyan-400 via-transparent to-transparent transform skew-x-12 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
       </div>
 
