@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { AgeVerification } from '@/components/AgeVerification';
+import { FlavorShowcase } from '@/components/FlavorShowcase';
 export const MainPage = () => {
-  const [showAgeVerification, setShowAgeVerification] = useState(false);
+  const [showAgeVerification, setShowAgeVerification] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<NodeJS.Timeout>();
@@ -30,6 +31,8 @@ export const MainPage = () => {
     const ageVerified = sessionStorage.getItem('ageVerified');
     if (!ageVerified) {
       setShowAgeVerification(true);
+    } else {
+      setShowAgeVerification(false);
     }
   }, []);
   useEffect(() => {
@@ -309,6 +312,9 @@ export const MainPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Flavor Showcase Section */}
+        <FlavorShowcase />
 
         {/* Verify Section */}
         <section id="verify" className="relative py-16 sm:py-24 lg:py-32">
