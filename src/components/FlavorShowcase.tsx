@@ -28,6 +28,10 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
     "/lovable-uploads/73a6891b-a8cd-464b-be7c-15e6556a6aa2.png", // Tobacco & Nut
     "/lovable-uploads/01c651f5-7333-4759-97d0-e3a26c1d1c10.png", // Monster Drink
     "/lovable-uploads/cb774285-138a-4080-aa60-2b38edad96e3.png", // Orange Soda
+    "/lovable-uploads/2c4da2f8-6c14-4223-8fca-aa7669b8aaaf.png", // Creamy Rainbow Candy
+    "/lovable-uploads/73b66ffd-7bd3-4323-a952-53d877270743.png", // Caramel Custard
+    "/lovable-uploads/32b2624c-5528-43e0-b55d-9530d6790650.png", // Strawberry Cake
+    "/lovable-uploads/a728bdcf-b0f3-480c-b8e9-692732f20769.png", // Cinnamon Apple Pie
   ];
 
   useEffect(() => {

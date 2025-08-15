@@ -71,8 +71,8 @@ export const BrandIntroduction = () => {
 
           {/* Product Carousel */}
           <div className="relative">
-            <div className="aspect-[4/5] glass-panel rounded-3xl p-6 overflow-hidden">
-              <div className="relative w-full h-full bg-black/20 rounded-2xl p-2 flex items-center justify-center overflow-hidden">
+            <div className="aspect-[4/5] glass-panel rounded-3xl p-4 overflow-hidden">
+              <div className="relative w-full h-full bg-black/20 rounded-2xl p-1 flex items-center justify-center overflow-hidden">
                 <div
                   className="flex transition-transform duration-700 ease-in-out w-full h-full"
                   style={{
@@ -83,12 +83,12 @@ export const BrandIntroduction = () => {
                   {images.map((src, i) => (
                     <div
                       key={i}
-                      className="w-full h-full flex-shrink-0 flex items-center justify-center"
+                      className="w-full h-full flex-shrink-0 flex items-center justify-center p-1"
                     >
                       <img
                         src={src}
                         alt={`LusMind Slide ${i + 1}`}
-                        className="max-w-full max-h-full object-contain rounded-2xl"
+                        className="w-full h-full object-cover rounded-xl shadow-2xl"
                       />
                     </div>
                   ))}
