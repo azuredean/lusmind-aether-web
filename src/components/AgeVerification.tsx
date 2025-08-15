@@ -8,7 +8,7 @@ interface AgeVerificationProps {
 
 export const AgeVerification = ({ onVerified, onReject }: AgeVerificationProps) => {
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-[9999] flex items-center justify-center p-4" style={{ isolation: 'isolate' }}>
       <div className="glass-panel p-8 rounded-2xl max-w-md w-full text-center relative">
         <button 
           onClick={onReject}

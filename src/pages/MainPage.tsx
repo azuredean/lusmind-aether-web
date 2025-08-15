@@ -28,11 +28,12 @@ export const MainPage = () => {
     image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png"
   }];
   useEffect(() => {
+    // 总是显示年龄验证，除非在当前会话中已验证
     const ageVerified = sessionStorage.getItem('ageVerified');
-    if (!ageVerified) {
-      setShowAgeVerification(true);
-    } else {
+    if (ageVerified === 'true') {
       setShowAgeVerification(false);
+    } else {
+      setShowAgeVerification(true);
     }
   }, []);
   useEffect(() => {
@@ -56,7 +57,8 @@ export const MainPage = () => {
     setShowAgeVerification(false);
   };
   const handleAgeRejected = () => {
-    window.location.href = '/';
+    sessionStorage.removeItem('ageVerified');
+    window.location.href = 'https://www.google.com';
   };
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -111,8 +113,12 @@ export const MainPage = () => {
         <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
-      {/* Age verification modal */}
-      {showAgeVerification && <AgeVerification onVerified={handleAgeVerified} onReject={handleAgeRejected} />}
+      {/* Age verification modal - Highest priority */}
+      {showAgeVerification && (
+        <div style={{ position: 'relative', zIndex: 10000 }}>
+          <AgeVerification onVerified={handleAgeVerified} onReject={handleAgeRejected} />
+        </div>
+      )}
 
       <main className="relative z-10">
         {/* Hero Section */}
