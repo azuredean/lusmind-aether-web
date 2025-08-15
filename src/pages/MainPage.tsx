@@ -8,10 +8,31 @@ export const MainPage = () => {
   const timerRef = useRef<NodeJS.Timeout>();
 
   const slides = [
-    { title: "Aurora Grape", desc: "luminous, cool finish", bg: "linear-gradient(135deg, #a855f7, #7c3aed)" },
-    { title: "Neon Berry", desc: "bright & layered", bg: "linear-gradient(135deg, #0ea5e9, #22d3ee)" },
-    { title: "Cyber Citrus", desc: "zingy, clean fade", bg: "linear-gradient(135deg, #f59e0b, #ec4899)" },
-    { title: "Midnight Mint", desc: "silky & crisp", bg: "linear-gradient(135deg, #10b981, #3b82f6)" }
+    { 
+      title: "Blueberry Raspberry", 
+      desc: "Rich berry symphony", 
+      image: "/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png"
+    },
+    { 
+      title: "Niagara Grape", 
+      desc: "Elegant vine essence", 
+      image: "/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png"
+    },
+    { 
+      title: "Mixed Berry", 
+      desc: "Complex fruit blend", 
+      image: "/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png"
+    },
+    { 
+      title: "Niagara Grape Premium", 
+      desc: "Refined grape fusion", 
+      image: "/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png"
+    },
+    { 
+      title: "Orange Soda", 
+      desc: "Citrus laboratory creation", 
+      image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png"
+    }
   ];
 
   useEffect(() => {
@@ -236,17 +257,16 @@ export const MainPage = () => {
                     >
                       {slides.map((slide, index) => (
                         <div key={index} className="w-full h-full flex-shrink-0 flex items-center justify-center">
-                          <div 
-                            className="relative w-full h-full rounded-2xl grid place-items-center text-center text-white"
-                            style={{ 
-                              background: slide.bg,
-                              boxShadow: 'inset 0 0 60px rgba(0,0,0,0.25)'
-                            }}
-                          >
-                            <div className="absolute inset-0 opacity-[0.12] bg-gradient-radial from-white/30 via-transparent to-transparent"></div>
-                            <div className="relative z-10">
-                              <h3 className="text-2xl md:text-3xl font-black tracking-wide">{slide.title}</h3>
-                              <p className="mt-2 opacity-90">{slide.desc}</p>
+                          <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                            <img 
+                              src={slide.image} 
+                              alt={slide.title}
+                              className="w-full h-full object-cover object-center"
+                            />
+                            <div className="absolute inset-0 bg-black/30" />
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+                              <h3 className="text-2xl md:text-3xl font-black tracking-wide text-shadow-lg drop-shadow-lg">{slide.title}</h3>
+                              <p className="mt-2 opacity-90 text-shadow drop-shadow-md">{slide.desc}</p>
                             </div>
                           </div>
                         </div>
