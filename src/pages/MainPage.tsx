@@ -136,9 +136,16 @@ export const MainPage = () => {
           <div className="relative z-10 max-w-[1120px] px-6 mx-auto text-center">
             {/* Navigation */}
             <nav className="flex items-center justify-between text-white/75 text-sm">
-              <a href="#top" className="font-black tracking-[4px] bg-gradient-to-r from-[#f0abfc] via-[#7dd3fc] to-[#c4b5fd] bg-clip-text text-transparent">
-                LUSMIND
-              </a>
+              <div className="flex items-center gap-3">
+                <img 
+                  src="/lovable-uploads/4ad7e2db-c2a3-419d-b306-0ccc3574d298.png" 
+                  alt="LusMind Logo" 
+                  className="w-8 h-8 object-contain"
+                />
+                <a href="#top" className="font-black tracking-[4px] bg-gradient-to-r from-[#f0abfc] via-[#7dd3fc] to-[#c4b5fd] bg-clip-text text-transparent">
+                  LUSMIND
+                </a>
+              </div>
               <div className="flex gap-6">
                 <button onClick={() => scrollToSection('products')} className="hover:text-white transition-colors">Products</button>
                 <button onClick={() => scrollToSection('verify')} className="hover:text-white transition-colors">Verify</button>
