@@ -290,13 +290,33 @@ p {
 /* ========== FLAVOR STRIP (auto-scroll) ========== */
 .strip {
   overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  /* Hide scrollbar overflow at top */
+  margin-top: -50px;
+  padding-top: 50px;
 }
 
 .strip-track {
   display: flex;
   gap: 18px;
   padding: 10px;
-  animation: marquee 24s linear infinite;
+  width: max-content;
+  cursor: grab;
+  user-select: none;
+}
+
+.strip-track:active {
+  cursor: grabbing;
+}
+
+.strip-track::-webkit-scrollbar {
+  display: none;
+}
+
+.strip-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .chip {
@@ -322,27 +342,6 @@ p {
   aspect-ratio: 1/1;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.strip-track.reverse {
-  animation: marquee-reverse 24s linear infinite;
-}
-
-@keyframes marquee-reverse {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
 
 
 /* ========== VERIFY / SUBSCRIBE ========== */

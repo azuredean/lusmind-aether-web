@@ -1,27 +1,51 @@
 import { useState, useEffect, useRef } from 'react';
 import { AgeVerification } from '@/components/AgeVerification';
 import { useDragScroll } from '@/hooks/useDragScroll';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
   const posRef = useRef(0);
   const pausedRef = useRef(false);
   const lastTsRef = useRef<number | null>(null);
   
-  // Drag scroll refs and hooks
+  // Auto-play refs for strips
+  const firstStripRafRef = useRef<number | null>(null);
+  const secondStripRafRef = useRef<number | null>(null);
+  const firstStripPosRef = useRef(0);
+  const secondStripPosRef = useRef(0);
   const firstStripPausedRef = useRef(false);
   const secondStripPausedRef = useRef(false);
+  const firstStripLastTsRef = useRef<number | null>(null);
+  const secondStripLastTsRef = useRef<number | null>(null);
   
   const firstStripRef = useDragScroll({
     onDragStart: () => { firstStripPausedRef.current = true; },
-    onDragEnd: () => { firstStripPausedRef.current = false; }
+    onDragEnd: () => { 
+      firstStripPausedRef.current = false;
+      // Resume auto-play after drag ends
+      setTimeout(() => {
+        if (firstStripRef.current && !firstStripPausedRef.current) {
+          startFirstStripAnimation();
+        }
+      }, 100);
+    }
   });
   
   const secondStripRef = useDragScroll({
     onDragStart: () => { secondStripPausedRef.current = true; },
-    onDragEnd: () => { secondStripPausedRef.current = false; }
+    onDragEnd: () => { 
+      secondStripPausedRef.current = false;
+      // Resume auto-play after drag ends
+      setTimeout(() => {
+        if (secondStripRef.current && !secondStripPausedRef.current) {
+          startSecondStripAnimation();
+        }
+      }, 100);
+    }
   });
 
   const slides = [
@@ -31,6 +55,24 @@ export const MainPage = () => {
     { image: "/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png", title: "Niagara Grape Premium" },
     { image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png", title: "Orange Soda" }
   ];
+
+  // Auto-slide effect for hero carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  // Navigation functions for hero carousel
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   useEffect(() => {
     const ageVerified = sessionStorage.getItem('ageVerified');
@@ -52,80 +94,109 @@ export const MainPage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
+  // Auto-play animation for first strip
+  const startFirstStripAnimation = () => {
+    const el = firstStripRef.current;
+    if (!el || firstStripPausedRef.current) return;
 
-    // 如果用户偏好减少动效，直接不滚动
-    const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    if (firstStripRafRef.current) {
+      cancelAnimationFrame(firstStripRafRef.current);
+    }
 
-    posRef.current = 0;
-    el.scrollLeft = 0;
+    const SPEED = 30; // pixels per second
 
-    const SPEED_PX_PER_SEC = 40; // 调整你需要的速度(像素/秒)
-
-    const tick = (ts: number) => {
-      if (pausedRef.current) {
-        lastTsRef.current = ts;
-        rafRef.current = requestAnimationFrame(tick);
+    const animate = (ts: number) => {
+      if (firstStripPausedRef.current) {
+        firstStripLastTsRef.current = ts;
+        firstStripRafRef.current = requestAnimationFrame(animate);
         return;
       }
 
-      const last = lastTsRef.current ?? ts;
-      const dt = Math.max(0, ts - last) / 1000; // 秒
-      lastTsRef.current = ts;
+      const last = firstStripLastTsRef.current ?? ts;
+      const dt = Math.max(0, ts - last) / 1000;
+      firstStripLastTsRef.current = ts;
 
-      // 实时取 scrollWidth（图片加载后会变化，不会失准）
-      const maxLoop = el.scrollWidth / 2; // 因为内容重复两份
-      if (maxLoop <= 0) {
-        rafRef.current = requestAnimationFrame(tick);
+      const maxScroll = el.scrollWidth / 2;
+      if (maxScroll <= 0) {
+        firstStripRafRef.current = requestAnimationFrame(animate);
         return;
       }
 
-      // 位置推进
-      let p = posRef.current + SPEED_PX_PER_SEC * dt;
+      let pos = firstStripPosRef.current + SPEED * dt;
+      if (pos >= maxScroll) pos -= maxScroll;
 
-      // 到一半回绕（无缝）
-      if (p >= maxLoop) p -= maxLoop;
+      firstStripPosRef.current = pos;
+      el.scrollLeft = pos;
 
-      posRef.current = p;
-      el.scrollLeft = p;
-
-      rafRef.current = requestAnimationFrame(tick);
+      firstStripRafRef.current = requestAnimationFrame(animate);
     };
 
-    rafRef.current = requestAnimationFrame((ts) => {
-      lastTsRef.current = ts;
-      tick(ts);
+    firstStripRafRef.current = requestAnimationFrame((ts) => {
+      firstStripLastTsRef.current = ts;
+      animate(ts);
     });
+  };
 
-    // 悬停暂停
-    const onEnter = () => (pausedRef.current = true);
-    const onLeave = () => (pausedRef.current = false);
-    el.addEventListener('mouseenter', onEnter);
-    el.addEventListener('mouseleave', onLeave);
+  // Auto-play animation for second strip (reverse direction)
+  const startSecondStripAnimation = () => {
+    const el = secondStripRef.current;
+    if (!el || secondStripPausedRef.current) return;
 
-    // 标签页隐藏暂停
-    const onVis = () => (pausedRef.current = document.hidden);
-    document.addEventListener('visibilitychange', onVis);
+    if (secondStripRafRef.current) {
+      cancelAnimationFrame(secondStripRafRef.current);
+    }
 
-    // 视口变化时，轻微校正 pos，避免跳（取模）
-    const onResize = () => {
-      const maxLoop = el.scrollWidth / 2;
-      if (maxLoop > 0) {
-        posRef.current = posRef.current % maxLoop;
-        el.scrollLeft = posRef.current;
+    const SPEED = 30; // pixels per second
+
+    const animate = (ts: number) => {
+      if (secondStripPausedRef.current) {
+        secondStripLastTsRef.current = ts;
+        secondStripRafRef.current = requestAnimationFrame(animate);
+        return;
       }
+
+      const last = secondStripLastTsRef.current ?? ts;
+      const dt = Math.max(0, ts - last) / 1000;
+      secondStripLastTsRef.current = ts;
+
+      const maxScroll = el.scrollWidth / 2;
+      if (maxScroll <= 0) {
+        secondStripRafRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
+      // Reverse direction
+      let pos = secondStripPosRef.current - SPEED * dt;
+      if (pos <= 0) pos += maxScroll;
+
+      secondStripPosRef.current = pos;
+      el.scrollLeft = pos;
+
+      secondStripRafRef.current = requestAnimationFrame(animate);
     };
-    window.addEventListener('resize', onResize);
+
+    // Start from the end for reverse direction
+    if (el.scrollWidth > 0) {
+      secondStripPosRef.current = el.scrollWidth / 2;
+      el.scrollLeft = secondStripPosRef.current;
+    }
+
+    secondStripRafRef.current = requestAnimationFrame((ts) => {
+      secondStripLastTsRef.current = ts;
+      animate(ts);
+    });
+  };
+
+  // Initialize strip animations
+  useEffect(() => {
+    const timer1 = setTimeout(() => startFirstStripAnimation(), 500);
+    const timer2 = setTimeout(() => startSecondStripAnimation(), 500);
 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      document.removeEventListener('visibilitychange', onVis);
-      window.removeEventListener('resize', onResize);
-      el.removeEventListener('mouseenter', onEnter);
-      el.removeEventListener('mouseleave', onLeave);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      if (firstStripRafRef.current) cancelAnimationFrame(firstStripRafRef.current);
+      if (secondStripRafRef.current) cancelAnimationFrame(secondStripRafRef.current);
     };
   }, []);
 
@@ -264,24 +335,118 @@ export const MainPage = () => {
           </div>
 
           {/* Carousel */}
-          <div className="carousel" id="heroCarousel">
+          <div className="carousel" id="heroCarousel" style={{ position: 'relative' }}>
             <div className="carousel-viewport">
               <div 
-                ref={scrollRef}
                 className="carousel-track" 
-                id="cTrack" 
                 style={{ 
                   display: 'flex',
-                  overflowX: 'hidden',
-                  scrollBehavior: 'auto'
+                  transform: `translateX(-${currentSlide * 100}%)`,
+                  transition: 'transform 0.5s ease-in-out'
                 }}
               >
-                {[...slides, ...slides].map((slide, index) => (
+                {slides.map((slide, index) => (
                   <div key={index} className="slide" style={{ flexShrink: 0 }}>
                     <img src={slide.image} alt={slide.title} />
                   </div>
                 ))}
               </div>
+            </div>
+            
+            {/* Navigation Buttons */}
+            <button 
+              onClick={prevSlide}
+              className="carousel-nav carousel-nav-prev"
+              style={{
+                position: 'absolute',
+                left: '12px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                zIndex: 10,
+                background: 'rgba(0, 0, 0, 0.5)',
+                border: 'none',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                cursor: 'pointer',
+                backdropFilter: 'blur(10px)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = 'rgba(0, 0, 0, 0.7)';
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = 'rgba(0, 0, 0, 0.5)';
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+              }}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            
+            <button 
+              onClick={nextSlide}
+              className="carousel-nav carousel-nav-next"
+              style={{
+                position: 'absolute',
+                right: '12px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                zIndex: 10,
+                background: 'rgba(0, 0, 0, 0.5)',
+                border: 'none',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                cursor: 'pointer',
+                backdropFilter: 'blur(10px)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = 'rgba(0, 0, 0, 0.7)';
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = 'rgba(0, 0, 0, 0.5)';
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+              }}
+            >
+              <ChevronRight size={20} />
+            </button>
+            
+            {/* Dots Indicator */}
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              display: 'flex',
+              gap: '8px',
+              zIndex: 10
+            }}>
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  style={{
+                    width: '12px',
+                    height: '12px',
+                    borderRadius: '50%',
+                    border: 'none',
+                    background: currentSlide === index ? 'white' : 'rgba(255, 255, 255, 0.5)',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -307,14 +472,12 @@ export const MainPage = () => {
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none'
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.animationPlayState = 'paused';
+              onMouseEnter={() => {
                 firstStripPausedRef.current = true;
               }}
-              onMouseLeave={(e) => {
-                if (!firstStripPausedRef.current) {
-                  e.currentTarget.style.animationPlayState = 'running';
-                }
+              onMouseLeave={() => {
+                firstStripPausedRef.current = false;
+                startFirstStripAnimation();
               }}
             >
               {/* Duplicate for seamless loop */}
@@ -336,14 +499,12 @@ export const MainPage = () => {
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none'
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.animationPlayState = 'paused';
+              onMouseEnter={() => {
                 secondStripPausedRef.current = true;
               }}
-              onMouseLeave={(e) => {
-                if (!secondStripPausedRef.current) {
-                  e.currentTarget.style.animationPlayState = 'running';
-                }
+              onMouseLeave={() => {
+                secondStripPausedRef.current = false;
+                startSecondStripAnimation();
               }}
             >
               {/* All flavor images combined */}
