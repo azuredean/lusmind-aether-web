@@ -318,8 +318,8 @@ export const MainPage = () => {
         }} />
         
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 className="gradient-text" style={{ marginBottom: '16px' }}>Premium Flavor Collection</h2>
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <h2 className="gradient-text" style={{ marginBottom: '12px' }}>Premium Flavor Collection</h2>
             <p style={{ maxWidth: '600px', margin: '0 auto' }}>
               Experience our signature flavors crafted with precision and innovation
             </p>
@@ -328,81 +328,81 @@ export const MainPage = () => {
           {/* Flowing Flavor Strip */}
           <div style={{
             overflow: 'hidden',
-            borderRadius: '24px',
+            borderRadius: '16px',
             background: 'rgba(255,255,255,0.02)',
             border: '1px solid rgba(255,255,255,0.1)',
             backdropFilter: 'blur(10px)'
           }}>
             <div style={{
               display: 'flex',
-              gap: '24px',
-              padding: '24px',
-              animation: 'flowRight 40s linear infinite',
+              gap: '16px',
+              padding: '16px',
+              animation: 'flowRight 35s linear infinite',
               width: 'max-content'
             }}
             onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
             onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}>
               {/* First set */}
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/93168de7-3a2f-4db1-ab76-dc654be26b6f.png" alt="Watermelon Strawberry" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/f55f7ba5-526e-4238-9fde-d0c3e8d613d0.png" alt="Blueberry Raspberry" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/c8bad9e1-51d8-457f-b243-3fac5a10ff64.png" alt="Kiwi Passion" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/950ad15f-ca56-46a9-b3ac-ce39a95c6339.png" alt="Peach Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/347ca50f-849a-43d7-88a0-3767230905b0.png" alt="Mango Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/588000a0-5227-469d-aa74-7bc3daae0570.png" alt="Watermelon Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/8c6e021f-647f-4728-a92d-1c844914ddd4.png" alt="Green Coconut" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/47e5c6a9-393a-448a-9e87-ac91ac1ac90b.png" alt="Niagara Grape" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/60fcfa98-7404-442b-bb33-52fa9379a93d.png" alt="Pineapple Coconut Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/6747eef8-572e-4f90-a650-acba5ef46b7a.png" alt="Cool Yuzu Cedar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               
               {/* Duplicate set for seamless loop */}
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/93168de7-3a2f-4db1-ab76-dc654be26b6f.png" alt="Watermelon Strawberry" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/f55f7ba5-526e-4238-9fde-d0c3e8d613d0.png" alt="Blueberry Raspberry" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/c8bad9e1-51d8-457f-b243-3fac5a10ff64.png" alt="Kiwi Passion" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/950ad15f-ca56-46a9-b3ac-ce39a95c6339.png" alt="Peach Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/347ca50f-849a-43d7-88a0-3767230905b0.png" alt="Mango Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/588000a0-5227-469d-aa74-7bc3daae0570.png" alt="Watermelon Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/8c6e021f-647f-4728-a92d-1c844914ddd4.png" alt="Green Coconut" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/47e5c6a9-393a-448a-9e87-ac91ac1ac90b.png" alt="Niagara Grape" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/60fcfa98-7404-442b-bb33-52fa9379a93d.png" alt="Pineapple Coconut Ice" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ minWidth: '280px', aspectRatio: '16/9', borderRadius: '20px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ minWidth: '180px', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
                 <img src="/lovable-uploads/6747eef8-572e-4f90-a650-acba5ef46b7a.png" alt="Cool Yuzu Cedar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
