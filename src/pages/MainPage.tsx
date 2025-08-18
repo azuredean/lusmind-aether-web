@@ -292,7 +292,7 @@ export const MainPage = () => {
           {/* Second Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
-              className="strip-track" 
+              className="strip-track reverse" 
               id="stripTrack2"
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
