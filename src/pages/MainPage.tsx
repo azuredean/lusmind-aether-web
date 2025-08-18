@@ -168,10 +168,17 @@ export const MainPage = () => {
     <>
       {/* NAV */}
       <header className="container">
-        <nav className="nav">
-          <a href="#" className="gradient-text" style={{ fontWeight: 900, letterSpacing: '4px' }}>
+      <nav className="nav">
+        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <img 
+            src="/lovable-uploads/d4cf886b-b75b-4211-9d38-f7c407b49c2d.png" 
+            alt="LusMind Logo" 
+            style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+          />
+          <span className="gradient-text" style={{ fontWeight: 900, letterSpacing: '4px' }}>
             LUSMIND
-          </a>
+          </span>
+        </a>
           <div className="nav-links">
             <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Products</a>
             <a href="#verify" onClick={(e) => { e.preventDefault(); scrollToSection('verify'); }}>Verify</a>
