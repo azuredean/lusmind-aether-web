@@ -3,6 +3,8 @@ import { AgeVerification } from '@/components/AgeVerification';
 
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const slides = [
     { image: "/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png", title: "Blueberry Raspberry" },
@@ -55,6 +57,32 @@ export const MainPage = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Carousel auto-play
+    const startCarousel = () => {
+      timerRef.current = setInterval(() => {
+        setCurrentSlide(prev => (prev + 1) % slides.length);
+      }, 5000);
+    };
+    startCarousel();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [slides.length]);
+
+  useEffect(() => {
+    // Update carousel transform
+    const track = document.getElementById('cTrack');
+    if (track) {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    
+    // Update dots
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }, [currentSlide]);
 
   const handleAgeVerified = () => {
     sessionStorage.setItem('ageVerified', 'true');
@@ -81,6 +109,30 @@ export const MainPage = () => {
     }
   };
 
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+    // Restart auto-play
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 5000);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide(prev => (prev + 1) % slides.length);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 5000);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 5000);
+  };
 
   const handleVerify = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -117,6 +169,15 @@ export const MainPage = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const pauseCarousel = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+  };
+
+  const resumeCarousel = () => {
+    timerRef.current = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 5000);
+  };
 
   if (showAgeVerification) {
     return (
@@ -190,20 +251,37 @@ export const MainPage = () => {
             </div>
           </div>
 
-          {/* Product Flow Display */}
-          <div className="product-flow-container">
-            <div className="product-flow-track">
-              {slides.map((slide, index) => (
-                <div key={index} className="flow-item">
-                  <img src={slide.image} alt={slide.title} />
-                </div>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {slides.map((slide, index) => (
-                <div key={`dup-${index}`} className="flow-item">
-                  <img src={slide.image} alt={slide.title} />
-                </div>
-              ))}
+          {/* Carousel */}
+          <div 
+            className="carousel" 
+            id="heroCarousel"
+            onMouseEnter={pauseCarousel}
+            onMouseLeave={resumeCarousel}
+          >
+            <div className="carousel-viewport">
+              <div className="carousel-track" id="cTrack" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                {slides.map((slide, index) => (
+                  <div key={index} className="slide">
+                    <img src={slide.image} alt={slide.title} />
+                  </div>
+                ))}
+              </div>
+              <button className="ctrl prev" id="prevBtn" aria-label="Previous slide" onClick={prevSlide}>
+                ‹
+              </button>
+              <button className="ctrl next" id="nextBtn" aria-label="Next slide" onClick={nextSlide}>
+                ›
+              </button>
+              <div className="dots" id="dots">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`dot ${index === currentSlide ? 'active' : ''}`}
+                    aria-label={`Go to slide ${index + 1}`}
+                    onClick={() => goToSlide(index)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
