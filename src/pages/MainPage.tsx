@@ -3,8 +3,11 @@ import { AgeVerification } from '@/components/AgeVerification';
 
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(true);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
+  const posRef = useRef(0);
+  const pausedRef = useRef(false);
+  const lastTsRef = useRef<number | null>(null);
 
   const slides = [
     { image: "/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png", title: "Blueberry Raspberry" },
@@ -35,31 +38,81 @@ export const MainPage = () => {
   }, []);
 
   useEffect(() => {
-    // Carousel auto-play
-    const startCarousel = () => {
-      timerRef.current = setInterval(() => {
-        setCurrentSlide(prev => (prev + 1) % slides.length);
-      }, 5000);
-    };
-    startCarousel();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [slides.length]);
+    const el = scrollRef.current;
+    if (!el) return;
 
-  useEffect(() => {
-    // Update carousel transform
-    const track = document.getElementById('cTrack');
-    if (track) {
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-    
-    // Update dots
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentSlide);
+    // 如果用户偏好减少动效，直接不滚动
+    const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    posRef.current = 0;
+    el.scrollLeft = 0;
+
+    const SPEED_PX_PER_SEC = 40; // 调整你需要的速度(像素/秒)
+
+    const tick = (ts: number) => {
+      if (pausedRef.current) {
+        lastTsRef.current = ts;
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
+
+      const last = lastTsRef.current ?? ts;
+      const dt = Math.max(0, ts - last) / 1000; // 秒
+      lastTsRef.current = ts;
+
+      // 实时取 scrollWidth（图片加载后会变化，不会失准）
+      const maxLoop = el.scrollWidth / 2; // 因为内容重复两份
+      if (maxLoop <= 0) {
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
+
+      // 位置推进
+      let p = posRef.current + SPEED_PX_PER_SEC * dt;
+
+      // 到一半回绕（无缝）
+      if (p >= maxLoop) p -= maxLoop;
+
+      posRef.current = p;
+      el.scrollLeft = p;
+
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame((ts) => {
+      lastTsRef.current = ts;
+      tick(ts);
     });
-  }, [currentSlide]);
+
+    // 悬停暂停
+    const onEnter = () => (pausedRef.current = true);
+    const onLeave = () => (pausedRef.current = false);
+    el.addEventListener('mouseenter', onEnter);
+    el.addEventListener('mouseleave', onLeave);
+
+    // 标签页隐藏暂停
+    const onVis = () => (pausedRef.current = document.hidden);
+    document.addEventListener('visibilitychange', onVis);
+
+    // 视口变化时，轻微校正 pos，避免跳（取模）
+    const onResize = () => {
+      const maxLoop = el.scrollWidth / 2;
+      if (maxLoop > 0) {
+        posRef.current = posRef.current % maxLoop;
+        el.scrollLeft = posRef.current;
+      }
+    };
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('resize', onResize);
+      el.removeEventListener('mouseenter', onEnter);
+      el.removeEventListener('mouseleave', onLeave);
+    };
+  }, []);
 
   const handleAgeVerified = () => {
     sessionStorage.setItem('ageVerified', 'true');
@@ -86,30 +139,6 @@ export const MainPage = () => {
     }
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    // Restart auto-play
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % slides.length);
-    }, 5000);
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide(prev => (prev + 1) % slides.length);
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % slides.length);
-    }, 5000);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % slides.length);
-    }, 5000);
-  };
 
   const handleVerify = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -146,15 +175,6 @@ export const MainPage = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const pauseCarousel = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-  };
-
-  const resumeCarousel = () => {
-    timerRef.current = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % slides.length);
-    }, 5000);
-  };
 
   if (showAgeVerification) {
     return (
@@ -229,34 +249,22 @@ export const MainPage = () => {
           </div>
 
           {/* Carousel */}
-          <div 
-            className="carousel" 
-            id="heroCarousel"
-            onMouseEnter={pauseCarousel}
-            onMouseLeave={resumeCarousel}
-          >
+          <div className="carousel" id="heroCarousel">
             <div className="carousel-viewport">
-              <div className="carousel-track" id="cTrack" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                {slides.map((slide, index) => (
-                  <div key={index} className="slide">
+              <div 
+                ref={scrollRef}
+                className="carousel-track" 
+                id="cTrack" 
+                style={{ 
+                  display: 'flex',
+                  overflowX: 'hidden',
+                  scrollBehavior: 'auto'
+                }}
+              >
+                {[...slides, ...slides].map((slide, index) => (
+                  <div key={index} className="slide" style={{ flexShrink: 0 }}>
                     <img src={slide.image} alt={slide.title} />
                   </div>
-                ))}
-              </div>
-              <button className="ctrl prev" id="prevBtn" aria-label="Previous slide" onClick={prevSlide}>
-                ‹
-              </button>
-              <button className="ctrl next" id="nextBtn" aria-label="Next slide" onClick={nextSlide}>
-                ›
-              </button>
-              <div className="dots" id="dots">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`dot ${index === currentSlide ? 'active' : ''}`}
-                    aria-label={`Go to slide ${index + 1}`}
-                    onClick={() => goToSlide(index)}
-                  />
                 ))}
               </div>
             </div>
