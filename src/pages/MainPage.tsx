@@ -305,12 +305,7 @@ export const MainPage = () => {
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
-              {/* Duplicate for seamless loop */}
-              {[...slides, ...slides].map((slide, index) => (
-                <div key={index} className="chip">
-                  <img src={slide.image} alt={slide.title} />
-                </div>
-              ))}
+              {/* Empty strip - images removed */}
             </div>
           </div>
         </div>
