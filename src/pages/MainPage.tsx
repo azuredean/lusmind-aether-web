@@ -284,7 +284,7 @@ export const MainPage = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
                 <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
-                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
+                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm" style={{
                   aspectRatio: '4/5'
                 }}>
                     <div className="relative w-full h-full">
@@ -293,13 +293,44 @@ export const MainPage = () => {
                       transform: `translate3d(-${currentSlide * 100}%, 0, 0)`
                     }}>
                         {slides.map((slide, index) => <div key={index} className="min-w-full h-full shrink-0">
-                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
-                              <img src={slide.image} alt={slide.title} className="w-full h-full max-w-full max-h-full object-contain rounded-2xl transition-transform duration-300 group-hover/slide:scale-105" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" fetchPriority={index === 0 ? 'high' : 'auto'} onError={e => {
-                            (e.currentTarget as HTMLImageElement).style.opacity = '0.15';
-                          }} />
+                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-gray-800/20 group/slide">
+                              {/* Loading placeholder */}
+                              <div className="absolute inset-3 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl border border-white/10">
+                                <div className="text-center space-y-2">
+                                  <div className="w-8 h-8 border-2 border-purple-400/30 border-t-purple-400 rounded-full animate-spin mx-auto"></div>
+                                  <p className="text-white/60 text-sm">Loading...</p>
+                                </div>
+                              </div>
 
-                              {/* 渐变叠层 */}
-                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/0" />
+                              <img 
+                                src={slide.image} 
+                                alt={slide.title} 
+                                className="w-full h-full max-w-full max-h-full object-contain rounded-2xl transition-all duration-500 opacity-0 group-hover/slide:scale-105" 
+                                loading={index === 0 ? 'eager' : 'lazy'} 
+                                decoding="async" 
+                                fetchPriority={index === 0 ? 'high' : 'auto'} 
+                                onLoad={(e) => {
+                                  (e.currentTarget as HTMLImageElement).style.opacity = '1';
+                                  const placeholder = e.currentTarget.previousElementSibling;
+                                  if (placeholder) (placeholder as HTMLElement).style.display = 'none';
+                                }}
+                                onError={(e) => {
+                                  const placeholder = e.currentTarget.previousElementSibling;
+                                  if (placeholder) {
+                                    placeholder.innerHTML = `
+                                      <div class="text-center space-y-2">
+                                        <div class="w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center mx-auto">
+                                          <span class="text-red-400 text-sm">✕</span>
+                                        </div>
+                                        <p class="text-red-400/80 text-sm">Image failed to load</p>
+                                      </div>
+                                    `;
+                                  }
+                                }} 
+                              />
+
+                              {/* 轻量渐变叠层 */}
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
 
                               {/* 文案覆盖 */}
                               <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
