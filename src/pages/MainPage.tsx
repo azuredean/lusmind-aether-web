@@ -299,7 +299,7 @@ export const MainPage = () => {
           {/* Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
-              className="strip-track linear-scroll" 
+              className="strip-track infinite-scroll" 
               id="stripTrack"
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
@@ -309,12 +309,16 @@ export const MainPage = () => {
                   <img src={slide.image} alt={slide.title} />
                 </div>
               ))}
+              {/* Add first image at the end for seamless loop */}
+              <div className="chip">
+                <img src={slides[0].image} alt={slides[0].title} />
+              </div>
             </div>
           </div>
           {/* Second Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
-              className="strip-track reverse linear-scroll" 
+              className="strip-track reverse infinite-scroll" 
               id="stripTrack2"
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
@@ -324,6 +328,10 @@ export const MainPage = () => {
                   <img src={slide.image} alt={slide.title} />
                 </div>
               ))}
+              {/* Add first image at the end for seamless loop */}
+              <div className="chip">
+                <img src={newFlavorSlides[0].image} alt={newFlavorSlides[0].title} />
+              </div>
             </div>
           </div>
         </div>

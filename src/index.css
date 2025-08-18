@@ -291,8 +291,7 @@ p {
   display: flex;
   gap: 18px;
   padding: 10px;
-  animation: linear-scroll-left 40s linear 1;
-  animation-fill-mode: forwards;
+  animation: infinite-scroll-left 30s linear infinite;
   will-change: transform;
 }
 
@@ -313,8 +312,7 @@ p {
 }
 
 .strip-track.reverse {
-  animation: linear-scroll-right 35s linear 1;
-  animation-fill-mode: forwards;
+  animation: infinite-scroll-right 25s linear infinite;
 }
 
 .strip-track.reverse .chip img {
@@ -322,22 +320,25 @@ p {
   aspect-ratio: 1/1;
 }
 
-.strip-track.linear-scroll {
+.strip-track.infinite-scroll {
   animation-timing-function: linear;
 }
 
-@keyframes linear-scroll-left {
+/* Calculate the exact distance for seamless loop */
+@keyframes infinite-scroll-left {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% + 100vw));
+    /* Move exactly the width of original images (excluding the duplicate) */
+    transform: translateX(calc(-160px * 5 - 18px * 5));
   }
 }
 
-@keyframes linear-scroll-right {
+@keyframes infinite-scroll-right {
   from {
-    transform: translateX(calc(-100% + 100vw));
+    /* Start from the end position */
+    transform: translateX(calc(-160px * 20 - 18px * 20));
   }
   to {
     transform: translateX(0);
