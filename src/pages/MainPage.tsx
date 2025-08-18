@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { AgeVerification } from '@/components/AgeVerification';
 import { FlavorShowcase } from '@/components/FlavorShowcase';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(true);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const timerRef = useRef<NodeJS.Timeout>();
+  
   const slides = [{
     title: "Blueberry Raspberry",
     desc: "Rich berry symphony",
@@ -27,28 +27,11 @@ export const MainPage = () => {
     desc: "Citrus laboratory creation",
     image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png"
   }];
+
   useEffect(() => {
     // 从首页进入时总是显示年龄验证
     setShowAgeVerification(true);
   }, []);
-  useEffect(() => {
-    if (!showAgeVerification) {
-      const startCarousel = () => {
-        timerRef.current = setInterval(() => {
-          setCurrentSlide(prev => (prev + 1) % slides.length);
-        }, 5000); // 增加到5秒
-      };
-      startCarousel();
-      return () => {
-        if (timerRef.current) clearInterval(timerRef.current);
-      };
-    }
-  }, [slides.length, showAgeVerification]);
-  useEffect(() => {
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-  }, [currentSlide]);
   const handleAgeVerified = () => {
     sessionStorage.setItem('ageVerified', 'true');
     setShowAgeVerification(false);
@@ -56,15 +39,6 @@ export const MainPage = () => {
   const handleAgeRejected = () => {
     sessionStorage.removeItem('ageVerified');
     window.location.href = 'https://www.google.com';
-  };
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-  const nextSlide = () => {
-    setCurrentSlide(prev => (prev + 1) % slides.length);
-  };
-  const prevSlide = () => {
-    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
   };
   const handleVerify = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -264,15 +238,25 @@ export const MainPage = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
                   <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
-                    <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
-                      aspectRatio: '4/5'
-                    }}>
-                      <div className="relative w-full h-full">
-                        <div ref={trackRef} className="flex h-full transition-transform duration-700 ease-out" style={{
-                          width: `${slides.length * 100}%`
-                        }}>
-                          {slides.map((slide, index) => (
-                            <div key={index} className="min-w-full h-full shrink-0">
+                    <Carousel
+                      className="w-full"
+                      plugins={[
+                        Autoplay({
+                          delay: 4000,
+                          stopOnInteraction: true,
+                        }),
+                      ]}
+                      opts={{
+                        align: "start",
+                        loop: true,
+                      }}
+                    >
+                      <CarouselContent className="-ml-0">
+                        {slides.map((slide, index) => (
+                          <CarouselItem key={index} className="pl-0">
+                            <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
+                              aspectRatio: '4/5'
+                            }}>
                               <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
                                 <img
                                   src={slide.image}
@@ -291,28 +275,18 @@ export const MainPage = () => {
                                   <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-xl bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
                                     {slide.title}
                                   </h3>
-                                  <p className="text-xs sm:text-sm opacity-90 drop-shadow text-white/80">
+                                  <p className="text-sm sm:text-base text-white/80 drop-shadow-lg font-medium">
                                     {slide.desc}
                                   </p>
+                                </div>
                               </div>
                             </div>
-                          </div>
+                          </CarouselItem>
                         ))}
-                      </div>
-
-                      {/* Enhanced Navigation */}
-                      <button onClick={prevSlide} className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/30 hover:bg-black/60 hover:border-white/50 hover:scale-110 transition-all duration-300 flex items-center justify-center text-xl">
-                        ‹
-                      </button>
-                      <button onClick={nextSlide} className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/30 hover:bg-black/60 hover:border-white/50 hover:scale-110 transition-all duration-300 flex items-center justify-center text-xl">
-                        ›
-                      </button>
-
-                      {/* Enhanced Dots */}
-                      <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-                        {slides.map((_, index) => <button key={index} onClick={() => goToSlide(index)} className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'w-8 bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg' : 'w-6 bg-white/30 hover:bg-white/50'}`} />)}
-                      </div>
-                    </div>
+                      </CarouselContent>
+                      <CarouselPrevious className="left-4 bg-black/40 hover:bg-black/60 text-white backdrop-blur-sm border border-white/20 hover:border-white/40" />
+                      <CarouselNext className="right-4 bg-black/40 hover:bg-black/60 text-white backdrop-blur-sm border border-white/20 hover:border-white/40" />
+                    </Carousel>
                   </div>
                 </div>
               </div>
@@ -449,5 +423,6 @@ export const MainPage = () => {
           </div>
         </footer>
       </main>
-    </div>;
+    </div>
+  );
 };
