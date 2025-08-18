@@ -285,23 +285,23 @@ p {
 /* ========== FLAVOR STRIP (auto-scroll) ========== */
 .strip {
   overflow: hidden;
-  height: 200px; /* Increased height for better image display */
 }
 
 .strip-track {
   display: flex;
   gap: 18px;
   padding: 10px;
-  animation: infinite-scroll-left 30s linear infinite;
-  will-change: transform;
+  animation: marquee 24s linear infinite;
 }
 
 .chip {
   flex: 0 0 auto;
   width: 160px;
-  height: 160px;
-  border-radius: 10px;
-  background: rgba(255,255,255,.02);
+  aspect-ratio: 1/1;
+  border-radius: 18px;
+  padding: 10px;
+  background: var(--panel);
+  border: 1px solid var(--ring);
   display: grid;
   place-items: center;
 }
@@ -312,34 +312,27 @@ p {
   object-fit: contain;
 }
 
-.strip-track.reverse {
-  animation: infinite-scroll-right 25s linear infinite;
-}
-
 .strip-track.reverse .chip img {
   object-fit: cover;
   aspect-ratio: 1/1;
 }
 
-.strip-track.infinite-scroll {
-  animation-timing-function: linear;
-}
-
-/* Calculate the exact distance for seamless loop */
-@keyframes infinite-scroll-left {
+@keyframes marquee {
   from {
     transform: translateX(0);
   }
   to {
-    /* Move exactly the width of original images (excluding the duplicate) */
-    transform: translateX(calc(-160px * 5 - 18px * 5));
+    transform: translateX(-50%);
   }
 }
 
-@keyframes infinite-scroll-right {
+.strip-track.reverse {
+  animation: marquee-reverse 24s linear infinite;
+}
+
+@keyframes marquee-reverse {
   from {
-    /* Start from the end position */
-    transform: translateX(calc(-160px * 20 - 18px * 20));
+    transform: translateX(-50%);
   }
   to {
     transform: translateX(0);

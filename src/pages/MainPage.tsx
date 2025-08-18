@@ -14,29 +14,6 @@ export const MainPage = () => {
     { image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png", title: "Orange Soda" }
   ];
 
-  const newFlavorSlides = [
-    { image: "/lovable-uploads/3b192fb7-a906-4dab-b90f-0cce1a5c18d5.png", title: "Watermelon Strawberry" },
-    { image: "/lovable-uploads/f118b54f-fa91-48ed-a6c9-010fe485899c.png", title: "Blueberry Raspberry" },
-    { image: "/lovable-uploads/96387b6f-3691-44e5-b29b-23fd56d487f0.png", title: "Kiwi & Passion" },
-    { image: "/lovable-uploads/f40e1940-0c12-4acd-a346-e7b44a74fc42.png", title: "Peach Ice" },
-    { image: "/lovable-uploads/169aa4fc-d5d3-41b9-a7a1-8daec2038b13.png", title: "Mango Ice" },
-    { image: "/lovable-uploads/8d672039-0c37-43c1-80e9-20a6a4eaad2a.png", title: "Watermelon Ice" },
-    { image: "/lovable-uploads/7db6a3cb-e2b7-4f2c-a7aa-23ecf0e3829e.png", title: "Green Coconut" },
-    { image: "/lovable-uploads/2c98da6a-68bc-43d7-891e-127d9a0fd050.png", title: "Niagara Grape" },
-    { image: "/lovable-uploads/43b1aa6d-f01a-44eb-8578-05233fd3666d.png", title: "Pineapple Coconut Ice" },
-    { image: "/lovable-uploads/0a4d82b0-95b3-4c6f-a5f6-24be6b66b2a2.png", title: "Cool Yuzu Cedar" },
-    { image: "/lovable-uploads/b2b117b3-1902-49f4-bf29-a93a115b2f05.png", title: "Melon Yogurt Ice" },
-    { image: "/lovable-uploads/075be852-ac76-414d-a6d0-3150767d0b4a.png", title: "Green Apple" },
-    { image: "/lovable-uploads/1ae56160-ec8c-4b3b-a92a-8d7c5cbdb017.png", title: "Arctic Ice" },
-    { image: "/lovable-uploads/e4a87b2b-97eb-4bde-a637-d9a0711b6209.png", title: "Cool Peppermint" },
-    { image: "/lovable-uploads/866ba477-2838-4667-85e3-3939d2a7df0e.png", title: "Double Apple Shisha" },
-    { image: "/lovable-uploads/b7879772-48b8-4625-a08d-3c02fb1db806.png", title: "Coffee Tobacco" },
-    { image: "/lovable-uploads/782b7512-24b4-4c60-a293-ca12ff874267.png", title: "Tobacco & Nut" },
-    { image: "/lovable-uploads/9fd32e86-a519-443e-be78-4709f6c0f60c.png", title: "Monster Drink" },
-    { image: "/lovable-uploads/904423dd-6612-4503-86c3-d48aee2e72a6.png", title: "Orange Soda" },
-    { image: "/lovable-uploads/0ecb9600-104b-4749-bde2-a4ac6fd57a8d.png", title: "Creamy Rainbow Candy" }
-  ];
-
   useEffect(() => {
     const ageVerified = sessionStorage.getItem('ageVerified');
     if (ageVerified === 'true') {
@@ -299,39 +276,33 @@ export const MainPage = () => {
           {/* Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
-              className="strip-track infinite-scroll" 
+              className="strip-track" 
               id="stripTrack"
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
-              {slides.map((slide, index) => (
+              {/* Duplicate for seamless loop */}
+              {[...slides, ...slides].map((slide, index) => (
                 <div key={index} className="chip">
                   <img src={slide.image} alt={slide.title} />
                 </div>
               ))}
-              {/* Add first image at the end for seamless loop */}
-              <div className="chip">
-                <img src={slides[0].image} alt={slides[0].title} />
-              </div>
             </div>
           </div>
           {/* Second Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
-              className="strip-track reverse infinite-scroll" 
+              className="strip-track reverse" 
               id="stripTrack2"
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
-              {newFlavorSlides.map((slide, index) => (
+              {/* Duplicate for seamless loop */}
+              {[...slides, ...slides].map((slide, index) => (
                 <div key={index} className="chip">
                   <img src={slide.image} alt={slide.title} />
                 </div>
               ))}
-              {/* Add first image at the end for seamless loop */}
-              <div className="chip">
-                <img src={newFlavorSlides[0].image} alt={newFlavorSlides[0].title} />
-              </div>
             </div>
           </div>
         </div>
