@@ -289,6 +289,22 @@ export const MainPage = () => {
               ))}
             </div>
           </div>
+          {/* Second Flavor auto-scroll strip */}
+          <div className="strip card">
+            <div 
+              className="strip-track" 
+              id="stripTrack2"
+              onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
+              onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
+            >
+              {/* Duplicate for seamless loop */}
+              {[...slides, ...slides].map((slide, index) => (
+                <div key={index} className="chip">
+                  <img src={slide.image} alt={slide.title} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
