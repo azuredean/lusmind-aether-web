@@ -121,11 +121,12 @@ export const MainPage = () => {
       </div>
 
       {/* Age verification modal - Highest priority */}
-      {showAgeVerification && (
-        <div style={{ position: 'relative', zIndex: 10000 }}>
+      {showAgeVerification && <div style={{
+      position: 'relative',
+      zIndex: 10000
+    }}>
           <AgeVerification onVerified={handleAgeVerified} onReject={handleAgeRejected} />
-        </div>
-      )}
+        </div>}
 
       <main className="relative z-10">
         {/* Hero Section */}
@@ -161,9 +162,7 @@ export const MainPage = () => {
                   <img src="/lovable-uploads/4ad7e2db-c2a3-419d-b306-0ccc3574d298.png" alt="LusMind Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain transition-transform duration-300 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <a href="#top" className="font-black tracking-[3px] sm:tracking-[4px] text-lg sm:text-xl bg-gradient-to-r from-[#f0abfc] via-[#7dd3fc] to-[#c4b5fd] bg-clip-text text-transparent transition-all duration-300 hover:tracking-[5px]">
-                  LUSMIND
-                </a>
+                
               </div>
               <div className="hidden md:flex gap-8">
                 <button onClick={() => scrollToSection('products')} className="text-white/70 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-300 backdrop-blur-sm border border-transparent hover:border-white/20">Products</button>
@@ -270,67 +269,49 @@ export const MainPage = () => {
               </div>
 
               {/* Enhanced Carousel */}
-              <div 
-                className="relative group"
-                onMouseEnter={() => {
-                  if (timerRef.current) {
-                    clearInterval(timerRef.current);
-                    timerRef.current = null;
-                  }
-                }}
-                onMouseLeave={() => {
-                  if (!timerRef.current) {
-                    timerRef.current = setInterval(() => {
-                      setCurrentSlide(p => (p + 1) % slides.length);
-                    }, 5000);
-                  }
-                }}
-              >
+              <div className="relative group" onMouseEnter={() => {
+              if (timerRef.current) {
+                clearInterval(timerRef.current);
+                timerRef.current = null;
+              }
+            }} onMouseLeave={() => {
+              if (!timerRef.current) {
+                timerRef.current = setInterval(() => {
+                  setCurrentSlide(p => (p + 1) % slides.length);
+                }, 5000);
+              }
+            }}>
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
                 <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
-                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/30 to-black/30 backdrop-blur-sm" style={{
-                    aspectRatio: '4/5'
-                  }}>
+                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
+                  aspectRatio: '4/5'
+                }}>
                     <div className="relative w-full h-full">
-                      <div 
-                        className="flex h-full transition-transform duration-700 ease-out will-change-transform"
-                        style={{
-                          width: `${slides.length * 100}%`,
-                          transform: `translate3d(-${currentSlide * 100}%, 0, 0)`,
-                        }}
-                      >
-                        {slides.map((slide, index) => (
-                          <div key={index} className="min-w-full h-full shrink-0">
-                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-4">
-                              <img
-                                src={slide.image}
-                                alt={slide.title}
-                                className="max-w-full max-h-full object-contain rounded-xl transition-transform duration-300 hover:scale-105"
-                                loading={index === 0 ? 'eager' : 'lazy'}
-                                decoding="async"
-                                fetchPriority={index === 0 ? 'high' : 'auto'}
-                                onError={(e) => {
-                                  console.error('Image failed to load:', slide.image);
-                                  (e.currentTarget as HTMLImageElement).style.opacity = '0.3';
-                                }}
-                              />
+                      <div className="flex h-full transition-transform duration-700 ease-out will-change-transform" style={{
+                      width: `${slides.length * 100}%`,
+                      transform: `translate3d(-${currentSlide * 100}%, 0, 0)`
+                    }}>
+                        {slides.map((slide, index) => <div key={index} className="min-w-full h-full shrink-0">
+                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
+                              <img src={slide.image} alt={slide.title} className="w-full h-full max-w-full max-h-full object-contain rounded-2xl transition-transform duration-300 group-hover/slide:scale-105" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" fetchPriority={index === 0 ? 'high' : 'auto'} onError={e => {
+                            (e.currentTarget as HTMLImageElement).style.opacity = '0.15';
+                          }} />
 
-                              {/* 轻量化渐变叠层 - 只在底部用于文字可读性 */}
-                              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                              {/* 渐变叠层 */}
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/0" />
 
                               {/* 文案覆盖 */}
-                              <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4 z-10">
-                                <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-2xl">
+                              <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-xl">
                                   {slide.title}
                                 </h3>
-                                <p className="text-xs sm:text-sm opacity-90 drop-shadow-xl">
+                                <p className="text-xs sm:text-sm opacity-90 drop-shadow">
                                   {slide.desc}
                                 </p>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          </div>)}
                       </div>
 
                       {/* Enhanced Navigation */}
@@ -343,19 +324,7 @@ export const MainPage = () => {
 
                       {/* Enhanced Dots */}
                       <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-                        {slides.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => goToSlide(index)}
-                            aria-label={`Go to slide ${index + 1}`}
-                            aria-current={index === currentSlide}
-                            className={`h-2 rounded-full transition-all duration-300 ${
-                              index === currentSlide 
-                                ? 'w-8 bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg' 
-                                : 'w-6 bg-white/30 hover:bg-white/50'
-                            }`}
-                          />
-                        ))}
+                        {slides.map((_, index) => <button key={index} onClick={() => goToSlide(index)} aria-label={`Go to slide ${index + 1}`} aria-current={index === currentSlide} className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'w-8 bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg' : 'w-6 bg-white/30 hover:bg-white/50'}`} />)}
                       </div>
                     </div>
                   </div>
