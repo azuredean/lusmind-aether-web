@@ -79,9 +79,9 @@ export const Navigation = () => {
               className="h-10 w-auto"
             />
             <img 
-              src="/lovable-uploads/04f79936-f6b4-4e4f-92ff-dddda5fde081.png" 
-              alt="LusMind Text Logo" 
-              className="h-8 w-auto"
+              src="/lovable-uploads/fb6ba6ca-9de9-4d01-a83a-92b431caadec.png" 
+              alt="LusMind Logo" 
+              className="h-10 w-auto"
             />
           </div>
 
