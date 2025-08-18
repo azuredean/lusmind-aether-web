@@ -326,7 +326,10 @@ export const MainPage = () => {
                 "/lovable-uploads/687e1c0b-e986-4c17-abbd-f2f021e1b93e.png",
                 "/lovable-uploads/a8122a31-2a0c-4427-8ace-5a19848ecc1b.png",
                 "/lovable-uploads/3c30f767-fd61-4af0-88dd-9dc19d7cd139.png",
-                "/lovable-uploads/db1bd122-976c-4cc1-ae7f-232f69cd1b0c.png"
+                "/lovable-uploads/db1bd122-976c-4cc1-ae7f-232f69cd1b0c.png",
+                "/lovable-uploads/8b762a1a-a6f1-4510-88db-9db5247e230d.png",
+                "/lovable-uploads/d8407800-8b7c-43f1-b981-e9e0789e370b.png",
+                "/lovable-uploads/77669a7e-a98d-4c08-a69d-13a07fc23723.png"
               ].concat([
                 "/lovable-uploads/9b576f2c-6211-4eb3-b2f6-fbc4b79461d8.png",
                 "/lovable-uploads/b9f726db-7379-4bee-a551-24113eef1fb5.png", 
@@ -347,7 +350,10 @@ export const MainPage = () => {
                 "/lovable-uploads/687e1c0b-e986-4c17-abbd-f2f021e1b93e.png",
                 "/lovable-uploads/a8122a31-2a0c-4427-8ace-5a19848ecc1b.png",
                 "/lovable-uploads/3c30f767-fd61-4af0-88dd-9dc19d7cd139.png",
-                "/lovable-uploads/db1bd122-976c-4cc1-ae7f-232f69cd1b0c.png"
+                "/lovable-uploads/db1bd122-976c-4cc1-ae7f-232f69cd1b0c.png",
+                "/lovable-uploads/8b762a1a-a6f1-4510-88db-9db5247e230d.png",
+                "/lovable-uploads/d8407800-8b7c-43f1-b981-e9e0789e370b.png",
+                "/lovable-uploads/77669a7e-a98d-4c08-a69d-13a07fc23723.png"
               ]).map((image, index) => (
                 <div key={index} className="chip">
                   <img src={image} alt={`Flavor ${index % 10 + 1}`} />
