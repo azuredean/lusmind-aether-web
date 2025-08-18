@@ -14,6 +14,19 @@ export const MainPage = () => {
     { image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png", title: "Orange Soda" }
   ];
 
+  const newFlavorSlides = [
+    { image: "/lovable-uploads/3b192fb7-a906-4dab-b90f-0cce1a5c18d5.png", title: "Watermelon Strawberry" },
+    { image: "/lovable-uploads/f118b54f-fa91-48ed-a6c9-010fe485899c.png", title: "Blueberry Raspberry" },
+    { image: "/lovable-uploads/96387b6f-3691-44e5-b29b-23fd56d487f0.png", title: "Kiwi & Passion" },
+    { image: "/lovable-uploads/f40e1940-0c12-4acd-a346-e7b44a74fc42.png", title: "Peach Ice" },
+    { image: "/lovable-uploads/169aa4fc-d5d3-41b9-a7a1-8daec2038b13.png", title: "Mango Ice" },
+    { image: "/lovable-uploads/8d672039-0c37-43c1-80e9-20a6a4eaad2a.png", title: "Watermelon Ice" },
+    { image: "/lovable-uploads/7db6a3cb-e2b7-4f2c-a7aa-23ecf0e3829e.png", title: "Green Coconut" },
+    { image: "/lovable-uploads/2c98da6a-68bc-43d7-891e-127d9a0fd050.png", title: "Niagara Grape" },
+    { image: "/lovable-uploads/43b1aa6d-f01a-44eb-8578-05233fd3666d.png", title: "Pineapple Coconut Ice" },
+    { image: "/lovable-uploads/0a4d82b0-95b3-4c6f-a5f6-24be6b66b2a2.png", title: "Cool Yuzu Cedar" }
+  ];
+
   useEffect(() => {
     const ageVerified = sessionStorage.getItem('ageVerified');
     if (ageVerified === 'true') {
@@ -298,7 +311,7 @@ export const MainPage = () => {
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
               {/* Duplicate for seamless loop */}
-              {[...slides, ...slides].map((slide, index) => (
+              {[...newFlavorSlides, ...newFlavorSlides].map((slide, index) => (
                 <div key={index} className="chip">
                   <img src={slide.image} alt={slide.title} />
                 </div>
