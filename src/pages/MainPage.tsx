@@ -73,7 +73,8 @@ export const MainPage = () => {
       behavior: 'smooth'
     });
   };
-  return <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white relative overflow-hidden" style={{
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white relative overflow-hidden" style={{
     fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial'
   }}>
       {/* Global ambient background */}
