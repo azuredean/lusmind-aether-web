@@ -249,7 +249,20 @@ export const MainPage = () => {
           </div>
 
           {/* Carousel */}
-          <div className="carousel" id="heroCarousel">
+          <div className="carousel" id="heroCarousel" style={{ position: 'relative' }}>
+            <button 
+              className="carousel-nav carousel-nav-prev"
+              onClick={() => {
+                const track = scrollRef.current;
+                if (track) {
+                  const slideWidth = track.children[0]?.clientWidth || 0;
+                  track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+                }
+              }}
+              aria-label="Previous slide"
+            >
+              ‹
+            </button>
             <div className="carousel-viewport">
               <div 
                 ref={scrollRef}
@@ -268,6 +281,19 @@ export const MainPage = () => {
                 ))}
               </div>
             </div>
+            <button 
+              className="carousel-nav carousel-nav-next"
+              onClick={() => {
+                const track = scrollRef.current;
+                if (track) {
+                  const slideWidth = track.children[0]?.clientWidth || 0;
+                  track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+                }
+              }}
+              aria-label="Next slide"
+            >
+              ›
+            </button>
           </div>
         </div>
       </section>
