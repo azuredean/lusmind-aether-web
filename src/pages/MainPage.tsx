@@ -24,7 +24,17 @@ export const MainPage = () => {
     { image: "/lovable-uploads/7db6a3cb-e2b7-4f2c-a7aa-23ecf0e3829e.png", title: "Green Coconut" },
     { image: "/lovable-uploads/2c98da6a-68bc-43d7-891e-127d9a0fd050.png", title: "Niagara Grape" },
     { image: "/lovable-uploads/43b1aa6d-f01a-44eb-8578-05233fd3666d.png", title: "Pineapple Coconut Ice" },
-    { image: "/lovable-uploads/0a4d82b0-95b3-4c6f-a5f6-24be6b66b2a2.png", title: "Cool Yuzu Cedar" }
+    { image: "/lovable-uploads/0a4d82b0-95b3-4c6f-a5f6-24be6b66b2a2.png", title: "Cool Yuzu Cedar" },
+    { image: "/lovable-uploads/b2b117b3-1902-49f4-bf29-a93a115b2f05.png", title: "Melon Yogurt Ice" },
+    { image: "/lovable-uploads/075be852-ac76-414d-a6d0-3150767d0b4a.png", title: "Green Apple" },
+    { image: "/lovable-uploads/1ae56160-ec8c-4b3b-a92a-8d7c5cbdb017.png", title: "Arctic Ice" },
+    { image: "/lovable-uploads/e4a87b2b-97eb-4bde-a637-d9a0711b6209.png", title: "Cool Peppermint" },
+    { image: "/lovable-uploads/866ba477-2838-4667-85e3-3939d2a7df0e.png", title: "Double Apple Shisha" },
+    { image: "/lovable-uploads/b7879772-48b8-4625-a08d-3c02fb1db806.png", title: "Coffee Tobacco" },
+    { image: "/lovable-uploads/782b7512-24b4-4c60-a293-ca12ff874267.png", title: "Tobacco & Nut" },
+    { image: "/lovable-uploads/9fd32e86-a519-443e-be78-4709f6c0f60c.png", title: "Monster Drink" },
+    { image: "/lovable-uploads/904423dd-6612-4503-86c3-d48aee2e72a6.png", title: "Orange Soda" },
+    { image: "/lovable-uploads/0ecb9600-104b-4749-bde2-a4ac6fd57a8d.png", title: "Creamy Rainbow Candy" }
   ];
 
   useEffect(() => {
