@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { AgeVerification } from '@/components/AgeVerification';
+import { useDragScroll } from '@/hooks/useDragScroll';
 
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(true);
@@ -8,6 +9,20 @@ export const MainPage = () => {
   const posRef = useRef(0);
   const pausedRef = useRef(false);
   const lastTsRef = useRef<number | null>(null);
+  
+  // Drag scroll refs and hooks
+  const firstStripPausedRef = useRef(false);
+  const secondStripPausedRef = useRef(false);
+  
+  const firstStripRef = useDragScroll({
+    onDragStart: () => { firstStripPausedRef.current = true; },
+    onDragEnd: () => { firstStripPausedRef.current = false; }
+  });
+  
+  const secondStripRef = useDragScroll({
+    onDragStart: () => { secondStripPausedRef.current = true; },
+    onDragEnd: () => { secondStripPausedRef.current = false; }
+  });
 
   const slides = [
     { image: "/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png", title: "Blueberry Raspberry" },
@@ -284,10 +299,23 @@ export const MainPage = () => {
           {/* Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
+              ref={firstStripRef}
               className="strip-track" 
               id="stripTrack"
-              onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
-              onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
+              style={{ 
+                overflowX: 'auto',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.animationPlayState = 'paused';
+                firstStripPausedRef.current = true;
+              }}
+              onMouseLeave={(e) => {
+                if (!firstStripPausedRef.current) {
+                  e.currentTarget.style.animationPlayState = 'running';
+                }
+              }}
             >
               {/* Duplicate for seamless loop */}
               {[...slides, ...slides].map((slide, index) => (
@@ -300,10 +328,23 @@ export const MainPage = () => {
           {/* Second Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
+              ref={secondStripRef}
               className="strip-track reverse" 
               id="stripTrack2"
-              onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
-              onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
+              style={{ 
+                overflowX: 'auto',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.animationPlayState = 'paused';
+                secondStripPausedRef.current = true;
+              }}
+              onMouseLeave={(e) => {
+                if (!secondStripPausedRef.current) {
+                  e.currentTarget.style.animationPlayState = 'running';
+                }
+              }}
             >
               {/* All flavor images combined */}
               {[
