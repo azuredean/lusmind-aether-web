@@ -264,30 +264,75 @@ export const MainPage = () => {
         </div>
       </section>
 
-      {/* PRODUCTS INTRO */}
-      <section id="products" className="section">
-        <div className="container" style={{ display: 'grid', gap: '28px', gridTemplateColumns: '1fr' }}>
-          <div style={{ display: 'grid', gap: '12px', maxWidth: '800px' }}>
-            <h2 className="gradient-text">Welcome to LusMind</h2>
-            <p>We craft digital-forward flavors with artisanal precision, distilling complex ideas into elegant sensations.</p>
-            <p style={{ opacity: .85 }}>Our living identity evolves with culture—surprising, adaptable, and globally consistent.</p>
-            <p style={{ color: '#7dd3fc', fontWeight: 700 }}>"Innovation is our vapor, excellence is our essence."</p>
-          </div>
-          {/* Flavor auto-scroll strip */}
-          <div className="strip card">
-            <div 
-              className="strip-track" 
-              id="stripTrack"
-              onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
-              onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
-            >
-              {/* Duplicate for seamless loop */}
-              {[...slides, ...slides].map((slide, index) => (
-                <div key={index} className="chip">
-                  <img src={slide.image} alt={slide.title} />
-                </div>
-              ))}
+      {/* WELCOME + CAROUSEL */}
+      <section id="products">
+        <div className="container grid">
+          {/* 左侧 Welcome + 双向风味条 */}
+          <div>
+            <h2 className="section-title">Welcome to LusMind</h2>
+            <div className="bar"></div>
+            <div className="card" style={{ marginBottom: '14px' }}>
+              <p style={{ margin: '0 0 12px', color: 'var(--text-2)' }}>
+                We craft digital-forward flavors with artisanal precision, distilling complex ideas into elegant sensations.
+              </p>
+              <p style={{ margin: '0', color: 'var(--muted)' }}>
+                Our living identity evolves with culture—surprising, adaptable, and consistent across physical and digital touchpoints.
+              </p>
             </div>
+
+            {/* Flavor Strip A (向左滚动，原有) */}
+            <div className="strip">
+              <div className="strip-viewport">
+                <div className="strip-track" id="stripA">
+                  {/* 一份 */}
+                  <div className="chip"><img src="/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png" alt="" /><div><b>Blueberry Raspberry</b><br /><span>Rich berry symphony</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png" alt="" /><div><b>Niagara Grape</b><br /><span>Elegant vine essence</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png" alt="" /><div><b>Mixed Berry</b><br /><span>Complex fruit blend</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png" alt="" /><div><b>Niagara Grape Premium</b><br /><span>Refined grape fusion</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png" alt="" /><div><b>Orange Soda</b><br /><span>Citrus laboratory creation</span></div></div>
+                  {/* 再重复一份 */}
+                  <div className="chip"><img src="/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png" alt="" /><div><b>Blueberry Raspberry</b><br /><span>Rich berry symphony</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png" alt="" /><div><b>Niagara Grape</b><br /><span>Elegant vine essence</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png" alt="" /><div><b>Mixed Berry</b><br /><span>Complex fruit blend</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png" alt="" /><div><b>Niagara Grape Premium</b><br /><span>Refined grape fusion</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png" alt="" /><div><b>Orange Soda</b><br /><span>Citrus laboratory creation</span></div></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Flavor Strip B（新增，向右滚动，反向）*/}
+            <div className="strip">
+              <div className="strip-viewport">
+                <div className="strip-track reverse" id="stripB">
+                  {/* 一份 */}
+                  <div className="chip"><img src="/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png" alt="" /><div><b>Orange Soda</b><br /><span>Citrus laboratory creation</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png" alt="" /><div><b>Niagara Grape Premium</b><br /><span>Refined grape fusion</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png" alt="" /><div><b>Mixed Berry</b><br /><span>Complex fruit blend</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png" alt="" /><div><b>Niagara Grape</b><br /><span>Elegant vine essence</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png" alt="" /><div><b>Blueberry Raspberry</b><br /><span>Rich berry symphony</span></div></div>
+                  {/* 再重复一份 */}
+                  <div className="chip"><img src="/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png" alt="" /><div><b>Orange Soda</b><br /><span>Citrus laboratory creation</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png" alt="" /><div><b>Niagara Grape Premium</b><br /><span>Refined grape fusion</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png" alt="" /><div><b>Mixed Berry</b><br /><span>Complex fruit blend</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png" alt="" /><div><b>Niagara Grape</b><br /><span>Elegant vine essence</span></div></div>
+                  <div className="chip"><img src="/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png" alt="" /><div><b>Blueberry Raspberry</b><br /><span>Rich berry symphony</span></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 右侧 Product Carousel */}
+          <div className="carousel card" aria-roledescription="carousel">
+            <div className="track" id="track" style={{ transform: 'translateX(0)' }}>
+              <div className="slide"><img src="/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png" alt="Blueberry Raspberry" /></div>
+              <div className="slide"><img src="/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png" alt="Niagara Grape" /></div>
+              <div className="slide"><img src="/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png" alt="Mixed Berry" /></div>
+              <div className="slide"><img src="/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png" alt="Niagara Grape Premium" /></div>
+              <div className="slide"><img src="/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png" alt="Orange Soda" /></div>
+            </div>
+            <button className="ctrl prev" id="prev" aria-label="Previous slide">‹</button>
+            <button className="ctrl next" id="next" aria-label="Next slide">›</button>
+            <div className="dotbar" id="dots" role="tablist" aria-label="Slides"></div>
           </div>
         </div>
       </section>
