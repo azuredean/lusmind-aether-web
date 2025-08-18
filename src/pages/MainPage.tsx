@@ -289,7 +289,7 @@ export const MainPage = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
                 <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
-                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
+                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/30 to-black/30 backdrop-blur-sm" style={{
                     aspectRatio: '4/5'
                   }}>
                     <div className="relative w-full h-full">
@@ -302,28 +302,29 @@ export const MainPage = () => {
                       >
                         {slides.map((slide, index) => (
                           <div key={index} className="min-w-full h-full shrink-0">
-                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
+                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-2">
                               <img
                                 src={slide.image}
                                 alt={slide.title}
-                                className="w-full h-full max-w-full max-h-full object-contain rounded-2xl transition-transform duration-300 group-hover/slide:scale-105"
+                                className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
                                 loading={index === 0 ? 'eager' : 'lazy'}
                                 decoding="async"
                                 fetchPriority={index === 0 ? 'high' : 'auto'}
                                 onError={(e) => {
-                                  (e.currentTarget as HTMLImageElement).style.opacity = '0.15';
+                                  console.error('Image failed to load:', slide.image);
+                                  (e.currentTarget as HTMLImageElement).style.opacity = '0.3';
                                 }}
                               />
 
-                              {/* 渐变叠层 */}
-                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/0" />
+                              {/* 轻量化渐变叠层 - 只在底部用于文字可读性 */}
+                              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
                               {/* 文案覆盖 */}
-                              <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
-                                <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-xl">
+                              <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4 z-10">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-2xl">
                                   {slide.title}
                                 </h3>
-                                <p className="text-xs sm:text-sm opacity-90 drop-shadow">
+                                <p className="text-xs sm:text-sm opacity-90 drop-shadow-xl">
                                   {slide.desc}
                                 </p>
                               </div>
