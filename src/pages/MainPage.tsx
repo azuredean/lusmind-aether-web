@@ -305,7 +305,34 @@ export const MainPage = () => {
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
-              {/* Empty strip - images removed */}
+              {/* New flavor images */}
+              {[
+                "/lovable-uploads/9b576f2c-6211-4eb3-b2f6-fbc4b79461d8.png",
+                "/lovable-uploads/b9f726db-7379-4bee-a551-24113eef1fb5.png",
+                "/lovable-uploads/c5854406-3bff-4457-84af-d3a687123914.png",
+                "/lovable-uploads/a9bf2e15-d1f5-42e0-82d5-36098e4ad78d.png",
+                "/lovable-uploads/7ba19d29-5ed4-4eb8-8116-f4f4c260e387.png",
+                "/lovable-uploads/069bd4db-c9ad-4223-a687-7948f930d02b.png",
+                "/lovable-uploads/b41146f5-0461-4eae-b292-7ec1d5a39003.png",
+                "/lovable-uploads/de35654b-b3bf-4024-89a4-13f3d4e7c6e9.png",
+                "/lovable-uploads/00a3ec32-a36b-4188-a91f-d62cce56ce7d.png",
+                "/lovable-uploads/97c22665-7d50-4f47-ae7d-fb319e6c8df7.png"
+              ].concat([
+                "/lovable-uploads/9b576f2c-6211-4eb3-b2f6-fbc4b79461d8.png",
+                "/lovable-uploads/b9f726db-7379-4bee-a551-24113eef1fb5.png",
+                "/lovable-uploads/c5854406-3bff-4457-84af-d3a687123914.png",
+                "/lovable-uploads/a9bf2e15-d1f5-42e0-82d5-36098e4ad78d.png",
+                "/lovable-uploads/7ba19d29-5ed4-4eb8-8116-f4f4c260e387.png",
+                "/lovable-uploads/069bd4db-c9ad-4223-a687-7948f930d02b.png",
+                "/lovable-uploads/b41146f5-0461-4eae-b292-7ec1d5a39003.png",
+                "/lovable-uploads/de35654b-b3bf-4024-89a4-13f3d4e7c6e9.png",
+                "/lovable-uploads/00a3ec32-a36b-4188-a91f-d62cce56ce7d.png",
+                "/lovable-uploads/97c22665-7d50-4f47-ae7d-fb319e6c8df7.png"
+              ]).map((image, index) => (
+                <div key={index} className="chip">
+                  <img src={image} alt={`Flavor ${index % 10 + 1}`} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
