@@ -17,33 +17,6 @@ export const MainPage = () => {
     { image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png", title: "Orange Soda" }
   ];
 
-  const flavorImages = [
-    "/lovable-uploads/b77eaea8-ddab-4e36-bd72-00ad857c4593.png",
-    "/lovable-uploads/79bd44ad-e23f-46d1-b082-b0650da3cded.png",
-    "/lovable-uploads/23243cbf-2d86-466f-a3cf-87cca5b21ebd.png",
-    "/lovable-uploads/74671bf2-71a5-47ae-9b1d-aa4a3112e105.png",
-    "/lovable-uploads/578dd4b5-9ba4-4a5e-b999-0bfb42dd36c3.png",
-    "/lovable-uploads/efcafea6-322e-4eb0-b4b0-31c3047723fd.png",
-    "/lovable-uploads/20d95ca4-7758-49d4-947c-f60e57bf7649.png",
-    "/lovable-uploads/a0e91021-c566-465f-b8ee-3199ed8babff.png",
-    "/lovable-uploads/1bf097ab-a34c-4cba-aa4d-edd263ee34ad.png",
-    "/lovable-uploads/ce14503d-968f-4db5-97a4-1fea5155b9b2.png",
-    "/lovable-uploads/921b58a6-5387-4f1d-a623-7fff0bc97de1.png",
-    "/lovable-uploads/53f5cf2a-ecac-48ad-8337-b8b3541ccfdf.png",
-    "/lovable-uploads/3cb41497-2b9b-4df6-a1e4-c7f7a12be98a.png",
-    "/lovable-uploads/9aae58b7-c0aa-4725-b4f7-37fbe4fea19b.png",
-    "/lovable-uploads/4f592c06-ebfc-442c-8d15-4d8e4784322b.png",
-    "/lovable-uploads/a897874d-dc7b-4680-8774-1140e6ce17a1.png",
-    "/lovable-uploads/e9491a8b-aa43-417a-a791-55f8372600ec.png",
-    "/lovable-uploads/73a6891b-a8cd-464b-be7c-15e6556a6aa2.png",
-    "/lovable-uploads/01c651f5-7333-4759-97d0-e3a26c1d1c10.png",
-    "/lovable-uploads/cb774285-138a-4080-aa60-2b38edad96e3.png",
-    "/lovable-uploads/2c4da2f8-6c14-4223-8fca-aa7669b8aaaf.png",
-    "/lovable-uploads/73b66ffd-7bd3-4323-a952-53d877270743.png",
-    "/lovable-uploads/32b2624c-5528-43e0-b55d-9530d6790650.png",
-    "/lovable-uploads/a728bdcf-b0f3-480c-b8e9-692732f20769.png",
-  ];
-
   useEffect(() => {
     const ageVerified = sessionStorage.getItem('ageVerified');
     if (ageVerified === 'true') {
@@ -317,9 +290,9 @@ export const MainPage = () => {
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
               {/* Duplicate for seamless loop */}
-              {[...flavorImages, ...flavorImages].map((image, index) => (
+              {[...slides, ...slides].map((slide, index) => (
                 <div key={index} className="chip">
-                  <img src={image} alt={`Flavor ${index % flavorImages.length + 1}`} />
+                  <img src={slide.image} alt={slide.title} />
                 </div>
               ))}
             </div>
@@ -333,9 +306,9 @@ export const MainPage = () => {
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
               {/* Duplicate for seamless loop */}
-              {[...flavorImages, ...flavorImages].map((image, index) => (
+              {[...slides, ...slides].map((slide, index) => (
                 <div key={index} className="chip">
-                  <img src={image} alt={`Flavor ${index % flavorImages.length + 1}`} />
+                  <img src={slide.image} alt={slide.title} />
                 </div>
               ))}
             </div>
