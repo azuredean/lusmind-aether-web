@@ -4,8 +4,7 @@ import { FlavorShowcase } from '@/components/FlavorShowcase';
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const timerRef = useRef<NodeJS.Timeout>();
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const slides = [{
     title: "Blueberry Raspberry",
     desc: "Rich berry symphony",
@@ -35,18 +34,31 @@ export const MainPage = () => {
     const startCarousel = () => {
       timerRef.current = setInterval(() => {
         setCurrentSlide(prev => (prev + 1) % slides.length);
-      }, 3600);
+      }, 5000);
     };
     startCarousel();
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [slides.length]);
+
+  // 页面不可见时暂停自动播放
   useEffect(() => {
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-  }, [currentSlide]);
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        if (timerRef.current) {
+          clearInterval(timerRef.current);
+          timerRef.current = null;
+        }
+      } else if (!timerRef.current) {
+        timerRef.current = setInterval(() => {
+          setCurrentSlide(prev => (prev + 1) % slides.length);
+        }, 5000);
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', onVisibilityChange);
+  }, [slides.length]);
   const handleAgeVerified = () => {
     sessionStorage.setItem('ageVerified', 'true');
     setShowAgeVerification(false);
@@ -258,31 +270,53 @@ export const MainPage = () => {
               </div>
 
               {/* Enhanced Carousel */}
-              <div className="relative group">
+              <div 
+                className="relative group"
+                onMouseEnter={() => {
+                  if (timerRef.current) {
+                    clearInterval(timerRef.current);
+                    timerRef.current = null;
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (!timerRef.current) {
+                    timerRef.current = setInterval(() => {
+                      setCurrentSlide(p => (p + 1) % slides.length);
+                    }, 5000);
+                  }
+                }}
+              >
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
                 <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
                   <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
-                  aspectRatio: '4/5'
-                }}>
+                    aspectRatio: '4/5'
+                  }}>
                     <div className="relative w-full h-full">
-                      <div ref={trackRef} className="flex h-full transition-transform duration-700 ease-out" style={{
-                      width: `${slides.length * 100}%`
-                    }}>
+                      <div 
+                        className="flex h-full transition-transform duration-700 ease-out will-change-transform"
+                        style={{
+                          width: `${slides.length * 100}%`,
+                          transform: `translate3d(-${currentSlide * 100}%, 0, 0)`,
+                        }}
+                      >
                         {slides.map((slide, index) => (
                           <div key={index} className="min-w-full h-full shrink-0">
                             <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
                               <img
                                 src={slide.image}
                                 alt={slide.title}
-                                className="w-full h-full object-contain rounded-2xl"
+                                className="w-full h-full max-w-full max-h-full object-contain rounded-2xl transition-transform duration-300 group-hover/slide:scale-105"
                                 loading={index === 0 ? 'eager' : 'lazy'}
                                 decoding="async"
+                                fetchPriority={index === 0 ? 'high' : 'auto'}
+                                onError={(e) => {
+                                  (e.currentTarget as HTMLImageElement).style.opacity = '0.15';
+                                }}
                               />
 
                               {/* 渐变叠层 */}
-                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
-                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10" />
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/0" />
 
                               {/* 文案覆盖 */}
                               <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
@@ -308,7 +342,19 @@ export const MainPage = () => {
 
                       {/* Enhanced Dots */}
                       <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-                        {slides.map((_, index) => <button key={index} onClick={() => goToSlide(index)} className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'w-8 bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg' : 'w-6 bg-white/30 hover:bg-white/50'}`} />)}
+                        {slides.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => goToSlide(index)}
+                            aria-label={`Go to slide ${index + 1}`}
+                            aria-current={index === currentSlide}
+                            className={`h-2 rounded-full transition-all duration-300 ${
+                              index === currentSlide 
+                                ? 'w-8 bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg' 
+                                : 'w-6 bg-white/30 hover:bg-white/50'
+                            }`}
+                          />
+                        ))}
                       </div>
                     </div>
                   </div>
