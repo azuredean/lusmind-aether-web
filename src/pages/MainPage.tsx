@@ -10,15 +10,11 @@ export const MainPage = () => {
   const lastTsRef = useRef<number | null>(null);
 
   const slides = [
-    { image: "/lovable-uploads/b68d4c0d-d8a6-4c5c-a8a0-940aabf2be45.png", title: "Watermelon Strawberry" },
-    { image: "/lovable-uploads/631a33a9-3b51-4c72-9505-2fe48aa566e3.png", title: "Blueberry Raspberry" },
-    { image: "/lovable-uploads/ce1b0269-ff68-4ffe-a452-402c692368fc.png", title: "Kiwi & Passion" },
-    { image: "/lovable-uploads/2ad8db68-b18c-4acb-aec6-8c6146f4c053.png", title: "Peach Ice" },
-    { image: "/lovable-uploads/253f1e9b-584d-47a8-8b28-881e5053ed24.png", title: "Mango Ice" },
-    { image: "/lovable-uploads/98600f76-d215-4b9e-9a78-41de6dc9f847.png", title: "Watermelon Ice" },
-    { image: "/lovable-uploads/6f527f1c-9892-4fdb-925b-5b38221f925b.png", title: "Green Coconut" },
-    { image: "/lovable-uploads/6eebdab6-017e-43bc-a2da-12217c3d07ca.png", title: "Niagara Grape" },
-    { image: "/lovable-uploads/189e21eb-d3f0-437e-ba30-223ea79cbcea.png", title: "Pineapple Coconut Ice" }
+    { image: "/lovable-uploads/f039a0fd-82f1-4eae-9d88-b830264a99a3.png", title: "Blueberry Raspberry" },
+    { image: "/lovable-uploads/959a431e-f709-4b2d-9a0f-9f905d19551d.png", title: "Niagara Grape" },
+    { image: "/lovable-uploads/4f147d90-2fc6-4c41-9be9-2363c855074e.png", title: "Mixed Berry" },
+    { image: "/lovable-uploads/72278a75-20ef-4099-b2ba-bc8797a1925d.png", title: "Niagara Grape Premium" },
+    { image: "/lovable-uploads/54bad1ca-7e85-4325-b562-62f84b384ea3.png", title: "Orange Soda" }
   ];
 
   useEffect(() => {
