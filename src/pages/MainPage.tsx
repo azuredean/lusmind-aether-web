@@ -32,16 +32,18 @@ export const MainPage = () => {
     setShowAgeVerification(true);
   }, []);
   useEffect(() => {
-    const startCarousel = () => {
-      timerRef.current = setInterval(() => {
-        setCurrentSlide(prev => (prev + 1) % slides.length);
-      }, 3600);
-    };
-    startCarousel();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [slides.length]);
+    if (!showAgeVerification) {
+      const startCarousel = () => {
+        timerRef.current = setInterval(() => {
+          setCurrentSlide(prev => (prev + 1) % slides.length);
+        }, 5000); // 增加到5秒
+      };
+      startCarousel();
+      return () => {
+        if (timerRef.current) clearInterval(timerRef.current);
+      };
+    }
+  }, [slides.length, showAgeVerification]);
   useEffect(() => {
     if (trackRef.current) {
       trackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -261,37 +263,37 @@ export const MainPage = () => {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-cyan-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-75"></div>
                 
-                <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
-                  <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
-                  aspectRatio: '4/5'
-                }}>
-                    <div className="relative w-full h-full">
-                      <div ref={trackRef} className="flex h-full transition-transform duration-700 ease-out" style={{
-                      width: `${slides.length * 100}%`
+                  <div className="relative rounded-3xl p-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-md border border-white/20">
+                    <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm" style={{
+                      aspectRatio: '4/5'
                     }}>
-                        {slides.map((slide, index) => (
-                          <div key={index} className="min-w-full h-full shrink-0">
-                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
-                              <img
-                                src={slide.image}
-                                alt={slide.title}
-                                className="w-full h-full object-contain rounded-2xl"
-                                loading={index === 0 ? 'eager' : 'lazy'}
-                                decoding="async"
-                              />
+                      <div className="relative w-full h-full">
+                        <div ref={trackRef} className="flex h-full transition-transform duration-700 ease-out" style={{
+                          width: `${slides.length * 100}%`
+                        }}>
+                          {slides.map((slide, index) => (
+                            <div key={index} className="min-w-full h-full shrink-0">
+                              <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-black/20 group/slide">
+                                <img
+                                  src={slide.image}
+                                  alt={slide.title}
+                                  className="w-full h-full object-contain rounded-2xl transition-transform duration-300 group-hover/slide:scale-105"
+                                  loading={index === 0 ? 'eager' : 'lazy'}
+                                  decoding="async"
+                                />
 
-                              {/* 渐变叠层 */}
-                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
-                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10" />
+                                {/* 渐变叠层 */}
+                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10" />
 
-                              {/* 文案覆盖 */}
-                              <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
-                                <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-xl">
-                                  {slide.title}
-                                </h3>
-                                <p className="text-xs sm:text-sm opacity-90 drop-shadow">
-                                  {slide.desc}
-                                </p>
+                                {/* 文案覆盖 */}
+                                <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
+                                  <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-xl bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
+                                    {slide.title}
+                                  </h3>
+                                  <p className="text-xs sm:text-sm opacity-90 drop-shadow text-white/80">
+                                    {slide.desc}
+                                  </p>
                               </div>
                             </div>
                           </div>
