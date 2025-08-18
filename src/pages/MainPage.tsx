@@ -1,6 +1,71 @@
 import { useState, useEffect, useRef } from 'react';
 import { AgeVerification } from '@/components/AgeVerification';
 import { FlavorShowcase } from '@/components/FlavorShowcase';
+
+interface CarouselSlideProps {
+  slide: {
+    image: string;
+    title: string;
+  };
+  index: number;
+}
+
+const CarouselSlide = ({ slide, index }: CarouselSlideProps) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <div className="min-w-full h-full shrink-0">
+      <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-gray-800/20 group/slide">
+        {/* Loading/Error placeholder */}
+        {!imageLoaded && (
+          <div className="absolute inset-3 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl border border-white/10">
+            <div className="text-center space-y-2">
+              {imageError ? (
+                <>
+                  <div className="w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-red-400 text-sm">✕</span>
+                  </div>
+                  <p className="text-red-400/80 text-sm">Image failed to load</p>
+                </>
+              ) : (
+                <>
+                  <div className="w-8 h-8 border-2 border-purple-400/30 border-t-purple-400 rounded-full animate-spin mx-auto"></div>
+                  <p className="text-white/60 text-sm">Loading...</p>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+
+        <img 
+          src={slide.image} 
+          alt={slide.title} 
+          className={`w-full h-full max-w-full max-h-full object-contain rounded-2xl transition-all duration-500 group-hover/slide:scale-105 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          loading={index === 0 ? 'eager' : 'lazy'} 
+          decoding="async" 
+          fetchPriority={index === 0 ? 'high' : 'auto'} 
+          onLoad={() => setImageLoaded(true)}
+          onError={() => {
+            setImageError(true);
+            setImageLoaded(true);
+          }} 
+        />
+
+        {/* 轻量渐变叠层 */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+
+        {/* 文案覆盖 */}
+        <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
+          <h3 className="text-lg font-bold mb-1 drop-shadow-lg">{slide.title}</h3>
+          <p className="text-sm text-white/80 drop-shadow-md">Premium E-liquid Collection</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 export const MainPage = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -292,57 +357,9 @@ export const MainPage = () => {
                       width: `${slides.length * 100}%`,
                       transform: `translate3d(-${currentSlide * 100}%, 0, 0)`
                     }}>
-                        {slides.map((slide, index) => <div key={index} className="min-w-full h-full shrink-0">
-                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-3 bg-gray-800/20 group/slide">
-                              {/* Loading placeholder */}
-                              <div className="absolute inset-3 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl border border-white/10">
-                                <div className="text-center space-y-2">
-                                  <div className="w-8 h-8 border-2 border-purple-400/30 border-t-purple-400 rounded-full animate-spin mx-auto"></div>
-                                  <p className="text-white/60 text-sm">Loading...</p>
-                                </div>
-                              </div>
-
-                              <img 
-                                src={slide.image} 
-                                alt={slide.title} 
-                                className="w-full h-full max-w-full max-h-full object-contain rounded-2xl transition-all duration-500 opacity-0 group-hover/slide:scale-105" 
-                                loading={index === 0 ? 'eager' : 'lazy'} 
-                                decoding="async" 
-                                fetchPriority={index === 0 ? 'high' : 'auto'} 
-                                onLoad={(e) => {
-                                  (e.currentTarget as HTMLImageElement).style.opacity = '1';
-                                  const placeholder = e.currentTarget.previousElementSibling;
-                                  if (placeholder) (placeholder as HTMLElement).style.display = 'none';
-                                }}
-                                onError={(e) => {
-                                  const placeholder = e.currentTarget.previousElementSibling;
-                                  if (placeholder) {
-                                    placeholder.innerHTML = `
-                                      <div class="text-center space-y-2">
-                                        <div class="w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center mx-auto">
-                                          <span class="text-red-400 text-sm">✕</span>
-                                        </div>
-                                        <p class="text-red-400/80 text-sm">Image failed to load</p>
-                                      </div>
-                                    `;
-                                  }
-                                }} 
-                              />
-
-                              {/* 轻量渐变叠层 */}
-                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
-
-                              {/* 文案覆盖 */}
-                              <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4">
-                                <h3 className="text-lg sm:text-xl lg:text-2xl font-black drop-shadow-xl">
-                                  {slide.title}
-                                </h3>
-                                <p className="text-xs sm:text-sm opacity-90 drop-shadow">
-                                  {slide.desc}
-                                </p>
-                              </div>
-                            </div>
-                          </div>)}
+                        {slides.map((slide, index) => (
+                          <CarouselSlide key={index} slide={slide} index={index} />
+                        ))}
                       </div>
 
                       {/* Enhanced Navigation */}
