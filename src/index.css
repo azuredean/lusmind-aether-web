@@ -285,6 +285,7 @@ p {
 /* ========== FLAVOR STRIP (auto-scroll) ========== */
 .strip {
   overflow: hidden;
+  height: 200px; /* Increased height for better image display */
 }
 
 .strip-track {
