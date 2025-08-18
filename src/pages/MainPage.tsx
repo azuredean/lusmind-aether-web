@@ -302,11 +302,11 @@ export const MainPage = () => {
                       >
                         {slides.map((slide, index) => (
                           <div key={index} className="min-w-full h-full shrink-0">
-                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-2">
+                            <div className="relative w-full h-full overflow-hidden flex items-center justify-center p-4">
                               <img
                                 src={slide.image}
                                 alt={slide.title}
-                                className="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                                className="max-w-full max-h-full object-contain rounded-xl transition-transform duration-300 hover:scale-105"
                                 loading={index === 0 ? 'eager' : 'lazy'}
                                 decoding="async"
                                 fetchPriority={index === 0 ? 'high' : 'auto'}
