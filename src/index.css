@@ -291,17 +291,16 @@ p {
   display: flex;
   gap: 18px;
   padding: 10px;
-  animation: marquee 24s linear infinite;
+  animation: seamless-scroll 40s linear infinite;
+  will-change: transform;
 }
 
 .chip {
   flex: 0 0 auto;
   width: 160px;
-  aspect-ratio: 1/1;
-  border-radius: 18px;
-  padding: 10px;
-  background: var(--panel);
-  border: 1px solid var(--ring);
+  height: 160px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.02);
   display: grid;
   place-items: center;
 }
@@ -312,27 +311,31 @@ p {
   object-fit: contain;
 }
 
+.strip-track.reverse {
+  animation: seamless-scroll-reverse 35s linear infinite;
+}
+
 .strip-track.reverse .chip img {
   object-fit: cover;
   aspect-ratio: 1/1;
 }
 
-@keyframes marquee {
+.strip-track.seamless-loop {
+  animation-timing-function: linear;
+}
+
+@keyframes seamless-scroll {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-33.333333%);
   }
 }
 
-.strip-track.reverse {
-  animation: marquee-reverse 24s linear infinite;
-}
-
-@keyframes marquee-reverse {
+@keyframes seamless-scroll-reverse {
   from {
-    transform: translateX(-50%);
+    transform: translateX(-33.333333%);
   }
   to {
     transform: translateX(0);

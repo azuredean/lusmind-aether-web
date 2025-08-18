@@ -299,13 +299,13 @@ export const MainPage = () => {
           {/* Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
-              className="strip-track" 
+              className="strip-track seamless-loop" 
               id="stripTrack"
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
-              {/* Duplicate for seamless loop */}
-              {[...slides, ...slides].map((slide, index) => (
+              {/* Triple duplication for perfect seamless loop */}
+              {[...slides, ...slides, ...slides].map((slide, index) => (
                 <div key={index} className="chip">
                   <img src={slide.image} alt={slide.title} />
                 </div>
@@ -315,13 +315,13 @@ export const MainPage = () => {
           {/* Second Flavor auto-scroll strip */}
           <div className="strip card">
             <div 
-              className="strip-track reverse" 
+              className="strip-track reverse seamless-loop" 
               id="stripTrack2"
               onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
               onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
             >
-              {/* Duplicate for seamless loop */}
-              {[...newFlavorSlides, ...newFlavorSlides].map((slide, index) => (
+              {/* Triple duplication for perfect seamless loop */}
+              {[...newFlavorSlides, ...newFlavorSlides, ...newFlavorSlides].map((slide, index) => (
                 <div key={index} className="chip">
                   <img src={slide.image} alt={slide.title} />
                 </div>
