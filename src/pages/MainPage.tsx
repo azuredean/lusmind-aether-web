@@ -175,9 +175,11 @@ export const MainPage = () => {
             alt="LusMind Logo" 
             style={{ width: '32px', height: '32px', objectFit: 'contain' }}
           />
-          <span className="gradient-text" style={{ fontWeight: 900, letterSpacing: '4px' }}>
-            LUSMIND
-          </span>
+          <img 
+            src="/lovable-uploads/8023d7ff-2b60-4640-aeeb-9b8bc17eadf9.png" 
+            alt="LUSMIND" 
+            style={{ height: '32px', objectFit: 'contain' }}
+          />
         </a>
           <div className="nav-links">
             <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Products</a>
