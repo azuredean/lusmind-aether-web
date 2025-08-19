@@ -465,7 +465,7 @@ export const MainPage = () => {
             . Not for sale to persons under 21. Nicotine is addictive.
           </p>
           <div style={{ marginTop: '22px', paddingTop: '18px', borderTop: '1px solid var(--ring)', textAlign: 'center', color: 'var(--muted)', fontSize: '13px' }}>
-            © {new Date().getFullYear()} LusMind. All rights reserved. | Digital Vapor Technology
+            Copyright © 2025 LUSMIND.COM All Rights Reserved.
           </div>
         </div>
       </footer>
