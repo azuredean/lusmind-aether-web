@@ -191,7 +191,7 @@ export const MainPage = () => {
         <span className="font-bold">WARNING:</span> This product contains nicotine which is a highly addictive substance.
       </div>
       {/* NAV */}
-      <header className="container">
+      <header className="container sticky top-0 bg-[var(--bg)] backdrop-blur-md z-40 border-b border-[var(--ring)]">
       <nav className="nav">
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <img 
