@@ -186,6 +186,10 @@ export const MainPage = () => {
 
   return (
     <>
+      {/* WARNING BANNER */}
+      <div className="w-full bg-black text-white text-center py-3 px-4 text-sm font-medium">
+        <span className="font-bold">WARNING:</span> This product contains nicotine which is a highly addictive substance.
+      </div>
       {/* NAV */}
       <header className="container">
       <nav className="nav">
