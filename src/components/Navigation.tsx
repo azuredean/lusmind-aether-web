@@ -68,25 +68,25 @@ export const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50">
-      <div className="w-full px-6">
-        <div className="flex items-center justify-between h-20">
+    <nav className="bg-black/95 backdrop-blur-md border-b border-white/10 shadow-lg fixed top-0 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3">
             <img 
               src="/lovable-uploads/9bbea08d-d65d-4174-a865-0c9d8cf90176.png" 
               alt="LusMind Brand Logo" 
-              className="h-12 w-auto"
+              className="h-10 w-auto"
             />
             <img 
               src="/lovable-uploads/fb6ba6ca-9de9-4d01-a83a-92b431caadec.png" 
               alt="LusMind Logo" 
-              className="h-12 w-auto"
+              className="h-10 w-auto"
             />
           </div>
 
-          {/* Navigation Items - Centered */}
-          <div className="hidden md:flex items-center justify-center flex-1 space-x-12">
+          {/* Navigation Items */}
+          <div className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <div
                 key={item.title}
@@ -96,22 +96,22 @@ export const Navigation = () => {
               >
                 <a
                   href={item.href}
-                  className="flex items-center text-gray-800 hover:text-primary transition-colors duration-300 font-medium text-sm tracking-wide py-3 px-4 rounded-full hover:bg-gray-100/50"
+                  className="flex items-center text-white hover:text-primary transition-colors duration-200 font-medium py-2"
                 >
                   {item.title}
                   {item.dropdown && (
-                    <ChevronDown className="ml-1 h-3 w-3" />
+                    <ChevronDown className="ml-1 h-4 w-4" />
                   )}
                 </a>
 
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.title && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-56 bg-white/95 backdrop-blur-md text-gray-800 rounded-xl shadow-lg border border-gray-200/50 py-2 z-50">
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-black/90 backdrop-blur-md text-white rounded-lg shadow-vapor border border-white/10 py-4 px-2">
                     {item.dropdown.map((dropdownItem) => (
                       <a
                         key={dropdownItem.title}
                         href={dropdownItem.href}
-                        className="block px-4 py-3 text-sm hover:bg-gray-100/70 transition-colors duration-200 rounded-lg mx-2"
+                        className="block px-4 py-3 text-sm hover:bg-white/10 rounded-md transition-colors duration-200"
                       >
                         {dropdownItem.title}
                       </a>
@@ -122,12 +122,9 @@ export const Navigation = () => {
             ))}
           </div>
 
-          {/* Right side - could be used for search or user menu */}
-          <div className="flex-shrink-0 w-20"></div>
-
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-gray-800 hover:text-primary transition-colors">
+            <button className="text-white hover:text-primary transition-colors">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>

@@ -190,71 +190,31 @@ export const MainPage = () => {
       <div className="w-full bg-black text-white text-center py-3 px-4 text-sm font-medium">
         <span className="font-bold">WARNING:</span> This product contains nicotine which is a highly addictive substance.
       </div>
-      
-      {/* NAV - Modern Clean Style */}
-      <header className="w-full sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
-        <div className="w-full px-6">
-          <nav className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/d4cf886b-b75b-4211-9d38-f7c407b49c2d.png" 
-                alt="LusMind Logo" 
-                className="h-12 w-auto object-contain"
-              />
-              <img 
-                src="/lovable-uploads/8023d7ff-2b60-4640-aeeb-9b8bc17eadf9.png" 
-                alt="LUSMIND" 
-                className="h-12 w-auto object-contain"
-              />
-            </div>
-
-            {/* Navigation Items - Centered */}
-            <div className="hidden md:flex items-center justify-center flex-1 space-x-12">
-              <a 
-                href="#products" 
-                onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}
-                className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium text-sm tracking-wide py-3 px-4 rounded-full hover:bg-gray-100/50"
-              >
-                Products
-              </a>
-              <a 
-                href="#verify" 
-                onClick={(e) => { e.preventDefault(); scrollToSection('verify'); }}
-                className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium text-sm tracking-wide py-3 px-4 rounded-full hover:bg-gray-100/50"
-              >
-                Verify
-              </a>
-              <a 
-                href="#subscribe" 
-                onClick={(e) => { e.preventDefault(); scrollToSection('subscribe'); }}
-                className="text-gray-800 hover:text-primary transition-colors duration-300 font-medium text-sm tracking-wide py-3 px-4 rounded-full hover:bg-gray-100/50"
-              >
-                Subscribe
-              </a>
-            </div>
-
-            {/* Right side - Theme toggle */}
-            <div className="flex-shrink-0 flex items-center">
-              <button 
-                id="themeToggle" 
-                className="text-gray-800 hover:text-primary transition-colors duration-300 p-2 rounded-full hover:bg-gray-100/50" 
-                aria-label="Toggle theme" 
-                onClick={toggleTheme}
-              >
-                🌙
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button className="text-gray-800 hover:text-primary transition-colors p-2">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </nav>
+      {/* NAV */}
+      <header className="w-full sticky top-0 bg-[var(--bg)] backdrop-blur-md z-40">
+        <div className="container">
+      <nav className="nav">
+        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <img 
+            src="/lovable-uploads/d4cf886b-b75b-4211-9d38-f7c407b49c2d.png" 
+            alt="LusMind Logo" 
+            style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+          />
+          <img 
+            src="/lovable-uploads/8023d7ff-2b60-4640-aeeb-9b8bc17eadf9.png" 
+            alt="LUSMIND" 
+            style={{ height: '32px', objectFit: 'contain' }}
+          />
+        </a>
+          <div className="nav-links">
+            <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Products</a>
+            <a href="#verify" onClick={(e) => { e.preventDefault(); scrollToSection('verify'); }}>Verify</a>
+            <a href="#subscribe" onClick={(e) => { e.preventDefault(); scrollToSection('subscribe'); }}>Subscribe</a>
+          </div>
+          <button id="themeToggle" className="theme-toggle" aria-label="Toggle theme" onClick={toggleTheme}>
+            🌙
+          </button>
+        </nav>
         </div>
       </header>
 
