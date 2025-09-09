@@ -285,7 +285,13 @@ function Header({ inverted }: { inverted: boolean }) {
       inverted ? "bg-transparent border-transparent" : "backdrop-blur bg-[rgba(11,16,42,0.6)] border-white/10"
     )}>
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-6">
-        <a href="#home" className={cn("font-semibold tracking-wide", "text-white")}>LUSMIND</a>
+        <a href="#home" className="flex items-center">
+          <img 
+            src="/lovable-uploads/e6838065-d17b-4c46-9eb8-e353998a4ccb.png" 
+            alt="LUSMIND" 
+            className="h-8 w-auto"
+          />
+        </a>
         <div className="hidden md:flex items-center gap-4 text-sm">
           <a className={cn("text-white/80 hover:text-white")} href="#products">Products</a>
           <a className={cn("text-white/80 hover:text-white")} href="#story">Story</a>
@@ -590,7 +596,13 @@ function Footer() {
     <footer className="border-t border-white/10 py-10 text-sm" style={{ background: `linear-gradient(180deg, #171C57 0%, #0B102A 100%)` }}>
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6">
         <div>
-          <div className="font-semibold text-white">LUSMIND</div>
+        <div className="flex items-center">
+          <img 
+            src="/lovable-uploads/e6838065-d17b-4c46-9eb8-e353998a4ccb.png" 
+            alt="LUSMIND" 
+            className="h-6 w-auto"
+          />
+        </div>
           <p className="text-slate-300 mt-2">Digital Vapor, Redefining Inspiration.</p>
         </div>
         <div>
