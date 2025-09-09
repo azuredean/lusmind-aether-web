@@ -22,7 +22,7 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
     "/lovable-uploads/53f5cf2a-ecac-48ad-8337-b8b3541ccfdf.png", // Melon Yogurt Ice
     "/lovable-uploads/3cb41497-2b9b-4df6-a1e4-c7f7a12be98a.png", // Green Apple
     "/lovable-uploads/9aae58b7-c0aa-4725-b4f7-37fbe4fea19b.png", // Arctic Ice
-    "/lovable-uploads/71612d93-be27-4308-9113-0270b9c003a5.png", // Cool Peppermint
+    "/lovable-uploads/ea4cfe6b-b1b0-448a-889e-768ca1c65908.png", // Cool Peppermint
     "/lovable-uploads/a897874d-dc7b-4680-8774-1140e6ce17a1.png", // Double Apple Shisha
     "/lovable-uploads/e9491a8b-aa43-417a-a791-55f8372600ec.png", // Coffee Tobacco
     "/lovable-uploads/73a6891b-a8cd-464b-be7c-15e6556a6aa2.png", // Tobacco & Nut
