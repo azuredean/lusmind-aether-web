@@ -9,25 +9,25 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
 
   const flavorImages = [
     "/lovable-uploads/b77eaea8-ddab-4e36-bd72-00ad857c4593.png", // Watermelon Strawberry
-    "/lovable-uploads/79bd44ad-e23f-46d1-b082-b0650da3cded.png", // Blueberry Raspberry  
+    "/lovable-uploads/bc1fc5de-0472-4e0b-99df-56017a874103.png", // Blueberry Raspberry  
     "/lovable-uploads/23243cbf-2d86-466f-a3cf-87cca5b21ebd.png", // Kiwi & Passion
-    "/lovable-uploads/74671bf2-71a5-47ae-9b1d-aa4a3112e105.png", // Peach Ice
-    "/lovable-uploads/578dd4b5-9ba4-4a5e-b999-0bfb42dd36c3.png", // Mango Ice
-    "/lovable-uploads/efcafea6-322e-4eb0-b4b0-31c3047723fd.png", // Watermelon Ice
+    "/lovable-uploads/f2771975-4d08-4667-84d2-768cc835b7c4.png", // Peach Ice
+    "/lovable-uploads/822f2f7d-7d53-4e3d-ae1d-58cd9bde0e71.png", // Mango Ice
+    "/lovable-uploads/b4f62c5c-19f1-4a54-9493-2fc10fa9c157.png", // Watermelon Ice
     "/lovable-uploads/20d95ca4-7758-49d4-947c-f60e57bf7649.png", // Green Coconut
     "/lovable-uploads/a0e91021-c566-465f-b8ee-3199ed8babff.png", // Green Coconut alt
-    "/lovable-uploads/1bf097ab-a34c-4cba-aa4d-edd263ee34ad.png", // Niagara Grape
-    "/lovable-uploads/ce14503d-968f-4db5-97a4-1fea5155b9b2.png", // Pineapple Coconut Ice
+    "/lovable-uploads/e038dd85-abb1-4f83-a740-67ad5ddd3e05.png", // Niagara Grape
+    "/lovable-uploads/175a9edd-1618-4c0e-9274-bd02344d1215.png", // Pineapple Coconut Ice
     "/lovable-uploads/921b58a6-5387-4f1d-a623-7fff0bc97de1.png", // Cool Yuzu Cedar
-    "/lovable-uploads/53f5cf2a-ecac-48ad-8337-b8b3541ccfdf.png", // Melon Yogurt Ice
-    "/lovable-uploads/3cb41497-2b9b-4df6-a1e4-c7f7a12be98a.png", // Green Apple
+    "/lovable-uploads/e9ceb65c-4181-4594-93ba-05d6c587459e.png", // Melon Yogurt Ice
+    "/lovable-uploads/abbd21c8-208e-4b40-97f2-9255fea9c770.png", // Green Apple
     "/lovable-uploads/9aae58b7-c0aa-4725-b4f7-37fbe4fea19b.png", // Arctic Ice
     "/lovable-uploads/ea4cfe6b-b1b0-448a-889e-768ca1c65908.png", // Cool Peppermint
     "/lovable-uploads/a897874d-dc7b-4680-8774-1140e6ce17a1.png", // Double Apple Shisha
-    "/lovable-uploads/e9491a8b-aa43-417a-a791-55f8372600ec.png", // Coffee Tobacco
+    "/lovable-uploads/5018366c-93d6-45d8-9b6c-3a38dd9f4f73.png", // Coffee Tobacco
     "/lovable-uploads/73a6891b-a8cd-464b-be7c-15e6556a6aa2.png", // Tobacco & Nut
     "/lovable-uploads/91c3186a-70e4-42e6-bf1e-406deac7ce00.png", // Monster Drink
-    "/lovable-uploads/cb774285-138a-4080-aa60-2b38edad96e3.png", // Orange Soda
+    "/lovable-uploads/8e9f2418-eb1b-4b3c-ae84-cff7bb4703d4.png", // Orange Soda
     "/lovable-uploads/a464032b-a094-456e-aea8-80e539a970c7.png", // Banana Nut
     "/lovable-uploads/2c4da2f8-6c14-4223-8fca-aa7669b8aaaf.png", // Creamy Rainbow Candy
     "/lovable-uploads/73b66ffd-7bd3-4323-a952-53d877270743.png", // Caramel Custard
