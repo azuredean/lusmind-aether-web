@@ -33,7 +33,7 @@ const theme = {
 
 const FLAVORS = [
   { key: "cool-peppermint", name: "Cool Peppermint", image: "/lovable-uploads/ea4cfe6b-b1b0-448a-889e-768ca1c65908.png", palette: ["#D8F3E1", "#CFE8FF", "#E6FE7F"], bottle: { from: "#EAFBF2", to: "#D8F3E1" }, notes: ["peppermint", "cooling lift", "clean finish"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #EAF9F1 100%)" },
-  { key: "monster-drink", name: "Monster Drink", palette: ["#E6FE7F", "#CFE8FF", "#FFE8A3"], bottle: { from: "#F2FFE6", to: "#E6FE7F" }, notes: ["energy note", "citrus hint", "sparkling feel"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #F5FFE6 100%)" },
+  { key: "monster-drink", name: "Monster Drink", image: "/lovable-uploads/91c3186a-70e4-42e6-bf1e-406deac7ce00.png", palette: ["#E6FE7F", "#CFE8FF", "#FFE8A3"], bottle: { from: "#F2FFE6", to: "#E6FE7F" }, notes: ["energy note", "citrus hint", "sparkling feel"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #F5FFE6 100%)" },
   { key: "banana-nut", name: "Banana Nut", palette: ["#FFE8A3", "#F4EFE9", "#D7C2A3"], bottle: { from: "#FFF8E1", to: "#FFE8A3" }, notes: ["ripe banana", "nutty body", "soft sweet"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #FFF7E9 100%)" },
   { key: "keel-scout", name: "Keel Scout", palette: ["#CFE8FF", "#E6FE7F", "#D8F3E1"], bottle: { from: "#EAF4FF", to: "#CFE8FF" }, notes: ["fresh breeze", "clean tone", "light finish"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #EEF6FF 100%)" },
   { key: "tobacco-mint", name: "Tobacco & Mint", palette: ["#D2B48C", "#D8F3E1", "#F4EFE9"], bottle: { from: "#F1E8D2", to: "#D2B48C" }, notes: ["tobacco base", "mint lift", "balanced"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #F2EBDD 100%)" },

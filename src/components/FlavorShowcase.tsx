@@ -26,7 +26,7 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
     "/lovable-uploads/a897874d-dc7b-4680-8774-1140e6ce17a1.png", // Double Apple Shisha
     "/lovable-uploads/e9491a8b-aa43-417a-a791-55f8372600ec.png", // Coffee Tobacco
     "/lovable-uploads/73a6891b-a8cd-464b-be7c-15e6556a6aa2.png", // Tobacco & Nut
-    "/lovable-uploads/01c651f5-7333-4759-97d0-e3a26c1d1c10.png", // Monster Drink
+    "/lovable-uploads/91c3186a-70e4-42e6-bf1e-406deac7ce00.png", // Monster Drink
     "/lovable-uploads/cb774285-138a-4080-aa60-2b38edad96e3.png", // Orange Soda
     "/lovable-uploads/2c4da2f8-6c14-4223-8fca-aa7669b8aaaf.png", // Creamy Rainbow Candy
     "/lovable-uploads/73b66ffd-7bd3-4323-a952-53d877270743.png", // Caramel Custard
