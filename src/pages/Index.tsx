@@ -287,7 +287,7 @@ function Header({ inverted }: { inverted: boolean }) {
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-6">
         <a href="#home" className="flex items-center">
           <img 
-            src="/lovable-uploads/e6838065-d17b-4c46-9eb8-e353998a4ccb.png" 
+            src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" 
             alt="LUSMIND" 
             className="h-8 w-auto"
           />
@@ -598,7 +598,7 @@ function Footer() {
         <div>
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/e6838065-d17b-4c46-9eb8-e353998a4ccb.png" 
+            src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" 
             alt="LUSMIND" 
             className="h-6 w-auto"
           />
