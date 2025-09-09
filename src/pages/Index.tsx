@@ -350,7 +350,7 @@ function Hero({ flavor, onInvertedChange }: { flavor: typeof FLAVORS[number]; on
               <img 
                 src="/lovable-uploads/a18bf4b4-77cf-46f3-9f74-edb2cf3d8300.png" 
                 alt="LUSMIND Product" 
-                className="w-48 md:w-56 drop-shadow-xl"
+                className="w-64 md:w-80 drop-shadow-xl"
               />
             </motion.div>
           </div>
