@@ -345,13 +345,9 @@ function Hero({ flavor, onInvertedChange }: { flavor: typeof FLAVORS[number]; on
               <Button variant="ghost" className="rounded-xl text-white hover:bg-white/10">Our philosophy</Button>
             </div>
           </div>
-          <div className="relative flex justify-end pr-8">
+          <div className="relative flex justify-center md:justify-end">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <img 
-                src="/lovable-uploads/a18bf4b4-77cf-46f3-9f74-edb2cf3d8300.png" 
-                alt="LUSMIND Product" 
-                className="w-40 md:w-48 drop-shadow-xl"
-              />
+              <Bottle from={flavor.bottle.from} to={flavor.bottle.to} />
             </motion.div>
           </div>
         </motion.div>
