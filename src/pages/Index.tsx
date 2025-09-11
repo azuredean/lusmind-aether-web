@@ -323,7 +323,6 @@ function Header({ inverted }: { inverted: boolean }) {
                   "data-[state=open]:bg-white/10 data-[state=open]:text-white"
                 )}>
                   Products
-                  <ChevronDown className="ml-1 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180" aria-hidden="true" />
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[200px] bg-slate-900/95 backdrop-blur border border-white/10 rounded-xl p-2">
                   <div className="flex flex-col gap-1">
