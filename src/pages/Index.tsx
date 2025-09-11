@@ -1,10 +1,17 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ShieldCheck, Globe, Cookie, ChevronRight, Flame, Info, X, Check } from "lucide-react";
+import { ShieldCheck, Globe, Cookie, ChevronRight, Flame, Info, X, Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const theme = {
   bg: {
@@ -308,7 +315,35 @@ function Header({ inverted }: { inverted: boolean }) {
           />
         </a>
         <div className="hidden md:flex items-center gap-4 text-sm">
-          <a className={cn("text-white/80 hover:text-white")} href="#products">Products</a>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(
+                  "text-white/80 hover:text-white bg-transparent hover:bg-white/10 border-none px-3 py-2 rounded-lg text-sm font-normal",
+                  "data-[state=open]:bg-white/10 data-[state=open]:text-white"
+                )}>
+                  Products
+                  <ChevronDown className="ml-1 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180" aria-hidden="true" />
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="min-w-[200px] bg-slate-900/95 backdrop-blur border border-white/10 rounded-xl p-2">
+                  <div className="flex flex-col gap-1">
+                    <a href="#eliquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      E-Liquid
+                    </a>
+                    <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
+                      Coming soon
+                    </span>
+                    <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
+                      Coming soon
+                    </span>
+                    <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
+                      Coming soon
+                    </span>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <a className={cn("text-white/80 hover:text-white")} href="#story">Story</a>
           <a className={cn("text-white/80 hover:text-white")} href="#safety">Compliance</a>
           <a className={cn("text-white/80 hover:text-white")} href="#contact">Contact</a>
