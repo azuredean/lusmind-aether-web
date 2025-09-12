@@ -324,7 +324,7 @@ function Header({ inverted }: { inverted: boolean }) {
                 )}>
                   Products
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[200px] bg-slate-900/95 backdrop-blur border border-white/10 rounded-xl p-2">
+                <NavigationMenuContent className="min-w-[200px] backdrop-blur bg-[rgba(11,16,42,0.6)] border border-white/10 rounded-xl p-2">
                   <div className="flex flex-col gap-1">
                     <a href="#eliquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                       E-Liquid
