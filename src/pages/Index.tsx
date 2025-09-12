@@ -12,6 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { AgeVerification } from "@/components/AgeVerification";
 
 const theme = {
   bg: {
@@ -171,28 +172,6 @@ function CookieBanner({ onAccept }: { onAccept: () => void }) {
         </div>
       </div>
     </div>
-  );
-}
-
-function AgeGate({ open, onAccept, onExit }: { open: boolean; onAccept: () => void; onExit: () => void }) {
-  return (
-    <Dialog open={open}>
-      <DialogContent className="sm:max-w-[520px] rounded-2xl bg-slate-900 text-slate-100 border border-white/10">
-        <DialogHeader>
-          <DialogTitle className="text-2xl">21+ Only</DialogTitle>
-          <DialogDescription>
-            This site is intended for adults of legal smoking age (21+) in the United States. By entering, you confirm you are of legal age and agree to our Terms & Privacy Policy.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="flex items-center gap-3 mt-4">
-          <Button className="rounded-xl" onClick={onAccept}><Check className="w-4 h-4 mr-1"/>I am 21+</Button>
-          <Button variant="outline" className="rounded-xl" onClick={onExit}><X className="w-4 h-4 mr-1"/>Exit</Button>
-        </div>
-        <div className="mt-3 text-xs text-slate-500">
-          Note: Keep out of reach of minors. If products contain nicotine, nicotine is an addictive chemical.
-        </div>
-      </DialogContent>
-    </Dialog>
   );
 }
 
@@ -689,7 +668,7 @@ export default function LusmindSite() {
   const activeFlavor = useMemo(() => FLAVORS.find((f) => f.key === flavorKey)!, [flavorKey]);
   
   const [navInverted, setNavInverted] = useState(true);
-  const [ageOpen, setAgeOpen] = useState<boolean | null>(null);
+  const [ageVerified, setAgeVerified] = useState(false);
   const [cookiesOk, setCookiesOk] = useState(false);
   const [region, setRegion] = useState<keyof typeof REGION_INFO>("US");
 
@@ -699,17 +678,13 @@ export default function LusmindSite() {
     setCookiesOk(ck);
     const r = window.localStorage.getItem("lusmind_region");
     if (r && REGION_INFO[r]) setRegion(r as keyof typeof REGION_INFO);
-    const ageOk = window.localStorage.getItem("lusmind_age_ok") === "1";
-    setAgeOpen(!ageOk);
+    const ageOk = window.localStorage.getItem("ageVerified") === "true";
+    setAgeVerified(ageOk);
   }, []);
 
   
-  const acceptAge = () => {
-    setAgeOpen(false);
-    if (isBrowser) window.localStorage.setItem("lusmind_age_ok", "1");
-  };
-  const exitSite = () => {
-    if (isBrowser) window.location.href = "https://www.google.com";
+  const handleAgeVerified = () => {
+    setAgeVerified(true);
   };
   const acceptCookies = () => {
     setCookiesOk(true);
@@ -722,7 +697,7 @@ export default function LusmindSite() {
 
   return (
     <div
-      className={cn("min-h-screen font-sans text-slate-100", ageOpen ? "overflow-hidden" : undefined)}
+      className={cn("min-h-screen font-sans text-slate-100", !ageVerified ? "overflow-hidden" : undefined)}
       style={{
         background: `radial-gradient(1200px 800px at 110% -10%, ${hexToRgba(theme.brand.secondary, 0.08)}, transparent 60%), linear-gradient(180deg, #1E236B 0%, ${theme.brand.primary} 40%, #0B102A 100%)`,
       }}
@@ -751,7 +726,7 @@ export default function LusmindSite() {
           * WARNING: Nicotine is an addictive chemical · Adults only
         </div>
       </div>
-      {ageOpen !== null && <AgeGate open={ageOpen} onAccept={acceptAge} onExit={exitSite} />}
+      {!ageVerified && <AgeVerification onVerified={handleAgeVerified} />}
       {!cookiesOk && <CookieBanner onAccept={acceptCookies} />}
     </div>
   );
