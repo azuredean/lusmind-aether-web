@@ -62,7 +62,7 @@ const FLAVORS = [
   { key: "watermelon-ice", name: "Watermelon Ice", image: "/lovable-uploads/b4f62c5c-19f1-4a54-9493-2fc10fa9c157.png", palette: ["#FFD6D6", "#CFE8FF", "#E6FE7F"], bottle: { from: "#FFF1F1", to: "#FFD6D6" }, notes: ["watermelon", "iced", "juicy"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #FFF5F7 100%)" },
   { key: "melon-yogurt-ice", name: "Melon Yogurt Ice", image: "/lovable-uploads/e9ceb65c-4181-4594-93ba-05d6c587459e.png", palette: ["#E6FE7F", "#FFF2CC", "#CFE8FF"], bottle: { from: "#F6FFE8", to: "#E6FE7F" }, notes: ["melon", "yogurt", "cool"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #F7FFE8 100%)" },
   { key: "watermelon-strawberry", name: "Watermelon Strawberry", image: "/lovable-uploads/d40cfc6b-12e9-4fac-b78c-42867e649607.png", palette: ["#FFD6D6", "#CFE8FF", "#FFE8A3"], bottle: { from: "#FFF1F1", to: "#FFD6D6" }, notes: ["watermelon", "strawberry", "soft"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #FFF6F3 100%)" },
-  { key: "vanilla-apple-tobacco", name: "Vanilla Apple Tobacco", palette: ["#FFF2CC", "#E6FE7F", "#D2B48C"], bottle: { from: "#FFF8E6", to: "#FFF2CC" }, notes: ["vanilla", "apple", "tobacco warm"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #FFF9EF 100%)" },
+  { key: "cool-yuzu-cedar", name: "Cool Yuzu Cedar", palette: ["#D8F3E1", "#FFF2CC", "#D2B48C"], bottle: { from: "#F0FFF4", to: "#D8F3E1" }, notes: ["yuzu citrus", "cedar wood", "cooling finish"], bgTint: "linear-gradient(180deg, #F7F5F2 0%, #F0FFF2 100%)" },
 ] as const;
 
 const isBrowser = typeof window !== "undefined";
