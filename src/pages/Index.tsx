@@ -207,17 +207,15 @@ function ProductCard({ flavor }: { flavor: typeof FLAVORS[number] }) {
       <CardContent>
         <div className="flex items-center gap-6">
           {(flavor as any).image ? (
-            <div className="w-48 h-48 md:w-56 md:h-56">
+            <div className="w-48 md:w-56">
               <img 
                 src={(flavor as any).image} 
                 alt={flavor.name}
-                className="w-full h-full object-cover rounded-2xl shadow-lg"
+                className="w-full h-auto rounded-2xl shadow-lg"
               />
             </div>
           ) : (
-            <div className="w-48 h-48 md:w-56 md:h-56 flex items-center justify-center">
-              <Bottle from={flavor.bottle.from} to={flavor.bottle.to} />
-            </div>
+            <Bottle from={flavor.bottle.from} to={flavor.bottle.to} />
           )}
           <div className="space-y-2 text-sm text-slate-300">
             {flavor.notes.map((n, i) => (
