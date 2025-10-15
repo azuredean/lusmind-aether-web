@@ -224,9 +224,6 @@ function ProductCard({ flavor }: { flavor: typeof FLAVORS[number] }) {
                 <span>{n}</span>
               </div>
             ))}
-            <Button variant="ghost" className="px-0 text-slate-200 hover:text-white">
-              Learn more<ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
           </div>
         </div>
       </CardContent>
