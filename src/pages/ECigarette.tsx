@@ -290,6 +290,13 @@ export default function ECigarette() {
           </div>
         </div>
       </footer>
+
+      {/* Fixed Warning Badge */}
+      <div className="fixed top-1/2 -right-12 md:right-2 md:top-auto md:bottom-6 rotate-90 md:rotate-0 z-40">
+        <div className="rounded-full bg-white/10 backdrop-blur border border-white/10 px-3 py-1 text-[11px] text-white">
+          * WARNING: Nicotine is an addictive chemical · Adults only
+        </div>
+      </div>
     </div>
   );
 }
