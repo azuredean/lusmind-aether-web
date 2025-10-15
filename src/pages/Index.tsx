@@ -604,8 +604,12 @@ function Hero({
             y: 0
           }} transition={{
             duration: 0.6
-          }}>
-              <Bottle from={flavor.bottle.from} to={flavor.bottle.to} />
+          }} key={flavor.key}>
+              <img 
+                src={flavor.image} 
+                alt={flavor.name} 
+                className="w-48 md:w-56 h-auto drop-shadow-xl" 
+              />
             </motion.div>
           </div>
         </motion.div>
