@@ -17,6 +17,13 @@ const slides = [
     subtitle: 'LUSMIND Fruit Fusion',
     description: 'Premium e-liquid with tropical fruit and berry essences',
   },
+  {
+    id: 3,
+    image: '/lovable-uploads/classic-flavor.png',
+    title: '经典风味永流传',
+    subtitle: 'LUSMIND Classic Heritage',
+    description: '传承经典口味，品味永恒魅力，每一口都是对经典的致敬',
+  },
 ];
 
 export const Carousel = () => {
