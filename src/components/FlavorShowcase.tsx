@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 interface FlavorShowcaseProps {
   className?: string;
@@ -7,7 +6,6 @@ interface FlavorShowcaseProps {
 
 export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
 
   const flavorImages = [
     "/lovable-uploads/b77eaea8-ddab-4e36-bd72-00ad857c4593.png", // Watermelon Strawberry
@@ -48,38 +46,24 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
     const scrollSpeed = 0.5; // Adjust speed as needed
 
     const animate = () => {
-      if (!isPaused) {
-        scrollPosition += scrollSpeed;
-        
-        // Reset when we've scrolled past half the content (since we duplicate)
-        if (scrollPosition >= scrollWidth / 2) {
-          scrollPosition = 0;
-        }
-        
-        scrollContainer.scrollLeft = scrollPosition;
+      scrollPosition += scrollSpeed;
+      
+      // Reset when we've scrolled past half the content (since we duplicate)
+      if (scrollPosition >= scrollWidth / 2) {
+        scrollPosition = 0;
       }
+      
+      scrollContainer.scrollLeft = scrollPosition;
       requestAnimationFrame(animate);
     };
 
     const animationId = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationId);
-  }, [isPaused]);
-
-  const scrollLeft = () => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-    scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
-  };
-
-  const scrollRight = () => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-    scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
-  };
+  }, []);
 
   return (
-    <section className={`relative py-16 sm:py-20 lg:py-24 group ${className}`}>
+    <section className={`relative py-16 sm:py-20 lg:py-24 ${className}`}>
       {/* Distinguished Flavor Background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Deep purple to cyan gradient base */}
@@ -163,27 +147,10 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
         </div>
 
         {/* Scrolling Flavor Images */}
-        <div className="relative" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+        <div className="relative">
           {/* Gradient overlays for seamless edges */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
-          
-          {/* Navigation buttons */}
-          <button
-            onClick={scrollLeft}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/30 transition-all hover:scale-110 shadow-lg border border-white/30 opacity-0 group-hover:opacity-100"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-          
-          <button
-            onClick={scrollRight}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/30 transition-all hover:scale-110 shadow-lg border border-white/30 opacity-0 group-hover:opacity-100"
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
           
           <div 
             ref={scrollRef}

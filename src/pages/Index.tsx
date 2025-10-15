@@ -428,14 +428,9 @@ function FlavorSelector({
   value: string;
   onChange: (key: typeof FLAVORS[number]["key"]) => void;
 }) {
-  return <div className="flex items-center gap-2 p-2 bg-white/10 backdrop-blur rounded-2xl border border-white/10 overflow-x-auto whitespace-nowrap">
-      {FLAVORS.map(f => <button key={f.key} onClick={() => onChange(f.key)} className={cn("flex flex-col items-center gap-2 p-2 rounded-xl transition-all shrink-0 group", value === f.key ? "bg-white/20 ring-2 ring-white/40" : "hover:bg-white/10")} aria-pressed={value === f.key}>
-          <div className="w-16 h-16 rounded-lg overflow-hidden bg-white/5 flex items-center justify-center">
-            <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-          </div>
-          <span className={cn("text-xs font-medium transition-colors", value === f.key ? "text-white" : "text-white/70 group-hover:text-white")}>
-            {f.name}
-          </span>
+  return <div className="flex items-center gap-2 p-1 bg-white/10 backdrop-blur rounded-2xl border border-white/10 overflow-x-auto whitespace-nowrap">
+      {FLAVORS.map(f => <button key={f.key} onClick={() => onChange(f.key)} className={cn("px-3 py-2 rounded-xl text-sm transition-all shrink-0", value === f.key ? "bg-white/10 text-white" : "hover:bg-white/5")} aria-pressed={value === f.key}>
+          {f.name}
         </button>)}
     </div>;
 }
