@@ -161,14 +161,13 @@ export const FlavorShowcase = ({ className = "" }: FlavorShowcaseProps) => {
             {[...flavorImages, ...flavorImages].map((image, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 relative group"
-                style={{ width: '300px', height: '200px' }}
+                className="flex-shrink-0 relative group w-48 md:w-56"
               >
-                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm border border-white/20">
+                <div className="relative w-full rounded-2xl overflow-hidden bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm border border-white/20">
                   <img
                     src={image}
                     alt={`Flavor ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
                   
