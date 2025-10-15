@@ -18,6 +18,14 @@
   --ok: #10b981;
   --warn: #f59e0b;
   --err: #ef4444;
+  
+  /* E-cigarette Theme Colors */
+  --ecig-bg-base: #D1B893;
+  --ecig-hero-red: #741016;
+  --ecig-button-red: #AD5246;
+  --ecig-accent-red: #931B21;
+  --ecig-title: #FFFFFF;
+  --ecig-body: #3A2A25;
 }
 
 [data-theme="dark"] {

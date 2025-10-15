@@ -518,9 +518,9 @@ function Header({
                     <a href="#eliquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                       E-Liquid
                     </a>
-                    <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
-                      Coming soon
-                    </span>
+                    <a href="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      E-cigarette
+                    </a>
                     <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
                       Coming soon
                     </span>
