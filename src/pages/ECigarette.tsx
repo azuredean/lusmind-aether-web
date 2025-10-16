@@ -3,6 +3,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import heroImage from "@/assets/ecigarette-hero.png";
+import distinguishedFeaturesBg from "@/assets/distinguished-features-bg.png";
 
 const theme = {
   bg: {
@@ -183,7 +184,10 @@ export default function ECigarette() {
       </section>
 
       {/* Product Features Section */}
-      <section className="py-20 bg-gradient-to-b from-[#D1B893] to-[#C8A882]">
+      <section 
+        className="py-20 bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: `url(${distinguishedFeaturesBg})` }}
+      >
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-[#3A2A25] mb-12 text-center" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
             Distinguished Features
