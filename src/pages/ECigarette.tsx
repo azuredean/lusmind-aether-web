@@ -185,7 +185,7 @@ export default function ECigarette() {
 
       {/* Product Features Section */}
       <section 
-        className="py-20 bg-cover bg-center bg-no-repeat relative"
+        className="py-20 bg-cover bg-bottom bg-no-repeat relative"
         style={{ backgroundImage: `url(${distinguishedFeaturesBg})` }}
       >
         {/* Dark overlay for better text readability */}
