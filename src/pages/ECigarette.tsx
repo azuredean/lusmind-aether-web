@@ -188,8 +188,11 @@ export default function ECigarette() {
         className="py-20 bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: `url(${distinguishedFeaturesBg})` }}
       >
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#3A2A25] mb-12 text-center" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
             Distinguished Features
           </h2>
           
@@ -199,10 +202,10 @@ export default function ECigarette() {
                 <span className="text-white text-xl">✓</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-[#3A2A25] mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
+                <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
                   Authentic Craftsmanship
                 </h3>
-                <p className="text-[#3A2A25]/80 font-sans">
+                <p className="text-white/90 font-sans">
                   Each piece represents decades of knowledge passed down through master craftsmen.
                 </p>
               </div>
@@ -213,10 +216,10 @@ export default function ECigarette() {
                 <span className="text-white text-xl">✓</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-[#3A2A25] mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
+                <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
                   Refined Experience
                 </h3>
-                <p className="text-[#3A2A25]/80 font-sans">
+                <p className="text-white/90 font-sans">
                   Carefully balanced flavors that deliver sophistication in every moment.
                 </p>
               </div>
@@ -227,10 +230,10 @@ export default function ECigarette() {
                 <span className="text-white text-xl">✓</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-[#3A2A25] mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
+                <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
                   Sustainable Practices
                 </h3>
-                <p className="text-[#3A2A25]/80 font-sans">
+                <p className="text-white/90 font-sans">
                   Committed to environmental responsibility without compromising quality.
                 </p>
               </div>
@@ -241,10 +244,10 @@ export default function ECigarette() {
                 <span className="text-white text-xl">✓</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-[#3A2A25] mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
+                <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
                   Legacy of Trust
                 </h3>
-                <p className="text-[#3A2A25]/80 font-sans">
+                <p className="text-white/90 font-sans">
                   Built on a foundation of integrity and customer satisfaction spanning generations.
                 </p>
               </div>
