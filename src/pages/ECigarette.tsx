@@ -70,7 +70,7 @@ export default function ECigarette() {
                         E-Liquid
                       </a>
                       <Link to="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                        E-cigarette
+                        E- Cigarette
                       </Link>
                       <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
                         Coming soon

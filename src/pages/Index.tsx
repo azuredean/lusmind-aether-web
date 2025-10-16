@@ -519,7 +519,7 @@ function Header({
                       E-Liquid
                     </a>
                     <a href="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                      E-cigarette
+                      E- Cigarette
                     </a>
                     <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
                       Coming soon
