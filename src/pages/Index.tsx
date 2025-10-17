@@ -501,12 +501,12 @@ function Header({
   inverted: boolean;
 }) {
   return <header className={cn("sticky top-0 z-30 border-b transition-colors", inverted ? "bg-transparent border-transparent" : "backdrop-blur bg-[rgba(11,16,42,0.6)] border-white/10")}>
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-6">
+      <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
         <a href="#home" className="flex items-center gap-2">
           <img src="/lovable-uploads/6a3cad97-68cc-4600-9c35-7d92e2c90d4b.png" alt="LM Logo" className="h-8 w-8" />
           <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-8 w-auto" />
         </a>
-        <div className="hidden md:flex items-center gap-4 text-sm">
+        <div className="hidden md:flex items-center gap-4 text-sm absolute left-1/2 -translate-x-1/2">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -536,7 +536,7 @@ function Header({
           <a className={cn("text-white/80 hover:text-white")} href="#safety">Compliance</a>
           <a className={cn("text-white/80 hover:text-white")} href="#contact">Contact</a>
         </div>
-        <div className="ml-auto flex items-center gap-3">
+        <div className="flex items-center gap-3">
           <Button className="rounded-xl" style={{
           background: theme.brand.secondary,
           color: "#0B102A"
