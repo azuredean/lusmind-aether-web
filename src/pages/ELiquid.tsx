@@ -638,7 +638,7 @@ export default function ELiquid() {
     return selectedFlavor.bgTint;
   }, [selectedFlavor]);
   if (!ageVerified) {
-    return <AgeVerification onVerify={handleAgeVerify} />;
+    return <AgeVerification onVerified={handleAgeVerify} />;
   }
   return <div className="min-h-screen transition-colors duration-700" style={{
     background: currentBgTint
