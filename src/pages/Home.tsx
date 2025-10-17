@@ -183,12 +183,14 @@ export default function Home() {
                     <span className="text-[#5FB9FF]">✓</span> Sleek, pocket-friendly design
                   </li>
                 </ul>
-                <Button 
-                  variant="outline"
-                  className="rounded-lg bg-transparent border-[#5FB9FF]/30 text-[#5FB9FF] hover:bg-[#5FB9FF]/10"
-                >
-                  Explore Collection →
-                </Button>
+                <Link to="/eliquid">
+                  <Button 
+                    variant="outline"
+                    className="rounded-lg bg-transparent border-[#5FB9FF]/30 text-[#5FB9FF] hover:bg-[#5FB9FF]/10"
+                  >
+                    Explore Collection →
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -249,12 +251,14 @@ export default function Home() {
                     <span className="text-[#5FB9FF]">✓</span> Premium tobacco blends
                   </li>
                 </ul>
-                <Button 
-                  variant="outline"
-                  className="rounded-lg bg-transparent border-[#5FB9FF]/30 text-[#5FB9FF] hover:bg-[#5FB9FF]/10"
-                >
-                  Explore Collection →
-                </Button>
+                <Link to="/eliquid">
+                  <Button 
+                    variant="outline"
+                    className="rounded-lg bg-transparent border-[#5FB9FF]/30 text-[#5FB9FF] hover:bg-[#5FB9FF]/10"
+                  >
+                    Explore Collection →
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
