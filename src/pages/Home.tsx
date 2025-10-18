@@ -177,7 +177,7 @@ const Home = () => {
                   
                   <div className="relative flex items-start justify-between mb-6">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-3 text-white">{product.title}</h3>
+                      <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-[#FEFFFF] to-[#CCFDFA] bg-clip-text text-transparent">{product.title}</h3>
                       <p className="text-white/40 text-sm leading-relaxed">{product.description}</p>
                     </div>
                     <div className="relative flex-shrink-0 p-4 bg-cyan-500/10 rounded-full ml-4">
