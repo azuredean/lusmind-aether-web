@@ -164,7 +164,7 @@ const Home = () => {
       {/* Product Lines Section */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-cyan-400">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             Our Product Lines
           </h2>
 
@@ -215,7 +215,7 @@ const Home = () => {
               <Shield className="w-4 h-4 text-cyan-400" />
               <span className="text-sm text-white/80">Proudly Made in the USA</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-400">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Quality You Can Trust
             </h2>
             <p className="text-white/70 max-w-3xl mx-auto">
