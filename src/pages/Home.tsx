@@ -61,7 +61,6 @@ export default function Home() {
               </NavigationMenuList>
             </NavigationMenu>
             <a href="#about" className="text-white/80 hover:text-white transition-colors">About Us</a>
-            <a href="#technology" className="text-white/80 hover:text-white transition-colors">Technology</a>
             <a href="#contact" className="text-white/80 hover:text-white transition-colors">Support</a>
           </div>
           
