@@ -170,10 +170,10 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {productLines.map((product, index) => (
-              <Card key={index} className="relative overflow-hidden bg-[#0f1419] border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
+              <Card key={index} className="relative overflow-hidden bg-gradient-to-r from-[#1a2332] via-[#0f1419] to-[#0f1419] border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
                 <CardContent className="relative p-8">
-                  {/* Diagonal gradient glow effect from bottom-left to top-right */}
-                  <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-cyan-500/15 via-cyan-500/5 to-transparent rounded-full blur-3xl"></div>
+                  {/* Radial cyan glow from right side */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"></div>
                   
                   <div className="relative flex items-start justify-between mb-6">
                     <div className="flex-1">
