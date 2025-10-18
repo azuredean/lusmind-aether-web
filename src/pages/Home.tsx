@@ -170,15 +170,16 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {productLines.map((product, index) => (
-              <Card key={index} className="bg-[#1a2a32]/80 backdrop-blur border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
+              <Card key={index} className="relative overflow-hidden bg-gradient-to-r from-[#1a2a32] to-[#1e3a42] backdrop-blur border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
                 <CardContent className="p-8">
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold mb-3 text-white">{product.title}</h3>
                       <p className="text-white/50 text-sm leading-relaxed">{product.description}</p>
                     </div>
-                    <div className="p-4 bg-cyan-500/20 rounded-full ml-4">
-                      <product.icon className="w-8 h-8 text-cyan-400" />
+                    <div className="relative p-4 bg-cyan-500/20 rounded-full ml-4">
+                      <div className="absolute inset-0 bg-cyan-500/30 rounded-full blur-xl"></div>
+                      <product.icon className="relative w-8 h-8 text-cyan-400" />
                     </div>
                   </div>
                   <ul className="space-y-3 mb-6">
