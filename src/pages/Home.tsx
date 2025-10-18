@@ -170,29 +170,34 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {productLines.map((product, index) => (
-              <Card key={index} className="relative overflow-hidden bg-gradient-to-r from-[#1a2a32] to-[#1e3a42] backdrop-blur border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
-                <CardContent className="p-8">
-                  <div className="flex items-start justify-between mb-6">
+              <Card key={index} className="relative overflow-hidden bg-gradient-to-br from-[#1a2832]/90 via-[#1e3238]/90 to-[#1a2832]/90 backdrop-blur border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 group">
+                <CardContent className="relative p-8">
+                  {/* Subtle glow effect in the background */}
+                  <div className="absolute top-1/2 right-0 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl -translate-y-1/2"></div>
+                  
+                  <div className="relative flex items-start justify-between mb-6">
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold mb-3 text-white">{product.title}</h3>
-                      <p className="text-white/50 text-sm leading-relaxed">{product.description}</p>
+                      <p className="text-white/40 text-sm leading-relaxed">{product.description}</p>
                     </div>
-                    <div className="relative p-4 bg-cyan-500/20 rounded-full ml-4">
-                      <div className="absolute inset-0 bg-cyan-500/30 rounded-full blur-xl"></div>
+                    <div className="relative flex-shrink-0 p-4 bg-cyan-500/15 rounded-full ml-4">
+                      <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-lg"></div>
                       <product.icon className="relative w-8 h-8 text-cyan-400" />
                     </div>
                   </div>
-                  <ul className="space-y-3 mb-6">
+                  
+                  <ul className="relative space-y-3 mb-6">
                     {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-sm text-white/60">
-                        <svg className="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <li key={idx} className="flex items-center gap-3 text-sm text-white/50">
+                        <svg className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                         </svg>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="mt-2 bg-transparent border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 w-full rounded-full transition-all">
+                  
+                  <Button variant="outline" className="relative mt-2 bg-transparent border border-cyan-400/60 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 w-full rounded-full transition-all">
                     Explore Collection →
                   </Button>
                 </CardContent>
