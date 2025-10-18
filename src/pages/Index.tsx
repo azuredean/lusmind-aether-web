@@ -507,6 +507,7 @@ function Header({
           <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-8 w-auto" />
         </a>
         <div className="hidden md:flex items-center gap-4 text-sm absolute left-1/2 -translate-x-1/2">
+          <a className={cn("text-white/80 hover:text-white px-3 py-2")} href="/">Home</a>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
