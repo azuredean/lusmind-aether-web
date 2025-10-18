@@ -121,7 +121,7 @@ const Home = () => {
             <button className="p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Account">
               <User className="w-5 h-5" />
             </button>
-            <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-6">
+            <Button className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-full px-6">
               Shop Now
             </Button>
           </div>
@@ -137,7 +137,7 @@ const Home = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-cyan-400">
             THE FUTURE OF VAPING
           </h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
@@ -145,10 +145,10 @@ const Home = () => {
             Made in USA.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-8 py-6 text-lg">
+            <Button className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-full px-8 py-6 text-lg">
               Explore Products
             </Button>
-            <Button variant="outline" className="border-2 border-white/20 hover:bg-white/10 text-white rounded-full px-8 py-6 text-lg">
+            <Button variant="outline" className="border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
               Learn More
             </Button>
           </div>
@@ -164,33 +164,34 @@ const Home = () => {
       {/* Product Lines Section */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-cyan-400">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-cyan-400">
             Our Product Lines
           </h2>
-          <div className="w-20 h-1 bg-cyan-400 mx-auto mb-16"></div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {productLines.map((product, index) => (
-              <Card key={index} className="bg-[#0f0f1a]/80 backdrop-blur border border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-white/10 rounded-xl">
+              <Card key={index} className="bg-[#1a1f2e]/60 backdrop-blur border border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-300 group">
+                <CardContent className="p-8">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-3 text-white">{product.title}</h3>
+                      <p className="text-white/60 text-sm leading-relaxed">{product.description}</p>
+                    </div>
+                    <div className="p-4 bg-cyan-500/10 rounded-2xl ml-4">
                       <product.icon className="w-8 h-8 text-cyan-400" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-2">{product.title}</h3>
-                      <p className="text-white/70 text-sm mb-4">{product.description}</p>
-                    </div>
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3 mb-6">
                     {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-white/80">
-                        <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                      <li key={idx} className="flex items-center gap-3 text-sm text-white/70">
+                        <svg className="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="mt-4 border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 w-full rounded-xl">
+                  <Button variant="outline" className="mt-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 w-full rounded-lg group-hover:bg-cyan-500/10 transition-all">
                     Explore Collection →
                   </Button>
                 </CardContent>
@@ -219,13 +220,13 @@ const Home = () => {
 
           <div className="grid md:grid-cols-4 gap-6">
             {qualityFeatures.map((feature, index) => (
-              <Card key={index} className="bg-[#0f0f1a]/60 backdrop-blur border border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
+              <Card key={index} className="bg-transparent border-none">
                 <CardContent className="p-6 text-center">
-                  <div className="inline-flex p-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl mb-4">
-                    <feature.icon className="w-8 h-8 text-cyan-400" />
+                  <div className="inline-flex p-4 bg-cyan-500/10 rounded-2xl mb-4">
+                    <feature.icon className="w-10 h-10 text-cyan-400" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-sm text-white/70">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-cyan-400">{feature.title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
