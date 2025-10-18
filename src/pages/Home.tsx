@@ -148,7 +148,7 @@ const Home = () => {
             <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-full px-8 py-6 text-lg">
               Explore Products
             </Button>
-            <Button variant="outline" className="border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
+            <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
               Learn More
             </Button>
           </div>
