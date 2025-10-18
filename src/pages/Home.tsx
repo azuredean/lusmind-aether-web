@@ -137,7 +137,7 @@ const Home = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-cyan-400">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             THE FUTURE OF VAPING
           </h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
@@ -145,7 +145,7 @@ const Home = () => {
             Made in USA.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-full px-8 py-6 text-lg">
+            <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-full px-8 py-6 text-lg">
               Explore Products
             </Button>
             <Button variant="outline" className="border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
