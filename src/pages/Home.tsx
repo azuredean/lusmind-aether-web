@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User } from "lucide-react";
+import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User, BatteryCharging, Cigarette, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Home = () => {
@@ -28,21 +28,21 @@ const Home = () => {
       title: "Disposable Vapes",
       description: "Convenient, ready-to-use devices with no maintenance required. Perfect for on-the-go use or trying signature flavors.",
       features: ["Up to 5000 puffs", "Rechargeable battery", "Sleek, pocket-friendly design"],
-      icon: Droplet,
+      icon: BatteryCharging,
       gradient: "from-purple-500/20 to-pink-500/20"
     },
     {
       title: "Cigarette-Like Vapes",
       description: "Traditional cigarette form factor with advanced vaping technology. Familiar experience with none of the combustion.",
       features: ["Authentic cigarette feel", "Draw-activated firing", "Tobacco-inspired flavors"],
-      icon: Droplet,
+      icon: Cigarette,
       gradient: "from-orange-500/20 to-red-500/20"
     },
     {
       title: "Flavor Masters",
       description: "Specialized devices engineered to deliver authentic tobacco flavors with enhanced taste and satisfaction.",
       features: ["Advanced flavor technology", "Customizable settings", "Premium tobacco blends"],
-      icon: Droplet,
+      icon: Sparkles,
       gradient: "from-green-500/20 to-emerald-500/20"
     }
   ];
