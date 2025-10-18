@@ -71,7 +71,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0B102A] via-[#1a1f3a] to-[#0B102A] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0f] via-[#0f0f1a] to-[#0a0a0f] text-white">
       {/* Warning Bar */}
       <div className="w-full bg-black text-white border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 py-2 text-center text-xs md:text-sm">
@@ -82,7 +82,7 @@ const Home = () => {
       {/* Header */}
       <header className={cn(
         "sticky top-0 z-50 transition-all duration-300",
-        isScrolled ? "backdrop-blur-lg bg-[rgba(11,16,42,0.8)] border-b border-white/10" : "bg-transparent"
+        isScrolled ? "backdrop-blur-lg bg-[rgba(10,10,15,0.8)] border-b border-cyan-500/20" : "bg-transparent"
       )}>
         <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
@@ -97,20 +97,20 @@ const Home = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white/80 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10">
+                  <NavigationMenuTrigger className="text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10">
                     Products
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="min-w-[200px] backdrop-blur bg-[rgba(11,16,42,0.9)] border border-white/10 rounded-xl p-2">
+                  <NavigationMenuContent className="min-w-[200px] backdrop-blur bg-[rgba(10,10,15,0.95)] border border-cyan-500/30 rounded-xl p-2">
                     <div className="flex flex-col gap-1">
-                      <a href="/#eliquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg">E-Liquid</a>
-                      <Link to="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg">E-Cigarette</Link>
+                      <a href="/#eliquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-cyan-500/10 rounded-lg">E-Liquid</a>
+                      <Link to="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-cyan-500/10 rounded-lg">E-Cigarette</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <a href="#story" className="text-white/80 hover:text-white transition-colors">About Us</a>
-            <a href="#contact" className="text-white/80 hover:text-white transition-colors">Support</a>
+            <a href="#story" className="text-white/90 hover:text-white transition-colors">About Us</a>
+            <a href="#contact" className="text-white/90 hover:text-white transition-colors">Support</a>
           </div>
 
           {/* Right Actions */}
@@ -137,7 +137,7 @@ const Home = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
             THE FUTURE OF VAPING
           </h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
@@ -164,17 +164,14 @@ const Home = () => {
       {/* Product Lines Section */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-cyan-400">
             Our Product Lines
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-16"></div>
+          <div className="w-20 h-1 bg-cyan-400 mx-auto mb-16"></div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {productLines.map((product, index) => (
-              <Card key={index} className={cn(
-                "bg-gradient-to-br backdrop-blur border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105",
-                product.gradient
-              )}>
+              <Card key={index} className="bg-[#0f0f1a]/80 backdrop-blur border border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="p-3 bg-white/10 rounded-xl">
@@ -193,7 +190,7 @@ const Home = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="ghost" className="mt-4 text-cyan-400 hover:text-cyan-300 hover:bg-white/10 w-full rounded-xl">
+                  <Button variant="outline" className="mt-4 border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 w-full rounded-xl">
                     Explore Collection →
                   </Button>
                 </CardContent>
@@ -211,7 +208,7 @@ const Home = () => {
               <Shield className="w-4 h-4 text-cyan-400" />
               <span className="text-sm text-white/80">Proudly Made in the USA</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cyan-400">
               Quality You Can Trust
             </h2>
             <p className="text-white/70 max-w-3xl mx-auto">
@@ -222,7 +219,7 @@ const Home = () => {
 
           <div className="grid md:grid-cols-4 gap-6">
             {qualityFeatures.map((feature, index) => (
-              <Card key={index} className="bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105">
+              <Card key={index} className="bg-[#0f0f1a]/60 backdrop-blur border border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
                 <CardContent className="p-6 text-center">
                   <div className="inline-flex p-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl mb-4">
                     <feature.icon className="w-8 h-8 text-cyan-400" />
