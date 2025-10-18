@@ -170,20 +170,20 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {productLines.map((product, index) => (
-              <Card key={index} className="bg-[#1a1f2e]/60 backdrop-blur border border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-300 group">
+              <Card key={index} className="bg-[#1a2a32]/80 backdrop-blur border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
                 <CardContent className="p-8">
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold mb-3 text-white">{product.title}</h3>
-                      <p className="text-white/60 text-sm leading-relaxed">{product.description}</p>
+                      <p className="text-white/50 text-sm leading-relaxed">{product.description}</p>
                     </div>
-                    <div className="p-4 bg-cyan-500/10 rounded-2xl ml-4">
+                    <div className="p-4 bg-cyan-500/20 rounded-full ml-4">
                       <product.icon className="w-8 h-8 text-cyan-400" />
                     </div>
                   </div>
                   <ul className="space-y-3 mb-6">
                     {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-sm text-white/70">
+                      <li key={idx} className="flex items-center gap-3 text-sm text-white/60">
                         <svg className="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                         </svg>
@@ -191,7 +191,7 @@ const Home = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="mt-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 w-full rounded-lg group-hover:bg-cyan-500/10 transition-all">
+                  <Button variant="outline" className="mt-2 bg-transparent border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 w-full rounded-full transition-all">
                     Explore Collection →
                   </Button>
                 </CardContent>
