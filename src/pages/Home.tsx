@@ -396,7 +396,7 @@ const Home = () => {
               />
               <Button 
                 type="submit" 
-                className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-xl px-6" 
+                className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 hover:scale-105 active:scale-95 text-black font-semibold rounded-xl px-6 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" 
                 disabled={!verifyCode || verifyStatus === 'checking'}
               >
                 {verifyStatus === 'checking' ? 'Verifying…' : 'Verify'}
