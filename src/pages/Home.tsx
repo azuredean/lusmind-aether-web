@@ -170,8 +170,9 @@ const Home = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <a href="#story" className="text-white/90 hover:text-white transition-colors">About Us</a>
-            <a href="#contact" className="text-white/90 hover:text-white transition-colors">Support</a>
+            <a href="#story" className="text-white/90 hover:text-white transition-colors">Story</a>
+            <a href="#compliance" className="text-white/90 hover:text-white transition-colors">Compliance</a>
+            <a href="#contact" className="text-white/90 hover:text-white transition-colors">Contact</a>
           </div>
 
           {/* Right Actions */}
@@ -424,7 +425,7 @@ const Home = () => {
       </section>
 
       {/* Compliance & Safety Section */}
-      <section id="safety" className="py-20 relative">
+      <section id="compliance" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
@@ -466,7 +467,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-12 bg-gradient-to-b from-transparent to-black/50">
+      <footer id="contact" className="border-t border-white/10 py-12 bg-gradient-to-b from-transparent to-black/50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
