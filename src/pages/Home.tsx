@@ -22,28 +22,32 @@ const Home = () => {
       description: "Expertly crafted e-liquids with rich, authentic flavors. Made from the highest quality ingredients for an exceptional vaping experience.",
       features: ["30+ unique flavors", "USP-grade ingredients", "Multiple nicotine strengths"],
       icon: Droplet,
-      gradient: "from-cyan-500/20 to-blue-500/20"
+      gradient: "from-cyan-500/20 to-blue-500/20",
+      link: "/e-liquid"
     },
     {
       title: "Disposable Vapes",
       description: "Convenient, ready-to-use devices with no maintenance required. Perfect for on-the-go use or trying signature flavors.",
       features: ["Up to 5000 puffs", "Rechargeable battery", "Sleek, pocket-friendly design"],
       icon: BatteryCharging,
-      gradient: "from-purple-500/20 to-pink-500/20"
+      gradient: "from-purple-500/20 to-pink-500/20",
+      link: "/e-cigarette"
     },
     {
       title: "Cigarette-Like Vapes",
       description: "Traditional cigarette form factor with advanced vaping technology. Familiar experience with none of the combustion.",
       features: ["Authentic cigarette feel", "Draw-activated firing", "Tobacco-inspired flavors"],
       icon: Cigarette,
-      gradient: "from-orange-500/20 to-red-500/20"
+      gradient: "from-orange-500/20 to-red-500/20",
+      link: "/e-cigarette"
     },
     {
       title: "Flavor Masters",
       description: "Specialized devices engineered to deliver authentic tobacco flavors with enhanced taste and satisfaction.",
       features: ["Advanced flavor technology", "Customizable settings", "Premium tobacco blends"],
       icon: Sparkles,
-      gradient: "from-green-500/20 to-emerald-500/20"
+      gradient: "from-green-500/20 to-emerald-500/20",
+      link: "/e-cigarette"
     }
   ];
 
@@ -197,9 +201,11 @@ const Home = () => {
                     ))}
                   </ul>
                   
-                  <Button variant="outline" className="relative mt-2 bg-transparent border border-cyan-500/50 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 w-full rounded-full transition-all">
-                    Explore Collection →
-                  </Button>
+                  <Link to={product.link}>
+                    <Button variant="outline" className="relative mt-2 bg-transparent border border-cyan-500/50 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 w-full rounded-full transition-all">
+                      Explore Collection →
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
