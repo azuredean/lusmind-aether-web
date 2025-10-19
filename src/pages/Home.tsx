@@ -102,7 +102,7 @@ const Home = () => {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="min-w-[200px] backdrop-blur bg-[rgba(10,10,15,0.95)] border border-cyan-500/30 rounded-xl p-2">
                     <div className="flex flex-col gap-1">
-                      <a href="/#eliquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-cyan-500/10 rounded-lg">E-Liquid</a>
+                      <Link to="/e-liquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-cyan-500/10 rounded-lg">E-Liquid</Link>
                       <Link to="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-cyan-500/10 rounded-lg">E-Cigarette</Link>
                     </div>
                   </NavigationMenuContent>
