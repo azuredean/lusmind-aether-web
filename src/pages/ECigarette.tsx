@@ -58,6 +58,7 @@ export default function ECigarette() {
             <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-8 w-auto" />
           </Link>
           <div className="hidden md:flex items-center gap-4 text-sm absolute left-1/2 -translate-x-1/2">
+            <Link to="/" className={cn("text-white/80 hover:text-white px-3 py-2")}>Home</Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -66,9 +67,9 @@ export default function ECigarette() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="min-w-[200px] backdrop-blur bg-[rgba(11,16,42,0.6)] border border-white/10 rounded-xl p-2">
                     <div className="flex flex-col gap-1">
-                      <a href="/#eliquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <Link to="/e-liquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                         E-Liquid
-                      </a>
+                      </Link>
                       <Link to="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                         E- Cigarette
                       </Link>
@@ -279,7 +280,7 @@ export default function ECigarette() {
             <div>
               <h4 className="font-semibold mb-4 font-sans">Products</h4>
               <ul className="space-y-2 text-sm font-sans">
-                <li><a href="/#eliquid" className="text-white/60 hover:text-white">E-Liquid</a></li>
+                <li><Link to="/e-liquid" className="text-white/60 hover:text-white">E-Liquid</Link></li>
                 <li><Link to="/e-cigarette" className="text-white/60 hover:text-white">E-cigarette</Link></li>
               </ul>
             </div>
