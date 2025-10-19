@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User, BatteryCharging, Cigarette, Sparkles } from "lucide-react";
+import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User, BatteryCharging, Cigarette, Sparkles, Globe, Info, Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,6 +74,62 @@ const Home = () => {
       description: "Recognized for innovation and excellence in the industry."
     }
   ];
+
+  const theme = {
+    brand: {
+      primary: "#353995",
+      secondary: "#E6FE7F"
+    }
+  };
+
+  const palette = ["#CFE8FF", "#D8F3E1", "#FFD6D6"];
+  const colors = useMemo(() => [theme.brand.secondary, ...palette], []);
+  const rows = [50, 90, 130, 170, 210, 250];
+
+  const [region, setRegion] = useState<"US" | "CA">("US");
+  const [verifyCode, setVerifyCode] = useState("");
+  const [verifyStatus, setVerifyStatus] = useState<'idle' | 'checking' | 'ok' | 'fail'>("idle");
+  const [verifyMsg, setVerifyMsg] = useState("");
+
+  const REGION_INFO = {
+    US: {
+      name: "United States (21+)",
+      warnings: [
+        "WARNING: This product may contain nicotine. Nicotine is an addictive chemical.",
+        "For adults of legal age only (21+). Keep out of reach of children and pets.",
+        "No therapeutic or cessation claims. Not intended for use by pregnant or nursing individuals."
+      ]
+    },
+    CA: {
+      name: "California (Prop 65)",
+      warnings: [
+        "⚠︎ WARNING: This product can expose you to chemicals including nicotine, which is known to the State of California to cause birth defects or other reproductive harm.",
+        "For adults of legal age only (21+). Keep out of reach of children and pets."
+      ]
+    }
+  };
+
+  const handleVerifySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const raw = verifyCode.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
+    if (raw.length < 8 || raw.length > 24) {
+      setVerifyStatus("fail");
+      setVerifyMsg("Invalid code format. Enter 8–24 letters/numbers.");
+      return;
+    }
+    setVerifyStatus("checking");
+    setVerifyMsg("");
+    setTimeout(() => {
+      const sum = raw.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+      if (sum % 97 === 1) {
+        setVerifyStatus("ok");
+        setVerifyMsg("Code valid. Product is authentic.");
+      } else {
+        setVerifyStatus("fail");
+        setVerifyMsg("Code not found or already verified. Please check and try again.");
+      }
+    }, 700);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0f] via-[#0f0f1a] to-[#0a0a0f] text-white">
@@ -242,6 +299,166 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Story Section */}
+      <section id="story" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Light & Harmony · Brand Story
+            </h2>
+            <p className="text-lg text-white/80 leading-relaxed">
+              LUSMIND pursues a light, contemporary feel. Soft colors, paper-like grain, and flowing lines build a soothing space between tech and nature.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-full px-8">
+                Read more
+              </Button>
+            </div>
+          </div>
+          <div className="relative h-72 md:h-80 rounded-3xl border border-cyan-500/20 bg-white/5 backdrop-blur overflow-hidden">
+            <div className="absolute inset-0 grid place-items-center">
+              <motion.svg viewBox="0 0 600 300" className="w-[92%] h-[92%]" aria-hidden>
+                <defs>
+                  <filter id="blurSoft" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="1.2" />
+                  </filter>
+                </defs>
+                <motion.g animate={{ x: [-6, 6, -6] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}>
+                  {rows.map((y, i) => {
+                    const c = colors[i % colors.length];
+                    const d = `M 20 ${y} C 180 ${y - 22}, 420 ${y + 22}, 580 ${y}`;
+                    const dur = 9 + i * 1.2;
+                    const delay = i * 0.35;
+                    return (
+                      <g key={i} filter="url(#blurSoft)">
+                        <motion.path 
+                          d={d} 
+                          fill="none" 
+                          stroke={c} 
+                          strokeOpacity={0.6} 
+                          strokeWidth={2.2} 
+                          pathLength={1} 
+                          strokeDasharray="0.2 1"
+                          initial={{ strokeDashoffset: 1 }}
+                          animate={{ strokeDashoffset: [1, 0, -1] }}
+                          transition={{ duration: dur, repeat: Infinity, ease: "easeInOut", delay }}
+                        />
+                        <motion.path 
+                          d={d} 
+                          fill="none" 
+                          stroke={c} 
+                          strokeOpacity={0.16} 
+                          strokeWidth={6} 
+                          pathLength={1} 
+                          strokeDasharray="0.12 1"
+                          initial={{ strokeDashoffset: 1 }}
+                          animate={{ strokeDashoffset: [1, 0, -1] }}
+                          transition={{ duration: dur * 1.1, repeat: Infinity, ease: "easeInOut", delay: delay + 0.2 }}
+                        />
+                      </g>
+                    );
+                  })}
+                </motion.g>
+              </motion.svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Verification Section */}
+      <section id="verify" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
+          <div className="space-y-3">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Product Verification
+            </h2>
+            <p className="text-white/80 text-lg">Enter the security code from your package to verify authenticity.</p>
+            <ul className="text-white/60 text-sm list-disc pl-5 space-y-1">
+              <li>Letters and numbers only, 8–24 characters.</li>
+              <li>The code is usually printed near the seal or QR label.</li>
+            </ul>
+          </div>
+          <form onSubmit={handleVerifySubmit} className="rounded-2xl bg-white/10 backdrop-blur border border-cyan-500/20 p-6">
+            <div className="flex gap-2">
+              <input 
+                type="text" 
+                inputMode="text" 
+                value={verifyCode} 
+                onChange={e => setVerifyCode(e.target.value)} 
+                placeholder="Enter verification code" 
+                className="flex-1 rounded-xl border border-cyan-500/30 bg-white/5 text-white placeholder:text-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-cyan-400/50 uppercase tracking-widest" 
+                aria-label="Verification code" 
+                autoComplete="one-time-code" 
+              />
+              <Button 
+                type="submit" 
+                className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-xl px-6" 
+                disabled={!verifyCode || verifyStatus === 'checking'}
+              >
+                {verifyStatus === 'checking' ? 'Verifying…' : 'Verify'}
+              </Button>
+            </div>
+            {verifyStatus !== 'idle' && (
+              <div className={cn(
+                "mt-3 text-sm rounded-xl px-4 py-3 border",
+                verifyStatus === 'ok' ? "bg-emerald-500/10 text-emerald-300 border-emerald-400/20" :
+                verifyStatus === 'fail' ? "bg-rose-500/10 text-rose-300 border-rose-400/20" :
+                "bg-white/5 text-white/80 border-cyan-500/20"
+              )} aria-live="polite">
+                <div className="flex items-center gap-2">
+                  {verifyStatus === 'ok' ? <Check className="w-5 h-5" /> : 
+                   verifyStatus === 'fail' ? <X className="w-5 h-5" /> : null}
+                  <span>{verifyMsg || 'Checking…'}</span>
+                </div>
+              </div>
+            )}
+            <div className="mt-3 text-xs text-white/40">Demo verification only. Server-side validation required for production.</div>
+          </form>
+        </div>
+      </section>
+
+      {/* Compliance & Safety Section */}
+      <section id="safety" className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
+          <div className="space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Compliance First · Safety by Default
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed">
+              Compliance is integrated into the experience: age-gate on entry, persistent page warnings, region-specific notices, and cookie/privacy controls with restrained language and visuals to avoid appealing to minors.
+            </p>
+            <ul className="list-disc pl-5 text-white/70 space-y-2">
+              <li>Age verification (21+ in the U.S.)</li>
+              <li>Health/safety warnings and non-therapeutic statements</li>
+              <li>Region-specific notices (e.g., U.S. general, California Prop 65)</li>
+              <li>Cookie and privacy preference management</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-white/10 backdrop-blur border border-cyan-500/20 p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Globe className="w-5 h-5 text-cyan-400" />
+              <span className="text-sm font-medium text-white">Region:</span>
+              <select 
+                className="text-sm bg-white/10 text-white border border-cyan-500/30 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-400/50" 
+                value={region} 
+                onChange={e => setRegion(e.target.value as "US" | "CA")}
+              >
+                {Object.entries(REGION_INFO).map(([k, v]) => (
+                  <option value={k} key={k} className="bg-[#0a0a0f] text-white">{v.name}</option>
+                ))}
+              </select>
+            </div>
+            <ul className="text-sm text-white/80 list-disc pl-5 space-y-2">
+              {REGION_INFO[region].warnings.map((w, i) => <li key={i}>{w}</li>)}
+            </ul>
+            <div className="mt-4 flex items-start gap-2 text-xs text-white/60">
+              <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <p>This page is not legal advice. Actual requirements vary and change over time. Consult local counsel for your selling/display region.</p>
+            </div>
           </div>
         </div>
       </section>
