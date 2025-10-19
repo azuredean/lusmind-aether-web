@@ -206,9 +206,11 @@ const Home = () => {
             Made in USA.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-full px-8 py-6 text-lg">
-              Explore Products
-            </Button>
+            <a href="#products">
+              <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-full px-8 py-6 text-lg">
+                Explore Products
+              </Button>
+            </a>
             <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
               Learn More
             </Button>
@@ -223,7 +225,7 @@ const Home = () => {
       </section>
 
       {/* Product Lines Section */}
-      <section className="py-20 relative">
+      <section id="products" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             Our Product Lines
