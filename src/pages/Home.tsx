@@ -217,7 +217,7 @@ const Home = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 className="font-mosaic font-bold text-5xl md:text-6xl lg:text-8xl text-white mb-4 -mt-20 tracking-wider">
+          <h1 className="font-mosaic font-bold text-7xl md:text-8xl lg:text-9xl text-white mb-4 -mt-20 tracking-wider">
             THE FUTURE OF VAPE
           </h1>
           
