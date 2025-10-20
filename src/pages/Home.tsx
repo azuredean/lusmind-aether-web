@@ -165,7 +165,7 @@ const Home = () => {
       <section className="relative pt-20 pb-32 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover" />
+          <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-contain" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
