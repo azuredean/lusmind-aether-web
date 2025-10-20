@@ -195,13 +195,7 @@ const Home = () => {
       <section className="relative pt-20 pb-32 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover opacity-40" />
-        </div>
-        
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+          <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
