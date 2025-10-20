@@ -212,9 +212,11 @@ const Home = () => {
                 Explore Products
               </Button>
             </a>
-            <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
-              Learn More
-            </Button>
+            <a href="#quality">
+              <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
+                Learn More
+              </Button>
+            </a>
           </div>
 
           {/* Scroll indicator */}
@@ -274,7 +276,7 @@ const Home = () => {
       </section>
 
       {/* Quality Section */}
-      <section className="py-20 relative bg-gradient-to-b from-transparent via-white/5 to-transparent">
+      <section id="quality" className="py-20 relative bg-gradient-to-b from-transparent via-white/5 to-transparent">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-6">
