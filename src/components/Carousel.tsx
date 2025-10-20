@@ -81,7 +81,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden rounded-2xl shadow-vapor bg-black/20">
+    <div className="relative w-full aspect-[16/9] max-h-[60vh] overflow-hidden rounded-2xl shadow-vapor">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -95,7 +95,7 @@ export const Carousel = () => {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
             
             {/* Overlay gradient */}

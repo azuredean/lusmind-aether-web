@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User, BatteryCharging, Cigarette, Sparkles, Globe, Info, Check, X } from "lucide-react";
+import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User, BatteryCharging, Cigarette, Sparkles, Globe, Info, Check, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import futureVapingBg from "@/assets/future-vaping-bg.png";
+import heroSlide1 from "@/assets/hero-slide-1.png";
+import heroSlide2 from "@/assets/hero-slide-2.png";
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -16,6 +19,18 @@ const Home = () => {
       setIsScrolled(window.scrollY > 50);
     });
   }
+
+  // Hero slides (includes newly uploaded images)
+  const heroSlides = [
+    { src: futureVapingBg, alt: "Futuristic vaping background" },
+    { src: "/lovable-uploads/coffee-tobacco.png", alt: "Coffee tobacco flavor e-liquid" },
+    { src: "/lovable-uploads/tobacco-nut.png", alt: "Tobacco and nut flavor e-liquid" },
+    { src: "/lovable-uploads/blueberry-raspberry.png", alt: "Blueberry raspberry flavor e-liquid" },
+    { src: "/lovable-uploads/niagra-grape.png", alt: "Niagra grape flavor e-liquid" },
+    { src: "/lovable-uploads/double-apple-shisha.png", alt: "Double apple shisha flavor e-liquid" },
+    { src: heroSlide1, alt: "Arctic Sweet Ice" },
+    { src: heroSlide2, alt: "Rainbow Candy" },
+  ];
   const productLines = [{
     title: "Premium E-Liquids",
     description: "Expertly crafted e-liquids with rich, authentic flavors. Made from the highest quality ingredients for an exceptional vaping experience.",
@@ -162,19 +177,49 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden h-[60vh] md:h-[72vh] lg:h-[80vh] pt-20">
-        {/* Background Image */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-          <img src={futureVapingBg} alt="Future of Vaping" className="max-w-full max-h-full object-contain opacity-40" />
-        </div>
-        
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-20">
-          
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+      <section className="relative pt-20 pb-64 overflow-hidden min-h-[80vh]">
+        {/* Background Carousel */}
+        <div className="absolute inset-0 w-full h-full">
+          <Carousel 
+            opts={{ 
+              loop: true,
+              align: "start",
+            }}
+            className="w-full h-full"
+          >
+            <CarouselContent className="-ml-0 h-full">
+              {heroSlides.map((s, idx) => (
+                <CarouselItem key={idx} className="pl-0 basis-full">
+                  <div className="relative w-full h-full">
+                    <img src={s.src} alt={s.alt} loading="lazy" className="w-full h-full object-cover object-center" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            {/* Semi-transparent Arrow Navigation */}
+            <CarouselPrevious 
+              className="absolute left-8 top-1/2 -translate-y-1/2 h-16 w-16 bg-black/30 hover:bg-black/50 border-white/20 hover:border-white/40 backdrop-blur-sm transition-all z-10"
+              variant="ghost"
+              size="icon"
+            >
+              <ChevronLeft className="h-8 w-8 text-white" />
+            </CarouselPrevious>
+            
+            <CarouselNext 
+              className="absolute right-8 top-1/2 -translate-y-1/2 h-16 w-16 bg-black/30 hover:bg-black/50 border-white/20 hover:border-white/40 backdrop-blur-sm transition-all z-10"
+              variant="ghost"
+              size="icon"
+            >
+              <ChevronRight className="h-8 w-8 text-white" />
+            </CarouselNext>
+          </Carousel>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
+          <h1 className="font-mosaic font-bold text-5xl md:text-6xl lg:text-8xl text-white mb-4 -mt-20 tracking-wider">
+            THE FUTURE OF VAPE
+          </h1>
           
           
           <div className="flex items-center justify-center gap-4">
@@ -207,7 +252,7 @@ const Home = () => {
                   <div className="relative flex items-start justify-between mb-6">
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-[#FEFFFF] to-[#CCFDFA] bg-clip-text text-transparent">{product.title}</h3>
-                      
+                      <p className="text-white/40 text-sm leading-relaxed">{product.description}</p>
                     </div>
                     <div className="relative flex-shrink-0 p-4 bg-cyan-500/10 rounded-full ml-4">
                       <div className="absolute inset-0 bg-cyan-500/30 rounded-full blur-xl"></div>
