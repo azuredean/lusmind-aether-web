@@ -198,32 +198,29 @@ const Home = () => {
           <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            THE FUTURE OF VAPING
-          </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+        <div className="relative max-w-7xl mx-auto px-4 text-center flex flex-col min-h-[70vh]">
+          <div className="flex-1 flex flex-col justify-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              THE FUTURE OF VAPING
+            </h1>
+            <div className="flex items-center justify-center gap-4 mb-16">
+              <a href="#products">
+                <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-white font-semibold rounded-full px-8 py-6 text-lg">
+                  Explore Products
+                </Button>
+              </a>
+              <a href="#quality">
+                <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
+                  Learn More
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-12">
             Experience premium electronic cigarettes crafted with cutting-edge technology and superior materials.<br />
             Made in USA.
           </p>
-          <div className="flex items-center justify-center gap-4">
-            <a href="#products">
-              <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-white font-semibold rounded-full px-8 py-6 text-lg">
-                Explore Products
-              </Button>
-            </a>
-            <a href="#quality">
-              <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
-                Learn More
-              </Button>
-            </a>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="mt-16 flex flex-col items-center gap-2 text-white/60 animate-bounce">
-            <span className="text-sm">Scroll Down</span>
-            <ChevronDown className="w-6 h-6" />
-          </div>
         </div>
       </section>
 
