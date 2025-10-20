@@ -78,7 +78,8 @@ export default {
 			},
 			fontFamily: {
 				'cyber': ['Orbitron', 'Inter', 'sans-serif'],
-				'sans': ['Inter', 'system-ui', 'sans-serif']
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'mosaic': ['Press Start 2P', 'monospace']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
