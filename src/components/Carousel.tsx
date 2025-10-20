@@ -24,6 +24,41 @@ const slides = [
     subtitle: 'LUSMIND Classic Heritage',
     description: '传承经典口味，品味永恒魅力，每一口都是对经典的致敬',
   },
+  {
+    id: 4,
+    image: '/lovable-uploads/coffee-tobacco.png',
+    title: 'Coffee Tobacco',
+    subtitle: 'LUSMIND Premium Flavor',
+    description: 'Rich coffee blend with smooth tobacco notes for sophisticated taste',
+  },
+  {
+    id: 5,
+    image: '/lovable-uploads/tobacco-nut.png',
+    title: 'Tobacco & Nut',
+    subtitle: 'LUSMIND Premium Flavor',
+    description: 'Smooth tobacco enhanced with roasted nut undertones',
+  },
+  {
+    id: 6,
+    image: '/lovable-uploads/blueberry-raspberry.png',
+    title: 'Blueberry Raspberry',
+    subtitle: 'LUSMIND Cosmic Collection',
+    description: 'Celestial berry fusion with cosmic flavor experience',
+  },
+  {
+    id: 7,
+    image: '/lovable-uploads/niagra-grape.png',
+    title: 'Niagra Grape',
+    subtitle: 'LUSMIND Premium Flavor',
+    description: 'Luscious grape essence inspired by nature\'s majesty',
+  },
+  {
+    id: 8,
+    image: '/lovable-uploads/double-apple-shisha.png',
+    title: 'Double Apple Shisha',
+    subtitle: 'LUSMIND Shisha Collection',
+    description: 'Authentic shisha flavor with dual apple harmony',
+  },
 ];
 
 export const Carousel = () => {
