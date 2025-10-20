@@ -221,6 +221,9 @@ const Home = () => {
             THE FUTURE OF VAPE
           </h1>
           
+          <p className="text-white text-lg md:text-xl lg:text-2xl tracking-wide mt-16">
+            Experience premium Made in USA
+          </p>
           
           <div className="flex items-center justify-center gap-4">
             <a href="#products">
