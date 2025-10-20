@@ -162,10 +162,10 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative overflow-hidden h-[60vh] md:h-[72vh] lg:h-[80vh] pt-20">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover opacity-40" />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+          <img src={futureVapingBg} alt="Future of Vaping" className="max-w-full max-h-full object-contain opacity-40" />
         </div>
         
         {/* Decorative background elements */}
