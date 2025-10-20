@@ -166,48 +166,51 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-64 overflow-hidden min-h-[80vh]">
-        <Carousel 
-          opts={{ 
-            loop: true,
-            align: "center",
-          }}
-          className="w-full h-full"
-        >
-          <CarouselContent className="h-full">
-            <CarouselItem className="h-full">
-              <div className="absolute inset-0 w-full h-full">
-                <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover object-center" />
-              </div>
-            </CarouselItem>
-            <CarouselItem className="h-full">
-              <div className="absolute inset-0 w-full h-full">
-                <img src={heroSlide1} alt="Arctic Sweet Ice" className="w-full h-full object-cover object-center" />
-              </div>
-            </CarouselItem>
-            <CarouselItem className="h-full">
-              <div className="absolute inset-0 w-full h-full">
-                <img src={heroSlide2} alt="Rainbow Candy" className="w-full h-full object-cover object-center" />
-              </div>
-            </CarouselItem>
-          </CarouselContent>
-          
-          {/* Semi-transparent Arrow Navigation */}
-          <CarouselPrevious 
-            className="absolute left-8 top-1/2 -translate-y-1/2 h-16 w-16 bg-black/30 hover:bg-black/50 border-white/20 hover:border-white/40 backdrop-blur-sm transition-all"
-            variant="ghost"
-            size="icon"
+        {/* Background Carousel */}
+        <div className="absolute inset-0 w-full h-full">
+          <Carousel 
+            opts={{ 
+              loop: true,
+              align: "start",
+            }}
+            className="w-full h-full"
           >
-            <ChevronLeft className="h-8 w-8 text-white" />
-          </CarouselPrevious>
-          
-          <CarouselNext 
-            className="absolute right-8 top-1/2 -translate-y-1/2 h-16 w-16 bg-black/30 hover:bg-black/50 border-white/20 hover:border-white/40 backdrop-blur-sm transition-all"
-            variant="ghost"
-            size="icon"
-          >
-            <ChevronRight className="h-8 w-8 text-white" />
-          </CarouselNext>
-        </Carousel>
+            <CarouselContent className="-ml-0 h-full">
+              <CarouselItem className="pl-0 basis-full">
+                <div className="relative w-full h-full">
+                  <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover object-center" />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="pl-0 basis-full">
+                <div className="relative w-full h-full">
+                  <img src={heroSlide1} alt="Arctic Sweet Ice" className="w-full h-full object-cover object-center" />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="pl-0 basis-full">
+                <div className="relative w-full h-full">
+                  <img src={heroSlide2} alt="Rainbow Candy" className="w-full h-full object-cover object-center" />
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            
+            {/* Semi-transparent Arrow Navigation */}
+            <CarouselPrevious 
+              className="absolute left-8 top-1/2 -translate-y-1/2 h-16 w-16 bg-black/30 hover:bg-black/50 border-white/20 hover:border-white/40 backdrop-blur-sm transition-all z-10"
+              variant="ghost"
+              size="icon"
+            >
+              <ChevronLeft className="h-8 w-8 text-white" />
+            </CarouselPrevious>
+            
+            <CarouselNext 
+              className="absolute right-8 top-1/2 -translate-y-1/2 h-16 w-16 bg-black/30 hover:bg-black/50 border-white/20 hover:border-white/40 backdrop-blur-sm transition-all z-10"
+              variant="ghost"
+              size="icon"
+            >
+              <ChevronRight className="h-8 w-8 text-white" />
+            </CarouselNext>
+          </Carousel>
+        </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
           
