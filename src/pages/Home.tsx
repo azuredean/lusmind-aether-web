@@ -19,6 +19,18 @@ const Home = () => {
       setIsScrolled(window.scrollY > 50);
     });
   }
+
+  // Hero slides (includes newly uploaded images)
+  const heroSlides = [
+    { src: futureVapingBg, alt: "Futuristic vaping background" },
+    { src: "/lovable-uploads/coffee-tobacco.png", alt: "Coffee tobacco flavor e-liquid" },
+    { src: "/lovable-uploads/tobacco-nut.png", alt: "Tobacco and nut flavor e-liquid" },
+    { src: "/lovable-uploads/blueberry-raspberry.png", alt: "Blueberry raspberry flavor e-liquid" },
+    { src: "/lovable-uploads/niagra-grape.png", alt: "Niagra grape flavor e-liquid" },
+    { src: "/lovable-uploads/double-apple-shisha.png", alt: "Double apple shisha flavor e-liquid" },
+    { src: heroSlide1, alt: "Arctic Sweet Ice" },
+    { src: heroSlide2, alt: "Rainbow Candy" },
+  ];
   const productLines = [{
     title: "Premium E-Liquids",
     description: "Expertly crafted e-liquids with rich, authentic flavors. Made from the highest quality ingredients for an exceptional vaping experience.",
@@ -176,21 +188,13 @@ const Home = () => {
             className="w-full h-full"
           >
             <CarouselContent className="-ml-0 h-full">
-              <CarouselItem className="pl-0 basis-full">
-                <div className="relative w-full h-full">
-                  <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover object-center" />
-                </div>
-              </CarouselItem>
-              <CarouselItem className="pl-0 basis-full">
-                <div className="relative w-full h-full">
-                  <img src={heroSlide1} alt="Arctic Sweet Ice" className="w-full h-full object-cover object-center" />
-                </div>
-              </CarouselItem>
-              <CarouselItem className="pl-0 basis-full">
-                <div className="relative w-full h-full">
-                  <img src={heroSlide2} alt="Rainbow Candy" className="w-full h-full object-cover object-center" />
-                </div>
-              </CarouselItem>
+              {heroSlides.map((s, idx) => (
+                <CarouselItem key={idx} className="pl-0 basis-full">
+                  <div className="relative w-full h-full">
+                    <img src={s.src} alt={s.alt} loading="lazy" className="w-full h-full object-cover object-center" />
+                  </div>
+                </CarouselItem>
+              ))}
             </CarouselContent>
             
             {/* Semi-transparent Arrow Navigation */}
