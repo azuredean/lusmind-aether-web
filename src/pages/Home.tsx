@@ -196,7 +196,6 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0F]/80 via-[#0A0A0F]/60 to-[#0A0A0F]"></div>
         </div>
         
         {/* Decorative background elements */}
