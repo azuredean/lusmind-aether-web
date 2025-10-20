@@ -162,7 +162,7 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative pt-20 pb-64 overflow-hidden min-h-[80vh]">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover object-center" />
