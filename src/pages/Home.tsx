@@ -7,7 +7,6 @@ import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User, BatteryChargin
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import futureVapingBg from "@/assets/future-vaping-bg.png";
-
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -17,99 +16,75 @@ const Home = () => {
       setIsScrolled(window.scrollY > 50);
     });
   }
-
-  const productLines = [
-    {
-      title: "Premium E-Liquids",
-      description: "Expertly crafted e-liquids with rich, authentic flavors. Made from the highest quality ingredients for an exceptional vaping experience.",
-      features: ["30+ unique flavors", "USP-grade ingredients", "Multiple nicotine strengths"],
-      icon: Droplet,
-      gradient: "from-cyan-500/20 to-blue-500/20",
-      link: "/e-liquid"
-    },
-    {
-      title: "Disposable Vapes",
-      description: "Convenient, ready-to-use devices with no maintenance required. Perfect for on-the-go use or trying signature flavors.",
-      features: ["Up to 5000 puffs", "Rechargeable battery", "Sleek, pocket-friendly design"],
-      icon: BatteryCharging,
-      gradient: "from-purple-500/20 to-pink-500/20",
-      link: "/e-cigarette"
-    },
-    {
-      title: "Cigarette-Like Vapes",
-      description: "Traditional cigarette form factor with advanced vaping technology. Familiar experience with none of the combustion.",
-      features: ["Authentic cigarette feel", "Draw-activated firing", "Tobacco-inspired flavors"],
-      icon: Cigarette,
-      gradient: "from-orange-500/20 to-red-500/20",
-      link: "/e-cigarette"
-    },
-    {
-      title: "Flavor Masters",
-      description: "Specialized devices engineered to deliver authentic tobacco flavors with enhanced taste and satisfaction.",
-      features: ["Advanced flavor technology", "Customizable settings", "Premium tobacco blends"],
-      icon: Sparkles,
-      gradient: "from-green-500/20 to-emerald-500/20",
-      link: "/e-cigarette"
-    }
-  ];
-
-  const qualityFeatures = [
-    {
-      icon: Droplet,
-      title: "Lab Tested",
-      description: "Every batch undergoes rigorous testing to ensure compliance and purity."
-    },
-    {
-      icon: Shield,
-      title: "Safety Certified",
-      description: "Our products meet or exceed all safety standards and regulations."
-    },
-    {
-      icon: Leaf,
-      title: "Sustainable",
-      description: "Eco-friendly packaging and responsible manufacturing processes."
-    },
-    {
-      icon: Award,
-      title: "Award Winning",
-      description: "Recognized for innovation and excellence in the industry."
-    }
-  ];
-
+  const productLines = [{
+    title: "Premium E-Liquids",
+    description: "Expertly crafted e-liquids with rich, authentic flavors. Made from the highest quality ingredients for an exceptional vaping experience.",
+    features: ["30+ unique flavors", "USP-grade ingredients", "Multiple nicotine strengths"],
+    icon: Droplet,
+    gradient: "from-cyan-500/20 to-blue-500/20",
+    link: "/e-liquid"
+  }, {
+    title: "Disposable Vapes",
+    description: "Convenient, ready-to-use devices with no maintenance required. Perfect for on-the-go use or trying signature flavors.",
+    features: ["Up to 5000 puffs", "Rechargeable battery", "Sleek, pocket-friendly design"],
+    icon: BatteryCharging,
+    gradient: "from-purple-500/20 to-pink-500/20",
+    link: "/e-cigarette"
+  }, {
+    title: "Cigarette-Like Vapes",
+    description: "Traditional cigarette form factor with advanced vaping technology. Familiar experience with none of the combustion.",
+    features: ["Authentic cigarette feel", "Draw-activated firing", "Tobacco-inspired flavors"],
+    icon: Cigarette,
+    gradient: "from-orange-500/20 to-red-500/20",
+    link: "/e-cigarette"
+  }, {
+    title: "Flavor Masters",
+    description: "Specialized devices engineered to deliver authentic tobacco flavors with enhanced taste and satisfaction.",
+    features: ["Advanced flavor technology", "Customizable settings", "Premium tobacco blends"],
+    icon: Sparkles,
+    gradient: "from-green-500/20 to-emerald-500/20",
+    link: "/e-cigarette"
+  }];
+  const qualityFeatures = [{
+    icon: Droplet,
+    title: "Lab Tested",
+    description: "Every batch undergoes rigorous testing to ensure compliance and purity."
+  }, {
+    icon: Shield,
+    title: "Safety Certified",
+    description: "Our products meet or exceed all safety standards and regulations."
+  }, {
+    icon: Leaf,
+    title: "Sustainable",
+    description: "Eco-friendly packaging and responsible manufacturing processes."
+  }, {
+    icon: Award,
+    title: "Award Winning",
+    description: "Recognized for innovation and excellence in the industry."
+  }];
   const theme = {
     brand: {
       primary: "#353995",
       secondary: "#E6FE7F"
     }
   };
-
   const palette = ["#CFE8FF", "#D8F3E1", "#FFD6D6"];
   const colors = useMemo(() => [theme.brand.secondary, ...palette], []);
   const rows = [50, 90, 130, 170, 210, 250];
-
   const [region, setRegion] = useState<"US" | "CA">("US");
   const [verifyCode, setVerifyCode] = useState("");
   const [verifyStatus, setVerifyStatus] = useState<'idle' | 'checking' | 'ok' | 'fail'>("idle");
   const [verifyMsg, setVerifyMsg] = useState("");
-
   const REGION_INFO = {
     US: {
       name: "United States (21+)",
-      warnings: [
-        "WARNING: This product may contain nicotine. Nicotine is an addictive chemical.",
-        "For adults of legal age only (21+). Keep out of reach of children and pets.",
-        "No therapeutic or cessation claims. Not intended for use by pregnant or nursing individuals."
-      ]
+      warnings: ["WARNING: This product may contain nicotine. Nicotine is an addictive chemical.", "For adults of legal age only (21+). Keep out of reach of children and pets.", "No therapeutic or cessation claims. Not intended for use by pregnant or nursing individuals."]
     },
     CA: {
       name: "California (Prop 65)",
-      warnings: [
-        "⚠︎ WARNING: This product can expose you to chemicals including nicotine, which is known to the State of California to cause birth defects or other reproductive harm.",
-        "For adults of legal age only (21+). Keep out of reach of children and pets."
-      ]
+      warnings: ["⚠︎ WARNING: This product can expose you to chemicals including nicotine, which is known to the State of California to cause birth defects or other reproductive harm.", "For adults of legal age only (21+). Keep out of reach of children and pets."]
     }
   };
-
   const handleVerifySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const raw = verifyCode.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
@@ -131,9 +106,7 @@ const Home = () => {
       }
     }, 700);
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0f] via-[#0f0f1a] to-[#0a0a0f] text-white">
+  return <div className="min-h-screen bg-gradient-to-b from-[#0a0a0f] via-[#0f0f1a] to-[#0a0a0f] text-white">
       {/* Warning Bar */}
       <div className="w-full bg-black text-white border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 py-2 text-center text-xs md:text-sm">
@@ -142,10 +115,7 @@ const Home = () => {
       </div>
 
       {/* Header */}
-      <header className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
-        isScrolled ? "backdrop-blur-lg bg-[rgba(10,10,15,0.8)] border-b border-cyan-500/20" : "bg-transparent"
-      )}>
+      <header className={cn("sticky top-0 z-50 transition-all duration-300", isScrolled ? "backdrop-blur-lg bg-[rgba(10,10,15,0.8)] border-b border-cyan-500/20" : "bg-transparent")}>
         <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
@@ -195,32 +165,39 @@ const Home = () => {
       <section className="relative pt-20 pb-32 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover" />
+          <img src={futureVapingBg} alt="Future of Vaping" className="w-full h-full object-cover opacity-40" />
+        </div>
+        
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-20">
+          
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 text-center flex flex-col min-h-[70vh]">
-          <div className="flex-1 flex flex-col justify-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              THE FUTURE OF VAPING
-            </h1>
-            <div className="flex items-center justify-center gap-4 mb-16">
-              <a href="#products">
-                <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-white font-semibold rounded-full px-8 py-6 text-lg">
-                  Explore Products
-                </Button>
-              </a>
-              <a href="#quality">
-                <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
-                  Learn More
-                </Button>
-              </a>
-            </div>
-          </div>
-
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-12">
+        <div className="relative max-w-7xl mx-auto px-4 text-center">
+          
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
             Experience premium electronic cigarettes crafted with cutting-edge technology and superior materials.<br />
             Made in USA.
           </p>
+          <div className="flex items-center justify-center gap-4">
+            <a href="#products">
+              <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-white font-semibold rounded-full px-8 py-6 text-lg">
+                Explore Products
+              </Button>
+            </a>
+            <a href="#quality">
+              <Button variant="outline" className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500/10 text-cyan-400 rounded-full px-8 py-6 text-lg">
+                Learn More
+              </Button>
+            </a>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="mt-16 flex flex-col items-center gap-2 text-white/60 animate-bounce">
+            <span className="text-sm">Scroll Down</span>
+            <ChevronDown className="w-6 h-6" />
+          </div>
         </div>
       </section>
 
@@ -232,8 +209,7 @@ const Home = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {productLines.map((product, index) => (
-              <Card key={index} className="relative overflow-hidden bg-gradient-to-r from-[#1a2332] via-[#0f1419] to-[#0f1419] border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
+            {productLines.map((product, index) => <Card key={index} className="relative overflow-hidden bg-gradient-to-r from-[#1a2332] via-[#0f1419] to-[#0f1419] border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
                 <CardContent className="relative p-8">
                   {/* Radial cyan glow from right side */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"></div>
@@ -250,14 +226,12 @@ const Home = () => {
                   </div>
                   
                   <ul className="relative space-y-3 mb-6">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-sm text-white/50">
+                    {product.features.map((feature, idx) => <li key={idx} className="flex items-center gap-3 text-sm text-white/50">
                         <svg className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         {feature}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   
                   <Link to={product.link}>
@@ -266,8 +240,7 @@ const Home = () => {
                     </Button>
                   </Link>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -290,8 +263,7 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
-            {qualityFeatures.map((feature, index) => (
-              <Card key={index} className="bg-transparent border-none">
+            {qualityFeatures.map((feature, index) => <Card key={index} className="bg-transparent border-none">
                 <CardContent className="p-6 text-center">
                   <div className="inline-flex p-4 bg-cyan-500/10 rounded-2xl mb-4">
                     <feature.icon className="w-10 h-10 text-cyan-400" />
@@ -299,8 +271,7 @@ const Home = () => {
                   <h3 className="text-xl font-bold mb-3 text-cyan-400">{feature.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed">{feature.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -329,41 +300,41 @@ const Home = () => {
                     <feGaussianBlur stdDeviation="1.2" />
                   </filter>
                 </defs>
-                <motion.g animate={{ x: [-6, 6, -6] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}>
+                <motion.g animate={{
+                x: [-6, 6, -6]
+              }} transition={{
+                duration: 14,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}>
                   {rows.map((y, i) => {
-                    const c = colors[i % colors.length];
-                    const d = `M 20 ${y} C 180 ${y - 22}, 420 ${y + 22}, 580 ${y}`;
-                    const dur = 9 + i * 1.2;
-                    const delay = i * 0.35;
-                    return (
-                      <g key={i} filter="url(#blurSoft)">
-                        <motion.path 
-                          d={d} 
-                          fill="none" 
-                          stroke={c} 
-                          strokeOpacity={0.6} 
-                          strokeWidth={2.2} 
-                          pathLength={1} 
-                          strokeDasharray="0.2 1"
-                          initial={{ strokeDashoffset: 1 }}
-                          animate={{ strokeDashoffset: [1, 0, -1] }}
-                          transition={{ duration: dur, repeat: Infinity, ease: "easeInOut", delay }}
-                        />
-                        <motion.path 
-                          d={d} 
-                          fill="none" 
-                          stroke={c} 
-                          strokeOpacity={0.16} 
-                          strokeWidth={6} 
-                          pathLength={1} 
-                          strokeDasharray="0.12 1"
-                          initial={{ strokeDashoffset: 1 }}
-                          animate={{ strokeDashoffset: [1, 0, -1] }}
-                          transition={{ duration: dur * 1.1, repeat: Infinity, ease: "easeInOut", delay: delay + 0.2 }}
-                        />
-                      </g>
-                    );
-                  })}
+                  const c = colors[i % colors.length];
+                  const d = `M 20 ${y} C 180 ${y - 22}, 420 ${y + 22}, 580 ${y}`;
+                  const dur = 9 + i * 1.2;
+                  const delay = i * 0.35;
+                  return <g key={i} filter="url(#blurSoft)">
+                        <motion.path d={d} fill="none" stroke={c} strokeOpacity={0.6} strokeWidth={2.2} pathLength={1} strokeDasharray="0.2 1" initial={{
+                      strokeDashoffset: 1
+                    }} animate={{
+                      strokeDashoffset: [1, 0, -1]
+                    }} transition={{
+                      duration: dur,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay
+                    }} />
+                        <motion.path d={d} fill="none" stroke={c} strokeOpacity={0.16} strokeWidth={6} pathLength={1} strokeDasharray="0.12 1" initial={{
+                      strokeDashoffset: 1
+                    }} animate={{
+                      strokeDashoffset: [1, 0, -1]
+                    }} transition={{
+                      duration: dur * 1.1,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: delay + 0.2
+                    }} />
+                      </g>;
+                })}
                 </motion.g>
               </motion.svg>
             </div>
@@ -386,38 +357,17 @@ const Home = () => {
           </div>
           <form onSubmit={handleVerifySubmit} className="rounded-2xl bg-white/10 backdrop-blur border border-cyan-500/20 p-6">
             <div className="flex gap-2">
-              <input 
-                type="text" 
-                inputMode="text" 
-                value={verifyCode} 
-                onChange={e => setVerifyCode(e.target.value)} 
-                placeholder="Enter verification code" 
-                className="flex-1 rounded-xl border border-cyan-500/30 bg-white/5 text-white placeholder:text-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-cyan-400/50 uppercase tracking-widest" 
-                aria-label="Verification code" 
-                autoComplete="one-time-code" 
-              />
-              <Button 
-                type="submit" 
-                className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 hover:scale-105 active:scale-95 text-black font-semibold rounded-xl px-6 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" 
-                disabled={!verifyCode || verifyStatus === 'checking'}
-              >
+              <input type="text" inputMode="text" value={verifyCode} onChange={e => setVerifyCode(e.target.value)} placeholder="Enter verification code" className="flex-1 rounded-xl border border-cyan-500/30 bg-white/5 text-white placeholder:text-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-cyan-400/50 uppercase tracking-widest" aria-label="Verification code" autoComplete="one-time-code" />
+              <Button type="submit" className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 hover:scale-105 active:scale-95 text-black font-semibold rounded-xl px-6 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" disabled={!verifyCode || verifyStatus === 'checking'}>
                 {verifyStatus === 'checking' ? 'Verifying…' : 'Verify'}
               </Button>
             </div>
-            {verifyStatus !== 'idle' && (
-              <div className={cn(
-                "mt-3 text-sm rounded-xl px-4 py-3 border",
-                verifyStatus === 'ok' ? "bg-emerald-500/10 text-emerald-300 border-emerald-400/20" :
-                verifyStatus === 'fail' ? "bg-rose-500/10 text-rose-300 border-rose-400/20" :
-                "bg-white/5 text-white/80 border-cyan-500/20"
-              )} aria-live="polite">
+            {verifyStatus !== 'idle' && <div className={cn("mt-3 text-sm rounded-xl px-4 py-3 border", verifyStatus === 'ok' ? "bg-emerald-500/10 text-emerald-300 border-emerald-400/20" : verifyStatus === 'fail' ? "bg-rose-500/10 text-rose-300 border-rose-400/20" : "bg-white/5 text-white/80 border-cyan-500/20")} aria-live="polite">
                 <div className="flex items-center gap-2">
-                  {verifyStatus === 'ok' ? <Check className="w-5 h-5" /> : 
-                   verifyStatus === 'fail' ? <X className="w-5 h-5" /> : null}
+                  {verifyStatus === 'ok' ? <Check className="w-5 h-5" /> : verifyStatus === 'fail' ? <X className="w-5 h-5" /> : null}
                   <span>{verifyMsg || 'Checking…'}</span>
                 </div>
-              </div>
-            )}
+              </div>}
             <div className="mt-3 text-xs text-white/40">Demo verification only. Server-side validation required for production.</div>
           </form>
         </div>
@@ -444,14 +394,8 @@ const Home = () => {
             <div className="flex items-center gap-2 mb-4">
               <Globe className="w-5 h-5 text-cyan-400" />
               <span className="text-sm font-medium text-white">Region:</span>
-              <select 
-                className="text-sm bg-white/10 text-white border border-cyan-500/30 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-400/50" 
-                value={region} 
-                onChange={e => setRegion(e.target.value as "US" | "CA")}
-              >
-                {Object.entries(REGION_INFO).map(([k, v]) => (
-                  <option value={k} key={k} className="bg-[#0a0a0f] text-white">{v.name}</option>
-                ))}
+              <select className="text-sm bg-white/10 text-white border border-cyan-500/30 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-400/50" value={region} onChange={e => setRegion(e.target.value as "US" | "CA")}>
+                {Object.entries(REGION_INFO).map(([k, v]) => <option value={k} key={k} className="bg-[#0a0a0f] text-white">{v.name}</option>)}
               </select>
             </div>
             <ul className="text-sm text-white/80 list-disc pl-5 space-y-2">
@@ -507,8 +451,6 @@ const Home = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
