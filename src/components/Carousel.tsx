@@ -59,6 +59,34 @@ const slides = [
     subtitle: 'LUSMIND Shisha Collection',
     description: 'Authentic shisha flavor with dual apple harmony',
   },
+  {
+    id: 9,
+    image: '/lovable-uploads/lusmind-mountain-adventure.png',
+    title: 'Adventure Awaits',
+    subtitle: 'LUSMIND Outdoor Collection',
+    description: 'Your perfect companion for mountain adventures and outdoor exploration',
+  },
+  {
+    id: 10,
+    image: '/lovable-uploads/lusmind-indoor-elegance.png',
+    title: 'Indoor Elegance',
+    subtitle: 'LUSMIND Premium Lifestyle',
+    description: 'Sophisticated design that complements your modern living space',
+  },
+  {
+    id: 11,
+    image: '/lovable-uploads/lusmind-city-night.png',
+    title: 'Urban Lifestyle',
+    subtitle: 'LUSMIND City Collection',
+    description: 'Experience premium vaping in the heart of the metropolitan night',
+  },
+  {
+    id: 12,
+    image: '/lovable-uploads/lusmind-yacht-sunset.png',
+    title: 'Luxury Moments',
+    subtitle: 'LUSMIND Exclusive Collection',
+    description: 'Elevate your experience with luxury vaping at sunset on the sea',
+  },
 ];
 
 export const Carousel = () => {
