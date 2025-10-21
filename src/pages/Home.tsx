@@ -221,7 +221,7 @@ const Home = () => {
             THE FUTURE OF VAPE
           </h1>
           
-          <p className="absolute -bottom-80 md:-bottom-96 left-1/2 -translate-x-1/2 text-white text-lg md:text-xl lg:text-2xl tracking-wide whitespace-nowrap">
+          <p className="absolute -bottom-96 md:-bottom-[120px] left-1/2 -translate-x-1/2 text-white text-lg md:text-xl lg:text-2xl tracking-wide whitespace-nowrap">
             Experience premium Made in USA
           </p>
           
