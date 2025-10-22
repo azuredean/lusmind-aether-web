@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { ChevronDown, Droplet, Shield, Leaf, Award, Search, User, BatteryCharging, Cigarette, Sparkles, Globe, Info, Check, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MobileMenu } from "@/components/MobileMenu";
 import { motion } from "framer-motion";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import futureVapingBg from "@/assets/future-vaping-bg.png";
@@ -124,22 +125,23 @@ const Home = () => {
   return <div className="min-h-screen bg-gradient-to-b from-[#0a0a0f] via-[#0f0f1a] to-[#0a0a0f] text-white">
       {/* Warning Bar */}
       <div className="w-full bg-black text-white border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-4 py-2 text-center text-xs md:text-sm">
+        <div className="max-w-7xl mx-auto px-4 py-2 text-center text-[10px] sm:text-xs md:text-sm">
           WARNING: This product contains nicotine. Nicotine is an addictive chemical.
         </div>
       </div>
 
       {/* Header */}
       <header className={cn("sticky top-0 z-50 transition-all duration-300", isScrolled ? "backdrop-blur-lg bg-[rgba(10,10,15,0.8)] border-b border-cyan-500/20" : "bg-transparent")}>
-        <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src="/lovable-uploads/6a3cad97-68cc-4600-9c35-7d92e2c90d4b.png" alt="LM Logo" className="h-8 w-8" />
-            <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-8 w-auto" />
+            <img src="/lovable-uploads/6a3cad97-68cc-4600-9c35-7d92e2c90d4b.png" alt="LM Logo" className="h-6 w-6 md:h-8 md:w-8" />
+            <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-6 md:h-8 w-auto" />
           </Link>
 
-          {/* Center Navigation */}
+          {/* Center Navigation - Desktop only */}
           <div className="hidden md:flex items-center gap-6 text-sm">
+
             <Link to="/" className="text-white hover:text-cyan-400 transition-colors">Home</Link>
             <NavigationMenu>
               <NavigationMenuList>
@@ -162,22 +164,25 @@ const Home = () => {
           </div>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3">
-            <button className="p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Search">
+          <div className="flex items-center gap-2 md:gap-3">
+            <button className="hidden sm:block p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Search">
               <Search className="w-5 h-5" />
             </button>
-            <button className="p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Account">
+            <button className="hidden sm:block p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Account">
               <User className="w-5 h-5" />
             </button>
-            <Button className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-full px-6">
+            <Button className="hidden sm:flex bg-cyan-500 hover:bg-cyan-600 text-black font-semibold rounded-full px-4 md:px-6 h-10 md:h-11 text-sm md:text-base">
               Shop Now
             </Button>
+            <MobileMenu />
           </div>
+
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-64 overflow-hidden min-h-[80vh]">
+      <section className="relative pt-12 md:pt-20 pb-32 md:pb-64 overflow-hidden min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh]">
+
         {/* Background Carousel */}
         <div className="absolute inset-0 w-full h-full">
           <Carousel 
@@ -217,13 +222,14 @@ const Home = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <h1 className="font-mosaic font-bold text-5xl md:text-7xl lg:text-8xl text-white mb-4 -mt-20 tracking-wider">
+          <h1 className="font-mosaic font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-white mb-4 -mt-10 md:-mt-20 tracking-wider">
             THE FUTURE OF VAPE
           </h1>
           
-          <p className="absolute -bottom-80 md:-bottom-96 left-1/2 -translate-x-1/2 text-white text-lg md:text-xl lg:text-2xl tracking-wide whitespace-nowrap">
+          <p className="absolute -bottom-48 sm:-bottom-64 md:-bottom-80 lg:-bottom-96 left-1/2 -translate-x-1/2 text-white text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide whitespace-nowrap">
             Experience premium Made in USA
           </p>
+
           
           <div className="flex items-center justify-center gap-4">
             <a href="#products">
@@ -240,30 +246,33 @@ const Home = () => {
       </section>
 
       {/* Product Lines Section */}
-      <section id="products" className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+      <section id="products" className="py-12 md:py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             Our Product Lines
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
             {productLines.map((product, index) => <Card key={index} className="relative overflow-hidden bg-gradient-to-r from-[#1a2332] via-[#0f1419] to-[#0f1419] border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
-                <CardContent className="relative p-8">
+                <CardContent className="relative p-4 md:p-6 lg:p-8">
+
                   {/* Radial cyan glow from right side */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"></div>
                   
-                  <div className="relative flex items-start justify-between mb-6">
+                  <div className="relative flex flex-col sm:flex-row items-start justify-between mb-4 md:mb-6 gap-4">
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-[#FEFFFF] to-[#CCFDFA] bg-clip-text text-transparent">{product.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 bg-gradient-to-r from-[#FEFFFF] to-[#CCFDFA] bg-clip-text text-transparent">{product.title}</h3>
                       <p className="text-white/40 text-sm leading-relaxed">{product.description}</p>
                     </div>
-                    <div className="relative flex-shrink-0 p-4 bg-cyan-500/10 rounded-full ml-4">
+                    <div className="relative flex-shrink-0 p-3 md:p-4 bg-cyan-500/10 rounded-full">
                       <div className="absolute inset-0 bg-cyan-500/30 rounded-full blur-xl"></div>
-                      <product.icon className="relative w-8 h-8 text-cyan-400" />
+                      <product.icon className="relative w-6 h-6 md:w-8 md:h-8 text-cyan-400" />
                     </div>
                   </div>
                   
-                  <ul className="relative space-y-3 mb-6">
+                  <ul className="relative space-y-2 md:space-y-3 mb-4 md:mb-6">
+
                     {product.features.map((feature, idx) => <li key={idx} className="flex items-center gap-3 text-sm text-white/50">
                         <svg className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -273,10 +282,11 @@ const Home = () => {
                   </ul>
                   
                   <Link to={product.link}>
-                    <Button variant="outline" className="relative mt-2 bg-transparent border border-cyan-500/50 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 w-full rounded-full transition-all">
+                    <Button variant="outline" className="relative mt-2 bg-transparent border border-cyan-500/50 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400 w-full rounded-full transition-all h-11 md:h-12 text-sm md:text-base">
                       Explore Collection →
                     </Button>
                   </Link>
+
                 </CardContent>
               </Card>)}
           </div>
@@ -284,52 +294,55 @@ const Home = () => {
       </section>
 
       {/* Quality Section */}
-      <section id="quality" className="py-20 relative bg-gradient-to-b from-transparent via-white/5 to-transparent">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-6">
+      <section id="quality" className="py-12 md:py-20 relative bg-gradient-to-b from-transparent via-white/5 to-transparent">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+          <div className="text-center mb-8 md:mb-12">
+            <div className="inline-flex items-center gap-2 px-3 md:px-4 py-2 bg-white/10 rounded-full mb-4 md:mb-6">
               <Shield className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-white/80">Proudly Made in the USA</span>
+              <span className="text-xs md:text-sm text-white/80">Proudly Made in the USA</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Quality You Can Trust
             </h2>
-            <p className="text-white/70 max-w-3xl mx-auto">
+            <p className="text-white/70 max-w-3xl mx-auto text-sm md:text-base px-4">
               Our products are designed, engineered, and manufactured in state-of-the-art facilities in the United States, 
               ensuring the highest standards of quality and safety.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
             {qualityFeatures.map((feature, index) => <Card key={index} className="bg-transparent border-none">
-                <CardContent className="p-6 text-center">
-                  <div className="inline-flex p-4 bg-cyan-500/10 rounded-2xl mb-4">
-                    <feature.icon className="w-10 h-10 text-cyan-400" />
+                <CardContent className="p-4 md:p-6 text-center">
+                  <div className="inline-flex p-3 md:p-4 bg-cyan-500/10 rounded-2xl mb-3 md:mb-4">
+                    <feature.icon className="w-8 h-8 md:w-10 md:h-10 text-cyan-400" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-cyan-400">{feature.title}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-cyan-400">{feature.title}</h3>
+                  <p className="text-xs md:text-sm text-white/60 leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>)}
+
           </div>
         </div>
       </section>
 
       {/* Brand Story Section */}
-      <section id="story" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <section id="story" className="py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Light & Harmony · Brand Story
             </h2>
-            <p className="text-lg text-white/80 leading-relaxed">
+            <p className="text-base md:text-lg text-white/80 leading-relaxed">
               LUSMIND pursues a light, contemporary feel. Soft colors, paper-like grain, and flowing lines build a soothing space between tech and nature.
             </p>
-            <div className="mt-6 flex gap-3">
-              <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-full px-8">
+            <div className="mt-4 md:mt-6 flex gap-3">
+              <Button className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-black font-semibold rounded-full px-6 md:px-8 h-11 md:h-12 text-sm md:text-base">
                 Read more
               </Button>
             </div>
           </div>
+
           <div className="relative h-72 md:h-80 rounded-3xl border border-cyan-500/20 bg-white/5 backdrop-blur overflow-hidden">
             <div className="absolute inset-0 grid place-items-center">
               <motion.svg viewBox="0 0 600 300" className="w-[92%] h-[92%]" aria-hidden>
@@ -381,25 +394,26 @@ const Home = () => {
       </section>
 
       {/* Product Verification Section */}
-      <section id="verify" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
+      <section id="verify" className="py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
           <div className="space-y-3">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Product Verification
             </h2>
-            <p className="text-white/80 text-lg">Enter the security code from your package to verify authenticity.</p>
-            <ul className="text-white/60 text-sm list-disc pl-5 space-y-1">
+            <p className="text-white/80 text-base md:text-lg">Enter the security code from your package to verify authenticity.</p>
+            <ul className="text-white/60 text-xs md:text-sm list-disc pl-5 space-y-1">
               <li>Letters and numbers only, 8–24 characters.</li>
               <li>The code is usually printed near the seal or QR label.</li>
             </ul>
           </div>
-          <form onSubmit={handleVerifySubmit} className="rounded-2xl bg-white/10 backdrop-blur border border-cyan-500/20 p-6">
-            <div className="flex gap-2">
-              <input type="text" inputMode="text" value={verifyCode} onChange={e => setVerifyCode(e.target.value)} placeholder="Enter verification code" className="flex-1 rounded-xl border border-cyan-500/30 bg-white/5 text-white placeholder:text-white/50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-cyan-400/50 uppercase tracking-widest" aria-label="Verification code" autoComplete="one-time-code" />
-              <Button type="submit" className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 hover:scale-105 active:scale-95 text-black font-semibold rounded-xl px-6 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" disabled={!verifyCode || verifyStatus === 'checking'}>
+          <form onSubmit={handleVerifySubmit} className="rounded-2xl bg-white/10 backdrop-blur border border-cyan-500/20 p-4 md:p-6">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input type="text" inputMode="text" value={verifyCode} onChange={e => setVerifyCode(e.target.value)} placeholder="Enter verification code" className="flex-1 rounded-xl border border-cyan-500/30 bg-white/5 text-white placeholder:text-white/50 px-3 md:px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-cyan-400/50 uppercase tracking-widest min-h-[44px]" aria-label="Verification code" autoComplete="one-time-code" />
+              <Button type="submit" className="bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 hover:scale-105 active:scale-95 text-black font-semibold rounded-xl px-6 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-h-[44px]" disabled={!verifyCode || verifyStatus === 'checking'}>
                 {verifyStatus === 'checking' ? 'Verifying…' : 'Verify'}
               </Button>
             </div>
+
             {verifyStatus !== 'idle' && <div className={cn("mt-3 text-sm rounded-xl px-4 py-3 border", verifyStatus === 'ok' ? "bg-emerald-500/10 text-emerald-300 border-emerald-400/20" : verifyStatus === 'fail' ? "bg-rose-500/10 text-rose-300 border-rose-400/20" : "bg-white/5 text-white/80 border-cyan-500/20")} aria-live="polite">
                 <div className="flex items-center gap-2">
                   {verifyStatus === 'ok' ? <Check className="w-5 h-5" /> : verifyStatus === 'fail' ? <X className="w-5 h-5" /> : null}
@@ -412,13 +426,14 @@ const Home = () => {
       </section>
 
       {/* Compliance & Safety Section */}
-      <section id="compliance" className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
+      <section id="compliance" className="py-12 md:py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Compliance First · Safety by Default
             </h2>
-            <p className="text-white/80 text-lg leading-relaxed">
+            <p className="text-white/80 text-base md:text-lg leading-relaxed">
+
               Compliance is integrated into the experience: age-gate on entry, persistent page warnings, region-specific notices, and cookie/privacy controls with restrained language and visuals to avoid appealing to minors.
             </p>
             <ul className="list-disc pl-5 text-white/70 space-y-2">
@@ -428,11 +443,12 @@ const Home = () => {
               <li>Cookie and privacy preference management</li>
             </ul>
           </div>
-          <div className="rounded-2xl bg-white/10 backdrop-blur border border-cyan-500/20 p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <Globe className="w-5 h-5 text-cyan-400" />
+          <div className="rounded-2xl bg-white/10 backdrop-blur border border-cyan-500/20 p-4 md:p-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-4">
+              <Globe className="w-5 h-5 text-cyan-400 flex-shrink-0" />
               <span className="text-sm font-medium text-white">Region:</span>
-              <select className="text-sm bg-white/10 text-white border border-cyan-500/30 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-400/50" value={region} onChange={e => setRegion(e.target.value as "US" | "CA")}>
+              <select className="text-sm bg-white/10 text-white border border-cyan-500/30 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-400/50 w-full sm:w-auto min-h-[44px]" value={region} onChange={e => setRegion(e.target.value as "US" | "CA")}>
+
                 {Object.entries(REGION_INFO).map(([k, v]) => <option value={k} key={k} className="bg-[#0a0a0f] text-white">{v.name}</option>)}
               </select>
             </div>
@@ -448,9 +464,10 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="border-t border-white/10 py-12 bg-gradient-to-b from-transparent to-black/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+      <footer id="contact" className="border-t border-white/10 py-8 md:py-12 bg-gradient-to-b from-transparent to-black/50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
+
             <div>
               <div className="flex items-center mb-4">
                 <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-6 w-auto" />

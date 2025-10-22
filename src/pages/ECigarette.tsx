@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MobileMenuECig } from "@/components/MobileMenuECig";
 import heroImage from "@/assets/ecigarette-hero.png";
 import distinguishedFeaturesBg from "@/assets/distinguished-features-bg.png";
 
@@ -53,6 +54,7 @@ export default function ECigarette() {
       {/* Navigation */}
       <header className={cn("sticky top-0 z-30 border-b transition-colors backdrop-blur bg-[rgba(11,16,42,0.6)] border-white/10")}>
         <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
+          <MobileMenuECig />
           <Link to="/" className="flex items-center gap-2">
             <img src="/lovable-uploads/6a3cad97-68cc-4600-9c35-7d92e2c90d4b.png" alt="LM Logo" className="h-8 w-8" />
             <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-8 w-auto" />
@@ -88,19 +90,20 @@ export default function ECigarette() {
             <a className={cn("text-white/80 hover:text-white")} href="/#safety">Compliance</a>
             <a className={cn("text-white/80 hover:text-white")} href="/#contact">Contact</a>
           </div>
-          <div className="flex items-center gap-3">
-            <Button className="rounded-xl" style={{
+          <div className="hidden md:flex items-center gap-3">
+            <Button className="rounded-xl h-10 md:h-11" style={{
               background: theme.brand.secondary,
               color: "#0B102A"
             }}>
               Explore Flavors
             </Button>
           </div>
+          <MobileMenuECig />
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-20 overflow-hidden">
+      <section className="relative pt-12 md:pt-20 pb-12 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImage} 
@@ -110,37 +113,39 @@ export default function ECigarette() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#741016]/80 to-transparent"></div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight" style={{ fontFamily: 'Playfair Display, Lora, serif', letterSpacing: '0.02em' }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 tracking-tight" style={{ fontFamily: 'Playfair Display, Lora, serif', letterSpacing: '0.02em' }}>
               Timeless Flavor,<br />
               Everlasting Legacy
             </h1>
-            <p className="text-xl md:text-2xl text-white/85 mb-8" style={{ fontFamily: 'Playfair Display, Lora, serif', letterSpacing: '0.03em' }}>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/85 mb-6 md:mb-8" style={{ fontFamily: 'Playfair Display, Lora, serif', letterSpacing: '0.03em' }}>
               Experience the perfect blend of tradition and innovation
             </p>
             <Button 
-              className="bg-[#AD5246] hover:bg-[#931B21] text-white px-8 py-6 text-lg rounded-md transition-all"
+              className="bg-[#AD5246] hover:bg-[#931B21] text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg rounded-md transition-all min-h-[44px]"
               style={{ borderRadius: '6px' }}
             >
               Explore Collection
             </Button>
+
           </div>
         </div>
       </section>
 
       {/* Brand Story Section */}
-      <section className="py-20 bg-[#D1B893]">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="py-12 md:py-20 bg-[#D1B893]">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#3A2A25] mb-6 text-center" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3A2A25] mb-4 md:mb-6 text-center" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
               Our Heritage
             </h2>
-            <p className="text-lg text-[#3A2A25] mb-8 leading-relaxed text-center font-sans">
+            <p className="text-sm md:text-base lg:text-lg text-[#3A2A25] mb-6 md:mb-8 leading-relaxed text-center font-sans">
               For generations, we've crafted experiences that transcend time. Each product is a testament to our commitment to quality, authenticity, and the art of refined taste.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
+
               <Card className="bg-white/50 backdrop-blur border-none shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl text-[#3A2A25]" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>

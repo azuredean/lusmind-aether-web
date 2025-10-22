@@ -109,7 +109,8 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full aspect-[16/9] max-h-[60vh] overflow-hidden rounded-2xl shadow-vapor">
+    <div className="relative w-full aspect-[16/9] h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden rounded-2xl shadow-vapor">
+
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -130,25 +131,26 @@ export const Carousel = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/30" />
             
             {/* Content */}
-            <div className="absolute inset-0 flex items-center justify-start p-8 md:p-12">
+            <div className="absolute inset-0 flex items-center justify-start px-4 md:px-8 lg:px-12 py-6 md:py-8">
               <div className="max-w-lg text-white">
-                <h3 className="cyber-title text-3xl md:text-4xl mb-4 neon-text animate-float">
+                <h3 className="cyber-title text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-4 neon-text animate-float">
                   {slide.title}
                 </h3>
-                <p className="text-xl md:text-2xl mb-4 font-medium">
+                <p className="text-base md:text-xl lg:text-2xl mb-2 md:mb-4 font-medium">
                   {slide.subtitle}
                 </p>
-                <p className="text-lg mb-6 text-white/90">
+                <p className="text-sm md:text-base lg:text-lg mb-4 md:mb-6 text-white/90">
                   {slide.description}
                 </p>
                 <Button 
                   size="lg"
-                  className="bg-gradient-primary text-white glow-hover"
+                  className="bg-gradient-primary text-white glow-hover h-11 md:h-12 px-6 md:px-8 text-sm md:text-base"
                 >
                   Explore Now
                 </Button>
               </div>
             </div>
+
           </div>
         </div>
       ))}
@@ -156,30 +158,37 @@ export const Carousel = () => {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors min-w-[44px] min-h-[44px]"
+        aria-label="Previous slide"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
       </button>
       
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors min-w-[44px] min-h-[44px]"
+        aria-label="Next slide"
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
       </button>
 
+
       {/* Dots indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center"
+            aria-label={`Go to slide ${index + 1}`}
+          >
+            <span className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
               index === currentSlide ? 'bg-primary' : 'bg-white/40'
-            }`}
-          />
+            }`} />
+          </button>
         ))}
       </div>
+
     </div>
   );
 };
