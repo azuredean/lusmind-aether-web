@@ -9,6 +9,7 @@ const slides = [
     title: 'Blueberry Raspberry',
     subtitle: 'LUSMIND Premium Collection',
     description: 'Rich and vibrant berry symphony with luxurious blend of flavors',
+    objectPosition: 'center 35%',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const slides = [
     title: 'Strawberry Watermelon',
     subtitle: 'LUSMIND Fruit Fusion',
     description: 'Premium e-liquid with tropical fruit and berry essences',
+    objectPosition: 'center 40%',
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ const slides = [
     title: '经典风味永流传',
     subtitle: 'LUSMIND Classic Heritage',
     description: '传承经典口味，品味永恒魅力，每一口都是对经典的致敬',
+    objectPosition: 'center 45%',
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const slides = [
     title: 'Coffee Tobacco',
     subtitle: 'LUSMIND Premium Flavor',
     description: 'Rich coffee blend with smooth tobacco notes for sophisticated taste',
+    objectPosition: 'center 40%',
   },
   {
     id: 5,
@@ -37,6 +41,7 @@ const slides = [
     title: 'Tobacco & Nut',
     subtitle: 'LUSMIND Premium Flavor',
     description: 'Smooth tobacco enhanced with roasted nut undertones',
+    objectPosition: 'center 38%',
   },
   {
     id: 6,
@@ -44,6 +49,7 @@ const slides = [
     title: 'Blueberry Raspberry',
     subtitle: 'LUSMIND Cosmic Collection',
     description: 'Celestial berry fusion with cosmic flavor experience',
+    objectPosition: 'center 42%',
   },
   {
     id: 7,
@@ -51,6 +57,7 @@ const slides = [
     title: 'Niagra Grape',
     subtitle: 'LUSMIND Premium Flavor',
     description: 'Luscious grape essence inspired by nature\'s majesty',
+    objectPosition: 'center 40%',
   },
   {
     id: 8,
@@ -58,6 +65,7 @@ const slides = [
     title: 'Double Apple Shisha',
     subtitle: 'LUSMIND Shisha Collection',
     description: 'Authentic shisha flavor with dual apple harmony',
+    objectPosition: 'center 40%',
   },
   {
     id: 9,
@@ -65,6 +73,7 @@ const slides = [
     title: 'Adventure Awaits',
     subtitle: 'LUSMIND Outdoor Collection',
     description: 'Your perfect companion for mountain adventures and outdoor exploration',
+    objectPosition: 'center',
   },
   {
     id: 10,
@@ -72,6 +81,7 @@ const slides = [
     title: 'Indoor Elegance',
     subtitle: 'LUSMIND Premium Lifestyle',
     description: 'Sophisticated design that complements your modern living space',
+    objectPosition: 'center',
   },
   {
     id: 11,
@@ -79,6 +89,7 @@ const slides = [
     title: 'Urban Lifestyle',
     subtitle: 'LUSMIND City Collection',
     description: 'Experience premium vaping in the heart of the metropolitan night',
+    objectPosition: 'center',
   },
   {
     id: 12,
@@ -86,6 +97,7 @@ const slides = [
     title: 'Luxury Moments',
     subtitle: 'LUSMIND Exclusive Collection',
     description: 'Elevate your experience with luxury vaping at sunset on the sea',
+    objectPosition: 'center',
   },
 ];
 
@@ -109,7 +121,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[50vh] min-h-[400px] md:h-[60vh] md:min-h-[500px] lg:h-[70vh] lg:max-h-[800px] xl:max-h-[900px] overflow-hidden rounded-2xl shadow-vapor bg-gray-950/30">
+    <div className="relative w-full aspect-[21/9] max-h-[85vh] min-h-[400px] md:min-h-[500px] overflow-hidden rounded-2xl shadow-vapor">
 
       {/* Slides */}
       {slides.map((slide, index) => (
@@ -124,7 +136,8 @@ export const Carousel = () => {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: slide.objectPosition || 'center' }}
             />
             
             {/* Overlay gradient */}
