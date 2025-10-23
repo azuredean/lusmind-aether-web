@@ -1,88 +1,141 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ProductFeatures = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-20 md:py-24 lg:py-32 px-4 md:px-6 lg:px-16 bg-[#F5F5F5] relative">
+    <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
-        <div className="mb-16 md:mb-20 lg:mb-24">
-          <h2 className={`text-2xl md:text-3xl lg:text-4xl font-light text-left mb-1 md:mb-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} text-[#2D2D2D]`}>
-            Two Solutions for
+        {/* Section Title */}
+        <div className={`text-center mb-16 md:mb-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl md:text-6xl font-light leading-[1.2] mb-2">
+            Four Product Lines for
           </h2>
-          <h2 className={`text-2xl md:text-3xl lg:text-4xl font-light text-left transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} text-[#2D2D2D]`} style={{ transitionDelay: '0.1s' }}>
-            <span className="font-serif italic">{'{Verifiable Computing}'}</span>
+          <h2 className="text-4xl md:text-6xl font-light leading-[1.2]">
+            <span className="italic font-serif">Every Vaping Style</span>
           </h2>
         </div>
 
-        <div className="space-y-16 md:space-y-20 lg:space-y-24">
-          {/* Feature 01 - Better responsive grid */}
-          <div className={`grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.2s' }}>
-            <div>
-              <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#2D2D2D] flex items-center justify-center flex-shrink-0">
-                  <span className="text-xs md:text-sm font-normal text-[#2D2D2D]">01</span>
-                </div>
-                <h3 className="text-lg md:text-xl lg:text-2xl font-normal text-[#2D2D2D]">
-                  For Universal Computation: <span className="italic font-serif">Pico zkVM</span>
-                </h3>
-              </div>
-              <p className="text-[12px] md:text-[13px] lg:text-[14px] text-[#999999] mb-3 md:mb-4 leading-relaxed">
-                The only modular zkVM achieving 99% real-time proving for current Ethereum blocks
-              </p>
-              <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#2D2D2D] leading-relaxed mb-4 md:mb-6">
-                From financial calculations to blockchain validation, Pico's modular architecture integrates specialized coprocessors that deliver breakthrough performance. Our distributed multi-GPU clusters prove 45M gas Ethereum blocks in 6.9 seconds on average. With just 64 GPUs, we offer 3.4x better performance efficiency than any competing solution.
-              </p>
-              <div className="flex flex-wrap gap-3 md:gap-4">
-                <a href="#" className="inline-flex items-center gap-2 text-[12px] md:text-[13px] text-[#2D2D2D] hover:text-[#666666] transition-colors group">
-                  [ Explore Pico ]
-                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </a>
-                <a href="#" className="inline-flex items-center gap-2 text-[12px] md:text-[13px] text-[#2D2D2D] hover:text-[#666666] transition-colors group">
-                  [ View on Ethproofs ]
-                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-            </div>
-            {/* Right side - Illustration placeholder */}
-            <div className="hidden lg:flex justify-center items-center">
-              <div className="relative w-56 h-56 xl:w-64 xl:h-64">
-                <div className="absolute inset-0 grid grid-cols-3 gap-3 md:gap-4">
-                  {[...Array(7)].map((_, i) => (
-                    <div key={i} className="relative" style={{ gridColumn: i === 6 ? '2' : 'auto' }}>
-                      <div className="w-full aspect-square bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-lg transform hover:scale-105 transition-transform"></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Feature 02 */}
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.4s' }}>
-            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#2D2D2D] flex items-center justify-center flex-shrink-0">
-                <span className="text-xs md:text-sm font-normal text-[#2D2D2D]">02</span>
-              </div>
-              <h3 className="text-lg md:text-xl lg:text-2xl font-normal text-[#2D2D2D]">
-                For Blockchain Intelligence: <span className="italic font-serif">ZK Data Coprocessor</span>
-              </h3>
-            </div>
-            <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#2D2D2D] leading-relaxed mb-4 md:mb-6 max-w-4xl">
-              Query, aggregate, and analyze any historical blockchain data with cryptographic proofs. Turn the entire blockchain history into a verifiable database for your smart contracts.
+        {/* Feature 1: Premium E-Liquids */}
+        <div className={`mb-16 md:mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="mb-6">
+            <span className="text-sm text-muted-foreground mb-3 block font-light">01</span>
+            <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
+              Premium E-Liquids
+            </h3>
+            <p className="text-base md:text-lg text-foreground font-medium mb-2">
+              Crafted with pharmaceutical-grade ingredients for unmatched purity and flavor depth
             </p>
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              <a href="#" className="inline-flex items-center gap-2 text-[12px] md:text-[13px] text-[#2D2D2D] hover:text-[#666666] transition-colors group">
-                [ Learn More ]
-                <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+          </div>
+          
+          <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-4xl">
+            From classic tobacco to exotic fruit blends, our premium e-liquids are meticulously formulated using only the finest ingredients. Every bottle undergoes rigorous quality control and flavor testing. Available in multiple nicotine strengths and VG/PG ratios to match your preferences perfectly.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+              <a href="#eliquids" className="flex items-center gap-2">
+                <span className="text-sm">[ Browse E-Liquids ]</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
-            </div>
+            </Button>
+            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+              <a href="#flavors" className="flex items-center gap-2">
+                <span className="text-sm">[ View All Flavors ]</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* Feature 2: Disposable Vapes */}
+        <div className={`mb-16 md:mb-24 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="mb-6">
+            <span className="text-sm text-muted-foreground mb-3 block font-light">02</span>
+            <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
+              Disposable Vapes
+            </h3>
+            <p className="text-base md:text-lg text-foreground font-medium mb-2">
+              Ultimate convenience with up to 5000 puffs of smooth, consistent flavor
+            </p>
+          </div>
+          
+          <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-4xl">
+            Pre-filled and ready to use right out of the box. Our disposable vapes feature advanced mesh coil technology for superior vapor production and flavor consistency. Ultra-portable design with long-lasting battery ensures you never run out at the wrong moment. Perfect for travel or trying new flavors.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+              <a href="#disposables" className="flex items-center gap-2">
+                <span className="text-sm">[ Shop Disposables ]</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* Feature 3: Cigarette-Like Vapes */}
+        <div className={`mb-16 md:mb-24 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="mb-6">
+            <span className="text-sm text-muted-foreground mb-3 block font-light">03</span>
+            <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
+              Cigarette-Like Vapes
+            </h3>
+            <p className="text-base md:text-lg text-foreground font-medium mb-2">
+              Familiar form factor with cutting-edge vaping technology for seamless transition
+            </p>
+          </div>
+          
+          <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-4xl">
+            Designed for smokers making the switch to vaping. Our cigarette-style devices replicate the authentic feel and draw resistance of traditional cigarettes while delivering clean, satisfying vapor. Discreet LED tip, lightweight design, and rechargeable battery make this the perfect choice for those seeking familiarity with innovation.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+              <a href="#cigarette" className="flex items-center gap-2">
+                <span className="text-sm">[ Discover Cigarette-Like ]</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* Feature 4: Flavor Masters */}
+        <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="mb-6">
+            <span className="text-sm text-muted-foreground mb-3 block font-light">04</span>
+            <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
+              Flavor Masters
+            </h3>
+            <p className="text-base md:text-lg text-foreground font-medium mb-2">
+              Premium pod systems engineered for flavor chasers and cloud enthusiasts
+            </p>
+          </div>
+          
+          <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-4xl">
+            Our flagship line combines advanced temperature control, adjustable airflow, and precision-engineered pods to deliver the most intense and pure flavor experience. Magnetic pod connection, rapid charging, and leak-proof design. With 50+ compatible flavor pods, the Flavor Masters series gives you complete control over your vaping experience.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+              <a href="#masters" className="flex items-center gap-2">
+                <span className="text-sm">[ Explore Flavor Masters ]</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+              <a href="#guide" className="flex items-center gap-2">
+                <span className="text-sm">[ Read Buying Guide ]</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default ProductFeatures;
