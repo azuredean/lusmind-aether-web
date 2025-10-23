@@ -121,7 +121,8 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl shadow-vapor">
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-vapor h-[min(70vh,calc(100vw/1.7778))] md:h-[min(80vh,calc(100vw/2.3333))]">
+
 
       {/* Slides */}
       {slides.map((slide, index) => (
@@ -138,6 +139,9 @@ export const Carousel = () => {
               alt={slide.title}
               className="w-full h-full object-cover"
               style={{ objectPosition: slide.objectPosition || 'center' }}
+              loading={index === currentSlide ? 'eager' : 'lazy'}
+              decoding="async"
+              sizes="100vw"
             />
             
             {/* Overlay gradient */}
