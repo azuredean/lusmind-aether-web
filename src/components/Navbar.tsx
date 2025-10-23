@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -32,9 +41,45 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            <a href="#product" className="text-sm hover:text-accent transition-colors">
-              Products
-            </a>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-sm bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                    Products
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 bg-background">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Brevis Network</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Infinite Compute Layer for Ethereum
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/ecigarette"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">E-Cigarette</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Premium vaping products and flavors
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             <a href="#explorer" className="text-sm hover:text-accent transition-colors">
               Flavors
             </a>
