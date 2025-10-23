@@ -5,60 +5,78 @@ const ProductFeatures = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-[#F5F5F5]">
-      <div className="container mx-auto max-w-7xl">
-        <h2 className={`text-4xl md:text-6xl font-light text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} text-[#2D2D2D]`}>
-          Two Solutions for<br />
-          <span className="font-serif italic">{'{Verifiable Computing}'}</span>
-        </h2>
+    <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-[#F5F5F5] relative">
+      <div className="container mx-auto max-w-6xl">
+        <div className="mb-24">
+          <h2 className={`text-3xl md:text-4xl font-light text-left mb-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} text-[#2D2D2D]`}>
+            Two Solutions for
+          </h2>
+          <h2 className={`text-3xl md:text-4xl font-light text-left transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} text-[#2D2D2D]`} style={{ transitionDelay: '0.1s' }}>
+            <span className="font-serif italic">{'{Verifiable Computing}'}</span>
+          </h2>
+        </div>
         
         <div className="space-y-16">
           {/* Feature 01 */}
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.2s' }}>
-            <div className="flex items-start gap-6 mb-6">
-              <span className="text-lg font-light text-[#999999]">01</span>
-              <div className="flex-1">
-                <h3 className="text-3xl md:text-4xl font-light mb-6 text-[#2D2D2D]">
-                  For Universal Computation: Pico zkVM
+          <div className={`grid md:grid-cols-2 gap-16 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.2s' }}>
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-10 rounded-full border-2 border-[#2D2D2D] flex items-center justify-center">
+                  <span className="text-sm font-normal text-[#2D2D2D]">01</span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-normal text-[#2D2D2D]">
+                  For Universal Computation: <span className="italic font-serif">Pico zkVM</span>
                 </h3>
-                <p className="text-sm md:text-base text-[#666666] mb-4 leading-relaxed">
-                  The only modular zkVM achieving 99% real-time proving for current Ethereum blocks
-                </p>
-                <p className="text-base md:text-lg text-[#2D2D2D] leading-relaxed mb-8">
-                  From financial calculations to blockchain validation, Pico's modular architecture integrates specialized coprocessors that deliver breakthrough performance. Our distributed multi-GPU clusters prove 45M gas Ethereum blocks in 6.9 seconds on average. With just 64 GPUs, we offer 3.4x better performance efficiency than any competing solution.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="#" className="inline-flex items-center gap-2 text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors group">
-                    [ Explore Pico ]
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                  <a href="#" className="inline-flex items-center gap-2 text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors group">
-                    [ View on Ethproofs ]
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
+              </div>
+              <p className="text-[13px] md:text-[14px] text-[#999999] mb-4 leading-relaxed">
+                The only modular zkVM achieving 99% real-time proving for current Ethereum blocks
+              </p>
+              <p className="text-[15px] md:text-[16px] text-[#2D2D2D] leading-relaxed mb-6">
+                From financial calculations to blockchain validation, Pico's modular architecture integrates specialized coprocessors that deliver breakthrough performance. Our distributed multi-GPU clusters prove 45M gas Ethereum blocks in 6.9 seconds on average. With just 64 GPUs, we offer 3.4x better performance efficiency than any competing solution.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a href="#" className="inline-flex items-center gap-2 text-[13px] text-[#2D2D2D] hover:text-[#666666] transition-colors group">
+                  [ Explore Pico ]
+                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                </a>
+                <a href="#" className="inline-flex items-center gap-2 text-[13px] text-[#2D2D2D] hover:text-[#666666] transition-colors group">
+                  [ View on Ethproofs ]
+                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+            {/* Right side - Illustration placeholder */}
+            <div className="hidden md:flex justify-center items-center">
+              <div className="relative w-64 h-64">
+                <div className="absolute inset-0 grid grid-cols-3 gap-4">
+                  {[...Array(7)].map((_, i) => (
+                    <div key={i} className="relative" style={{ gridColumn: i === 6 ? '2' : 'auto' }}>
+                      <div className="w-full aspect-square bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-lg transform hover:scale-105 transition-transform"></div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
           {/* Feature 02 */}
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.4s' }}>
-            <div className="flex items-start gap-6 mb-6">
-              <span className="text-lg font-light text-[#999999]">02</span>
-              <div className="flex-1">
-                <h3 className="text-3xl md:text-4xl font-light mb-6 text-[#2D2D2D]">
-                  For Blockchain Intelligence: ZK Data Coprocessor
-                </h3>
-                <p className="text-base md:text-lg text-[#2D2D2D] leading-relaxed mb-8">
-                  Query, aggregate, and analyze any historical blockchain data with cryptographic proofs. Turn the entire blockchain history into a verifiable database for your smart contracts.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="#" className="inline-flex items-center gap-2 text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors group">
-                    [ Learn More ]
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
+          <div className={`mt-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.4s' }}>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-10 h-10 rounded-full border-2 border-[#2D2D2D] flex items-center justify-center">
+                <span className="text-sm font-normal text-[#2D2D2D]">02</span>
               </div>
+              <h3 className="text-xl md:text-2xl font-normal text-[#2D2D2D]">
+                For Blockchain Intelligence: <span className="italic font-serif">ZK Data Coprocessor</span>
+              </h3>
+            </div>
+            <p className="text-[15px] md:text-[16px] text-[#2D2D2D] leading-relaxed mb-6 max-w-3xl">
+              Query, aggregate, and analyze any historical blockchain data with cryptographic proofs. Turn the entire blockchain history into a verifiable database for your smart contracts.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#" className="inline-flex items-center gap-2 text-[13px] text-[#2D2D2D] hover:text-[#666666] transition-colors group">
+                [ Learn More ]
+                <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
         </div>

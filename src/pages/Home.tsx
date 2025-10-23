@@ -43,9 +43,9 @@ const Home = () => {
 
         {/* Main Content - Left Aligned */}
         <div className="container mx-auto px-6 md:px-16 relative z-10">
-          <div className="max-w-3xl">
-            {/* Hero Title with letter-by-letter animation */}
-            <h1 className="text-5xl md:text-7xl font-light leading-[1.15] mb-8">
+          <div className="max-w-2xl">
+            {/* Hero Title - Larger, thinner font */}
+            <h1 className="text-[56px] md:text-[80px] lg:text-[96px] font-extralight leading-[1.1] mb-6">
               <span className={`inline-block transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.1s' }}>
                 Infinite
               </span>
@@ -62,30 +62,50 @@ const Home = () => {
                 for
               </span>
               <br />
-              <span className={`inline-block font-serif italic transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.3s' }}>
-                {'{Web3}'}
+              <span className={`inline-block font-serif italic text-[52px] md:text-[72px] lg:text-[88px] transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.3s' }}>
+                {'{E}'}
               </span>
             </h1>
 
-            {/* Tagline */}
-            <p className={`text-lg md:text-xl text-[#666666] leading-relaxed mb-12 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.5s' }}>
+            {/* Tagline - Smaller */}
+            <p className={`text-[15px] md:text-[17px] text-[#666666] leading-relaxed max-w-xl transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.5s' }}>
               Prove with zero knowledge. Verify instantly. Build impossible applications.
             </p>
+          </div>
+        </div>
 
-            {/* Stats */}
-            <div className={`flex flex-wrap gap-8 md:gap-12 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.7s' }}>
-              <div className="flex flex-col">
-                <span className="text-3xl md:text-4xl font-light mb-1">30+</span>
+        {/* Stats Section - Bottom Center */}
+        <div className="absolute bottom-24 left-0 right-0 z-10">
+          <div className="container mx-auto px-6">
+            {/* Trusted by title */}
+            <h3 className={`text-center text-[#4A90E2] text-2xl md:text-3xl mb-8 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.9s' }}>
+              Trusted by the <span className="italic font-serif">{'{best}'}</span>
+            </h3>
+            
+            {/* Stats - Centered, Larger */}
+            <div className={`flex justify-center items-center gap-12 md:gap-20 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1s' }}>
+              <div className="flex flex-col items-center">
+                <span className="text-4xl md:text-5xl font-light mb-2">30+</span>
                 <span className="text-sm text-[#666666]">Partners</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-3xl md:text-4xl font-light mb-1">94,701</span>
+              <div className="flex flex-col items-center">
+                <span className="text-4xl md:text-5xl font-light mb-2">94,701</span>
                 <span className="text-sm text-[#666666]">Users</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-3xl md:text-4xl font-light mb-1">125,423,861</span>
+              <div className="flex flex-col items-center">
+                <span className="text-4xl md:text-5xl font-light mb-2">125,423,861</span>
                 <span className="text-sm text-[#666666]">Proofs</span>
               </div>
+            </div>
+
+            {/* Bottom CTAs */}
+            <div className={`flex justify-center items-center gap-6 mt-10 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1.1s' }}>
+              <a href="#cases" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors flex items-center gap-2">
+                [ See All Use Cases ] <span>→</span>
+              </a>
+              <a href="#built" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors flex items-center gap-2">
+                [ Explore What They Built ] <span>→</span>
+              </a>
             </div>
           </div>
         </div>
