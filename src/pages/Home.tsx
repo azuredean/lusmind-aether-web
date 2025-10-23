@@ -22,17 +22,17 @@ const Home = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-        {/* Corner CTAs */}
-        <div className="absolute top-32 left-8 md:left-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-16 md:pt-20">
+        {/* Corner CTAs - Better positioning */}
+        <div className="absolute top-24 md:top-32 left-6 md:left-12 lg:left-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
           <CTAButton href="#team">Talk to our Team</CTAButton>
         </div>
         
-        <div className="absolute top-32 right-8 md:right-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
+        <div className="absolute top-24 md:top-32 right-6 md:right-12 lg:right-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
           <CTAButton href="#docs">Explore Documentation</CTAButton>
         </div>
         
-        <div className="absolute bottom-32 right-8 md:right-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
+        <div className="absolute bottom-24 md:bottom-32 right-6 md:right-12 lg:right-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
           <CTAButton href="#community">Join our Community</CTAButton>
         </div>
 
@@ -41,11 +41,11 @@ const Home = () => {
           <HeroOrb />
         </div>
 
-        {/* Main Content - Left Aligned */}
-        <div className="container mx-auto px-6 md:px-16 relative z-10">
-          <div className="max-w-2xl">
-            {/* Hero Title - Larger, thinner font */}
-            <h1 className="text-[56px] md:text-[80px] lg:text-[96px] font-extralight leading-[1.1] mb-6">
+        {/* Main Content - Left Aligned with better spacing */}
+        <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+          <div className="max-w-3xl">
+            {/* Hero Title - Optimized sizing */}
+            <h1 className="text-[48px] md:text-[72px] lg:text-[88px] xl:text-[96px] font-extralight leading-[1.1] mb-4 md:mb-6">
               <span className={`inline-block transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.1s' }}>
                 Infinite
               </span>
@@ -62,59 +62,59 @@ const Home = () => {
                 for
               </span>
               <br />
-              <span className={`inline-block font-serif italic text-[52px] md:text-[72px] lg:text-[88px] transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.3s' }}>
+              <span className={`inline-block font-serif italic text-[44px] md:text-[66px] lg:text-[80px] xl:text-[88px] transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.3s' }}>
                 {'{E}'}
               </span>
             </h1>
 
-            {/* Tagline - Smaller */}
-            <p className={`text-[15px] md:text-[17px] text-[#666666] leading-relaxed max-w-xl transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.5s' }}>
+            {/* Tagline - Better responsive sizing */}
+            <p className={`text-[14px] md:text-[16px] lg:text-[17px] text-[#666666] leading-relaxed max-w-xl transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.5s' }}>
               Prove with zero knowledge. Verify instantly. Build impossible applications.
             </p>
           </div>
         </div>
 
-        {/* Stats Section - Bottom Center */}
-        <div className="absolute bottom-24 left-0 right-0 z-10">
+        {/* Stats Section - Bottom Center with optimized spacing */}
+        <div className="absolute bottom-16 md:bottom-20 lg:bottom-24 left-0 right-0 z-10">
           <div className="container mx-auto px-6">
             {/* Trusted by title */}
-            <h3 className={`text-center text-[#4A90E2] text-2xl md:text-3xl mb-8 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.9s' }}>
+            <h3 className={`text-center text-[#4A90E2] text-xl md:text-2xl lg:text-3xl mb-6 md:mb-8 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.9s' }}>
               Trusted by the <span className="italic font-serif">{'{best}'}</span>
             </h3>
             
-            {/* Stats - Centered, Larger */}
-            <div className={`flex justify-center items-center gap-12 md:gap-20 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1s' }}>
+            {/* Stats - Better responsive layout */}
+            <div className={`flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-20 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1s' }}>
               <div className="flex flex-col items-center">
-                <span className="text-4xl md:text-5xl font-light mb-2">30+</span>
-                <span className="text-sm text-[#666666]">Partners</span>
+                <span className="text-3xl md:text-4xl lg:text-5xl font-light mb-1 md:mb-2">30+</span>
+                <span className="text-xs md:text-sm text-[#666666]">Partners</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-4xl md:text-5xl font-light mb-2">94,701</span>
-                <span className="text-sm text-[#666666]">Users</span>
+                <span className="text-3xl md:text-4xl lg:text-5xl font-light mb-1 md:mb-2">94,701</span>
+                <span className="text-xs md:text-sm text-[#666666]">Users</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-4xl md:text-5xl font-light mb-2">125,423,861</span>
-                <span className="text-sm text-[#666666]">Proofs</span>
+                <span className="text-3xl md:text-4xl lg:text-5xl font-light mb-1 md:mb-2">125,423,861</span>
+                <span className="text-xs md:text-sm text-[#666666]">Proofs</span>
               </div>
             </div>
 
-            {/* Bottom CTAs */}
-            <div className={`flex justify-center items-center gap-6 mt-10 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1.1s' }}>
-              <a href="#cases" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors flex items-center gap-2">
+            {/* Bottom CTAs - Better mobile layout */}
+            <div className={`flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mt-8 md:mt-10 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '1.1s' }}>
+              <a href="#cases" className="text-xs md:text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors flex items-center gap-2 whitespace-nowrap">
                 [ See All Use Cases ] <span>→</span>
               </a>
-              <a href="#built" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors flex items-center gap-2">
+              <a href="#built" className="text-xs md:text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors flex items-center gap-2 whitespace-nowrap">
                 [ Explore What They Built ] <span>→</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Background decoration */}
+        {/* Background decoration - More rings for depth */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#E0E0E0]/50" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-[#E0E0E0]/30" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border border-[#E0E0E0]/20" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] rounded-full border border-[#E0E0E0]/50" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] md:w-[1000px] md:h-[1000px] rounded-full border border-[#E0E0E0]/30" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] md:w-[1200px] md:h-[1200px] rounded-full border border-[#E0E0E0]/20" />
         </div>
       </section>
 
