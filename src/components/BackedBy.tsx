@@ -3,62 +3,42 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const BackedBy = () => {
   const { ref, isVisible } = useScrollAnimation();
 
-  const leadInvestors = [
-    { name: "Horizon Ventures", position: "01" },
-    { name: "Summit Partners", position: "02" },
-  ];
-
-  const moreInvestors = [
-    "Atlantic Capital",
-    "Pacific Growth",
-    "Vertex Holdings",
-    "Redwood Ventures",
-    "Pinnacle Group",
-  ];
-
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-muted/30">
+    <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-[#F5F5F5]">
       <div className="container mx-auto max-w-7xl">
-        {/* Section Title */}
-        <div className={`mb-16 md:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-6xl font-light leading-[1.2]">
-            Trusted By Industry Leaders
-          </h2>
-        </div>
-
+        <h2 className={`text-4xl md:text-6xl font-light text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} text-[#2D2D2D]`}>
+          Backed By
+        </h2>
+        
         {/* Lead Investors */}
-        <div className={`mb-16 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-xl md:text-2xl font-light mb-8 text-muted-foreground">Lead Partners</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {leadInvestors.map((investor) => (
+        <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.2s' }}>
+          <h3 className="text-lg font-light text-[#999999] mb-8">Lead Investors</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[1, 2].map((item, index) => (
               <div
-                key={investor.name}
-                className="p-12 rounded-lg border border-border/50 bg-card/30 backdrop-blur-sm hover:border-accent/50 transition-all duration-300 hover:shadow-xl group"
+                key={index}
+                className="aspect-[2/1] border border-[#E0E0E0] rounded-2xl bg-white hover:border-[#2D2D2D]/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center group cursor-pointer"
               >
-                <div className="text-5xl md:text-6xl font-light text-muted-foreground/20 mb-4 group-hover:text-accent/30 transition-colors">
-                  {investor.position}
-                </div>
-                <h4 className="text-xl md:text-2xl font-light">{investor.name}</h4>
+                <span className="text-2xl font-light text-[#999999] group-hover:text-[#2D2D2D] transition-colors">
+                  {String(item).padStart(2, '0')}
+                </span>
               </div>
             ))}
           </div>
         </div>
 
         {/* More Investors */}
-        <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-xl md:text-2xl font-light mb-8 text-muted-foreground">Strategic Partners</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {moreInvestors.map((investor, index) => (
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.4s' }}>
+          <h3 className="text-lg font-light text-[#999999] mb-8">More Investors</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            {[3, 4, 5, 6, 7].map((item, index) => (
               <div
-                key={investor}
-                className="p-8 rounded-lg border border-border/50 bg-card/30 backdrop-blur-sm hover:border-accent/50 transition-all duration-300 hover:shadow-xl group flex items-center justify-center"
+                key={index}
+                className="aspect-square border border-[#E0E0E0] rounded-2xl bg-white hover:border-[#2D2D2D]/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center group cursor-pointer"
               >
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-light text-muted-foreground/20 mb-2 group-hover:text-accent/30 transition-colors">
-                    {String(index + 3).padStart(2, '0')}
-                  </div>
-                  <h4 className="text-sm font-light">{investor}</h4>
-                </div>
+                <span className="text-xl font-light text-[#999999] group-hover:text-[#2D2D2D] transition-colors">
+                  {String(item).padStart(2, '0')}
+                </span>
               </div>
             ))}
           </div>

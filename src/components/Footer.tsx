@@ -1,54 +1,62 @@
-import { Github, Twitter, MessageSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const footerLinks = {
-  "Products": [
-    { name: "Premium E-Liquids", href: "#eliquids" },
-    { name: "Disposable Vapes", href: "#disposables" },
-    { name: "Cigarette-Like Vapes", href: "#cigarette" },
-    { name: "Flavor Masters", href: "#masters" }
+  Products: [
+    { name: "Pico zkVM", href: "#pico" },
+    { name: "zkCoprocessor", href: "#zkcoprocessor" },
+    { name: "Explorer", href: "#explorer" },
   ],
-  "Discover": [
-    { name: "Find Retailers", href: "#retailers" },
-    { name: "Flavor Guide", href: "#flavors" },
-    { name: "Vaping Tips", href: "#tips" }
+  Discover: [
+    { name: "Blog", href: "#blog" },
+    { name: "Github", href: "#github" },
   ],
-  "Support": [
-    { name: "User Manual", href: "#manual" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Warranty", href: "#warranty" }
+  Build: [
+    { name: "Talk to a builder", href: "#builder" },
+    { name: "Pico zkVM Docs", href: "#pico-docs" },
+    { name: "zkCoprocessor Docs", href: "#zkco-docs" },
   ],
-  "Contact": [
-    { name: "Customer Service", href: "#service" },
-    { name: "Join VIP Club", href: "#vip" },
-    { name: "Wholesale Inquiry", href: "#wholesale" }
-  ]
+  "Contact Us": [
+    { name: "Join Telegram", href: "#telegram" },
+    { name: "Join Discord", href: "#discord" },
+  ],
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          {/* Brand Column */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full border-2 border-primary-foreground" />
+    <footer className="bg-[#F5F5F5] border-t border-[#E0E0E0]">
+      <div className="container mx-auto px-6 md:px-16 py-16 md:py-20">
+        {/* Top CTA */}
+        <div className="mb-16 text-center">
+          <a 
+            href="#community"
+            className="group inline-flex items-center gap-3 px-8 py-4 border border-[#2D2D2D]/15 rounded-lg hover:border-[#2D2D2D]/30 hover:bg-white transition-all duration-300 text-[#2D2D2D]"
+          >
+            <span className="text-base">[ Join our Community ]</span>
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-8 h-8 rounded-full bg-[#2D2D2D] flex items-center justify-center">
+                <div className="w-4 h-4 rounded-full border-2 border-white" />
               </div>
-              <span className="text-xl font-bold">LUSMIND</span>
+              <span className="text-xl font-bold text-[#2D2D2D]">Brevis Network</span>
             </div>
           </div>
 
-          {/* Links Columns */}
+          {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-sm font-semibold mb-4 text-foreground">{category}</h4>
+              <h3 className="font-normal mb-4 text-sm text-[#2D2D2D]">{category}</h3>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <a 
+                    <a
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                      className="text-sm text-[#666666] hover:text-[#2D2D2D] transition-colors"
                     >
                       {link.name}
                     </a>
@@ -60,24 +68,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © LUSMIND 2025. All rights reserved.
-            </p>
-            
-            <div className="flex items-center gap-6">
-              <a href="#twitter" className="text-muted-foreground hover:text-accent transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#instagram" className="text-muted-foreground hover:text-accent transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#community" className="text-muted-foreground hover:text-accent transition-colors">
-                <MessageSquare className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+        <div className="pt-8 border-t border-[#E0E0E0]">
+          <p className="text-sm text-[#666666] text-center">
+            © Brevis 2025. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

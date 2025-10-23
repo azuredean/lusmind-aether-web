@@ -1,60 +1,43 @@
 const ecosystemPartners = [
-  "7-Eleven",
-  "Circle K",
-  "Walgreens",
-  "CVS Pharmacy",
-  "Speedway",
-  "Shell",
-  "BP",
-  "Chevron",
-  "ExxonMobil",
-  "Pilot Flying J",
-  "Love's Travel Stops",
-  "Wawa",
-  "QuikTrip",
-  "Sheetz",
-  "Casey's",
-  "Maverik",
-  "RaceTrac",
-  "GetGo",
-  "Cumberland Farms",
-  "Murphy USA",
-  "Kwik Trip",
-  "Holiday",
-  "Speedway",
-  "Thorntons",
-  "Kum & Go",
-  "76",
+  "PancakeSwap",
+  "Algebra",
+  "QuickSwap",
+  "THENA",
+  "OpenEden",
+  "Usual",
+  "Kernel",
+  "Bedrock",
+  "Polygon",
+  "Avalanche",
+  "BNB Chain",
+  "Ethereum",
+  "Arbitrum",
+  "Optimism",
 ];
 
 const EcosystemLogos = () => {
   return (
-    <section className="relative py-16 md:py-24 bg-background overflow-hidden">
-      {/* Gradient masks for fade effect */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
-      
-      <div className="container mx-auto px-6 md:px-16 mb-10">
-        <h2 className="text-xl md:text-2xl font-light text-center text-foreground">
-          Available at Leading Retailers Nationwide
-        </h2>
-      </div>
-      
-      <div className="flex animate-scroll hover:[animation-play-state:paused]">
-        {[...ecosystemPartners, ...ecosystemPartners, ...ecosystemPartners].map((partner, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-40 h-20 mx-8 flex items-center justify-center group"
-          >
-            <div className="relative w-full h-full rounded-lg bg-card border border-border flex items-center justify-center opacity-60 hover:opacity-100 hover:border-primary/50 transition-all duration-300 hover:scale-105">
-              <span className="text-sm font-medium">{partner}</span>
-              {/* Tooltip on hover */}
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-popover border border-border rounded-md text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                {partner}
+    <section className="py-20 md:py-24 px-6 bg-[#F5F5F5] relative overflow-hidden border-t border-[#E0E0E0]">
+      <div className="container mx-auto max-w-7xl">
+        <div className="relative">
+          {/* Gradient masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#F5F5F5] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#F5F5F5] to-transparent z-10 pointer-events-none" />
+          
+          {/* Scrolling container */}
+          <div className="flex gap-8 md:gap-12 animate-scroll">
+            {[...ecosystemPartners, ...ecosystemPartners].map((partner, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 px-8 py-5 border border-[#E0E0E0]/60 bg-white/50 rounded-xl hover:border-[#2D2D2D]/20 hover:bg-white transition-all duration-300 hover:scale-105 hover:shadow-sm group"
+              >
+                <span className="text-sm md:text-base font-normal whitespace-nowrap text-[#666666] group-hover:text-[#2D2D2D] transition-colors">
+                  {partner}
+                </span>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

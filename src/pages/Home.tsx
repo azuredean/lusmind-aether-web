@@ -8,74 +8,93 @@ import UseCases from "@/components/UseCases";
 import BackedBy from "@/components/BackedBy";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  useEffect(() => {
+    setTitleVisible(true);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#F5F5F5] text-[#2D2D2D]">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-[#F5F5F5]">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         {/* Corner CTAs */}
-        <div className="absolute top-32 left-8 md:left-16 z-20 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <CTAButton href="#team">Contact Our Team</CTAButton>
+        <div className="absolute top-32 left-8 md:left-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+          <CTAButton href="#team">Talk to our Team</CTAButton>
         </div>
         
-        <div className="absolute top-32 right-8 md:right-16 z-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <CTAButton href="#docs">Browse Catalog</CTAButton>
+        <div className="absolute top-32 right-8 md:right-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
+          <CTAButton href="#docs">Explore Documentation</CTAButton>
         </div>
         
-        <div className="absolute bottom-32 right-8 md:right-16 z-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <CTAButton href="#community">Join VIP Club</CTAButton>
+        <div className="absolute bottom-32 right-8 md:right-16 z-20 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
+          <CTAButton href="#community">Join our Community</CTAButton>
         </div>
 
         {/* Hero Orb - Centered */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
           <HeroOrb />
         </div>
 
         {/* Main Content - Left Aligned */}
         <div className="container mx-auto px-6 md:px-16 relative z-10">
-          <div className="max-w-2xl">
-            {/* Hero Title */}
-            <h1 className="text-5xl md:text-7xl font-normal leading-[1.2] animate-fade-in-up mb-6 text-[#2D2D2D]">
-              Premium Vaping Experience<br />
-              <span className="italic font-serif">LUSMIND</span>
+          <div className="max-w-3xl">
+            {/* Hero Title with letter-by-letter animation */}
+            <h1 className="text-5xl md:text-7xl font-light leading-[1.15] mb-8">
+              <span className={`inline-block transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.1s' }}>
+                Infinite
+              </span>
+              {' '}
+              <span className={`inline-block transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.15s' }}>
+                Compute
+              </span>
+              {' '}
+              <span className={`inline-block transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.2s' }}>
+                Layer
+              </span>
+              {' '}
+              <span className={`inline-block transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.25s' }}>
+                for
+              </span>
+              <br />
+              <span className={`inline-block font-serif italic transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.3s' }}>
+                {'{Web3}'}
+              </span>
             </h1>
 
             {/* Tagline */}
-            <p className="text-base md:text-lg text-[#666666] animate-fade-in-up leading-relaxed mb-12" style={{ animationDelay: '0.2s' }}>
-              Pure flavor. Perfect satisfaction. Elevate your vaping journey.
+            <p className={`text-lg md:text-xl text-[#666666] leading-relaxed mb-12 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.5s' }}>
+              Prove with zero knowledge. Verify instantly. Build impossible applications.
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className={`flex flex-wrap gap-8 md:gap-12 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '0.7s' }}>
               <div className="flex flex-col">
-                <span className="text-3xl md:text-4xl font-bold text-[#2D2D2D]">50+</span>
-                <span className="text-sm text-[#666666]">Flavors</span>
+                <span className="text-3xl md:text-4xl font-light mb-1">30+</span>
+                <span className="text-sm text-[#666666]">Partners</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl md:text-4xl font-bold text-[#2D2D2D]">100,000+</span>
-                <span className="text-sm text-[#666666]">Happy Customers</span>
+                <span className="text-3xl md:text-4xl font-light mb-1">94,701</span>
+                <span className="text-sm text-[#666666]">Users</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl md:text-4xl font-bold text-[#2D2D2D]">5M+</span>
-                <span className="text-sm text-[#666666]">Devices Sold</span>
+                <span className="text-3xl md:text-4xl font-light mb-1">125,423,861</span>
+                <span className="text-sm text-[#666666]">Proofs</span>
               </div>
-            </div>
-
-            {/* Hero CTAs */}
-            <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <CTAButton href="#use-cases">Shop Our Products</CTAButton>
-              <CTAButton href="#ecosystem">Find Retailers</CTAButton>
             </div>
           </div>
         </div>
 
-        {/* Background decoration - Subtle circular grid */}
+        {/* Background decoration */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#E0E0E0]" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-[#E8E8E8]" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#E0E0E0]/50" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-[#E0E0E0]/30" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border border-[#E0E0E0]/20" />
         </div>
       </section>
 

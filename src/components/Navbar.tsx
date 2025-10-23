@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Plus } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,24 +30,24 @@ const Navbar = () => {
             <span className="text-xl font-bold text-[#2D2D2D]">LUSMIND</span>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#product" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors">
+          <div className="hidden md:flex items-center gap-10">
+            <a href="#product" className="text-sm text-[#2D2D2D] hover:text-[#999999] transition-colors duration-200">
               Product
             </a>
-            <a href="#explorer" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors">
+            <a href="#explorer" className="text-sm text-[#2D2D2D] hover:text-[#999999] transition-colors duration-200">
               Explorer
             </a>
-            <a href="#ecosystem" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors">
+            <a href="#ecosystem" className="text-sm text-[#2D2D2D] hover:text-[#999999] transition-colors duration-200">
               Ecosystem
             </a>
-            <a href="#blog" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors">
+            <a href="#blog" className="text-sm text-[#2D2D2D] hover:text-[#999999] transition-colors duration-200">
               Blog
             </a>
-            <button className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors flex items-center gap-1">
+            <button className="text-sm text-[#2D2D2D] hover:text-[#999999] transition-colors duration-200 flex items-center gap-1">
               Community
-              <span className="text-xs">+</span>
+              <Plus className="w-3 h-3" />
             </button>
-            <a href="#career" className="text-sm text-[#2D2D2D] hover:text-[#666666] transition-colors">
+            <a href="#career" className="text-sm text-[#2D2D2D] hover:text-[#999999] transition-colors duration-200">
               Career
             </a>
           </div>
