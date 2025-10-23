@@ -121,7 +121,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full aspect-[21/9] max-h-[85vh] min-h-[400px] md:min-h-[500px] overflow-hidden rounded-2xl shadow-vapor">
+    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl shadow-vapor">
 
       {/* Slides */}
       {slides.map((slide, index) => (
