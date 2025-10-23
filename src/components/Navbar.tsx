@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,8 +13,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav 
@@ -28,37 +24,31 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
               <div className="w-4 h-4 rounded-full border-2 border-primary-foreground" />
             </div>
             <span className="text-xl font-bold">LUSMIND</span>
-          </Link>
+          </div>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link 
-              to="/" 
-              className={`text-sm transition-colors ${isActive('/') ? 'text-accent font-medium' : 'hover:text-accent'}`}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/e-cigarette" 
-              className={`text-sm transition-colors ${isActive('/e-cigarette') ? 'text-accent font-medium' : 'hover:text-accent'}`}
-            >
-              E-Cigarette
-            </Link>
             <a href="#product" className="text-sm hover:text-accent transition-colors">
               Products
             </a>
-            <a href="#use-cases" className="text-sm hover:text-accent transition-colors">
-              Use Cases
+            <a href="#explorer" className="text-sm hover:text-accent transition-colors">
+              Flavors
             </a>
             <a href="#ecosystem" className="text-sm hover:text-accent transition-colors">
               Retailers
             </a>
+            <a href="#blog" className="text-sm hover:text-accent transition-colors">
+              Blog
+            </a>
             <a href="#community" className="text-sm hover:text-accent transition-colors">
               Community
+            </a>
+            <a href="#career" className="text-sm hover:text-accent transition-colors">
+              About Us
             </a>
           </div>
 
@@ -82,47 +72,23 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="md:hidden pt-4 pb-2 animate-fade-in-up">
             <div className="flex flex-col gap-4">
-              <Link 
-                to="/" 
-                className={`text-sm transition-colors py-2 ${isActive('/') ? 'text-accent font-medium' : 'hover:text-accent'}`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                to="/e-cigarette" 
-                className={`text-sm transition-colors py-2 ${isActive('/e-cigarette') ? 'text-accent font-medium' : 'hover:text-accent'}`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                E-Cigarette
-              </Link>
-              <a 
-                href="#product" 
-                className="text-sm hover:text-accent transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <a href="#product" className="text-sm hover:text-accent transition-colors py-2">
                 Products
               </a>
-              <a 
-                href="#use-cases" 
-                className="text-sm hover:text-accent transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Use Cases
+              <a href="#explorer" className="text-sm hover:text-accent transition-colors py-2">
+                Flavors
               </a>
-              <a 
-                href="#ecosystem" 
-                className="text-sm hover:text-accent transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <a href="#ecosystem" className="text-sm hover:text-accent transition-colors py-2">
                 Retailers
               </a>
-              <a 
-                href="#community" 
-                className="text-sm hover:text-accent transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <a href="#blog" className="text-sm hover:text-accent transition-colors py-2">
+                Blog
+              </a>
+              <a href="#community" className="text-sm hover:text-accent transition-colors py-2">
                 Community
+              </a>
+              <a href="#career" className="text-sm hover:text-accent transition-colors py-2">
+                About Us
               </a>
               <Button variant="outline" size="sm" className="w-full mt-2">
                 Shop Now
