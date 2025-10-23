@@ -52,12 +52,12 @@ const Navbar = () => {
                       <li>
                         <NavigationMenuLink asChild>
                           <Link
-                            to="/"
+                            to="/e-liquid"
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none">Brevis Network</div>
+                            <div className="text-sm font-medium leading-none">E-Liquid</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Infinite Compute Layer for Ethereum
+                              Premium e-liquid flavors and blends
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -65,12 +65,12 @@ const Navbar = () => {
                       <li>
                         <NavigationMenuLink asChild>
                           <Link
-                            to="/ecigarette"
+                            to="/e-cigarette"
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">E-Cigarette</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Premium vaping products and flavors
+                              Premium vaping devices and products
                             </p>
                           </Link>
                         </NavigationMenuLink>
