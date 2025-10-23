@@ -3,37 +3,38 @@ import { useEffect, useRef, useState } from 'react';
 interface UseScrollAnimationOptions {
   threshold?: number;
   rootMargin?: string;
+  triggerOnce?: boolean;
 }
 
 export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
-  const { threshold = 0.1, rootMargin = '0px' } = options;
+  const { threshold = 0.1, rootMargin = '0px', triggerOnce = true } = options;
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Once visible, stop observing
-          if (ref.current) {
-            observer.unobserve(ref.current);
+          if (triggerOnce) {
+            observer.unobserve(element);
           }
+        } else if (!triggerOnce) {
+          setIsVisible(false);
         }
       },
       { threshold, rootMargin }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.disconnect();
     };
-  }, [threshold, rootMargin]);
+  }, [threshold, rootMargin, triggerOnce]);
 
   return { ref, isVisible };
 };
