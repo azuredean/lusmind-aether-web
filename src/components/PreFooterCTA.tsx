@@ -8,7 +8,7 @@ const PreFooterCTA = () => {
         <div className="text-center space-y-12">
           {/* Title */}
           <h2 className="text-4xl md:text-6xl font-light leading-[1.2]">
-            Experience <span className="italic font-serif">LUSMIND</span>
+            Experience <span className="italic font-serif bg-gradient-to-r from-[#8FF5FF] to-[#FFA4F3] bg-clip-text text-transparent">LUSMIND</span>
           </h2>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
