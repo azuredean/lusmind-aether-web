@@ -40,7 +40,7 @@ const Index = () => {
             {/* Hero Title */}
             <h1 className="text-5xl md:text-7xl font-normal leading-[1.2] animate-fade-in-up mb-6 text-[#2D2D2D]">
               Premium Vaping Experience<br />
-              <span className="italic font-serif bg-gradient-to-r from-[#B1F0FA] to-[#F3B6E9] bg-clip-text text-transparent">LUSMIND</span>
+              <span className="italic font-serif bg-gradient-to-r from-[#8FF5FF] to-[#FFA4F3] bg-clip-text text-transparent">LUSMIND</span>
             </h1>
 
             {/* Tagline */}
