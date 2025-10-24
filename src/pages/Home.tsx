@@ -12,6 +12,13 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Warning Bar */}
+      <div className="w-full border-b bg-black text-white border-white/20">
+        <div className="max-w-6xl mx-auto px-4 py-2 text-center text-xs md:text-sm tracking-wide">
+          WARNING: This product contains nicotine. Nicotine is an addictive chemical.
+        </div>
+      </div>
+      
       <Navbar />
       
       {/* Hero Section */}
