@@ -14,7 +14,7 @@ const ProductFeatures = () => {
             Four Product Lines for
           </h2>
           <h2 className="text-4xl md:text-6xl font-light leading-[1.2]">
-            <span className="italic font-serif">Every Vaping Style</span>
+            <span className="italic font-serif bg-gradient-to-r from-[#8FF5FF] to-[#FFA4F3] bg-clip-text text-transparent">Every Vaping Style</span>
           </h2>
         </div>
 
