@@ -33,12 +33,10 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <div className="w-4 h-4 rounded-full border-2 border-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold">LUSMIND</span>
-          </div>
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/lovable-uploads/6a3cad97-68cc-4600-9c35-7d92e2c90d4b.png" alt="LM Logo" className="h-8 w-8" />
+            <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-8 w-auto" />
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
             <NavigationMenu>
