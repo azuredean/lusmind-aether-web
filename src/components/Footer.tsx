@@ -2,9 +2,8 @@ import { ArrowRight } from "lucide-react";
 
 const footerLinks = {
   Products: [
-    { name: "Pico zkVM", href: "#pico" },
-    { name: "zkCoprocessor", href: "#zkcoprocessor" },
-    { name: "Explorer", href: "#explorer" },
+    { name: "E-Liquid", href: "/e-liquid" },
+    { name: "E-Cigarette", href: "/e-cigarette" },
   ],
   Discover: [
     { name: "Blog", href: "#blog" },
