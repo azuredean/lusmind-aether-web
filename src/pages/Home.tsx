@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Warning Bar */}
-      <div className="w-full border-b bg-black text-white border-white/20">
+      <div className="fixed top-0 left-0 right-0 w-full border-b bg-black text-white border-white/20 z-[60]">
         <div className="max-w-6xl mx-auto px-4 py-2 text-center text-xs md:text-sm tracking-wide">
           WARNING: This product contains nicotine. Nicotine is an addictive chemical.
         </div>
@@ -22,7 +22,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-[#F5F5F5]">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-32 bg-[#F5F5F5]">
         {/* Corner CTAs */}
         <div className="absolute top-32 left-8 md:left-16 z-20 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <CTAButton href="#team">Contact Our Team</CTAButton>
