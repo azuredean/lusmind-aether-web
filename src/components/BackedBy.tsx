@@ -25,8 +25,8 @@ const BackedBy = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Section Title */}
         <div className={`mb-16 md:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-6xl font-light leading-[1.2]">
-            产品防伪验证
+          <h2 className="text-3xl md:text-5xl font-light leading-[1.2] text-foreground">
+            Product Verification
           </h2>
         </div>
 
@@ -35,17 +35,17 @@ const BackedBy = () => {
           <div className="max-w-2xl mx-auto p-8 md:p-12 rounded-lg border border-border/50 bg-card/30 backdrop-blur-sm">
             <div className="space-y-6">
               <div className="text-center mb-8">
-                <p className="text-lg md:text-xl font-light text-muted-foreground">
-                  输入产品防伪码验证真伪
+                <p className="text-base md:text-lg font-light text-muted-foreground leading-relaxed">
+                  Enter your product verification code to confirm authenticity
                 </p>
               </div>
 
               <div className="space-y-4">
-                <Label htmlFor="verification-code" className="text-base">防伪码</Label>
+                <Label htmlFor="verification-code" className="text-sm font-light text-foreground">Verification Code</Label>
                 <Input
                   id="verification-code"
                   type="text"
-                  placeholder="请输入产品防伪码"
+                  placeholder="Enter product verification code"
                   value={verificationCode}
                   onChange={(e) => setVerificationCode(e.target.value)}
                   className="h-12 text-base"
@@ -54,21 +54,21 @@ const BackedBy = () => {
 
               <Button 
                 onClick={handleVerify}
-                className="w-full h-12 text-base"
+                className="w-full h-12 text-base font-light"
                 disabled={!verificationCode.trim()}
               >
-                验证
+                Verify
               </Button>
 
               {verificationStatus === "success" && (
                 <div className="p-4 rounded-lg border border-accent/50 bg-accent/10 text-center">
-                  <p className="text-accent font-light">✓ 验证成功 - 产品为正品</p>
+                  <p className="text-accent font-light">✓ Verification Successful - Authentic Product</p>
                 </div>
               )}
 
               {verificationStatus === "error" && (
                 <div className="p-4 rounded-lg border border-destructive/50 bg-destructive/10 text-center">
-                  <p className="text-destructive font-light">✗ 验证失败 - 请检查防伪码</p>
+                  <p className="text-destructive font-light">✗ Verification Failed - Please check your code</p>
                 </div>
               )}
             </div>
