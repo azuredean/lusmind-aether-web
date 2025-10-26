@@ -108,7 +108,12 @@ export default function ECigarette() {
           <img 
             src={heroImage} 
             alt="E-cigarette products" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center md:object-right"
+            style={{ 
+              objectFit: 'cover',
+              maxWidth: '100%',
+              height: '100%'
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#741016]/80 to-transparent"></div>
         </div>
