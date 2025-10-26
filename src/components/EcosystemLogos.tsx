@@ -1,30 +1,31 @@
-const ecosystemPartners = [
-  "7-Eleven",
-  "Circle K",
-  "Walgreens",
-  "CVS Pharmacy",
-  "Speedway",
-  "Shell",
-  "BP",
-  "Chevron",
-  "ExxonMobil",
-  "Pilot Flying J",
-  "Love's Travel Stops",
-  "Wawa",
-  "QuikTrip",
-  "Sheetz",
-  "Casey's",
-  "Maverik",
-  "RaceTrac",
-  "GetGo",
-  "Cumberland Farms",
-  "Murphy USA",
-  "Kwik Trip",
-  "Holiday",
-  "Speedway",
-  "Thorntons",
-  "Kum & Go",
-  "76",
+const flavorsList = [
+  "Arctic Sweet Ice",
+  "Banana & Nut",
+  "Blueberry Raspberry",
+  "Caramel Custard",
+  "Cinnamon Apple Pie",
+  "Coffee Tobacco",
+  "Cool Peppermint",
+  "Cool Yuzu Cedar",
+  "Creamy Rainbow Candy",
+  "Double Apple Shisha",
+  "Grape Soda",
+  "Green Apple",
+  "Green Coconut",
+  "Gummy Rainbow",
+  "Kiwi & Passion Fruit",
+  "Mango Ice",
+  "Melon Yogurt Ice",
+  "Monster Drink",
+  "Niagara Grape",
+  "Orange Soda",
+  "Peach Ice",
+  "Pineapple Coconut Ice",
+  "Strawberry Cake",
+  "Tobacco & Nut",
+  "Vanilla Apple Tobacco",
+  "Watermelon Ice",
+  "Watermelon Strawberry",
 ];
 
 const EcosystemLogos = () => {
@@ -41,16 +42,16 @@ const EcosystemLogos = () => {
       </div>
       
       <div className="flex animate-scroll hover:[animation-play-state:paused]">
-        {[...ecosystemPartners, ...ecosystemPartners, ...ecosystemPartners].map((partner, index) => (
+        {[...flavorsList, ...flavorsList, ...flavorsList].map((flavor, index) => (
           <div
             key={index}
             className="flex-shrink-0 w-40 h-20 mx-8 flex items-center justify-center group"
           >
             <div className="relative w-full h-full rounded-lg bg-card border border-border flex items-center justify-center opacity-60 hover:opacity-100 hover:border-primary/50 transition-all duration-300 hover:scale-105">
-              <span className="text-sm font-medium">{partner}</span>
+              <span className="text-sm font-medium">{flavor}</span>
               {/* Tooltip on hover */}
               <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-popover border border-border rounded-md text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                {partner}
+                {flavor}
               </div>
             </div>
           </div>
