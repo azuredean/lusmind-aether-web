@@ -19,7 +19,7 @@ const Index = () => {
         </div>
       </div>
       
-      <Navbar />
+      <Navbar theme="light" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-32 bg-[#F5F5F5]">

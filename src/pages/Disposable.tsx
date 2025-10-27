@@ -19,7 +19,7 @@ const Disposable = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Navbar theme="dark" />
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
