@@ -37,7 +37,7 @@ const EcosystemLogos = () => {
       
       <div className="container mx-auto px-6 md:px-16 mb-10">
         <h2 className="text-xl md:text-2xl font-light text-center text-foreground">
-          Available at Leading Retailers Nationwide
+          Premium Flavor Collection
         </h2>
       </div>
       
