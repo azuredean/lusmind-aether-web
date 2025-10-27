@@ -1,12 +1,12 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const ProductFeatures = () => {
-  const { ref, isVisible } = useScrollAnimation();
-
-  return (
-    <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-muted/30">
+  const {
+    ref,
+    isVisible
+  } = useScrollAnimation();
+  return <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         {/* Section Title */}
         <div className={`text-center mb-16 md:mb-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -42,10 +42,7 @@ const ProductFeatures = () => {
               </a>
             </Button>
             <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
-              <a href="#flavors" className="flex items-center gap-2">
-                <span className="text-sm">[ View All Flavors ]</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              
             </Button>
           </div>
         </div>
@@ -126,16 +123,11 @@ const ProductFeatures = () => {
               </a>
             </Button>
             <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
-              <a href="#guide" className="flex items-center gap-2">
-                <span className="text-sm">[ Read Buying Guide ]</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
-}
-
+    </section>;
+};
 export default ProductFeatures;
