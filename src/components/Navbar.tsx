@@ -92,7 +92,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" className="hidden md:flex h-8 text-sm font-normal rounded-full px-4">
+          <Button variant="default" size="sm" className="hidden md:flex h-8 text-sm font-normal rounded-full px-4">
             Shop Now
           </Button>
           
@@ -130,7 +130,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             <a href="#career" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               About Us
             </a>
-            <Button variant="outline" size="sm" className="w-full mt-2 rounded-full h-8 text-sm font-normal">
+            <Button variant="default" size="sm" className="w-full mt-2 rounded-full h-8 text-sm font-normal">
               Shop Now
             </Button>
           </div>
