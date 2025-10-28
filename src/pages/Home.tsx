@@ -8,6 +8,7 @@ import UseCases from "@/components/UseCases";
 import BackedBy from "@/components/BackedBy";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import Footer from "@/components/Footer";
+import heroProductsSide from "@/assets/hero-products-side.png";
 const Index = () => {
   return <div className="min-h-screen bg-background text-foreground">
       {/* Warning Bar */}
@@ -95,6 +96,12 @@ const Index = () => {
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#E0E0E0]" />
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-[#E8E8E8]" />
+          {/* Product Image on the right */}
+          <img 
+            src={heroProductsSide} 
+            alt="LUSMIND Products" 
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-auto opacity-90 animate-fade-in"
+          />
         </div>
       </section>
 
