@@ -8,10 +8,8 @@ import UseCases from "@/components/UseCases";
 import BackedBy from "@/components/BackedBy";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
+  return <div className="min-h-screen bg-background text-foreground">
       {/* Warning Bar */}
       <div className="fixed top-0 left-0 right-0 w-full border-b bg-black text-white border-white/20 z-[60]">
         <div className="max-w-6xl mx-auto px-4 py-2 text-center text-xs md:text-sm tracking-wide">
@@ -24,21 +22,29 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-32 bg-[#F5F5F5]">
         {/* Corner CTAs */}
-        <div className="absolute top-32 left-8 md:left-16 z-20 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="absolute top-32 left-8 md:left-16 z-20 animate-fade-in-up" style={{
+        animationDelay: '0.2s'
+      }}>
           <CTAButton href="#team">Contact Our Team</CTAButton>
         </div>
         
-        <div className="absolute top-32 right-8 md:right-16 z-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="absolute top-32 right-8 md:right-16 z-20 animate-fade-in-up" style={{
+        animationDelay: '0.4s'
+      }}>
           <CTAButton href="#docs">Browse Catalog</CTAButton>
         </div>
         
-        <div className="absolute bottom-32 right-8 md:right-16 z-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="absolute bottom-32 right-8 md:right-16 z-20 animate-fade-in-up" style={{
+        animationDelay: '0.6s'
+      }}>
           <CTAButton href="#community">Join VIP Club</CTAButton>
         </div>
 
         {/* Hero Orb - Centered */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <HeroOrb />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-fade-in-up" style={{
+        animationDelay: '0.3s'
+      }}>
+          
         </div>
 
         {/* Main Content - Left Aligned */}
@@ -51,12 +57,16 @@ const Index = () => {
             </h1>
 
             {/* Tagline */}
-            <p className="text-base md:text-lg text-[#666666] animate-fade-in-up leading-relaxed mb-12" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base md:text-lg text-[#666666] animate-fade-in-up leading-relaxed mb-12" style={{
+            animationDelay: '0.2s'
+          }}>
               Pure flavor. Perfect satisfaction. Elevate your vaping journey.
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-wrap gap-8 mb-12 animate-fade-in-up" style={{
+            animationDelay: '0.4s'
+          }}>
               <div className="flex flex-col">
                 <span className="text-3xl md:text-4xl font-bold text-[#2D2D2D]">50+</span>
                 <span className="text-sm text-[#666666]">Flavors</span>
@@ -72,7 +82,9 @@ const Index = () => {
             </div>
 
             {/* Hero CTAs */}
-            <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{
+            animationDelay: '0.6s'
+          }}>
               <CTAButton href="#use-cases">Shop Our Products</CTAButton>
               <CTAButton href="#ecosystem">Find Retailers</CTAButton>
             </div>
@@ -106,8 +118,6 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
