@@ -55,7 +55,7 @@ const ProductFeatures = () => {
               Disposable Vapes
             </h3>
             <p className="text-base md:text-lg text-foreground font-medium mb-2">
-              Ultimate convenience with up to 5000 puffs of smooth, consistent flavor
+              Ultimate convenience with up to 40000 puffs of smooth, consistent flavor
             </p>
           </div>
           
