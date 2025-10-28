@@ -6,7 +6,7 @@ const HeroOrb = () => {
       <img 
         src={heroProducts} 
         alt="LUSMIND Products" 
-        className="w-full h-full object-contain animate-float"
+        className="w-full h-full object-contain animate-float scale-[1.3] -translate-y-8"
       />
     </div>
   );
