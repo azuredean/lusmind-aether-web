@@ -129,12 +129,12 @@ const Disposable = () => {
           <div className="max-w-3xl mx-auto bg-card p-8 rounded-lg border border-border">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { label: "Puff Count", value: "Up to 5000 puffs" },
-                { label: "Battery", value: "Integrated rechargeable" },
-                { label: "E-liquid Capacity", value: "12ml" },
-                { label: "Nicotine Strength", value: "2% / 5%" },
+                { label: "Puff Count", value: "Up to 40000 puffs" },
+                { label: "Battery", value: "Type-C Fast Charging" },
+                { label: "Smoosh experience", value: "Dual Mesh Coils" },
+                { label: "Nicotine Strength", value: "3% / 5%" },
                 { label: "Flavors Available", value: "27 varieties" },
-                { label: "Activation", value: "Draw-activated" }
+                { label: "Activation", value: "Adjustable Airflow" }
               ].map((spec, index) => (
                 <motion.div
                   key={index}
