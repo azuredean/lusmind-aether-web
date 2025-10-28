@@ -77,10 +77,10 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             </NavigationMenuList>
           </NavigationMenu>
           <a href="#explorer" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
-            Flavors
+            Experiences
           </a>
           <a href="#ecosystem" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
-            Retailers
+            Verification
           </a>
           
           <a href="#community" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
