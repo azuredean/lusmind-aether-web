@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { AgeVerification } from "@/components/AgeVerification";
+import Navbar from "@/components/Navbar";
 const theme = {
   bg: {
     canvas: "#F7F5F2",
@@ -496,57 +496,6 @@ function TopWarningBar() {
       </div>
     </div>;
 }
-function Header({
-  inverted
-}: {
-  inverted: boolean;
-}) {
-  return <header className={cn("sticky top-0 z-30 border-b transition-colors", inverted ? "bg-transparent border-transparent" : "backdrop-blur bg-[rgba(11,16,42,0.6)] border-white/10")}>
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between relative">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/lovable-uploads/6a3cad97-68cc-4600-9c35-7d92e2c90d4b.png" alt="LM Logo" className="h-8 w-8" />
-          <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-8 w-auto" />
-        </Link>
-        <div className="hidden md:flex items-center gap-4 text-sm absolute left-1/2 -translate-x-1/2">
-          <Link to="/" className={cn("text-white/80 hover:text-white px-3 py-2")}>Home</Link>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn("text-white/80 hover:text-white bg-transparent hover:bg-white/10 border-none px-3 py-2 rounded-lg text-sm font-normal", "data-[state=open]:bg-white/10 data-[state=open]:text-white")}>
-                  Products
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[200px] backdrop-blur bg-[rgba(11,16,42,0.6)] border border-white/10 rounded-xl p-2">
-                  <div className="flex flex-col gap-1">
-                    <Link to="/e-liquid" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                      E-Liquid
-                    </Link>
-                    <Link to="/e-cigarette" className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                      E- Cigarette
-                    </Link>
-                    <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
-                      Coming soon
-                    </span>
-                    <span className="px-3 py-2 text-sm text-white/50 cursor-not-allowed rounded-lg">
-                      Coming soon
-                    </span>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-          <a className={cn("text-white/80 hover:text-white")} href="#story">Story</a>
-          <a className={cn("text-white/80 hover:text-white")} href="#safety">Compliance</a>
-          <a className={cn("text-white/80 hover:text-white")} href="#contact">Contact</a>
-        </div>
-        <div className="flex items-center gap-3">
-          <Button className="rounded-xl" style={{
-          background: theme.brand.secondary,
-          color: "#0B102A"
-        }}>Explore Flavors</Button>
-        </div>
-      </nav>
-    </header>;
-}
 function Hero({
   flavor,
   onInvertedChange
@@ -875,7 +824,6 @@ function Footer() {
 export default function LusmindSite() {
   const [flavorKey, setFlavorKey] = useState<typeof FLAVORS[number]["key"]>(FLAVORS[0].key);
   const activeFlavor = useMemo(() => FLAVORS.find(f => f.key === flavorKey)!, [flavorKey]);
-  const [navInverted, setNavInverted] = useState(true);
   const [ageVerified, setAgeVerified] = useState(false);
   const [cookiesOk, setCookiesOk] = useState(false);
   const [region, setRegion] = useState<keyof typeof REGION_INFO>("US");
@@ -904,8 +852,8 @@ export default function LusmindSite() {
   }}>
       <a href="#home" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white rounded px-2 py-1">Skip to main content</a>
       <TopWarningBar />
-      <Header inverted={navInverted} />
-      <Hero flavor={activeFlavor} onInvertedChange={setNavInverted} />
+      <Navbar theme="dark" />
+      <Hero flavor={activeFlavor} onInvertedChange={() => {}} />
       <section className="relative -mt-10 z-10">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <FlavorSelector value={flavorKey} onChange={setFlavorKey} />
