@@ -5,18 +5,18 @@ const footerLinks = {
     { name: "E-Liquid", href: "/e-liquid" },
     { name: "E-Cigarette", href: "/e-cigarette" },
   ],
-  Discover: [
-    { name: "Blog", href: "#blog" },
-    { name: "Github", href: "#github" },
+  About: [
+    { name: "Brand story", href: "#story" },
+    { name: "Products & flavors", href: "#products" },
   ],
-  Build: [
-    { name: "Talk to a builder", href: "#builder" },
-    { name: "Pico zkVM Docs", href: "#pico-docs" },
-    { name: "zkCoprocessor Docs", href: "#zkco-docs" },
+  Compliance: [
+    { name: "Safety & notices", href: "#safety" },
+    { name: "Privacy & Cookies", href: "#" },
+    { name: "Terms", href: "#" },
   ],
-  "Contact Us": [
-    { name: "Join Telegram", href: "#telegram" },
-    { name: "Join Discord", href: "#discord" },
+  Contact: [
+    { name: "support@lusmind.example", href: "mailto:support@lusmind.example" },
+    { name: "Mon—Fri 10:00‑18:00", href: "#" },
   ],
 };
 
