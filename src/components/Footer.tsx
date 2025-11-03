@@ -4,6 +4,7 @@ const footerLinks = {
   Products: [
     { name: "E-Liquid", href: "/e-liquid" },
     { name: "E-Cigarette", href: "/e-cigarette" },
+    { name: "Disposable", href: "/disposable" },
   ],
   About: [
     { name: "Brand story", href: "#story" },
