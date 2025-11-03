@@ -92,10 +92,6 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="default" size="sm" className="hidden md:flex h-8 text-sm font-normal rounded-full px-4">
-            Shop Now
-          </Button>
-          
           {/* Mobile menu button */}
           <button className={`md:hidden p-1 ${textColor}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -130,9 +126,6 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             <a href="#career" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               About Us
             </a>
-            <Button variant="default" size="sm" className="w-full mt-2 rounded-full h-8 text-sm font-normal">
-              Shop Now
-            </Button>
           </div>
         </div>}
     </nav>;
