@@ -16,7 +16,7 @@ const footerLinks = {
     { name: "Terms", href: "#" },
   ],
   Contact: [
-    { name: "support@lusmind.example", href: "mailto:support@lusmind.example" },
+    { name: "support@lusmind.com", href: "mailto:support@lusmind.com" },
     { name: "Mon—Fri 10:00‑18:00", href: "#" },
   ],
 };
