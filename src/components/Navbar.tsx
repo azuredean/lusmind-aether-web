@@ -53,20 +53,20 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/e-cigarette" className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors ${isDark ? 'hover:bg-white/10 focus:bg-white/10' : 'hover:bg-accent focus:bg-accent'} ${isDark ? 'hover:text-white focus:text-white' : 'hover:text-accent-foreground focus:text-accent-foreground'}`}>
-                          <div className={`text-sm font-medium leading-none ${isDark ? 'text-white' : ''}`}>NG-cigarette</div>
+                        <Link to="/disposable" className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors ${isDark ? 'hover:bg-white/10 focus:bg-white/10' : 'hover:bg-accent focus:bg-accent'} ${isDark ? 'hover:text-white focus:text-white' : 'hover:text-accent-foreground focus:text-accent-foreground'}`}>
+                          <div className={`text-sm font-medium leading-none ${isDark ? 'text-white' : ''}`}>Disposable</div>
                           <p className={`line-clamp-2 text-sm leading-snug ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>
-                            Next-generation cigarette devices
+                            Convenient disposable vape devices
                           </p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/disposable" className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors ${isDark ? 'hover:bg-white/10 focus:bg-white/10' : 'hover:bg-accent focus:bg-accent'} ${isDark ? 'hover:text-white focus:text-white' : 'hover:text-accent-foreground focus:text-accent-foreground'}`}>
-                          <div className={`text-sm font-medium leading-none ${isDark ? 'text-white' : ''}`}>Disposable</div>
+                        <Link to="/e-cigarette" className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors ${isDark ? 'hover:bg-white/10 focus:bg-white/10' : 'hover:bg-accent focus:bg-accent'} ${isDark ? 'hover:text-white focus:text-white' : 'hover:text-accent-foreground focus:text-accent-foreground'}`}>
+                          <div className={`text-sm font-medium leading-none ${isDark ? 'text-white' : ''}`}>NG-cigarette</div>
                           <p className={`line-clamp-2 text-sm leading-snug ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>
-                            Convenient disposable vape devices
+                            Next-generation cigarette devices
                           </p>
                         </Link>
                       </NavigationMenuLink>
@@ -105,11 +105,11 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             <Link to="/e-liquid" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               E-Liquid
             </Link>
-            <Link to="/e-cigarette" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
-              NG-cigarette
-            </Link>
             <Link to="/disposable" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               Disposable
+            </Link>
+            <Link to="/e-cigarette" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
+              NG-cigarette
             </Link>
             <a href="#explorer" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               Flavors
