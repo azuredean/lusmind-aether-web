@@ -811,7 +811,7 @@ function Footer() {
         <div>
           <div className="font-medium text-white mb-2">Contact</div>
           <ul className="space-y-1 text-slate-300">
-            <li>support@lusmind.example</li>
+            <li>support@lusmind.com</li>
             <li>Mon—Fri 10:00‑18:00</li>
           </ul>
         </div>
