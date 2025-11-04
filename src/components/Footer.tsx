@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 const footerLinks = {
   Products: [
     { name: "E-Liquid", href: "/e-liquid" },
-    { name: "E-Cigarette", href: "/e-cigarette" },
     { name: "Disposable", href: "/disposable" },
+    { name: "NG-cigarette", href: "/e-cigarette" },
   ],
   About: [
     { name: "Brand story", href: "#story" },
