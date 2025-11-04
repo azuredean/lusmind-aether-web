@@ -50,10 +50,10 @@ const ProductFeatures = () => {
 
         {/* Feature 2: Disposable Vapes */}
         <div className={`mb-16 md:mb-24 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} relative`}>
-          <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
             <img src={disposableProduct} alt="" className="w-64 md:w-96 object-contain" />
           </div>
-          <div className="mb-6">
+          <div className="mb-6 relative z-10">
             <span className="text-sm text-muted-foreground mb-3 block font-light">02</span>
             <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
               Disposable Vapes
