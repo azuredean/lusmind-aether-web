@@ -89,6 +89,9 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
           <a href="#career" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
             About Us
           </a>
+          <a href="#contact" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
+            Contact Us
+          </a>
         </div>
 
         <div className="flex items-center gap-4">
@@ -125,6 +128,9 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             </a>
             <a href="#career" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               About Us
+            </a>
+            <a href="#contact" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
+              Contact Us
             </a>
           </div>
         </div>}
