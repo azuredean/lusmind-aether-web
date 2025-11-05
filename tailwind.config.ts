@@ -128,19 +128,23 @@ export default {
 						opacity: '0'
 					}
 				},
-				'mist-collision': {
-					'0%': { 
-						transform: 'translateX(-50vw)',
-						opacity: '0'
-					},
-					'50%': { 
-						opacity: '0.8'
-					},
-					'100%': { 
-						transform: 'translateX(50vw)',
-						opacity: '0'
-					}
+			'mist-collision': {
+				'0%': { 
+					transform: 'translateX(-50vw)',
+					opacity: '0'
+				},
+				'50%': { 
+					opacity: '0.8'
+				},
+				'100%': { 
+					transform: 'translateX(50vw)',
+					opacity: '0'
 				}
+			},
+			'scroll': {
+				'0%': { transform: 'translateX(0)' },
+				'100%': { transform: 'translateX(-50%)' }
+			}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -149,7 +153,8 @@ export default {
 				'glow': 'glow 2s ease-in-out infinite alternate',
 				'drift': 'drift 8s linear infinite',
 				'vapor-rise': 'vapor-rise 4s ease-out infinite',
-				'mist-collision': 'mist-collision 3s ease-out infinite'
+				'mist-collision': 'mist-collision 3s ease-out infinite',
+				'scroll': 'scroll 30s linear infinite'
 			}
 		}
 	},
