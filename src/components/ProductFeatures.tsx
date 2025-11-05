@@ -23,7 +23,7 @@ const ProductFeatures = () => {
         {/* Feature 1: Premium E-Liquids */}
         <div className={`mb-16 md:mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} relative`}>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-            <img src={premiumEliquidsBottles} alt="" className="w-80 md:w-[500px] object-contain" />
+            <img src={premiumEliquidsBottles} alt="" className="w-56 md:w-80 object-contain opacity-85" />
           </div>
           <div className="mb-6 relative z-10">
             <span className="text-sm text-muted-foreground mb-3 block font-light">01</span>
