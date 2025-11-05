@@ -5,10 +5,8 @@ import Footer from "@/components/Footer";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import BackedBy from "@/components/BackedBy";
 import heroImage from "@/assets/disposable-hero.png";
-
 const Disposable = () => {
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -16,44 +14,41 @@ const Disposable = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar theme="dark" />
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Disposable Vape Products" 
-            className="w-full h-full object-cover object-center"
-            style={{ 
-              objectFit: 'cover',
-              maxWidth: '100%',
-              height: '100%'
-            }}
-          />
+          <img src={heroImage} alt="Disposable Vape Products" className="w-full h-full object-cover object-center" style={{
+          objectFit: 'cover',
+          maxWidth: '100%',
+          height: '100%'
+        }} />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background"></div>
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }}>
             <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
               Disposable Vapes
             </h1>
             <p className="text-xl md:text-2xl text-white/90 font-light mb-8 max-w-2xl mx-auto">
               Experience ultimate convenience with our premium disposable vape collection
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-light text-lg transition-all"
-            >
+            <motion.button whileHover={{
+            scale: 1.05
+          }} whileTap={{
+            scale: 0.95
+          }} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-light text-lg transition-all">
               Explore Collection
             </motion.button>
           </motion.div>
@@ -63,12 +58,15 @@ const Disposable = () => {
       {/* Features Section */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-foreground mb-4">
               Why Choose Disposable?
             </h2>
@@ -78,36 +76,33 @@ const Disposable = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "No Maintenance",
-                description: "No refilling, no charging, no complications. Just pure enjoyment."
-              },
-              {
-                title: "Portable Design",
-                description: "Sleek and compact, fits perfectly in your pocket or bag."
-              },
-              {
-                title: "Premium Flavors",
-                description: "Wide selection of authentic flavors crafted with quality ingredients."
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-background p-8 rounded-lg border-2 border-accent/30 hover:border-accent hover:scale-105 hover:shadow-xl hover:shadow-accent/20 transition-all duration-300"
-              >
+            {[{
+            title: "No Maintenance",
+            description: "No refilling, no charging, no complications. Just pure enjoyment."
+          }, {
+            title: "Portable Design",
+            description: "Sleek and compact, fits perfectly in your pocket or bag."
+          }, {
+            title: "Premium Flavors",
+            description: "Wide selection of authentic flavors crafted with quality ingredients."
+          }].map((feature, index) => <motion.div key={index} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: index * 0.1
+          }} className="bg-background p-8 rounded-lg border-2 border-accent/30 hover:border-accent hover:scale-105 hover:shadow-xl hover:shadow-accent/20 transition-all duration-300">
                 <h3 className="text-2xl font-light text-foreground mb-4">
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground font-light">
                   {feature.description}
                 </p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -115,31 +110,23 @@ const Disposable = () => {
       {/* Product Carousel */}
       <section className="py-16 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-light text-foreground mb-4">
-              Our Collection
-            </h2>
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
+            
           </motion.div>
 
           <div className="relative">
             <div className="flex gap-6 animate-[scroll_30s_linear_infinite]">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
-                <div 
-                  key={index} 
-                  className="flex-shrink-0 w-80 aspect-[4/3] rounded-lg overflow-hidden bg-card border border-border"
-                >
-                  <img
-                    src={`/lovable-uploads/disposable-${num}.png`}
-                    alt={`Disposable vape product ${num}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
+              {[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => <div key={index} className="flex-shrink-0 w-80 aspect-[4/3] rounded-lg overflow-hidden bg-card border border-border">
+                  <img src={`/lovable-uploads/disposable-${num}.png`} alt={`Disposable vape product ${num}`} className="w-full h-full object-cover" />
+                </div>)}
             </div>
           </div>
         </div>
@@ -148,12 +135,15 @@ const Disposable = () => {
       {/* Specifications Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-foreground mb-4">
               Product Specifications
             </h2>
@@ -161,26 +151,38 @@ const Disposable = () => {
 
           <div className="max-w-3xl mx-auto bg-card p-8 rounded-lg border border-border">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { label: "Puff Count", value: "Up to 40000 puffs" },
-                { label: "Battery", value: "Type-C Fast Charging" },
-                { label: "Smoosh experience", value: "Dual Mesh Coils" },
-                { label: "Nicotine Strength", value: "3% / 5%" },
-                { label: "Flavors Available", value: "27 varieties" },
-                { label: "Activation", value: "Adjustable Airflow" }
-              ].map((spec, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="flex justify-between items-center py-3 border-b border-border"
-                >
+              {[{
+              label: "Puff Count",
+              value: "Up to 40000 puffs"
+            }, {
+              label: "Battery",
+              value: "Type-C Fast Charging"
+            }, {
+              label: "Smoosh experience",
+              value: "Dual Mesh Coils"
+            }, {
+              label: "Nicotine Strength",
+              value: "3% / 5%"
+            }, {
+              label: "Flavors Available",
+              value: "27 varieties"
+            }, {
+              label: "Activation",
+              value: "Adjustable Airflow"
+            }].map((spec, index) => <motion.div key={index} initial={{
+              opacity: 0,
+              x: -20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              delay: index * 0.05
+            }} className="flex justify-between items-center py-3 border-b border-border">
                   <span className="text-muted-foreground font-light">{spec.label}</span>
                   <span className="text-foreground font-light">{spec.value}</span>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </div>
         </div>
@@ -189,8 +191,6 @@ const Disposable = () => {
       <BackedBy />
       <PreFooterCTA />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Disposable;
