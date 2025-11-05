@@ -2,6 +2,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import disposableProduct from "@/assets/disposable-product.png";
+import premiumEliquidsBottles from "@/assets/premium-eliquids-bottles.png";
 const ProductFeatures = () => {
   const {
     ref,
@@ -20,8 +21,11 @@ const ProductFeatures = () => {
         </div>
 
         {/* Feature 1: Premium E-Liquids */}
-        <div className={`mb-16 md:mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="mb-6">
+        <div className={`mb-16 md:mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} relative`}>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            <img src={premiumEliquidsBottles} alt="" className="w-80 md:w-[500px] object-contain" />
+          </div>
+          <div className="mb-6 relative z-10">
             <span className="text-sm text-muted-foreground mb-3 block font-light">01</span>
             <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
               Premium E-Liquids
@@ -31,11 +35,11 @@ const ProductFeatures = () => {
             </p>
           </div>
           
-          <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-4xl">
+          <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-4xl relative z-10">
             From classic tobacco to exotic fruit blends, our premium e-liquids are meticulously formulated using only the finest ingredients. Every bottle undergoes rigorous quality control and flavor testing. Available in multiple nicotine strengths and VG/PG ratios to match your preferences perfectly.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 relative z-10">
             <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
               <a href="#eliquids" className="flex items-center gap-2">
                 <span className="text-sm">[ Browse E-Liquids ]</span>
