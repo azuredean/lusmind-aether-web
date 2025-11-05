@@ -1,40 +1,45 @@
 import { ArrowRight } from "lucide-react";
-
 const footerLinks = {
-  Products: [
-    { name: "E-Liquid", href: "/e-liquid" },
-    { name: "Disposable", href: "/disposable" },
-    { name: "NG-cigarette", href: "/e-cigarette" },
-  ],
-  About: [
-    { name: "Brand story", href: "#story" },
-    { name: "Products & flavors", href: "#products" },
-  ],
-  Compliance: [
-    { name: "Safety & notices", href: "#safety" },
-    { name: "Privacy & Cookies", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
-  Contact: [
-    { name: "support@lusmind.com", href: "mailto:support@lusmind.com" },
-    { name: "Mon—Fri 10:00‑18:00", href: "#" },
-  ],
+  Products: [{
+    name: "E-Liquid",
+    href: "/e-liquid"
+  }, {
+    name: "Disposable",
+    href: "/disposable"
+  }, {
+    name: "NG-cigarette",
+    href: "/e-cigarette"
+  }],
+  About: [{
+    name: "Brand story",
+    href: "#story"
+  }, {
+    name: "Products & flavors",
+    href: "#products"
+  }],
+  Compliance: [{
+    name: "Safety & notices",
+    href: "#safety"
+  }, {
+    name: "Privacy & Cookies",
+    href: "#"
+  }, {
+    name: "Terms",
+    href: "#"
+  }],
+  Contact: [{
+    name: "support@lusmind.com",
+    href: "mailto:support@lusmind.com"
+  }, {
+    name: "Mon—Fri 10:00‑18:00",
+    href: "#"
+  }]
 };
-
 const Footer = () => {
-  return (
-    <footer className="bg-[#F5F5F5] border-t border-[#E0E0E0]">
+  return <footer className="bg-[#F5F5F5] border-t border-[#E0E0E0]">
       <div className="container mx-auto px-6 md:px-16 py-16 md:py-20">
         {/* Top CTA */}
-        <div className="mb-16 text-center">
-          <a 
-            href="#community"
-            className="group inline-flex items-center gap-3 px-8 py-4 border border-[#2D2D2D]/15 rounded-lg hover:border-[#2D2D2D]/30 hover:bg-white transition-all duration-300 text-[#2D2D2D]"
-          >
-            <span className="text-base">[ Join our Community ]</span>
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
-        </div>
+        
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
@@ -46,23 +51,16 @@ const Footer = () => {
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+          {Object.entries(footerLinks).map(([category, links]) => <div key={category}>
               <h3 className="font-normal mb-4 text-sm text-[#2D2D2D]">{category}</h3>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-[#666666] hover:text-[#2D2D2D] transition-colors"
-                    >
+                {links.map(link => <li key={link.name}>
+                    <a href={link.href} className="text-sm text-[#666666] hover:text-[#2D2D2D] transition-colors">
                       {link.name}
                     </a>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* Bottom Bar */}
@@ -72,8 +70,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
