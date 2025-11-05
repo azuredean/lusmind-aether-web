@@ -98,7 +98,7 @@ const Disposable = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-background p-8 rounded-lg border border-border"
+                className="bg-background p-8 rounded-lg border-2 border-accent/30 hover:border-accent hover:scale-105 hover:shadow-xl hover:shadow-accent/20 transition-all duration-300"
               >
                 <h3 className="text-2xl font-light text-foreground mb-4">
                   {feature.title}
