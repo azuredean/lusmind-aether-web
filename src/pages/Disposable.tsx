@@ -112,6 +112,39 @@ const Disposable = () => {
         </div>
       </section>
 
+      {/* Product Carousel */}
+      <section className="py-16 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-light text-foreground mb-4">
+              Our Collection
+            </h2>
+          </motion.div>
+
+          <div className="relative">
+            <div className="flex gap-6 animate-[scroll_30s_linear_infinite]">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 w-80 aspect-[4/3] rounded-lg overflow-hidden bg-card border border-border"
+                >
+                  <img
+                    src={`/lovable-uploads/disposable-${num}.png`}
+                    alt={`Disposable vape product ${num}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Specifications Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
