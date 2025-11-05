@@ -32,7 +32,7 @@ const PreFooterCTA = () => {
 
             {/* E-liquid Excellence */}
             <div className="space-y-4 text-left">
-              <h3 className="text-xl font-light text-foreground">European Flavors</h3>
+              <h3 className="text-xl font-light text-foreground">Natural Flavors</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Our e-liquid formulations feature premium flavor compounds imported from Europe. 
                 Every ingredient is carefully selected for purity, delivering clean, authentic taste 
