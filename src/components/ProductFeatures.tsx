@@ -94,7 +94,7 @@ const ProductFeatures = () => {
           </div>
           
           <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-4xl">
-            Designed for smokers making the switch to vaping. Our next-generation devices replicate the authentic feel and draw resistance of traditional cigarettes while delivering clean, satisfying vapor. Discreet LED tip, lightweight design, and rechargeable battery make this the perfect choice for those seeking familiarity with innovation.
+             Designed for smokers making the switch to vaping. Our next-generation devices are engineered to replicate the classic flavor profile of traditional cigarettes, delivering a familiar and satisfying taste with every puff. By utilizing premium raw materials and precise extraction techniques, we achieve an exceptionally authentic restoration of that classic taste, making this the perfect choice for those seeking familiarity with innovation.
           </p>
 
           <div className="flex flex-wrap gap-4">
