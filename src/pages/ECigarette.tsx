@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MobileMenuECig } from "@/components/MobileMenuECig";
 import Navbar from "@/components/Navbar";
-import heroImage from "@/assets/ecigarette-hero.png";
+import heroImage from "@/assets/ecigarette-hero-new.png";
 import distinguishedFeaturesBg from "@/assets/distinguished-features-bg.png";
 
 const theme = {
@@ -60,11 +60,12 @@ export default function ECigarette() {
           <img 
             src={heroImage} 
             alt="E-cigarette products" 
-            className="w-full h-full object-cover object-center md:object-right"
+            className="w-full h-full object-cover object-center"
             style={{ 
               objectFit: 'cover',
               maxWidth: '100%',
-              height: '100%'
+              height: '100%',
+              transform: 'scale(1.1)'
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#741016]/80 to-transparent"></div>
