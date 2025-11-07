@@ -65,7 +65,7 @@ export default function ECigarette() {
               objectFit: 'cover',
               maxWidth: '100%',
               height: '100%',
-              transform: 'scale(1.1)'
+              transform: 'scale(0.85)'
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#741016]/80 to-transparent"></div>
