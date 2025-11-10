@@ -556,10 +556,13 @@ function Hero({
           }} transition={{
             duration: 0.6
           }} key={flavor.key}>
-              <img 
-                src={flavor.image} 
-                alt={flavor.name} 
-                className="w-48 md:w-56 h-auto drop-shadow-xl" 
+              <img
+                src={flavor.image}
+                alt={flavor.name}
+                className="w-48 md:w-56 h-auto drop-shadow-xl"
+                style={{
+                  marginTop: "clamp(-6rem, -12vw, -1.5rem)"
+                }}
               />
             </motion.div>
           </div>
