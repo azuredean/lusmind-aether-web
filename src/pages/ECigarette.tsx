@@ -220,6 +220,43 @@ export default function ECigarette() {
         </div>
       </section>
 
+      {/* Product Verification Section */}
+      <section id="verification" className="py-16 md:py-24 bg-[#D1B893]">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-16">
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3A2A25] mb-4" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
+              Product Verification
+            </h2>
+            <p className="text-base md:text-lg text-[#3A2A25]/70 font-sans">
+              Enter your product verification code to confirm authenticity
+            </p>
+          </div>
+
+          <div className="bg-white/50 backdrop-blur-sm border border-[#3A2A25]/10 rounded-lg p-8 md:p-10 shadow-lg">
+            <div className="space-y-6">
+              <div>
+                <label htmlFor="verification-code" className="block text-sm font-medium text-[#3A2A25] mb-2 font-sans">
+                  Verification Code
+                </label>
+                <input
+                  id="verification-code"
+                  type="text"
+                  placeholder="Enter product verification code"
+                  className="w-full h-12 px-4 rounded-md border border-[#3A2A25]/20 bg-white/70 text-[#3A2A25] placeholder:text-[#3A2A25]/40 focus:outline-none focus:ring-2 focus:ring-[#741016] focus:border-transparent transition-all font-sans"
+                />
+              </div>
+
+              <Button 
+                className="w-full h-12 text-base bg-[#741016] hover:bg-[#931B21] text-white transition-all font-sans"
+                style={{ borderRadius: '6px' }}
+              >
+                Verify Product
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[#0B102A] text-white py-12">
         <div className="max-w-6xl mx-auto px-4">
