@@ -76,9 +76,6 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <a href="#explorer" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
-            Experiences
-          </a>
           <a href="/#verification" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
             Verification
           </a>
