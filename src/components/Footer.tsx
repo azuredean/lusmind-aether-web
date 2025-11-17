@@ -36,7 +36,7 @@ const footerLinks = {
   }]
 };
 const Footer = () => {
-  return <footer className="bg-[#F5F5F5] border-t border-[#E0E0E0]">
+  return <footer id="contact" className="bg-[#F5F5F5] border-t border-[#E0E0E0]">
       <div className="container mx-auto px-6 md:px-16 py-16 md:py-20">
         {/* Top CTA */}
         
