@@ -57,7 +57,7 @@ const Index = () => {
               <img
                 src={slide}
                 alt={`Hero slide ${index + 1}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain object-right"
               />
             </div>
           ))}
