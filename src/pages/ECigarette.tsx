@@ -92,7 +92,7 @@ export default function ECigarette() {
       </section>
 
       {/* Brand Story Section */}
-      <section className="py-12 md:py-20 bg-[#D1B893]">
+      <section id="about" className="py-12 md:py-20 bg-[#D1B893]">
         <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3A2A25] mb-4 md:mb-6 text-center" style={{ fontFamily: 'Playfair Display, Lora, serif' }}>
@@ -220,8 +220,13 @@ export default function ECigarette() {
         </div>
       </section>
 
+      {/* Verification Section - Anchor for navigation */}
+      <section id="verification" className="py-0">
+        {/* Empty section for navigation anchor */}
+      </section>
+
       {/* Footer */}
-      <footer className="bg-[#0B102A] text-white py-12">
+      <footer id="contact" className="bg-[#0B102A] text-white py-12">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>

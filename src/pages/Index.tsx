@@ -602,7 +602,7 @@ function Story({
 }) {
   const colors = useMemo(() => [theme.brand.secondary, ...palette], [palette]);
   const rows = [50, 90, 130, 170, 210, 250];
-  return <section id="story" className="py-16">
+  return <section id="about" className="py-16">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold text-white">Light & Harmony · Brand Story</h2>
@@ -691,7 +691,7 @@ function ProductVerify() {
       }
     }, 700);
   };
-  return <section id="verify" className="py-16">
+  return <section id="verification" className="py-16">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-start">
         <div className="space-y-3">
           <h2 className="text-2xl md:text-3xl font-semibold text-white">Product Verification</h2>
