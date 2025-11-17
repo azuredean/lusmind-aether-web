@@ -66,18 +66,18 @@ const Index = () => {
         {/* Carousel Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 backdrop-blur-sm p-3 rounded-full transition-all duration-300"
+          className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 p-3 rounded-full transition-all duration-300 shadow-lg"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 text-[#2D2D2D]" />
+          <ChevronLeft className="w-6 h-6 text-gray-400" />
         </button>
         
         <button
           onClick={nextSlide}
-          className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 backdrop-blur-sm p-3 rounded-full transition-all duration-300"
+          className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 p-3 rounded-full transition-all duration-300 shadow-lg"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 text-[#2D2D2D]" />
+          <ChevronRight className="w-6 h-6 text-gray-400" />
         </button>
         {/* Corner CTAs */}
         <div className="absolute top-32 left-8 md:left-16 z-20 animate-fade-in-up" style={{
