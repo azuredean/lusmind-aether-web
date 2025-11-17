@@ -80,10 +80,10 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             Verification
           </a>
           
-          <a href="#community" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
+          <a href="#about" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
             Community
           </a>
-          <a href="#career" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
+          <a href="#about" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
             About Us
           </a>
           <a href="#contact" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
@@ -120,10 +120,10 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             <a href="#blog" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               Blog
             </a>
-            <a href="#community" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
+            <a href="#about" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               Community
             </a>
-            <a href="#career" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
+            <a href="#about" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               About Us
             </a>
             <a href="#contact" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>

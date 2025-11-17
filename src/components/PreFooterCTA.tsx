@@ -1,7 +1,7 @@
 
 const PreFooterCTA = () => {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-16 bg-background">
+    <section id="about" className="py-24 md:py-32 px-6 md:px-16 bg-background">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center space-y-12">
           {/* Title */}
