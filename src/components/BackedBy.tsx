@@ -21,7 +21,7 @@ const BackedBy = () => {
   };
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-muted/30">
+    <section id="verification" ref={ref} className="py-24 md:py-32 px-6 md:px-16 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         {/* Section Title */}
         <div className={`mb-16 md:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
