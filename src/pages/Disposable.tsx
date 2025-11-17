@@ -68,7 +68,7 @@ const Disposable = () => {
           once: true
         }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-foreground mb-4">
-              Why Choose Disposable?
+              Why Choose LUSMIND Disposable?
             </h2>
             <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
               Designed for simplicity, crafted for satisfaction
