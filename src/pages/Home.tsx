@@ -66,7 +66,7 @@ const Index = () => {
         {/* Carousel Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 p-3 rounded-full transition-all duration-300 shadow-lg"
+          className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/5 hover:bg-white/15 border border-white/30 p-3 rounded-full transition-all duration-300 shadow-xl"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-6 h-6 text-gray-400" />
@@ -74,7 +74,7 @@ const Index = () => {
         
         <button
           onClick={nextSlide}
-          className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 p-3 rounded-full transition-all duration-300 shadow-lg"
+          className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/5 hover:bg-white/15 border border-white/30 p-3 rounded-full transition-all duration-300 shadow-xl"
           aria-label="Next slide"
         >
           <ChevronRight className="w-6 h-6 text-gray-400" />
