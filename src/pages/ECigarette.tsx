@@ -225,7 +225,10 @@ export default function ECigarette() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-bold text-lg mb-4 font-sans">LUSMIND</h3>
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/lovable-uploads/6a3cad97-68cc-4600-9c35-7d92e2c90d4b.png" alt="LM Logo" className="h-6 w-6" />
+                <img src="/lovable-uploads/97552e62-98e0-43b3-850e-1c39978ce0cd.png" alt="LUSMIND" className="h-6 w-auto" />
+              </div>
               <p className="text-white/60 text-sm font-sans">
                 Timeless quality, everlasting excellence.
               </p>
