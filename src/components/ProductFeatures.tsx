@@ -40,12 +40,12 @@ const ProductFeatures = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 relative z-10">
-            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
-              <a href="#eliquids" className="flex items-center gap-2">
-                <span className="text-sm">[ Browse E-Liquids ]</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
+          <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+            <a href="/e-liquid" className="flex items-center gap-2">
+              <span className="text-sm">[ Browse E-Liquids ]</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
             <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
               
             </Button>
@@ -72,12 +72,12 @@ const ProductFeatures = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
-              <a href="#disposables" className="flex items-center gap-2">
-                <span className="text-sm">[ Shop Disposables ]</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
+          <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+            <a href="/disposable" className="flex items-center gap-2">
+              <span className="text-sm">[ Shop Disposables ]</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
           </div>
         </div>
 
@@ -98,12 +98,12 @@ const ProductFeatures = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
-              <a href="#ng-cigarette" className="flex items-center gap-2">
-                <span className="text-sm">[ Discover NG-cigarette ]</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
+          <Button variant="outline" className="group border-[#2D2D2D]/20 hover:border-[#2D2D2D]/40 hover:bg-[#2D2D2D]/5" asChild>
+            <a href="/e-cigarette" className="flex items-center gap-2">
+              <span className="text-sm">[ Discover NG-cigarette ]</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
           </div>
         </div>
       </div>
