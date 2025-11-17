@@ -38,8 +38,8 @@ const Disposable = () => {
         }} transition={{
           duration: 0.8
         }}>
-            <h1 className="text-5xl md:text-7xl font-light text-white mb-6">
-              Disposable Vapes
+            <h1 className="text-5xl md:text-7xl mb-6">
+              <span className="italic font-serif bg-gradient-to-r from-[#8FF5FF] to-[#FFA4F3] bg-clip-text text-transparent">Disposable Vapes</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 font-light mb-8 max-w-2xl mx-auto">
               Experience ultimate convenience with our premium disposable vape collection
