@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import HeroOrb from "@/components/HeroOrb";
 import CTAButton from "@/components/CTAButton";
@@ -8,7 +10,29 @@ import UseCases from "@/components/UseCases";
 import BackedBy from "@/components/BackedBy";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import Footer from "@/components/Footer";
+import heroSlide1 from "@/assets/hero-slide-cigarette.png";
+import heroSlide2 from "@/assets/hero-slide-eliquid.png";
+import heroSlide3 from "@/assets/hero-slide-space.png";
+
+const heroSlides = [heroSlide1, heroSlide2, heroSlide3];
 const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
   return <div className="min-h-screen bg-background text-foreground">
       {/* Warning Bar */}
       <div className="fixed top-0 left-0 right-0 w-full border-b bg-black text-white border-white/20 z-[60]">
@@ -21,6 +45,40 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-32 bg-[#F5F5F5]">
+        {/* Background Carousel */}
+        <div className="absolute inset-0 z-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={slide}
+                alt={`Hero slide ${index + 1}`}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Carousel Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 backdrop-blur-sm p-3 rounded-full transition-all duration-300"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6 text-[#2D2D2D]" />
+        </button>
+        
+        <button
+          onClick={nextSlide}
+          className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 backdrop-blur-sm p-3 rounded-full transition-all duration-300"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6 text-[#2D2D2D]" />
+        </button>
         {/* Corner CTAs */}
         <div className="absolute top-32 left-8 md:left-16 z-20 animate-fade-in-up" style={{
         animationDelay: '0.2s'
