@@ -76,7 +76,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <a href="/#verification" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
+          <a href="#verification" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors`}>
             Verification
           </a>
           
@@ -114,7 +114,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
             <a href="#explorer" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               Flavors
             </a>
-            <a href="/#verification" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
+            <a href="#verification" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
               Verification
             </a>
             <a href="#blog" className={`text-sm font-normal ${textColor} ${textColorHover} transition-colors py-2`}>
