@@ -8,6 +8,11 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Badge } from "@/components/ui/badge";
 import { AgeVerification } from "@/components/AgeVerification";
 import Navbar from "@/components/Navbar";
+import meArcticSweetIce from "@/assets/me-arctic-sweet-ice.png";
+import meBananaNut from "@/assets/me-banana-nut.png";
+import meBlueberryRaspberry from "@/assets/me-blueberry-raspberry.png";
+import meCaramelCustard from "@/assets/me-caramel-custard.png";
+import meCinnamonApplePie from "@/assets/me-cinnamon-apple-pie.png";
 const theme = {
   bg: {
     canvas: "#F7F5F2",
@@ -58,6 +63,7 @@ const FLAVORS = [{
   key: "banana-nut",
   name: "Banana Nut",
   image: "/lovable-uploads/a464032b-a094-456e-aea8-80e539a970c7.png",
+  imageUS: meBananaNut,
   palette: ["#FFE8A3", "#F4EFE9", "#D7C2A3"],
   bottle: {
     from: "#FFF8E1",
@@ -113,6 +119,7 @@ const FLAVORS = [{
   key: "cinnamon-apple-pie",
   name: "Cinnamon Apple Pie",
   image: "/lovable-uploads/74d4636a-0a38-40e9-af35-cbce508310fb.png",
+  imageUS: meCinnamonApplePie,
   palette: ["#FFD6B5", "#FFE8A3", "#D2B48C"],
   bottle: {
     from: "#FFF0E3",
@@ -146,6 +153,7 @@ const FLAVORS = [{
   key: "blueberry-raspberry",
   name: "Blueberry Raspberry",
   image: "/lovable-uploads/bc1fc5de-0472-4e0b-99df-56017a874103.png",
+  imageUS: meBlueberryRaspberry,
   palette: ["#CFE8FF", "#E5D9FF", "#FFD6D6"],
   bottle: {
     from: "#EEF5FF",
@@ -157,6 +165,7 @@ const FLAVORS = [{
   key: "vanilla-custard",
   name: "Caramel Custard",
   image: "/lovable-uploads/577fbebc-68bb-4093-ab17-308fae3d01e0.png",
+  imageUS: meCaramelCustard,
   palette: ["#FFF2CC", "#FFE8A3", "#F4EFE9"],
   bottle: {
     from: "#FFF8E6",
@@ -245,6 +254,7 @@ const FLAVORS = [{
   key: "arctic-berry-ice",
   name: "Arctic Sweet Ice",
   image: "/lovable-uploads/5a603468-2ecb-409f-9820-41d985294da4.png",
+  imageUS: meArcticSweetIce,
   palette: ["#CFE8FF", "#E5D9FF", "#D8F3E1"],
   bottle: {
     from: "#F0F7FF",
