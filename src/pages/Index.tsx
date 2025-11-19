@@ -502,10 +502,12 @@ function TopWarningBar() {
 }
 function Hero({
   flavor,
-  onInvertedChange
+  onInvertedChange,
+  version
 }: {
   flavor: typeof FLAVORS[number];
   onInvertedChange?: (inv: boolean) => void;
+  version: 'ME' | 'US';
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const {
@@ -525,6 +527,10 @@ function Hero({
   }, [scrollYProgress, onInvertedChange]);
   const bg = `radial-gradient(1000px 600px at 80% -20%, ${hexToRgba(flavor.palette[0], 0.18)}, transparent 60%), linear-gradient(180deg, #2A2F88 0%, ${theme.brand.primary} 48%, #1A1D66 100%)`;
   const smokeColors = [theme.brand.secondary, flavor.palette[0], flavor.palette[1] ?? "#5156B3"];
+  
+  // ME版本不显示图片，US版本显示image
+  const displayImage = version === 'US' ? flavor.image : null;
+  
   return <section id="home" ref={ref} className="relative overflow-hidden" style={{
     background: bg
   }}>
@@ -551,24 +557,26 @@ function Hero({
             </div>
           </div>
           <div className="relative flex justify-center md:justify-end">
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.6
-          }} key={flavor.key}>
-              <img
-                src={flavor.image}
-                alt={flavor.name}
-                className="w-48 md:w-56 h-auto drop-shadow-xl"
-                style={{
-                  marginTop: "clamp(-6rem, -12vw, -1.5rem)"
-                }}
-              />
-            </motion.div>
+            {displayImage && (
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.6
+            }} key={flavor.key}>
+                <img
+                  src={displayImage}
+                  alt={flavor.name}
+                  className="w-48 md:w-56 h-auto drop-shadow-xl"
+                  style={{
+                    marginTop: "clamp(-6rem, -12vw, -1.5rem)"
+                  }}
+                />
+              </motion.div>
+            )}
           </div>
         </motion.div>
       </div>
@@ -861,7 +869,7 @@ export default function LusmindSite() {
       <a href="#home" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white rounded px-2 py-1">Skip to main content</a>
       <TopWarningBar />
       <Navbar theme="dark" />
-      <Hero flavor={activeFlavor} onInvertedChange={() => {}} />
+      <Hero flavor={activeFlavor} onInvertedChange={() => {}} version={version} />
       <section className="relative -mt-10 z-10">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <FlavorSelector value={flavorKey} onChange={setFlavorKey} />
