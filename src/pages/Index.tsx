@@ -450,7 +450,7 @@ function ProductCard({
   flavor: typeof FLAVORS[number];
   version: 'ME' | 'US';
 }) {
-  const displayImage = version === 'US' ? (flavor as any).imageUS : (flavor as any).image;
+  const displayImage = version === 'ME' ? (flavor as any).imageUS : (flavor as any).image;
   
   return <Card className="rounded-3xl border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
       <CardHeader>
