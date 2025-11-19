@@ -36,7 +36,6 @@ const FLAVORS = [{
   key: "cool-peppermint",
   name: "Cool Peppermint",
   image: "/lovable-uploads/ea4cfe6b-b1b0-448a-889e-768ca1c65908.png",
-  imageUS: "/lovable-uploads/classic-flavor.png",
   palette: ["#D8F3E1", "#CFE8FF", "#E6FE7F"],
   bottle: {
     from: "#EAFBF2",
@@ -48,7 +47,6 @@ const FLAVORS = [{
   key: "monster-drink",
   name: "Monster Drink",
   image: "/lovable-uploads/91c3186a-70e4-42e6-bf1e-406deac7ce00.png",
-  imageUS: "/lovable-uploads/niagra-grape.png",
   palette: ["#E6FE7F", "#CFE8FF", "#FFE8A3"],
   bottle: {
     from: "#F2FFE6",
@@ -60,7 +58,6 @@ const FLAVORS = [{
   key: "banana-nut",
   name: "Banana Nut",
   image: "/lovable-uploads/a464032b-a094-456e-aea8-80e539a970c7.png",
-  imageUS: "/lovable-uploads/classic-flavor.png",
   palette: ["#FFE8A3", "#F4EFE9", "#D7C2A3"],
   bottle: {
     from: "#FFF8E1",
@@ -72,7 +69,6 @@ const FLAVORS = [{
   key: "keel-scout",
   name: "Double Apple Shisha",
   image: "/lovable-uploads/0437b888-5834-4830-9e2c-7f144ebc2572.png",
-  imageUS: "/lovable-uploads/double-apple-shisha.png",
   palette: ["#CFE8FF", "#E6FE7F", "#D8F3E1"],
   bottle: {
     from: "#EAF4FF",
@@ -84,7 +80,6 @@ const FLAVORS = [{
   key: "tobacco-mint",
   name: "Tobacco & Nut",
   image: "/lovable-uploads/3ce25664-49eb-4c06-b7e4-fd8609332e17.png",
-  imageUS: "/lovable-uploads/tobacco-nut.png",
   palette: ["#D2B48C", "#D8F3E1", "#F4EFE9"],
   bottle: {
     from: "#F1E8D2",
@@ -96,7 +91,6 @@ const FLAVORS = [{
   key: "strawberry-jam",
   name: "Creamy Rainbow Candy",
   image: "/lovable-uploads/407f84ee-9002-4f3c-93f9-934ad61b36df.png",
-  imageUS: "/lovable-uploads/blueberry-raspberry.png",
   palette: ["#FFD6D6", "#FFE8A3", "#CFE8FF"],
   bottle: {
     from: "#FFF1F1",
@@ -108,7 +102,6 @@ const FLAVORS = [{
   key: "kiwi-passion-fruit",
   name: "Kiwi & Passion Fruit",
   image: "/lovable-uploads/58d2fae3-6db0-472a-9ad3-63efa0fe4eba.png",
-  imageUS: "/lovable-uploads/classic-flavor.png",
   palette: ["#D8F3E1", "#FFE8A3", "#FFCFA3"],
   bottle: {
     from: "#E6F9D8",
@@ -120,7 +113,6 @@ const FLAVORS = [{
   key: "cinnamon-apple-pie",
   name: "Cinnamon Apple Pie",
   image: "/lovable-uploads/74d4636a-0a38-40e9-af35-cbce508310fb.png",
-  imageUS: "/lovable-uploads/coffee-tobacco.png",
   palette: ["#FFD6B5", "#FFE8A3", "#D2B48C"],
   bottle: {
     from: "#FFF0E3",
