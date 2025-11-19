@@ -36,6 +36,7 @@ const FLAVORS = [{
   key: "cool-peppermint",
   name: "Cool Peppermint",
   image: "/lovable-uploads/ea4cfe6b-b1b0-448a-889e-768ca1c65908.png",
+  imageUS: "/lovable-uploads/classic-flavor.png",
   palette: ["#D8F3E1", "#CFE8FF", "#E6FE7F"],
   bottle: {
     from: "#EAFBF2",
@@ -47,6 +48,7 @@ const FLAVORS = [{
   key: "monster-drink",
   name: "Monster Drink",
   image: "/lovable-uploads/91c3186a-70e4-42e6-bf1e-406deac7ce00.png",
+  imageUS: "/lovable-uploads/niagra-grape.png",
   palette: ["#E6FE7F", "#CFE8FF", "#FFE8A3"],
   bottle: {
     from: "#F2FFE6",
@@ -58,6 +60,7 @@ const FLAVORS = [{
   key: "banana-nut",
   name: "Banana Nut",
   image: "/lovable-uploads/a464032b-a094-456e-aea8-80e539a970c7.png",
+  imageUS: "/lovable-uploads/classic-flavor.png",
   palette: ["#FFE8A3", "#F4EFE9", "#D7C2A3"],
   bottle: {
     from: "#FFF8E1",
@@ -69,6 +72,7 @@ const FLAVORS = [{
   key: "keel-scout",
   name: "Double Apple Shisha",
   image: "/lovable-uploads/0437b888-5834-4830-9e2c-7f144ebc2572.png",
+  imageUS: "/lovable-uploads/double-apple-shisha.png",
   palette: ["#CFE8FF", "#E6FE7F", "#D8F3E1"],
   bottle: {
     from: "#EAF4FF",
@@ -80,6 +84,7 @@ const FLAVORS = [{
   key: "tobacco-mint",
   name: "Tobacco & Nut",
   image: "/lovable-uploads/3ce25664-49eb-4c06-b7e4-fd8609332e17.png",
+  imageUS: "/lovable-uploads/tobacco-nut.png",
   palette: ["#D2B48C", "#D8F3E1", "#F4EFE9"],
   bottle: {
     from: "#F1E8D2",
@@ -91,6 +96,7 @@ const FLAVORS = [{
   key: "strawberry-jam",
   name: "Creamy Rainbow Candy",
   image: "/lovable-uploads/407f84ee-9002-4f3c-93f9-934ad61b36df.png",
+  imageUS: "/lovable-uploads/blueberry-raspberry.png",
   palette: ["#FFD6D6", "#FFE8A3", "#CFE8FF"],
   bottle: {
     from: "#FFF1F1",
@@ -102,6 +108,7 @@ const FLAVORS = [{
   key: "kiwi-passion-fruit",
   name: "Kiwi & Passion Fruit",
   image: "/lovable-uploads/58d2fae3-6db0-472a-9ad3-63efa0fe4eba.png",
+  imageUS: "/lovable-uploads/classic-flavor.png",
   palette: ["#D8F3E1", "#FFE8A3", "#FFCFA3"],
   bottle: {
     from: "#E6F9D8",
@@ -113,6 +120,7 @@ const FLAVORS = [{
   key: "cinnamon-apple-pie",
   name: "Cinnamon Apple Pie",
   image: "/lovable-uploads/74d4636a-0a38-40e9-af35-cbce508310fb.png",
+  imageUS: "/lovable-uploads/coffee-tobacco.png",
   palette: ["#FFD6B5", "#FFE8A3", "#D2B48C"],
   bottle: {
     from: "#FFF0E3",
@@ -436,10 +444,14 @@ function FlavorSelector({
     </div>;
 }
 function ProductCard({
-  flavor
+  flavor,
+  version
 }: {
   flavor: typeof FLAVORS[number];
+  version: 'ME' | 'US';
 }) {
+  const displayImage = version === 'US' ? (flavor as any).imageUS : (flavor as any).image;
+  
   return <Card className="rounded-3xl border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-white">
@@ -449,8 +461,8 @@ function ProductCard({
       </CardHeader>
       <CardContent>
         <div className="flex items-center gap-6">
-          {(flavor as any).image ? <div className="w-48 md:w-56">
-              <img src={(flavor as any).image} alt={flavor.name} className="w-full h-auto rounded-2xl shadow-lg" />
+          {displayImage ? <div className="w-48 md:w-56">
+              <img src={displayImage} alt={flavor.name} className="w-full h-auto rounded-2xl shadow-lg" />
             </div> : <Bottle from={flavor.bottle.from} to={flavor.bottle.to} />}
           <div className="space-y-2 text-sm text-slate-300">
             {flavor.notes.map((n, i) => <div key={i} className="flex items-center gap-2">
@@ -722,7 +734,7 @@ function ProductVerify() {
       </div>
     </section>;
 }
-function Products() {
+function Products({ version }: { version: 'ME' | 'US' }) {
   return <section id="products" className="py-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-end justify-between gap-4 mb-6">
@@ -736,7 +748,7 @@ function Products() {
         }}>View all</Button>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {FLAVORS.map(f => <ProductCard key={f.key} flavor={f} />)}
+          {FLAVORS.map(f => <ProductCard key={f.key} flavor={f} version={version} />)}
         </div>
       </div>
     </section>;
@@ -830,6 +842,7 @@ export default function LusmindSite() {
   const [ageVerified, setAgeVerified] = useState(false);
   const [cookiesOk, setCookiesOk] = useState(false);
   const [region, setRegion] = useState<keyof typeof REGION_INFO>("US");
+  const [version, setVersion] = useState<'ME' | 'US'>('US');
   useEffect(() => {
     if (!isBrowser) return;
     const ck = window.localStorage.getItem("lusmind_cookie_ok") === "1";
@@ -863,13 +876,48 @@ export default function LusmindSite() {
           
         </div>
       </section>
-      <Products />
+      <Products version={version} />
       <Story palette={activeFlavor.palette} />
       <ProductVerify />
       <SafetySection region={region} onRegionChange={changeRegion} />
       <Contact />
       <Footer />
-            <div className="fixed top-1/2 -right-12 md:right-2 md:top-auto md:bottom-6 rotate-90 md:rotate-0 z-40">
+      
+      {/* Version Switch Button */}
+      <div className="fixed top-24 right-8 z-40">
+        <div className="flex gap-2 bg-white/5 backdrop-blur-sm border border-white/30 rounded-2xl p-1.5 shadow-xl">
+          <button
+            onClick={() => setVersion('ME')}
+            className={cn(
+              "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300",
+              version === 'ME' 
+                ? "bg-white/20 text-white shadow-lg" 
+                : "text-gray-400 hover:bg-white/10 hover:text-gray-300"
+            )}
+          >
+            <div className="flex items-center gap-2">
+              <Globe className="w-4 h-4" />
+              <span>ME</span>
+            </div>
+          </button>
+          <button
+            onClick={() => setVersion('US')}
+            className={cn(
+              "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300",
+              version === 'US' 
+                ? "bg-white/20 text-white shadow-lg" 
+                : "text-gray-400 hover:bg-white/10 hover:text-gray-300"
+            )}
+          >
+            <div className="flex items-center gap-2">
+              <Globe className="w-4 h-4" />
+              <span>US</span>
+            </div>
+          </button>
+        </div>
+      </div>
+      
+      <div className="fixed top-1/2 -right-12 md:right-2 md:top-auto md:bottom-6 rotate-90 md:rotate-0 z-40">
         <div className="rounded-full bg-white/10 backdrop-blur border border-white/10 px-3 py-1 text-[11px] text-white">
           * WARNING: Nicotine is an addictive chemical · Adults only
         </div>
