@@ -8,11 +8,11 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Badge } from "@/components/ui/badge";
 import { AgeVerification } from "@/components/AgeVerification";
 import Navbar from "@/components/Navbar";
-import meArcticSweetIce from "@/assets/me-arctic-sweet-ice.png";
-import meBananaNut from "@/assets/me-banana-nut.png";
-import meBlueberryRaspberry from "@/assets/me-blueberry-raspberry.png";
-import meCaramelCustard from "@/assets/me-caramel-custard.png";
-import meCinnamonApplePie from "@/assets/me-cinnamon-apple-pie.png";
+import meArcticSweetIce from "@/assets/me-products/arctic-sweet-ice.png";
+import meBananaNut from "@/assets/me-products/banana-nut.png";
+import meBlueberryRaspberry from "@/assets/me-products/blueberry-raspberry.png";
+import meCaramelCustard from "@/assets/me-products/caramel-custard.png";
+import meCinnamonApplePie from "@/assets/me-products/cinnamon-apple-pie.png";
 const theme = {
   bg: {
     canvas: "#F7F5F2",
@@ -63,7 +63,7 @@ const FLAVORS = [{
   key: "banana-nut",
   name: "Banana Nut",
   image: "/lovable-uploads/a464032b-a094-456e-aea8-80e539a970c7.png",
-  imageUS: meBananaNut,
+  imageME: meBananaNut,
   palette: ["#FFE8A3", "#F4EFE9", "#D7C2A3"],
   bottle: {
     from: "#FFF8E1",
@@ -119,7 +119,7 @@ const FLAVORS = [{
   key: "cinnamon-apple-pie",
   name: "Cinnamon Apple Pie",
   image: "/lovable-uploads/74d4636a-0a38-40e9-af35-cbce508310fb.png",
-  imageUS: meCinnamonApplePie,
+  imageME: meCinnamonApplePie,
   palette: ["#FFD6B5", "#FFE8A3", "#D2B48C"],
   bottle: {
     from: "#FFF0E3",
@@ -153,7 +153,7 @@ const FLAVORS = [{
   key: "blueberry-raspberry",
   name: "Blueberry Raspberry",
   image: "/lovable-uploads/bc1fc5de-0472-4e0b-99df-56017a874103.png",
-  imageUS: meBlueberryRaspberry,
+  imageME: meBlueberryRaspberry,
   palette: ["#CFE8FF", "#E5D9FF", "#FFD6D6"],
   bottle: {
     from: "#EEF5FF",
@@ -165,7 +165,7 @@ const FLAVORS = [{
   key: "vanilla-custard",
   name: "Caramel Custard",
   image: "/lovable-uploads/577fbebc-68bb-4093-ab17-308fae3d01e0.png",
-  imageUS: meCaramelCustard,
+  imageME: meCaramelCustard,
   palette: ["#FFF2CC", "#FFE8A3", "#F4EFE9"],
   bottle: {
     from: "#FFF8E6",
@@ -254,7 +254,7 @@ const FLAVORS = [{
   key: "arctic-berry-ice",
   name: "Arctic Sweet Ice",
   image: "/lovable-uploads/5a603468-2ecb-409f-9820-41d985294da4.png",
-  imageUS: meArcticSweetIce,
+  imageME: meArcticSweetIce,
   palette: ["#CFE8FF", "#E5D9FF", "#D8F3E1"],
   bottle: {
     from: "#F0F7FF",
@@ -452,7 +452,7 @@ function ProductCard({
   flavor: typeof FLAVORS[number];
   version: 'ME' | 'US';
 }) {
-  const displayImage = version === 'ME' ? (flavor as any).imageUS : (flavor as any).image;
+  const displayImage = version === 'ME' ? (flavor as any).imageME : (flavor as any).image;
   
   return <Card className="rounded-3xl border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
       <CardHeader>
@@ -538,8 +538,8 @@ function Hero({
   const bg = `radial-gradient(1000px 600px at 80% -20%, ${hexToRgba(flavor.palette[0], 0.18)}, transparent 60%), linear-gradient(180deg, #2A2F88 0%, ${theme.brand.primary} 48%, #1A1D66 100%)`;
   const smokeColors = [theme.brand.secondary, flavor.palette[0], flavor.palette[1] ?? "#5156B3"];
   
-  // ME版本不显示图片，US版本显示image
-  const displayImage = version === 'US' ? flavor.image : null;
+  // ME版本显示imageME，US版本显示image
+  const displayImage = version === 'ME' ? (flavor as any).imageME : flavor.image;
   
   return <section id="home" ref={ref} className="relative overflow-hidden" style={{
     background: bg
