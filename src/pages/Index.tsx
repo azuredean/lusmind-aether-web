@@ -23,6 +23,10 @@ import meGreenCoconut from "@/assets/me-products/green-coconut.png";
 import meKiwiPassionfruit from "@/assets/me-products/kiwi-passionfruit.png";
 import meMangoIce from "@/assets/me-products/mango-ice.png";
 import meMelonYogurtIce from "@/assets/me-products/melon-yogurt-ice.png";
+import meStrawberryCake from "@/assets/me-products/strawberry-cake.png";
+import meTobaccoNut from "@/assets/me-products/tobacco-nut.png";
+import meWatermelonIce from "@/assets/me-products/watermelon-ice.png";
+import meWatermelonStrawberry from "@/assets/me-products/watermelon-strawberry.png";
 const theme = {
   bg: {
     canvas: "#F7F5F2",
@@ -98,6 +102,7 @@ const FLAVORS = [{
   key: "tobacco-mint",
   name: "Tobacco & Nut",
   image: "/lovable-uploads/3ce25664-49eb-4c06-b7e4-fd8609332e17.png",
+  imageME: meTobaccoNut,
   palette: ["#D2B48C", "#D8F3E1", "#F4EFE9"],
   bottle: {
     from: "#F1E8D2",
@@ -249,6 +254,7 @@ const FLAVORS = [{
   key: "strawberry-cake",
   name: "Strawberry Cake",
   image: "/lovable-uploads/348c3797-7f4a-4d95-a936-43dee5f6960e.png",
+  imageME: meStrawberryCake,
   palette: ["#FFD6D6", "#E5D9FF", "#CFE8FF"],
   bottle: {
     from: "#FFF3F3",
@@ -284,6 +290,7 @@ const FLAVORS = [{
   key: "watermelon-ice",
   name: "Watermelon Ice",
   image: "/lovable-uploads/b4f62c5c-19f1-4a54-9493-2fc10fa9c157.png",
+  imageME: meWatermelonIce,
   palette: ["#FFD6D6", "#CFE8FF", "#E6FE7F"],
   bottle: {
     from: "#FFF1F1",
@@ -307,6 +314,7 @@ const FLAVORS = [{
   key: "watermelon-strawberry",
   name: "Watermelon Strawberry",
   image: "/lovable-uploads/d40cfc6b-12e9-4fac-b78c-42867e649607.png",
+  imageME: meWatermelonStrawberry,
   palette: ["#FFD6D6", "#CFE8FF", "#FFE8A3"],
   bottle: {
     from: "#FFF1F1",
