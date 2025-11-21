@@ -18,6 +18,11 @@ import meCoolPeppermint from "@/assets/me-products/cool-peppermint.png";
 import meCoolYuzuCedar from "@/assets/me-products/cool-yuzu-cedar.png";
 import meCreamyRainbowCandy from "@/assets/me-products/creamy-rainbow-candy.png";
 import meDoubleAppleShisha from "@/assets/me-products/double-apple-shisha.png";
+import meGreenApple from "@/assets/me-products/green-apple.png";
+import meGreenCoconut from "@/assets/me-products/green-coconut.png";
+import meKiwiPassionfruit from "@/assets/me-products/kiwi-passionfruit.png";
+import meMangoIce from "@/assets/me-products/mango-ice.png";
+import meMelonYogurtIce from "@/assets/me-products/melon-yogurt-ice.png";
 const theme = {
   bg: {
     canvas: "#F7F5F2",
@@ -116,6 +121,7 @@ const FLAVORS = [{
   key: "kiwi-passion-fruit",
   name: "Kiwi & Passion Fruit",
   image: "/lovable-uploads/58d2fae3-6db0-472a-9ad3-63efa0fe4eba.png",
+  imageME: meKiwiPassionfruit,
   palette: ["#D8F3E1", "#FFE8A3", "#FFCFA3"],
   bottle: {
     from: "#E6F9D8",
@@ -186,6 +192,7 @@ const FLAVORS = [{
   key: "mango-ice",
   name: "Mango Ice",
   image: "/lovable-uploads/822f2f7d-7d53-4e3d-ae1d-58cd9bde0e71.png",
+  imageME: meMangoIce,
   palette: ["#FFCFA3", "#FFE8A3", "#CFE8FF"],
   bottle: {
     from: "#FFF0E0",
@@ -219,6 +226,7 @@ const FLAVORS = [{
   key: "green-apple",
   name: "Green Apple",
   image: "/lovable-uploads/abbd21c8-208e-4b40-97f2-9255fea9c770.png",
+  imageME: meGreenApple,
   palette: ["#E6FE7F", "#D8F3E1", "#CFE8FF"],
   bottle: {
     from: "#F2FFE6",
@@ -252,6 +260,7 @@ const FLAVORS = [{
   key: "green-coconut",
   name: "Green Coconut",
   image: "/lovable-uploads/4368fcfa-8df8-410d-89de-dd898164b244.png",
+  imageME: meGreenCoconut,
   palette: ["#D8F3E1", "#EAF9F1", "#CFE8FF"],
   bottle: {
     from: "#F0FFF4",
@@ -286,6 +295,7 @@ const FLAVORS = [{
   key: "melon-yogurt-ice",
   name: "Melon Yogurt Ice",
   image: "/lovable-uploads/e9ceb65c-4181-4594-93ba-05d6c587459e.png",
+  imageME: meMelonYogurtIce,
   palette: ["#E6FE7F", "#FFF2CC", "#CFE8FF"],
   bottle: {
     from: "#F6FFE8",
