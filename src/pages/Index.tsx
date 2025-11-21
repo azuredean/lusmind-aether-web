@@ -13,6 +13,11 @@ import meBananaNut from "@/assets/me-products/banana-nut.png";
 import meBlueberryRaspberry from "@/assets/me-products/blueberry-raspberry.png";
 import meCaramelCustard from "@/assets/me-products/caramel-custard.png";
 import meCinnamonApplePie from "@/assets/me-products/cinnamon-apple-pie.png";
+import meCoffeeTobacco from "@/assets/me-products/coffee-tobacco.png";
+import meCoolPeppermint from "@/assets/me-products/cool-peppermint.png";
+import meCoolYuzuCedar from "@/assets/me-products/cool-yuzu-cedar.png";
+import meCreamyRainbowCandy from "@/assets/me-products/creamy-rainbow-candy.png";
+import meDoubleAppleShisha from "@/assets/me-products/double-apple-shisha.png";
 const theme = {
   bg: {
     canvas: "#F7F5F2",
@@ -41,6 +46,7 @@ const FLAVORS = [{
   key: "cool-peppermint",
   name: "Cool Peppermint",
   image: "/lovable-uploads/ea4cfe6b-b1b0-448a-889e-768ca1c65908.png",
+  imageME: meCoolPeppermint,
   palette: ["#D8F3E1", "#CFE8FF", "#E6FE7F"],
   bottle: {
     from: "#EAFBF2",
@@ -75,6 +81,7 @@ const FLAVORS = [{
   key: "keel-scout",
   name: "Double Apple Shisha",
   image: "/lovable-uploads/0437b888-5834-4830-9e2c-7f144ebc2572.png",
+  imageME: meDoubleAppleShisha,
   palette: ["#CFE8FF", "#E6FE7F", "#D8F3E1"],
   bottle: {
     from: "#EAF4FF",
@@ -97,6 +104,7 @@ const FLAVORS = [{
   key: "strawberry-jam",
   name: "Creamy Rainbow Candy",
   image: "/lovable-uploads/407f84ee-9002-4f3c-93f9-934ad61b36df.png",
+  imageME: meCreamyRainbowCandy,
   palette: ["#FFD6D6", "#FFE8A3", "#CFE8FF"],
   bottle: {
     from: "#FFF1F1",
@@ -142,6 +150,7 @@ const FLAVORS = [{
   key: "coffee-tobacco",
   name: "Coffee Tobacco",
   image: "/lovable-uploads/5018366c-93d6-45d8-9b6c-3a38dd9f4f73.png",
+  imageME: meCoffeeTobacco,
   palette: ["#C8B18B", "#F4EFE9", "#D2B48C"],
   bottle: {
     from: "#EDE3D2",
@@ -299,6 +308,7 @@ const FLAVORS = [{
   key: "cool-yuzu-cedar",
   name: "Cool Yuzu Cedar",
   image: "/lovable-uploads/1a057b10-b648-4b7f-9860-481b721fcef3.png",
+  imageME: meCoolYuzuCedar,
   palette: ["#D8F3E1", "#FFF2CC", "#D2B48C"],
   bottle: {
     from: "#F0FFF4",
