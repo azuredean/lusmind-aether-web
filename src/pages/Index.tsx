@@ -27,6 +27,11 @@ import meStrawberryCake from "@/assets/me-products/strawberry-cake.png";
 import meTobaccoNut from "@/assets/me-products/tobacco-nut.png";
 import meWatermelonIce from "@/assets/me-products/watermelon-ice.png";
 import meWatermelonStrawberry from "@/assets/me-products/watermelon-strawberry.png";
+import meMonsterDrink from "@/assets/me-products/monster-drink.png";
+import mePeachIce from "@/assets/me-products/peach-ice.png";
+import mePineappleCoconutIce from "@/assets/me-products/pineapple-coconut-ice.png";
+import meNiagaraGrape from "@/assets/me-products/niagara-grape.png";
+import meOrangeSoda from "@/assets/me-products/orange-soda.png";
 const theme = {
   bg: {
     canvas: "#F7F5F2",
@@ -67,6 +72,7 @@ const FLAVORS = [{
   key: "monster-drink",
   name: "Monster Drink",
   image: "/lovable-uploads/91c3186a-70e4-42e6-bf1e-406deac7ce00.png",
+  imageME: meMonsterDrink,
   palette: ["#E6FE7F", "#CFE8FF", "#FFE8A3"],
   bottle: {
     from: "#F2FFE6",
@@ -150,6 +156,7 @@ const FLAVORS = [{
   key: "peach-ice",
   name: "Peach Ice",
   image: "/lovable-uploads/f2771975-4d08-4667-84d2-768cc835b7c4.png",
+  imageME: mePeachIce,
   palette: ["#FFCFA3", "#FFE8A3", "#CFE8FF"],
   bottle: {
     from: "#FFF1E6",
@@ -209,6 +216,7 @@ const FLAVORS = [{
   key: "pineapple-coconut-ice",
   name: "Pineapple Coconut Ice",
   image: "/lovable-uploads/175a9edd-1618-4c0e-9274-bd02344d1215.png",
+  imageME: mePineappleCoconutIce,
   palette: ["#FFF2CC", "#EAF9F1", "#CFE8FF"],
   bottle: {
     from: "#FFFFE8",
@@ -220,6 +228,7 @@ const FLAVORS = [{
   key: "niagara-grape",
   name: "Niagara Grape",
   image: "/lovable-uploads/e038dd85-abb1-4f83-a740-67ad5ddd3e05.png",
+  imageME: meNiagaraGrape,
   palette: ["#E5D9FF", "#CFE8FF", "#FFD6D6"],
   bottle: {
     from: "#F3ECFF",
@@ -243,6 +252,7 @@ const FLAVORS = [{
   key: "orange-soda",
   name: "Orange Soda",
   image: "/lovable-uploads/8e9f2418-eb1b-4b3c-ae84-cff7bb4703d4.png",
+  imageME: meOrangeSoda,
   palette: ["#FFD1A3", "#FFE8A3", "#CFE8FF"],
   bottle: {
     from: "#FFF2E6",
