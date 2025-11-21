@@ -446,6 +446,10 @@ const REGION_INFO: Record<string, {
   CA: {
     name: "California (Prop 65)",
     warnings: ["⚠︎ WARNING: This product can expose you to chemicals including nicotine, which is known to the State of California to cause birth defects or other reproductive harm.", "For adults of legal age only (21+). Keep out of reach of children and pets."]
+  },
+  ME: {
+    name: "Middle East (18+)",
+    warnings: ["تحذير: يحتوي هذا المنتج على النيكوتين. النيكوتين مادة كيميائية تسبب الإدمان.", "WARNING: This product contains nicotine. Nicotine is an addictive chemical.", "For adults of legal age only (18+). Keep out of reach of children and minors.", "Not intended for use by pregnant or nursing individuals or those with cardiovascular conditions."]
   }
 };
 function CookieBanner({
@@ -528,8 +532,8 @@ function RegionNotice({
       <div className="flex items-center gap-2 mb-2">
         <Globe className="w-4 h-4 text-white" />
         <span className="text-sm font-medium text-white">Region:</span>
-        <select className="text-sm bg-white/10 text-slate-100 border border-white/10 rounded-lg px-2 py-1" value={region} onChange={e => onRegionChange(e.target.value as keyof typeof REGION_INFO)}>
-          {Object.entries(REGION_INFO).map(([k, v]) => <option value={k} key={k} className="text-slate-900">{v.name}</option>)}
+        <select className="text-sm bg-slate-800 text-slate-100 border border-white/20 rounded-lg px-2 py-1 cursor-pointer hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-white/30 z-10" value={region} onChange={e => onRegionChange(e.target.value as keyof typeof REGION_INFO)}>
+          {Object.entries(REGION_INFO).map(([k, v]) => <option value={k} key={k} className="bg-slate-800 text-slate-100">{v.name}</option>)}
         </select>
       </div>
       <ul className="text-xs text-slate-200 list-disc pl-5 space-y-1">
@@ -645,9 +649,9 @@ function SafetySection({
             Compliance is integrated into the experience: age-gate on entry, persistent page warnings, region-specific notices, and cookie/privacy controls with restrained language and visuals to avoid appealing to minors.
           </p>
           <ul className="list-disc pl-5 text-slate-200 space-y-2">
-            <li>Age verification (21+ in the U.S.)</li>
+            <li>Age verification (21+ in the U.S., 18+ in Middle East)</li>
             <li>Health/safety warnings and non-therapeutic statements</li>
-            <li>Region-specific notices (e.g., U.S. general, California Prop 65)</li>
+            <li>Region-specific notices (e.g., U.S. general, California Prop 65, Middle East bilingual)</li>
             <li>Cookie and privacy preference management</li>
           </ul>
         </div>
