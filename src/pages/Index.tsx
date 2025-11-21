@@ -491,8 +491,8 @@ function ProductCard({
       </CardHeader>
       <CardContent>
         <div className="flex items-center gap-6">
-          {displayImage ? <div className="w-48 md:w-56">
-              <img src={displayImage} alt={flavor.name} className="w-full h-auto rounded-2xl shadow-lg" />
+          {displayImage ? <div className="w-48 md:w-56 aspect-[3/4] flex items-center justify-center">
+              <img src={displayImage} alt={flavor.name} className="w-full h-full object-contain rounded-2xl" />
             </div> : <Bottle from={flavor.bottle.from} to={flavor.bottle.to} />}
           <div className="space-y-2 text-sm text-slate-300">
             {flavor.notes.map((n, i) => <div key={i} className="flex items-center gap-2">
