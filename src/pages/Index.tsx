@@ -441,11 +441,11 @@ const REGION_INFO: Record<string, {
 }> = {
   US: {
     name: "United States (21+)",
-    warnings: ["WARNING: This product may contain nicotine. Nicotine is an addictive chemical.", "For adults of legal age only (21+). Keep out of reach of children and pets.", "No therapeutic or cessation claims. Not intended for use by pregnant or nursing individuals."]
+    warnings: ["WARNING: This product contains nicotine. Nicotine is an addictive chemical.", "For adults of legal age only (21+). Keep out of reach of children and pets.", "This product is not intended to diagnose, treat, cure, or prevent any disease.", "Not intended for use by pregnant or nursing individuals."]
   },
   CA: {
-    name: "California (Prop 65)",
-    warnings: ["⚠︎ WARNING: This product can expose you to chemicals including nicotine, which is known to the State of California to cause birth defects or other reproductive harm.", "For adults of legal age only (21+). Keep out of reach of children and pets."]
+    name: "California (21+, Prop 65)",
+    warnings: ["WARNING: This product contains nicotine. Nicotine is an addictive chemical.", "⚠︎ California Prop 65 WARNING: This product can expose you to chemicals including nicotine, which is known to the State of California to cause birth defects or other reproductive harm.", "For adults of legal age only (21+). Keep out of reach of children and pets."]
   },
   ME: {
     name: "Middle East (18+)",
