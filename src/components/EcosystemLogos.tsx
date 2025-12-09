@@ -36,8 +36,8 @@ const EcosystemLogos = () => {
       <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
       
       <div className="container mx-auto px-6 md:px-16 mb-10">
-        <h2 className="text-xl md:text-2xl font-light text-center text-foreground">
-          Premium Flavor Collection
+        <h2 className="text-4xl md:text-6xl font-light text-center">
+          <span className="italic font-serif bg-gradient-to-r from-[#8FF5FF] to-[#FFA4F3] bg-clip-text text-transparent">Premium Flavor Collection</span>
         </h2>
       </div>
       
