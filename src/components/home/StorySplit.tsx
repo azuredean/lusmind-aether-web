@@ -17,7 +17,7 @@ const StorySplit = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="relative w-[240px] md:w-[300px] overflow-hidden rounded-t-full bg-cream/5 ring-1 ring-cream/10">
+          <div className="relative w-[240px] md:w-[300px] overflow-hidden rounded-t-full bg-cream/[0.07] ring-1 ring-cream/15">
             <img
               src={storyImage}
               alt="LUSMIND e-liquid bottles"
