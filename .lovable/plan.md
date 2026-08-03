@@ -1,45 +1,34 @@
-## Goal
+## 目标
 
-Rebuild the homepage (`/`) so its layout, section order, and typographic style mirror oakandeden.com. Keep unchanged: the top nicotine warning texture bar and the existing navbar. The hero photo will be a newly generated "all products group still-life" image in the style of the reference (not the whiskey photo).
+提高主页对 oakandeden.com 的还原度。核心问题：参考站每个板块都有**实拍级摄影大图**（情境静物、氛围场景、产品特写），而我们目前只在 Hero 用了一张生成图，其余板块用的是抠图 PNG（透明底产品图）放在浅灰方块里，比例、清晰度、画面占比都不对。
 
-## Hero image
+## 做法
 
-Generate a new wide still-life photo modeled on the reference hero: warm neutral studio backdrop, soft daylight, a table-top arrangement of LUSMIND products — disposable devices, NG-cigarette device, and e-liquid bottles — with props and hands-free clean composition, matching the existing product designs in `src/assets` (hero-products, disposable-product, premium-eliquids-bottles, me-products flavors) as visual reference. Saved to `src/assets/home-hero-group.jpg` and used full-bleed in the hero.
+为参考站主页上出现的每一张照片，用 LUSMIND 产品生成一张对应的摄影级图片，并按参考站的画幅比例与占屏尺寸替换现有素材。
 
-## New homepage section order (mirroring the reference)
+### 需要新生成的图片（统一风格：暖中性影棚/自然光、浅景深、真实材质、无文字无人脸）
 
-```text
-[ warning bar ]      <- unchanged
-[ navbar ]           <- unchanged
-1  HERO           full-bleed photo, left-aligned oversized condensed
-                  serif headline, tiny mono tagline, solid black CTA
-2  STORY SPLIT    dark (near-black) band, left arched product image,
-                  right eyebrow rule + stacked serif headline +
-                  short paragraph + outlined "LEARN MORE" button
-3  FEATURED       light band, horizontal product carousel with giant
-   FLAVORS        ghost outline wordmark scrolling behind the products
-4  PRODUCT LINES  alternating full-width image/text rows (3 rows:
-                  E-Liquids, Disposables, NG-cigarette) with black CTAs
-5  BRAND VALUES   dark band, centered eyebrow + serif statement +
-                  3-column supporting copy
-6  EXPERIENCES    light band, 4 use-case cards in a quiet 2x2 grid
-7  NEWSLETTER /   centered CTA band with email capture styling
-   PRE-FOOTER
-[ footer ]        restyled to match (dark, columned)
-```
+| 用途 | 参考站对应画面 | 生成尺寸/比例 |
+|---|---|---|
+| Hero | 全宽产品合集静物 | 1920×1080（重新生成，提高清晰度与构图留白，左侧留字位） |
+| Story Split（深色带） | 拱形竖构图产品特写 | 1024×1536（3:2 竖幅，深色暖调背景，单支设备/瓶身特写） |
+| Featured Flavors 轮播 ×6 | 每个口味一张同构图产品照 | 1024×1280（统一背景、统一机位，形成成套感） |
+| Product Lines ×3 | 三张情境大图（E-Liquid 桌面组合 / Disposable 手持生活场景 / NG-Cigarette 特写） | 1536×1152（4:3 横幅，整块铺满，不留灰底） |
+| Brand Values 背景 | 深色氛围横幅 | 1920×900（暗调，做半透明背景层） |
+| Experiences ×4 | 四个使用场景照（居家、夜出、户外、旅途） | 1024×1024 方形卡片满铺 |
+| Newsletter 背景 | 暖色纹理横幅 | 1920×700 |
 
-## Typography & tokens
+### 版式与比例调整（对齐参考站）
 
-- Headlines: condensed uppercase serif/display, tight leading, large scale.
-- Eyebrows, buttons, small labels: uppercase monospace, wide letter-spacing.
-- Palette added to `index.css` as semantic tokens: warm cream background (`#EDE6DB`-family), near-black (`#1A1815`), muted ink text, single warm accent. Replaces the cyan/pink gradient text treatment on the home page.
+- **Hero**：改为接近 100vh 的全屏画幅，图片 `object-cover`，遮罩改成参考站那种左侧柔和渐隐而非大面积压白。
+- **StorySplit**：拱形图容器加大到参考站的比例（约占列宽 80%，高 520–620px），图片改为 `object-cover` 填满拱形，去掉当前的 padding 与浅色底块。
+- **FeaturedFlavors**：卡片改为固定 4:5 图片框、`object-cover`，幽灵大字尺寸与滚动速度对齐参考站。
+- **ProductLines**：图片列改为整块 `object-cover` 满铺（去掉 `bg-ink/[0.04]` + `p-10` 的灰底留白），行高对齐参考站的大图比例。
+- **Experiences**：卡片改为图片满铺 + 底部文字叠加，而非纯文字卡。
+- **BrandValues / NewsletterCTA**：加入背景图层 + 暗色叠加。
 
-## Technical details
+### 技术细节
 
-- Rewrite `src/pages/Home.tsx` into the new section order; hero carousel and corner CTA buttons are removed.
-- New components: `HomeHero.tsx`, `StorySplit.tsx`, `FeaturedFlavors.tsx` (ghost-type marquee), `ProductLines.tsx`, `BrandValues.tsx`, `NewsletterCTA.tsx` under `src/components/home/`.
-- `EcosystemLogos`, `ProblemStatement`, `ProductFeatures`, `UseCases`, `BackedBy`, `PreFooterCTA`, `HeroOrb` are no longer used by Home (left in place for the other pages that import them; unused ones can be deleted later).
-- Fonts loaded via Google Fonts in `index.html`; new font families + colors registered in `tailwind.config.ts` and `index.css`.
-- Reuse existing flavor artwork in `src/assets/me-products` for the featured carousel.
-- Other pages (`/e-liquid`, `/e-cigarette`, `/disposable`) are untouched.
-- Update `index.html` title/description to LUSMIND-specific copy.
+- 新图统一放 `src/assets/home/`，以 ES6 import 引用；旧的 `home-hero-group.jpg` 被替换。
+- 所有 `<img>` 补 `loading="lazy"`（Hero 除外用 `eager`）与准确 alt。
+- 只改 `src/components/home/*` 与新增图片资源，不动导航栏、警示条、其他页面。
