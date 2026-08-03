@@ -19,7 +19,14 @@ export default {
 		},
 		extend: {
 			colors: {
+				cream: 'hsl(var(--cream))',
+				ink: {
+					DEFAULT: 'hsl(var(--ink))',
+					soft: 'hsl(var(--ink-soft))'
+				},
+				'warm-accent': 'hsl(var(--warm-accent))',
 				border: 'hsl(var(--border))',
+
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
@@ -79,8 +86,12 @@ export default {
 			fontFamily: {
 				'cyber': ['Orbitron', 'Inter', 'sans-serif'],
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				'mosaic': ['Press Start 2P', 'monospace']
+				'mosaic': ['Press Start 2P', 'monospace'],
+				'display': ['Zilla Slab', 'Georgia', 'serif'],
+				'serif': ['Bodoni Moda', 'Georgia', 'serif'],
+				'mono': ['Space Mono', 'ui-monospace', 'monospace']
 			},
+
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

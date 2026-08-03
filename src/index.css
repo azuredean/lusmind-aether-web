@@ -40,6 +40,13 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
+    /* Editorial homepage palette */
+    --cream: 38 30% 89%;
+    --ink: 40 12% 9%;
+    --ink-soft: 36 8% 38%;
+    --warm-accent: 28 55% 45%;
+
+
     /* Gradient colors */
     --gradient-orange: 20 100% 60%;
     --gradient-blue: 210 100% 60%;
