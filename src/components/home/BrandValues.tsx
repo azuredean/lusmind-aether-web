@@ -1,4 +1,7 @@
+import valuesBg from "@/assets/home/values-bg.jpg";
+
 const values = [
+
   {
     title: "Expert Team",
     body:
@@ -33,11 +36,23 @@ const values = [
 
 const BrandValues = () => {
   return (
-    <section id="values" className="relative bg-ink text-cream">
+    <section id="values" className="relative isolate overflow-hidden bg-ink text-cream">
+      <img
+        src={valuesBg}
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={900}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
+      />
+      <div className="absolute inset-0 -z-10 bg-ink/75" />
       <div className="absolute left-1/2 top-0 h-16 w-px -translate-x-1/2 bg-cream/25" />
 
       <div className="container mx-auto px-6 py-28 md:px-16 md:py-36">
         <div className="text-center">
+
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-cream/60">
             Inside LUSMIND
           </span>
