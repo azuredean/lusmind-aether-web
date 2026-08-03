@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import newsletterBg from "@/assets/home/newsletter-bg.jpg";
+
 
 const NewsletterCTA = () => {
   const [email, setEmail] = useState("");
@@ -12,9 +14,20 @@ const NewsletterCTA = () => {
   };
 
   return (
-    <section className="relative bg-ink text-cream">
+    <section className="relative isolate overflow-hidden bg-ink text-cream">
+      <img
+        src={newsletterBg}
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={700}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.12]"
+      />
       <div className="absolute left-1/2 top-0 h-16 w-px -translate-x-1/2 bg-cream/25" />
       <div className="container mx-auto px-6 py-24 text-center md:px-16 md:py-32">
+
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-cream/60">
           Stay Close
         </span>
@@ -38,7 +51,7 @@ const NewsletterCTA = () => {
           />
           <button
             type="submit"
-            className="bg-cream px-8 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink transition-opacity hover:opacity-85"
+            className="whitespace-nowrap bg-cream px-8 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ink transition-opacity hover:opacity-85"
           >
             Sign Up
           </button>

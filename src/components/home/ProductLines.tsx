@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import eliquidImage from "@/assets/premium-eliquids-bottles.png";
-import disposableImage from "@/assets/hero-slide-space.png";
-import ngImage from "@/assets/disposable-product.png";
+import eliquidImage from "@/assets/home/line-eliquid.jpg";
+import disposableImage from "@/assets/home/line-disposable.jpg";
+import ngImage from "@/assets/home/line-ng.jpg";
 
 const lines = [
   {
@@ -60,11 +60,15 @@ const ProductLines = () => {
               style={{ transitionDelay: `${i * 120}ms` }}
             >
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                <div className="flex items-center justify-center bg-ink/[0.04] p-10">
+                <div className="aspect-[4/3] w-full overflow-hidden">
                   <img
                     src={line.image}
                     alt={`${line.title} by LUSMIND`}
-                    className="h-64 w-auto object-contain md:h-80"
+                    width={1536}
+                    height={1152}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
