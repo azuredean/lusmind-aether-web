@@ -1,4 +1,4 @@
-import storyImage from "@/assets/premium-eliquids-bottles.png";
+import storyImage from "@/assets/home/story-arch.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const StorySplit = () => {
@@ -17,11 +17,15 @@ const StorySplit = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="relative w-[240px] md:w-[300px] overflow-hidden rounded-t-full bg-cream/[0.07] ring-1 ring-cream/15">
+          <div className="relative w-full max-w-[380px] overflow-hidden rounded-t-full md:max-w-[440px]">
             <img
               src={storyImage}
-              alt="LUSMIND e-liquid bottles"
-              className="h-[340px] md:h-[420px] w-full object-contain p-6"
+              alt="LUSMIND e-liquid bottle and device in warm low light"
+              width={1024}
+              height={1536}
+              loading="lazy"
+              decoding="async"
+              className="h-[480px] w-full object-cover md:h-[620px]"
             />
           </div>
         </div>
