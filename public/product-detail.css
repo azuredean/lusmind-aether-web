@@ -45,9 +45,9 @@
   --line-dark: rgba(17, 22, 17, 0.18);
   --accent: #c7ff19;
   --accent-rgb: 199, 255, 25;
-  --display: "Syne", "Arial Black", sans-serif;
+  --display: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --body: "Manrope", "Helvetica Neue", sans-serif;
-  --mono: "IBM Plex Mono", monospace;
+  --mono: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --page: min(92vw, 1480px);
   --header: 72px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -1187,6 +1187,9 @@ img {
 
 .age-gate__panel img {
   width: 158px;
+  height: auto;
+  aspect-ratio: 360 / 79;
+  object-fit: contain;
   margin-bottom: 2rem;
 }
 

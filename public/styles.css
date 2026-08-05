@@ -49,9 +49,9 @@
   --text-dark-soft: #a2a99e;
   --border: rgba(19, 24, 18, 0.18);
   --border-dark: rgba(238, 239, 232, 0.16);
-  --display: "Syne", "Arial Black", sans-serif;
+  --display: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --body: "Manrope", "Helvetica Neue", sans-serif;
-  --mono: "IBM Plex Mono", monospace;
+  --mono: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --page: min(92vw, 1480px);
   --header-height: 76px;
   --radius-s: 3px;
@@ -294,17 +294,16 @@ img {
   z-index: 9000;
   inset: 0;
   display: grid;
-  place-items: center;
+  place-items: center start;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 24px;
-  background:
-    radial-gradient(circle at 74% 18%, rgba(199, 255, 25, 0.12), transparent 26%),
-    linear-gradient(120deg, #050706 0 56%, #0a0e0a 56% 100%);
+  padding: 24px max(24px, calc((100vw - 1480px) / 2));
+  background: #050706;
   transition: opacity 500ms ease, visibility 500ms ease;
 }
 
 .age-gate::before {
+  z-index: 1;
   position: absolute;
   inset: 0;
   background-image:
@@ -315,12 +314,52 @@ img {
   mask-image: linear-gradient(to right, transparent, #000 45%, #000);
 }
 
+.age-gate::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(3, 5, 4, 0.72) 0, rgba(3, 5, 4, 0.36) 48%, rgba(3, 5, 4, 0.18) 100%),
+    linear-gradient(0deg, rgba(3, 5, 4, 0.48), transparent 48%, rgba(3, 5, 4, 0.26));
+  content: "";
+  pointer-events: none;
+}
+
+.age-gate__slides,
+.age-gate__slide {
+  position: absolute;
+  inset: 0;
+}
+
+.age-gate__slides {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.age-gate__slide {
+  background-image: var(--age-image);
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.035);
+  animation: age-gate-slide 18.2s linear infinite;
+  will-change: opacity, transform;
+}
+
+.age-gate__slide:nth-child(2) { animation-delay: 2.6s; }
+.age-gate__slide:nth-child(3) { animation-delay: 5.2s; }
+.age-gate__slide:nth-child(4) { animation-delay: 7.8s; }
+.age-gate__slide:nth-child(5) { animation-delay: 10.4s; }
+.age-gate__slide:nth-child(6) { animation-delay: 13s; }
+.age-gate__slide:nth-child(7) { animation-delay: 15.6s; }
+
 .age-gate.is-accepted {
   visibility: hidden;
   opacity: 0;
 }
 
 .age-gate__signal {
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 63%;
@@ -333,18 +372,21 @@ img {
 
 .age-gate__panel {
   position: relative;
-  z-index: 1;
-  width: min(100%, 640px);
+  z-index: 3;
+  width: min(100%, 570px);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: clamp(30px, 6vw, 72px);
-  background: rgba(7, 10, 7, 0.82);
+  padding: clamp(30px, 4.6vw, 62px);
+  background: rgba(7, 10, 7, 0.76);
   box-shadow: var(--shadow-deep), inset 0 1px rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
 }
 
 .age-gate__panel img {
   width: 190px;
-  margin-bottom: 58px;
+  height: auto;
+  aspect-ratio: 360 / 79;
+  margin-bottom: 34px;
+  object-fit: contain;
 }
 
 .age-gate__panel .eyebrow {
@@ -354,9 +396,10 @@ img {
 .age-gate__panel h1 {
   margin: 18px 0;
   font-family: var(--display);
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: 0.92;
-  letter-spacing: -0.055em;
+  font-size: clamp(40px, 5.7vw, 68px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
 }
 
 .age-gate__panel > p:not(.eyebrow) {
@@ -1013,6 +1056,9 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
 .positioning {
   padding: 102px 0 90px;
+  background:
+    linear-gradient(90deg, rgba(238, 239, 232, 0.78), rgba(238, 239, 232, 0.92) 58%, rgba(238, 239, 232, 0.82)),
+    url("/assets/campaign/brand-materials-bg.webp") left center / cover no-repeat;
 }
 
 .positioning__headline {
@@ -1731,6 +1777,8 @@ body.is-locked:not(.is-menu-open) .site-shell {
   overflow: clip;
   padding: 105px 0 105px;
   background:
+    linear-gradient(90deg, rgba(5, 7, 6, 0.94), rgba(5, 7, 6, 0.82) 52%, rgba(5, 7, 6, 0.58)),
+    url("/assets/campaign/partner-showroom-bg.webp") center / cover no-repeat,
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px) center / 6.25vw 100%,
     var(--ink);
 }
@@ -1922,6 +1970,9 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
 .assurance {
   padding: 105px 0;
+  background:
+    linear-gradient(90deg, rgba(238, 239, 232, 0.9), rgba(238, 239, 232, 0.76) 58%, rgba(238, 239, 232, 0.84)),
+    url("/assets/campaign/market-readiness-bg.webp") center / cover no-repeat;
 }
 
 .assurance__grid {
@@ -2065,6 +2116,9 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
 .faq {
   padding: 105px 0;
+  background:
+    linear-gradient(rgba(238, 239, 232, 0.82), rgba(238, 239, 232, 0.9)),
+    url("/assets/campaign/faq-material-bg.webp") center / cover no-repeat;
 }
 
 .faq__grid {
@@ -2153,7 +2207,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
 .contact {
   overflow: hidden;
   padding: 105px 0 100px;
-  background: #080b08;
+  background:
+    linear-gradient(90deg, rgba(5, 7, 6, 0.94), rgba(5, 7, 6, 0.72) 54%, rgba(5, 7, 6, 0.82)),
+    url("/assets/campaign/contact-partnership-bg.webp") center / cover no-repeat,
+    #080b08;
 }
 
 .contact::before {
@@ -2542,6 +2599,14 @@ body.is-locked:not(.is-menu-open) .site-shell {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes age-gate-slide {
+  0% { opacity: 0; transform: scale(1.045); }
+  2% { opacity: 1; }
+  12.4% { opacity: 1; }
+  14.285% { opacity: 0; transform: scale(1.015); }
+  100% { opacity: 0; transform: scale(1.015); }
 }
 
 @keyframes hero-enter {
@@ -3579,7 +3644,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
   }
 
   .age-gate__panel {
-    width: min(640px, 100%);
+    width: min(570px, 100%);
     padding: 24px;
   }
 
@@ -3704,6 +3769,16 @@ body.is-locked:not(.is-menu-open) .site-shell {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .age-gate__slide {
+    opacity: 0;
+    animation: none !important;
+    transform: none;
+  }
+
+  .age-gate__slide:first-child {
+    opacity: 1;
   }
 }
 

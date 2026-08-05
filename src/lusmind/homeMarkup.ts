@@ -1,9 +1,18 @@
 // Generated from the supplied Lusmind static homepage (index.html).
 export const homeMarkup = String.raw`
-<a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <div class="age-gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
+      <div class="age-gate__slides" aria-hidden="true">
+        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-club-entry.webp')"></span>
+        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-dance-close.webp')"></span>
+        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-sun-wine.webp')"></span>
+        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-rooftop-night.webp')"></span>
+        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-penthouse-dance.webp')"></span>
+        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-poolside-lounge.webp')"></span>
+        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-gallery-arrival.webp')"></span>
+      </div>
       <div class="age-gate__signal" aria-hidden="true"></div>
       <div class="age-gate__panel">
         <img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="360" height="79" />
