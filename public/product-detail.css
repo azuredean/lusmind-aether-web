@@ -1187,6 +1187,9 @@ img {
 
 .age-gate__panel img {
   width: 158px;
+  height: auto;
+  aspect-ratio: 360 / 79;
+  object-fit: contain;
   margin-bottom: 2rem;
 }
 
