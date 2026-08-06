@@ -839,7 +839,18 @@ body.is-locked:not(.is-menu-open) .site-shell {
   grid-template-columns: 54% 46%;
   align-items: center;
   padding-top: var(--header-height);
+  pointer-events: none;
 }
+
+.hero__content a,
+.hero__content button,
+.hero__content input,
+.hero__content select,
+.hero__content textarea,
+.hero__content [role="button"] {
+  pointer-events: auto;
+}
+
 
 .hero__copy {
   max-width: 800px;
