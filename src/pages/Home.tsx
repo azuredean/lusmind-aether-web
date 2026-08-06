@@ -30,6 +30,7 @@ const Home = () => {
     <div
       ref={ref}
       data-page="home"
+      style={{ visibility: stylesReady ? "visible" : "hidden" }}
       dangerouslySetInnerHTML={{ __html: homeMarkup }}
     />
   );
