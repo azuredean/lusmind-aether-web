@@ -18,7 +18,7 @@ const ProductPage = () => {
   const { productId = "" } = useParams();
   const ref = useRef<HTMLDivElement>(null);
   const known = Boolean(PRODUCT_TITLES[productId]);
-  useStylesheet(known ? "/product-detail.css" : "");
+  const stylesReady = useStylesheet(known ? "/product-detail.css" : "");
   useInternalLinks(ref);
 
   useEffect(() => {
