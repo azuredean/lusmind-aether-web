@@ -613,6 +613,7 @@ export function initHome(): () => void {
   return () => {
     scope.dispose();
     globalThis.window.clearTimeout(productSwapTimer);
+    globalThis.window.clearInterval(heroTimer);
     globalThis.document.body.classList.remove("is-locked", "is-menu-open");
   };
 }
