@@ -774,7 +774,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
   opacity: 0;
   transform: none;
   animation: none;
-  transition: opacity 700ms var(--ease-out);
+  transition: opacity 400ms var(--ease-out);
 }
 
 .hero__media .hero__slide.is-active {
