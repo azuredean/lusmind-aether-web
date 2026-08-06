@@ -36,6 +36,7 @@ const ProductPage = () => {
       ref={ref}
       key={productId}
       data-page="product"
+      style={{ visibility: stylesReady ? "visible" : "hidden" }}
       dangerouslySetInnerHTML={{ __html: productShellMarkup }}
     />
   );
