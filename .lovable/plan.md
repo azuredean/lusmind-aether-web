@@ -1,34 +1,16 @@
-## 目标
+# 修复进入页面前闪现无样式内容（FOUC）
 
-提高主页对 oakandeden.com 的还原度。核心问题：参考站每个板块都有**实拍级摄影大图**（情境静物、氛围场景、产品特写），而我们目前只在 Hero 用了一张生成图，其余板块用的是抠图 PNG（透明底产品图）放在浅灰方块里，比例、清晰度、画面占比都不对。
+## 现象原因
+页面的样式表不是随页面一起加载的，而是在 React 组件挂载后用 JS 动态插入 `<link>`（`src/lusmind/useStylesheet.ts`）。在样式表下载完成之前，HTML 内容已经渲染出来，所以会先看到一屏没有排版的纯文字/蓝色链接，随后才跳到正常页面。产品详情页（`/products/*`）尤其明显，因为它完全没有等待样式就绪就渲染内容。
 
-## 做法
+## 修改方案
+1. 在 `index.html` 的 `<head>` 中为 `/styles.css` 和 `/product-detail.css` 添加 `<link rel="preload" as="style">`，让浏览器提前开始下载，切换路由时基本瞬时命中缓存。
+2. 让页面在样式表就绪前不显示内容：
+   - `ProductPage.tsx` 接收 `useStylesheet` 返回的 `ready`，未就绪时容器保持 `visibility: hidden`（保留 DOM，脚本仍可初始化），就绪后显示。
+   - `Home.tsx` 同样处理，用已有的 `stylesReady`。
+3. 在 `useStylesheet` 中做去重与缓存：如果该 href 的 `<link>` 已存在且已加载，直接返回 `ready = true`，避免重复插入和二次闪烁。
 
-为参考站主页上出现的每一张照片，用 LUSMIND 产品生成一张对应的摄影级图片，并按参考站的画幅比例与占屏尺寸替换现有素材。
-
-### 需要新生成的图片（统一风格：暖中性影棚/自然光、浅景深、真实材质、无文字无人脸）
-
-| 用途 | 参考站对应画面 | 生成尺寸/比例 |
-|---|---|---|
-| Hero | 全宽产品合集静物 | 1920×1080（重新生成，提高清晰度与构图留白，左侧留字位） |
-| Story Split（深色带） | 拱形竖构图产品特写 | 1024×1536（3:2 竖幅，深色暖调背景，单支设备/瓶身特写） |
-| Featured Flavors 轮播 ×6 | 每个口味一张同构图产品照 | 1024×1280（统一背景、统一机位，形成成套感） |
-| Product Lines ×3 | 三张情境大图（E-Liquid 桌面组合 / Disposable 手持生活场景 / NG-Cigarette 特写） | 1536×1152（4:3 横幅，整块铺满，不留灰底） |
-| Brand Values 背景 | 深色氛围横幅 | 1920×900（暗调，做半透明背景层） |
-| Experiences ×4 | 四个使用场景照（居家、夜出、户外、旅途） | 1024×1024 方形卡片满铺 |
-| Newsletter 背景 | 暖色纹理横幅 | 1920×700 |
-
-### 版式与比例调整（对齐参考站）
-
-- **Hero**：改为接近 100vh 的全屏画幅，图片 `object-cover`，遮罩改成参考站那种左侧柔和渐隐而非大面积压白。
-- **StorySplit**：拱形图容器加大到参考站的比例（约占列宽 80%，高 520–620px），图片改为 `object-cover` 填满拱形，去掉当前的 padding 与浅色底块。
-- **FeaturedFlavors**：卡片改为固定 4:5 图片框、`object-cover`，幽灵大字尺寸与滚动速度对齐参考站。
-- **ProductLines**：图片列改为整块 `object-cover` 满铺（去掉 `bg-ink/[0.04]` + `p-10` 的灰底留白），行高对齐参考站的大图比例。
-- **Experiences**：卡片改为图片满铺 + 底部文字叠加，而非纯文字卡。
-- **BrandValues / NewsletterCTA**：加入背景图层 + 暗色叠加。
-
-### 技术细节
-
-- 新图统一放 `src/assets/home/`，以 ES6 import 引用；旧的 `home-hero-group.jpg` 被替换。
-- 所有 `<img>` 补 `loading="lazy"`（Hero 除外用 `eager`）与准确 alt。
-- 只改 `src/components/home/*` 与新增图片资源，不动导航栏、警示条、其他页面。
+## 技术细节
+- 用 `visibility` 而非 `display:none`，避免破坏依赖布局测量的初始化脚本（滚动进度、IntersectionObserver）。
+- 顶部年龄验证遮罩逻辑不变。
+- 验证：在 preview 中冷加载 `/` 和 `/products/royal-heat`，用 Playwright 截图确认首帧不再出现无样式内容，且无横向溢出。
