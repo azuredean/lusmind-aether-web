@@ -573,12 +573,42 @@ export function initHome(): () => void {
     });
   }
 
+  let heroTimer: any;
+  function initHeroSlideshow() {
+    const slideshow = document.querySelector(".hero__slideshow");
+    if (!slideshow) return;
+    const slides = [...slideshow.querySelectorAll(".hero__slide")];
+    if (slides.length < 2) {
+      slides[0]?.classList.add("is-active");
+      return;
+    }
+    let index = 0;
+    const show = (next) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+    };
+    const start = () => {
+      globalThis.window.clearInterval(heroTimer);
+      heroTimer = globalThis.window.setInterval(() => show(index + 1), 2000);
+    };
+    show(0);
+    start();
+    slideshow.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      show(index + 1);
+      start();
+    });
+  }
+
   initAgeGate();
   initNavigation();
   initScrollEffects();
   initProductExplorer();
   initActions();
   initInquiryForm();
+  initHeroSlideshow();
+
 
   return () => {
     scope.dispose();
