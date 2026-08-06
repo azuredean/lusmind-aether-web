@@ -593,12 +593,18 @@ export function initHome(): () => void {
     };
     show(0);
     start();
-    slideshow.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      show(index + 1);
-      start();
-    });
+    const media = slideshow.closest(".hero__media") || slideshow;
+    media.addEventListener(
+      "click",
+      (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        show(index + 1);
+        start();
+      },
+      true
+    );
+
   }
 
   initAgeGate();
