@@ -342,7 +342,7 @@ img {
   background-size: cover;
   opacity: 0;
   transform: scale(1.035);
-  animation: age-gate-slide 18.2s linear infinite;
+  animation: age-gate-slide 15.6s linear infinite;
   will-change: opacity, transform;
 }
 
@@ -351,7 +351,6 @@ img {
 .age-gate__slide:nth-child(4) { animation-delay: 7.8s; }
 .age-gate__slide:nth-child(5) { animation-delay: 10.4s; }
 .age-gate__slide:nth-child(6) { animation-delay: 13s; }
-.age-gate__slide:nth-child(7) { animation-delay: 15.6s; }
 
 .age-gate.is-accepted {
   visibility: hidden;
