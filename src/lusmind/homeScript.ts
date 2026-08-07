@@ -368,7 +368,7 @@ export function initHome(): () => void {
     const buttons = [...controls.querySelectorAll("button")];
     const variants: any[] = product.variants ? Object.entries(product.variants) : [];
 
-    if (!variants.length) {
+    if (!variants.length || product.name !== "Arc Pod S") {
       controls.hidden = true;
       currentVariant = null;
       return;
