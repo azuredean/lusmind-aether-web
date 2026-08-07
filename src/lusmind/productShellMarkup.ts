@@ -35,7 +35,7 @@ export const productShellMarkup = String.raw`
         <a href="/#wholesale">Wholesale</a>
         <a href="/#company">Company</a>
       </nav>
-      <a class="header-inquiry" href="mailto:partners@lusmind.com" data-product-inquiry>Partner inquiry ↗</a>
+      <a class="header-inquiry" href="mailto:support@lusmind.com" data-product-inquiry>Partner inquiry ↗</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation" data-menu-toggle><span></span><span></span></button>
     </header>
 
@@ -47,7 +47,7 @@ export const productShellMarkup = String.raw`
       <a class="mobile-menu__product" href="/products/arc-pod-s" data-product-link="arc-pod-s"><span>03</span>Arc Pod S<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/core-20" data-product-link="core-20"><span>04</span>Core 20<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/ai-pulse" data-product-link="ai-pulse"><span>05</span>AI Pulse<i>↗</i></a>
-      <a class="button button--accent" href="mailto:partners@lusmind.com" data-product-inquiry>Request distributor pricing</a>
+      <a class="button button--accent" href="mailto:support@lusmind.com" data-product-inquiry>Request distributor pricing</a>
     </nav>
 
     <main id="product-main"></main>
@@ -55,7 +55,7 @@ export const productShellMarkup = String.raw`
     <footer class="site-footer">
       <div class="site-footer__inner page-width">
         <a href="/"><img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="260" height="57" /></a>
-        <nav aria-label="Footer navigation"><a href="/#collection">Collection</a><a href="/#wholesale">Wholesale</a><a href="mailto:partners@lusmind.com">Contact</a></nav>
+        <nav aria-label="Footer navigation"><a href="/#collection">Collection</a><a href="/#wholesale">Wholesale</a><a href="mailto:support@lusmind.com">Contact</a></nav>
         <small>© <span data-year>2026</span> Lusmind. For qualified adult-industry partners.</small>
       </div>
     </footer>

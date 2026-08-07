@@ -566,9 +566,9 @@ export function initHome(): () => void {
       ].join("\n");
 
       status.textContent = "Opening your email client…";
-      window.location.href = `mailto:partners@lusmind.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+      window.location.href = `mailto:support@lusmind.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
       window.setTimeout(() => {
-        status.textContent = "Draft prepared for partners@lusmind.com";
+        status.textContent = "Draft prepared for support@lusmind.com";
       }, 900);
     });
   }

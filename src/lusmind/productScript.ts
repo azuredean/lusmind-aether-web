@@ -427,7 +427,7 @@ export function initProduct(productId: string): () => void {
     "Program scope": product.trade.customization
   }).map(([label, value]) => `<div class="trade-term"><span>${label}</span><strong>${value}</strong></div>`).join("");
 
-  const inquiryHref = `mailto:partners@lusmind.com?subject=${encodeURIComponent(`Distributor inquiry — ${product.name}`)}&body=${encodeURIComponent(`Hello Lusmind team,\n\nI would like to discuss wholesale or customization options for ${product.name}.\n\nCompany:\nMarket:\nEstimated quantity:\nTarget launch date:\n`)}`;
+  const inquiryHref = `mailto:support@lusmind.com?subject=${encodeURIComponent(`Distributor inquiry — ${product.name}`)}&body=${encodeURIComponent(`Hello Lusmind team,\n\nI would like to discuss wholesale or customization options for ${product.name}.\n\nCompany:\nMarket:\nEstimated quantity:\nTarget launch date:\n`)}`;
 
   productMain.innerHTML = `
     <section class="product-hero product-hero--${product.layout}" id="overview" aria-labelledby="product-title">

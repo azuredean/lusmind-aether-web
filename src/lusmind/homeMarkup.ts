@@ -461,7 +461,7 @@ export const homeMarkup = String.raw`
                 <p class="reveal reveal--delay-2">A useful first message includes your market, channel, product interest, target quantity and launch timing.</p>
                 <div class="contact__direct reveal reveal--delay-3">
                   <span>Direct inquiries</span>
-                  <a href="mailto:partners@lusmind.com">partners@lusmind.com</a>
+                  <a href="mailto:support@lusmind.com">support@lusmind.com</a>
                   <small>Typical reply target: within two business days</small>
                 </div>
               </div>
