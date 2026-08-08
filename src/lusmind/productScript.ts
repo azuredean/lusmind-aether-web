@@ -1008,6 +1008,8 @@ export function initProduct(productId: string): () => void {
 
   return () => {
     scope.dispose();
+    railObserver?.disconnect();
+    if (parallaxFrame) window.cancelAnimationFrame(parallaxFrame);
     schemaScript.remove();
     globalThis.document.body.classList.remove("is-locked");
   };
