@@ -67,10 +67,10 @@ export function initHome(): () => void {
         }
       },
       specs: [
-        ["Formats", "Slim + classic"],
-        ["Retail pack", "20 sticks"],
-        ["Carton", "200 sticks"],
-        ["Profiles", "Up to 8"]
+        ["E-liquid", "Slim 2.2 mL / Classic 1.8 mL"],
+        ["Battery", "Slim 250 / Classic 200 mAh"],
+        ["Nicotine", "2% / 5%"],
+        ["Coil", "1.0 / 1.5 Ω"]
       ]
     },
     fusion: {
@@ -86,10 +86,10 @@ export function initHome(): () => void {
       position: "center",
       tone: "dark",
       specs: [
-        ["Battery", "650 mAh"],
-        ["Pod", "2.5 mL refillable"],
-        ["Modes", "3 heat profiles"],
-        ["Charging", "USB-C"]
+        ["Battery", "300 mAh"],
+        ["Pod", "2 mL"],
+        ["Nicotine", "2% / 5%"],
+        ["Coil", "0.8 / 1.2 Ω"]
       ]
     },
     arc: {
@@ -121,10 +121,10 @@ export function initHome(): () => void {
         }
       },
       specs: [
-        ["Battery", "1,000 mAh"],
-        ["Pod", "3.0 mL refillable"],
-        ["Coils", "0.6 / 0.8 Ω"],
-        ["Charging", "USB-C fast"]
+        ["Battery", "600 mAh"],
+        ["E-liquid", "2 mL + 10 mL"],
+        ["Coil", "0.8 / 1.2 Ω"],
+        ["Power", "14 W"]
       ]
     },
     core: {
@@ -159,10 +159,10 @@ export function initHome(): () => void {
       position: "center",
       tone: "light",
       specs: [
-        ["Capacity", "22 mL"],
-        ["Battery", "850 mAh"],
-        ["Output", "Eco + Boost"],
-        ["Display", "Smart full-status"]
+        ["E-liquid", "2 mL + 10 mL"],
+        ["Battery", "600 mAh"],
+        ["Coil", "Dual mesh"],
+        ["Power", "14–22 W"]
       ]
     }
   };

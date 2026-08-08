@@ -53,10 +53,10 @@ export function initProduct(productId: string): () => void {
       boardAlt: "Royal Heat slim product board showing formats, packout and principal features",
       boardPosition: "center",
       facts: [
-        ["Format range", "Slim + Classic", "One premium design language"],
-        ["Retail pack", "20 sticks", "Distributor carton options"],
-        ["Ready time", "Approx. 20 sec", "Draft platform target"],
-        ["Program", "Brand / OEM", "Market-specific configuration"]
+        ["Range", "Royal Slim + Royal Classic", "Two products, one family"],
+        ["E-liquid", "2.2 mL / 1.8 mL", "Slim / Classic"],
+        ["Battery", "250 mAh / 200 mAh", "Slim / Classic"],
+        ["Nicotine", "2% / 5%", "Market dependent"]
       ],
       intro: {
         eyebrow: "Portfolio logic / 01",
@@ -70,12 +70,12 @@ export function initProduct(productId: string): () => void {
         ["Scalable pack system", "Single packs, inner cartons and master cartons share one recognizable trade language."]
       ],
       specs: [
-        ["Product class", "Heated consumable"],
-        ["Format options", "Slim / Classic"],
-        ["Pack configuration", "20-stick retail pack; 200-stick carton"],
-        ["Color direction", "Carbon, champagne, burgundy, graphite"],
-        ["Customization", "Blend, foil, pack and master carton"],
-        ["Status", "Pre-production specification"]
+        ["Products", "Royal Slim / Royal Classic"],
+        ["E-liquid capacity", "Royal Slim 2.2 mL; Royal Classic 1.8 mL"],
+        ["Battery", "Royal Slim 250 mAh; Royal Classic 200 mAh"],
+        ["Nicotine strength", "2% / 5%"],
+        ["Coil type", "1.0 Ω / 1.5 Ω"],
+        ["Size", "Comparable to a conventional cigarette"]
       ],
       context: {
         eyebrow: "Channel context / 02",
@@ -118,10 +118,10 @@ export function initProduct(productId: string): () => void {
       boardAlt: "Fusion One product board with device colors and component callouts",
       boardPosition: "center",
       facts: [
-        ["Interface", "Hybrid", "Pod + selected heat-stick formats"],
-        ["Battery", "650 mAh", "Draft development target"],
-        ["Charging", "USB-C", "Bottom-mounted port"],
-        ["Body", "Aluminum", "Five finish directions"]
+        ["Pod", "2 mL", "Replaceable cartridge"],
+        ["Battery", "300 mAh", "USB-C rechargeable"],
+        ["Coil type", "0.8 / 1.2 Ω", "Selectable"],
+        ["Nicotine", "2% / 5%", "Market dependent"]
       ],
       intro: {
         eyebrow: "System architecture / 01",
@@ -136,11 +136,11 @@ export function initProduct(productId: string): () => void {
       ],
       specs: [
         ["Product class", "Hybrid vapor / heat platform"],
-        ["Battery target", "650 mAh rechargeable"],
-        ["Pod capacity", "2.5 mL nominal; market dependent"],
-        ["Charging", "USB-C"],
-        ["Materials", "Aluminum body / polymer pod"],
-        ["Status", "Engineering concept; validation required"]
+        ["Pod capacity", "2 mL"],
+        ["Battery", "300 mAh rechargeable"],
+        ["Nicotine strength", "2% / 5%"],
+        ["Coil type", "0.8 Ω / 1.2 Ω"],
+        ["Size", "Diameter 80–100 mm; height 100–120 mm (customizable)"]
       ],
       context: {
         eyebrow: "Channel context / 02",
@@ -183,10 +183,10 @@ export function initProduct(productId: string): () => void {
       boardAlt: "Arc Pod S metallic finish family on a white product board",
       boardPosition: "center",
       facts: [
-        ["Battery", "1,000 mAh", "Draft platform target"],
-        ["Pod", "3.0 mL", "Regional configuration"],
-        ["Coils", "0.6 / 0.8 Ω", "Proposed pod options"],
-        ["Finishes", "Metal + wrap", "Five core colorways"]
+        ["E-liquid", "2 mL + 10 mL", "Pod + refill reservoir"],
+        ["Battery", "600 mAh", "USB-C rechargeable"],
+        ["Coil type", "0.8 / 1.2 Ω", "Mesh options"],
+        ["Power", "14 W", "Output target"]
       ],
       intro: {
         eyebrow: "Industrial design / 01",
@@ -201,11 +201,11 @@ export function initProduct(productId: string): () => void {
       ],
       specs: [
         ["Product class", "Refillable pod system"],
-        ["Battery target", "1,000 mAh rechargeable"],
-        ["Pod capacity", "3.0 mL nominal"],
-        ["Coil options", "0.6 / 0.8 Ω mesh"],
-        ["Charging", "USB-C"],
-        ["Activation", "Draw activated"]
+        ["E-liquid capacity", "2 mL + 10 mL"],
+        ["Battery", "600 mAh rechargeable"],
+        ["Nicotine strength", "2% / 5%"],
+        ["Coil type", "0.8 Ω / 1.2 Ω"],
+        ["Power", "14 W"]
       ],
       context: {
         eyebrow: "Channel context / 02",
@@ -313,10 +313,10 @@ export function initProduct(productId: string): () => void {
       boardAlt: "AI Pulse product board showing three graphic treatments and digital status interface",
       boardPosition: "center",
       facts: [
-        ["Capacity target", "22 mL", "Market-dependent configuration"],
-        ["Modes", "Eco + Boost", "Selectable output behavior"],
-        ["Status", "Battery + liquid", "High-contrast digital readout"],
-        ["Battery", "850 mAh", "USB-C rechargeable"]
+        ["E-liquid", "2 mL + 10 mL", "Pod + refill reservoir"],
+        ["Battery", "600 mAh", "USB-C rechargeable"],
+        ["Coil type", "Dual mesh", "Balanced flavor delivery"],
+        ["Power", "14–22 W", "Eco / Boost range"]
       ],
       intro: {
         eyebrow: "Interface system / 01",
@@ -331,11 +331,11 @@ export function initProduct(productId: string): () => void {
       ],
       specs: [
         ["Product class", "Rechargeable disposable"],
-        ["Capacity target", "22 mL; market dependent"],
-        ["Battery target", "850 mAh rechargeable"],
-        ["Output modes", "Eco / Boost"],
-        ["Charging", "USB-C"],
-        ["Display", "Battery / liquid / mode status"]
+        ["E-liquid capacity", "2 mL + 10 mL"],
+        ["Battery", "600 mAh rechargeable"],
+        ["Nicotine strength", "2% / 5%"],
+        ["Coil type", "Dual mesh"],
+        ["Power", "14–22 W (Eco / Boost)"]
       ],
       context: {
         eyebrow: "Channel context / 02",
