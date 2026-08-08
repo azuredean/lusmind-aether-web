@@ -128,7 +128,7 @@ export const homeMarkup = String.raw`
           <div class="page-width">
             <div class="section-index section-index--dark reveal"><span>01</span><span>Product stories</span></div>
             <div class="visual-index__intro">
-              <h2 id="visual-index-title" class="reveal">Five products.<br /><span>Five distinct worlds.</span></h2>
+              <h2 id="visual-index-title" class="reveal">Five platforms.<br /><span>Six distinct products.</span></h2>
               <p class="reveal reveal--delay-1">Open any story to see its architecture, finishes, provisional specifications and distributor program.</p>
             </div>
             <div class="campaign-grid">
