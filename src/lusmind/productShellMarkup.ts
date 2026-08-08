@@ -5,7 +5,7 @@ export const productShellMarkup = String.raw`
 
     <div class="age-gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
       <div class="age-gate__panel">
-        <img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="260" height="57" />
+        <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" />
         <p class="eyebrow">Age verification / Trade site</p>
         <h1 id="age-title">For adults only.</h1>
         <p>This site presents nicotine-product information for adult trade professionals. Confirm that you are of legal smoking age in your jurisdiction.</p>
@@ -18,7 +18,7 @@ export const productShellMarkup = String.raw`
     </div>
 
     <header class="site-header" data-header>
-      <a class="brand" href="/" aria-label="Lusmind home"><img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="260" height="57" /></a>
+      <a class="brand" href="/" aria-label="Lusmind home"><img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" /></a>
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="/">Home</a>
         <div class="nav-products">
@@ -60,7 +60,7 @@ export const productShellMarkup = String.raw`
 
     <footer class="site-footer">
       <div class="site-footer__inner page-width">
-        <a href="/"><img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="260" height="57" /></a>
+        <a href="/"><img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" /></a>
         <nav aria-label="Footer navigation"><a href="/#collection">Collection</a><a href="/#wholesale">Wholesale</a><a href="mailto:support@lusmind.com">Contact</a></nav>
         <small>© <span data-year>2026</span> Lusmind. For qualified adult-industry partners.</small>
       </div>
