@@ -14,12 +14,44 @@
     <meta name="twitter:title" content="LusMind - Luxury Vape Experience" />
     <meta name="twitter:description" content="Discover a luxury vape experience built for distributors, wholesalers and private-label partners." />
     <title>LusMind - Luxury Vape Experience</title>
-    <link rel="icon" href="/assets/brand/lusmind-logo.webp" type="image/webp" />
-    <link rel="preload" href="/assets/fonts/syne-800.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/assets/fonts/manrope-400.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/assets/campaign/ai-pulse-hero.webp" as="image" type="image/webp" />
-    <link rel="preload" href="/styles.css" as="style" />
-    <link rel="preload" href="/product-detail.css" as="style" />
+    <link rel="icon" href="/assets/brand/lusmind-logo-720.webp" type="image/webp" />
+    <link rel="preload" href="/assets/fonts/syne-800.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // Route-aware critical loading: request only the stylesheet and the single
+      // above-the-fold image the current route actually needs.
+      (function () {
+        var path = location.pathname;
+        var isProduct = /^\/products\//.test(path);
+        var sheet = isProduct ? "/product-detail.css" : "/styles.css";
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = sheet;
+        link.setAttribute("data-lusmind-sheet", sheet);
+        document.head.appendChild(link);
+
+        var HERO = {
+          "/products/royal-heat": "/assets/campaign/royal-heat-hero.webp",
+          "/products/royal-slim": "/assets/products/royal-slim.webp",
+          "/products/royal-classic": "/assets/products/royal-classic.webp",
+          "/products/fusion-one": "/assets/campaign/fusion-one-hero.webp",
+          "/products/arc-pod-s": "/assets/campaign/arc-pod-s-hero.webp",
+          "/products/core-20": "/assets/campaign/core-20-hero.webp",
+          "/products/ai-pulse": "/assets/campaign/ai-pulse-hero.webp"
+        };
+        var hero = isProduct ? HERO[path.replace(/\/$/, "")] : "/assets/campaign/age-life-1.webp";
+        if (hero) {
+          var pre = document.createElement("link");
+          pre.rel = "preload";
+          pre.as = "image";
+          pre.type = "image/webp";
+          pre.href = hero;
+          pre.setAttribute("fetchpriority", "high");
+          document.head.appendChild(pre);
+        }
+      })();
+    </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

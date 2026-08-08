@@ -186,6 +186,76 @@ export function initHome(): () => void {
   let currentVariant = null;
   let productSwapTimer;
 
+  const deferredTimers: any[] = [];
+  const observers: any[] = [];
+
+  /** Run non-critical work when the main thread is free. */
+  function whenIdle(fn, timeout = 1200) {
+    if (typeof (globalThis.window as any).requestIdleCallback === "function") {
+      (globalThis.window as any).requestIdleCallback(fn, { timeout });
+      return;
+    }
+    deferredTimers.push(globalThis.window.setTimeout(fn, 200));
+  }
+
+  function later(fn, delay) {
+    deferredTimers.push(globalThis.window.setTimeout(fn, delay));
+  }
+
+  /** Swap a deferred `data-src` image into a real request. */
+  function hydrateImage(image) {
+    if (!image || !image.dataset || !image.dataset.src) return;
+    image.src = image.dataset.src;
+    delete image.dataset.src;
+  }
+
+  function hydrateWithin(root) {
+    if (!root) return;
+    root.querySelectorAll("img[data-src]").forEach(hydrateImage);
+  }
+
+  function observeOnce(nodes, callback, rootMargin = "700px 0px") {
+    const items = [...nodes];
+    if (!items.length) return;
+    if (typeof globalThis.window.IntersectionObserver !== "function") {
+      items.forEach(callback);
+      return;
+    }
+    const observer = new globalThis.window.IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+          callback(entry.target);
+        });
+      },
+      { rootMargin }
+    );
+    items.forEach((item) => observer.observe(item));
+    observers.push(observer);
+  }
+
+  /** Below-the-fold imagery and section backdrops load only as they approach. */
+  function initDeferredMedia() {
+    const images = [...document.querySelectorAll("img[data-src]")].filter(
+      (image) => !image.closest(".hero__slideshow") && !image.closest("#product-dropdown")
+    );
+    observeOnce(images, hydrateImage);
+
+    const backdrops = document.querySelectorAll(
+      ".positioning, .wholesale, .assurance, .faq, .contact"
+    );
+    observeOnce(backdrops, (section) => section.classList.add("is-bg-ready"), "900px 0px");
+
+    const stage = document.querySelector("[data-product-stage]");
+    if (stage) {
+      observeOnce([stage], () => {
+        productStageReady = true;
+        hydrateWithin(stage);
+      });
+    }
+  }
+
   function safelyReadStorage(key) {
     try {
       return window.localStorage.getItem(key);
@@ -202,6 +272,27 @@ export function initHome(): () => void {
     }
   }
 
+  let ageSlidesScheduled = false;
+  /** Age-gate backdrops beyond the first are fetched just before their turn. */
+  function scheduleAgeSlides() {
+    if (ageSlidesScheduled) return;
+    ageSlidesScheduled = true;
+    const slides = [...document.querySelectorAll(".age-gate__slide[data-age-image]")];
+    slides.forEach((slide, index) => {
+      later(() => {
+        const src = slide.dataset.ageImage;
+        if (!src) return;
+        slide.style.setProperty("--age-image", `url('${src}')`);
+        delete slide.dataset.ageImage;
+      }, 1400 + index * 2400);
+    });
+  }
+
+  function hydrateHeroSlides() {
+    const slides = [...document.querySelectorAll(".hero__slide[data-src]")];
+    slides.forEach((slide, index) => later(() => hydrateImage(slide), index * 350));
+  }
+
   function unlockSite({ remember = false } = {}) {
     if (remember) safelyWriteStorage("lusmind-age-verified-v1", "true");
     ageGate.classList.add("is-accepted");
@@ -211,6 +302,9 @@ export function initHome(): () => void {
     window.setTimeout(() => {
       if (ageGate.classList.contains("is-accepted")) ageGate.hidden = true;
     }, 520);
+    whenIdle(hydrateHeroSlides);
+    // Page media only becomes relevant once the visitor is past the gate.
+    whenIdle(initDeferredMedia);
   }
 
   function initAgeGate() {
@@ -221,11 +315,13 @@ export function initHome(): () => void {
       return;
     }
 
+    scheduleAgeSlides();
+
     ageConfirm.addEventListener("click", () => unlockSite({ remember: true }));
     ageDeny.addEventListener("click", () => {
       const panel = ageGate.querySelector(".age-gate__panel");
       panel.innerHTML = `
-        <img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="360" height="79" />
+        <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" />
         <p class="eyebrow">Access restricted</p>
         <h1>Not available.</h1>
         <p>You must be of legal smoking age in your jurisdiction to view this website.</p>
@@ -250,6 +346,7 @@ export function initHome(): () => void {
     productsToggle.setAttribute("aria-expanded", String(open));
     productDropdown.setAttribute("aria-hidden", String(!open));
     productDropdown.classList.toggle("is-open", open);
+    if (open) hydrateWithin(productDropdown);
   }
 
   function initNavigation() {
@@ -389,6 +486,7 @@ export function initHome(): () => void {
     });
   }
 
+  let productStageReady = false;
   function updateProductMedia(media, animate = true) {
     const stage = document.querySelector("[data-product-stage]");
     const image = document.querySelector("[data-product-image]");
@@ -397,7 +495,8 @@ export function initHome(): () => void {
     if (animate) stage.classList.add("is-changing");
 
     const commit = () => {
-      image.src = media.image;
+      if (productStageReady) image.src = media.image;
+      else image.dataset.src = media.image;
       image.alt = media.alt;
       image.style.objectPosition = media.position || "center";
       stage.classList.toggle("is-dark", media.tone === "dark");
@@ -596,6 +695,11 @@ export function initHome(): () => void {
     };
     show(0);
     start();
+    // Background tabs should not burn frames on the crossfade.
+    document.addEventListener("visibilitychange", () => {
+      if (globalThis.document.hidden) globalThis.window.clearInterval(heroTimer);
+      else start();
+    });
     const media = slideshow.closest(".hero__media") || slideshow;
     media.addEventListener(
       "click",
@@ -621,6 +725,8 @@ export function initHome(): () => void {
 
   return () => {
     scope.dispose();
+    deferredTimers.forEach((timer) => globalThis.window.clearTimeout(timer));
+    observers.forEach((observer) => observer.disconnect());
     globalThis.window.clearTimeout(productSwapTimer);
     globalThis.window.clearInterval(heroTimer);
     globalThis.document.body.classList.remove("is-locked", "is-menu-open");
