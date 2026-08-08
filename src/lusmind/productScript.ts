@@ -553,7 +553,121 @@ export function initProduct(productId: string): () => void {
 
   const inquiryHref = `mailto:support@lusmind.com?subject=${encodeURIComponent(`Distributor inquiry — ${product.name}`)}&body=${encodeURIComponent(`Hello Lusmind team,\n\nI would like to discuss wholesale or customization options for ${product.name}.\n\nCompany:\nMarket:\nEstimated quantity:\nTarget launch date:\n`)}`;
 
-  productMain.innerHTML = `
+
+  const makeSeriesPanels = () => SERIES.members.map((m: any) => `
+    <article class="series-panel reveal">
+      <a class="series-panel__media" href="/products/${m.id}" aria-label="Explore ${m.name}">
+        <img src="${m.image}" alt="${m.alt}" loading="lazy" decoding="async" style="object-position:${m.position}" />
+      </a>
+      <div class="series-panel__body">
+        <p class="eyebrow">Product ${m.code}</p>
+        <h3>${m.name}</h3>
+        <p class="series-panel__copy">${m.positioning}</p>
+        <dl class="series-panel__specs">
+          ${m.specs.map(([label, value]: any) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("")}
+        </dl>
+        <a class="button button--accent" href="/products/${m.id}">Explore ${m.name} <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  `).join("");
+
+  const seriesMarkup = () => `
+    <section class="product-hero product-hero--series product-hero--left" id="overview" aria-labelledby="product-title">
+      <img class="product-hero__media" src="${SERIES.campaign}" alt="${SERIES.campaignAlt}" fetchpriority="high" decoding="async" data-parallax />
+      <div class="product-hero__shade" aria-hidden="true"></div>
+      <div class="product-hero__grid" aria-hidden="true"></div>
+      <div class="product-hero__inner">
+        <div class="product-hero__copy">
+          <a class="product-hero__crumb" href="/#collection"><span aria-hidden="true">←</span> Back to collection</a>
+          <p class="eyebrow">${SERIES.family} / ${SERIES.index}</p>
+          <h1 id="product-title">${SERIES.name} <span>${SERIES.headline}</span></h1>
+          <p class="product-hero__lede">${SERIES.lede}</p>
+          <div class="product-hero__actions">
+            <a class="button button--accent" href="/products/royal-slim">Explore Royal Slim <span aria-hidden="true">↗</span></a>
+            <a class="button button--line" href="/products/royal-classic">Explore Royal Classic <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="product-hero__index" aria-label="Series of two products">
+          Series<br /><strong>02</strong>products
+        </div>
+      </div>
+    </section>
+
+    <nav class="anchor-rail" aria-label="Section navigation">
+      <div class="anchor-rail__inner page-width">
+        <a href="#overview">Overview</a>
+        <a href="#details">Products</a>
+        <a href="#context">Compare</a>
+        <a href="#trade">Trade</a>
+      </div>
+    </nav>
+
+    <section class="product-section product-section--paper" id="details">
+      <div class="page-width">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">Series structure / 01</p>
+            <p class="section-head__copy">Royal Heat is not a single product page. Select the format that fits your channel; each product has its own specification, identity and page.</p>
+          </div>
+          <h2>Two formats, one trade language.</h2>
+        </header>
+        <div class="series-grid">${makeSeriesPanels()}</div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--dark" id="context">
+      <div class="page-width">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">Direct comparison / 02</p>
+            <p class="section-head__copy">Specifications are preliminary and market dependent. Nicotine configuration and saleability are reviewed market by market.</p>
+          </div>
+          <h2>Slim or Classic — where they differ.</h2>
+        </header>
+        <div class="series-compare reveal" role="table" aria-label="Royal Slim and Royal Classic comparison">
+          <div class="series-compare__row series-compare__row--head" role="row">
+            <span role="columnheader">Specification</span><span role="columnheader">Royal Slim</span><span role="columnheader">Royal Classic</span>
+          </div>
+          ${["E-liquid","Battery","Nicotine","Coil type","Size"].map((label, i) => `
+            <div class="series-compare__row" role="row">
+              <span role="cell">${label}</span>
+              <strong role="cell">${SERIES.members[0].specs[i][1]}</strong>
+              <strong role="cell">${SERIES.members[1].specs[i][1]}</strong>
+            </div>
+          `).join("")}
+        </div>
+        <p class="data-note data-note--dark">Preliminary specification. Values are indicative for planning and are confirmed at sampling.</p>
+      </div>
+    </section>
+
+    <section class="trade-section" id="trade" aria-labelledby="trade-title">
+      <div class="trade-layout page-width">
+        <div class="trade-copy reveal">
+          <p class="eyebrow">Distributor program / 03</p>
+          <h2 id="trade-title">One program across both formats.</h2>
+          <p>Royal Slim and Royal Classic share carton logic and commercial terms, so both formats can run through a single distributor program. Indicative values below apply to the series.</p>
+        </div>
+        <aside class="trade-panel reveal" aria-label="Indicative commercial terms">
+          <div class="trade-terms">${makeTerms()}</div>
+          <a class="button button--accent" href="${inquiryHref}">Start a Royal Heat inquiry <span aria-hidden="true">↗</span></a>
+          <small>Indicative development targets, not a binding quotation. Compliance, nicotine configuration and saleability are reviewed market by market.</small>
+        </aside>
+      </div>
+    </section>
+
+    <a class="next-product" href="/products/royal-slim" aria-label="View next product: Royal Slim">
+      <img src="/assets/products/royal-slim.webp" alt="" loading="lazy" decoding="async" />
+      <div class="next-product__inner page-width">
+        <div>
+          <p class="eyebrow">Next product / 01A</p>
+          <h2>Royal Slim</h2>
+        </div>
+        <span class="next-product__arrow" aria-hidden="true">↗</span>
+      </div>
+    </a>
+  `;
+
+  productMain.innerHTML = isSeries ? seriesMarkup() : `
     <section class="product-hero product-hero--${product.layout}" id="overview" aria-labelledby="product-title">
       <img class="product-hero__media" src="${product.campaign}" alt="${product.campaignAlt}" fetchpriority="high" decoding="async" style="object-position:${product.campaignPosition || "center"}" data-parallax />
       <div class="product-hero__shade" aria-hidden="true"></div>
@@ -797,7 +911,28 @@ export function initProduct(productId: string): () => void {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
-  const schema = {
+  const schema: any = isSeries ? {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Lusmind Royal Heat series",
+    description: SERIES.lede,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: SERIES.members.map((member: any, position: number) => ({
+        "@type": "ListItem",
+        position: position + 1,
+        item: {
+          "@type": "Product",
+          name: `Lusmind ${member.name}`,
+          category: "Cigarette-format electronic product",
+          description: member.positioning,
+          image: new URL(member.image, window.location.href).href,
+          url: new URL(`/products/${member.id}`, window.location.href).href,
+          brand: { "@type": "Brand", name: "Lusmind" }
+        }
+      }))
+    }
+  } : {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `Lusmind ${product.name}`,
