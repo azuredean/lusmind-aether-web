@@ -67,10 +67,10 @@ export function initHome(): () => void {
         }
       },
       specs: [
-        ["Formats", "Slim + classic"],
-        ["Retail pack", "20 sticks"],
-        ["Carton", "200 sticks"],
-        ["Profiles", "Up to 8"]
+        ["E-liquid", "Slim 2.2 mL / Classic 1.8 mL"],
+        ["Battery", "Slim 250 / Classic 200 mAh"],
+        ["Nicotine", "2% / 5%"],
+        ["Coil", "1.0 / 1.5 Ω"]
       ]
     },
     fusion: {
