@@ -24,7 +24,10 @@ export const productShellMarkup = String.raw`
         <div class="nav-products">
           <button type="button" aria-expanded="false" aria-controls="product-dropdown" data-products-toggle>Products <span aria-hidden="true">⌄</span></button>
           <div class="product-dropdown" id="product-dropdown">
-            <a href="/products/royal-heat" data-product-link="royal-heat"><small>01</small><span>Royal Heat</span><i>Heat sticks</i></a>
+            <p class="product-dropdown__group">Royal Heat series</p>
+            <a href="/products/royal-slim" data-product-link="royal-slim"><small>01A</small><span>Royal Slim</span><i>Cigarette format</i></a>
+            <a href="/products/royal-classic" data-product-link="royal-classic"><small>01B</small><span>Royal Classic</span><i>Cigarette format</i></a>
+            <a href="/products/royal-heat" data-product-link="royal-heat"><small>01</small><span>Royal Heat</span><i>Series overview</i></a>
             <a href="/products/fusion-one" data-product-link="fusion-one"><small>02</small><span>Fusion One</span><i>Hybrid</i></a>
             <a href="/products/arc-pod-s" data-product-link="arc-pod-s"><small>03</small><span>Arc Pod S</span><i>Refillable</i></a>
             <a href="/products/core-20" data-product-link="core-20"><small>04</small><span>Core 20</span><i>Heat device</i></a>
@@ -40,9 +43,12 @@ export const productShellMarkup = String.raw`
     </header>
 
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
-      <p class="eyebrow">Lusmind collection / 05</p>
+      <p class="eyebrow">Lusmind collection / 05 platforms · 06 products</p>
       <a class="mobile-menu__home" href="/"><span>00</span>Home<i>↗</i></a>
-      <a class="mobile-menu__product" href="/products/royal-heat" data-product-link="royal-heat"><span>01</span>Royal Heat<i>↗</i></a>
+      <p class="mobile-menu__group">Royal Heat series</p>
+      <a class="mobile-menu__product" href="/products/royal-slim" data-product-link="royal-slim"><span>01A</span>Royal Slim<i>↗</i></a>
+      <a class="mobile-menu__product" href="/products/royal-classic" data-product-link="royal-classic"><span>01B</span>Royal Classic<i>↗</i></a>
+      <a class="mobile-menu__product" href="/products/royal-heat" data-product-link="royal-heat"><span>01</span>Royal Heat overview<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/fusion-one" data-product-link="fusion-one"><span>02</span>Fusion One<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/arc-pod-s" data-product-link="arc-pod-s"><span>03</span>Arc Pod S<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/core-20" data-product-link="core-20"><span>04</span>Core 20<i>↗</i></a>
