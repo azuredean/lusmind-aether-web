@@ -303,6 +303,8 @@ export function initHome(): () => void {
       if (ageGate.classList.contains("is-accepted")) ageGate.hidden = true;
     }, 520);
     whenIdle(hydrateHeroSlides);
+    // Page media only becomes relevant once the visitor is past the gate.
+    whenIdle(initDeferredMedia);
   }
 
   function initAgeGate() {
@@ -712,7 +714,6 @@ export function initHome(): () => void {
 
   }
 
-  initDeferredMedia();
   initAgeGate();
   initNavigation();
   initScrollEffects();
