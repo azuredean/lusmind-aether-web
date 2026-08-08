@@ -440,8 +440,64 @@ export function initProduct(productId: string): () => void {
     "ai-pulse": "/products/ai-pulse"
   };
 
+
+  const SERIES: any = {
+    index: "01",
+    name: "Royal Heat",
+    family: "Royal series overview",
+    headline: "One series. Two cigarette-format products.",
+    lede: "Royal Heat is a two-product series: Royal Slim and Royal Classic. Both are cigarette-referenced electronic formats sharing one trade language, separated by proportion, capacity and identity.",
+    accent: "#d4a351",
+    accentRgb: "212, 163, 81",
+    layout: "left",
+    campaign: "/assets/campaign/royal-heat-hero.webp",
+    campaignAlt: "Lusmind Royal Heat series presented in a black and champagne setting",
+    trade: {
+      moq: "50 cartons / SKU",
+      samples: "12–18 days",
+      lead: "30–40 days",
+      customization: "Liquid + full pack system"
+    },
+    members: [
+      {
+        id: "royal-slim",
+        code: "01A",
+        name: "Royal Slim",
+        image: "/assets/products/royal-slim.webp",
+        alt: "Royal Slim product, finishes and packaging",
+        position: "27% center",
+        positioning: "The slim proportion. The larger reservoir in the series, held inside a discreet cigarette-referenced body and a black-and-champagne identity.",
+        specs: [
+          ["E-liquid", "2.2 mL"],
+          ["Battery", "250 mAh"],
+          ["Nicotine", "2% / 5%"],
+          ["Coil type", "1.0 Ω / 1.5 Ω"],
+          ["Size", "Comparable to a conventional cigarette"]
+        ]
+      },
+      {
+        id: "royal-classic",
+        code: "01B",
+        name: "Royal Classic",
+        image: "/assets/products/royal-classic.webp",
+        alt: "Royal Classic product and red packaging in a travel setting",
+        position: "28% center",
+        positioning: "The familiar classic proportion, carried by a royal red and warm ivory pack system built for travel-led display.",
+        specs: [
+          ["E-liquid", "1.8 mL"],
+          ["Battery", "200 mAh"],
+          ["Nicotine", "2% / 5%"],
+          ["Coil type", "1.0 Ω / 1.5 Ω"],
+          ["Size", "Comparable to a conventional cigarette"]
+        ]
+      }
+    ],
+    next: "fusion-one"
+  };
+
   const currentId = productId;
-  const product = PRODUCTS[currentId];
+  const isSeries = currentId === "royal-heat";
+  const product = isSeries ? SERIES : PRODUCTS[currentId];
 
   if (!product) {
     throw new Error(`Unknown Lusmind product page: ${currentId || "missing id"}`);
@@ -499,7 +555,7 @@ export function initProduct(productId: string): () => void {
 
   productMain.innerHTML = `
     <section class="product-hero product-hero--${product.layout}" id="overview" aria-labelledby="product-title">
-      <img class="product-hero__media" src="${product.campaign}" alt="${product.campaignAlt}" fetchpriority="high" />
+      <img class="product-hero__media" src="${product.campaign}" alt="${product.campaignAlt}" fetchpriority="high" decoding="async" style="object-position:${product.campaignPosition || "center"}" data-parallax />
       <div class="product-hero__shade" aria-hidden="true"></div>
       <div class="product-hero__grid" aria-hidden="true"></div>
       <div class="product-hero__inner">
@@ -519,6 +575,16 @@ export function initProduct(productId: string): () => void {
       </div>
     </section>
 
+    <nav class="anchor-rail" aria-label="Section navigation">
+      <div class="anchor-rail__inner page-width">
+        <a href="#overview">Overview</a>
+        <a href="#details">Details</a>
+        <a href="#context">Context</a>
+        <a href="#options">Finishes</a>
+        <a href="#trade">Trade</a>
+      </div>
+    </nav>
+
     <section class="facts-rail" aria-label="Key product facts">
       <div class="facts-rail__grid page-width">${makeFacts()}</div>
     </section>
@@ -534,7 +600,7 @@ export function initProduct(productId: string): () => void {
         </header>
         <div class="breakdown">
           <figure class="breakdown__visual reveal">
-            <img src="${product.board}" alt="${product.boardAlt}" loading="lazy" style="object-position:${product.boardPosition || "center"}" />
+            <img src="${product.board}" alt="${product.boardAlt}" loading="lazy" decoding="async" style="object-position:${product.boardPosition || "center"}" />
             ${makeCallouts()}
           </figure>
           <div class="breakdown__content reveal">
@@ -548,8 +614,8 @@ export function initProduct(productId: string): () => void {
       </div>
     </section>
 
-    <section class="context-stage context-stage--${product.layout}" aria-labelledby="context-title">
-      <img src="${product.campaign}" alt="" loading="lazy" aria-hidden="true" />
+    <section class="context-stage context-stage--${product.layout}" id="context" aria-labelledby="context-title">
+      <img src="${product.campaign}" alt="" loading="lazy" decoding="async" aria-hidden="true" data-parallax />
       <div class="context-stage__inner page-width">
         <div class="context-stage__copy reveal">
           <p class="eyebrow">${product.context.eyebrow}</p>
