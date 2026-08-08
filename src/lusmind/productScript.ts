@@ -261,7 +261,7 @@ export function initProduct(productId: string): () => void {
       },
       features: [
         ["Curved viewing window", "The side opening makes liquid level checking quick while giving the silhouette a distinct signature."],
-        ["Mesh pod platform", "Proposed 0.6-ohm and 0.8-ohm directions support configurable delivery and repeatable replacement."],
+        ["Mesh pod platform", "Proposed 0.8-ohm and 1.2-ohm directions support configurable delivery and repeatable replacement."],
         ["Draw-led simplicity", "A minimal interaction model removes unnecessary controls for a clean everyday experience."],
         ["Two material families", "Choose a precise metallic shell or a warmer tactile wrap without changing the platform geometry."]
       ],
@@ -426,12 +426,14 @@ export function initProduct(productId: string): () => void {
         lead: "30–45 days",
         customization: "Flavor + UI + full-face art"
       },
-      next: "royal-heat"
+      next: "royal-slim"
     }
   };
 
   const PRODUCT_PATHS: any = {
     "royal-heat": "/products/royal-heat",
+    "royal-slim": "/products/royal-slim",
+    "royal-classic": "/products/royal-classic",
     "fusion-one": "/products/fusion-one",
     "arc-pod-s": "/products/arc-pod-s",
     "core-20": "/products/core-20",
