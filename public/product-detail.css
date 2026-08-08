@@ -1653,7 +1653,7 @@ img {
 
 .anchor-rail {
   position: sticky;
-  top: 0;
+  top: var(--header, 64px);
   z-index: 40;
   color: var(--white);
   background: rgba(6, 8, 7, 0.92);
@@ -1868,6 +1868,10 @@ img {
 
   .anchor-rail a {
     min-height: 44px;
+  }
+
+  .anchor-rail {
+    top: 0;
   }
 
   .product-hero__media,
