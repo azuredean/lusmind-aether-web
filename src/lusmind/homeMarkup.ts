@@ -106,7 +106,7 @@ export const homeMarkup = String.raw`
             <div class="hero__copy">
               <p class="eyebrow reveal">Lusmind product systems / 2026</p>
               <h1 id="hero-title" class="reveal reveal--delay-1">Designed to<br /><span>move markets.</span></h1>
-              <p class="hero__lede reveal reveal--delay-2">Five differentiated platforms for distributors who need shelf impact, flexible customization and a manufacturing path built to scale.</p>
+              <p class="hero__lede reveal reveal--delay-2">Five differentiated platforms and six distinct products for distributors who need shelf impact, flexible customization and a manufacturing path built to scale.</p>
               <div class="hero__actions reveal reveal--delay-3">
                 <a class="button button--acid" href="#visual-index">Explore the collection <span aria-hidden="true">↓</span></a>
                 <a class="button button--line" href="/products/ai-pulse">Discover AI Pulse <span aria-hidden="true">↗</span></a>
@@ -171,7 +171,7 @@ export const homeMarkup = String.raw`
               <article class="metric reveal">
                 <span class="metric__number">05</span>
                 <h3>Distinct product platforms</h3>
-                <p>From heat-stick formats to refillable pods and AI-enabled disposables.</p>
+                <p>Five platforms, six products — from cigarette formats to refillable pods and AI-enabled disposables.</p>
               </article>
               <article class="metric reveal reveal--delay-1">
                 <span class="metric__number">03</span>
