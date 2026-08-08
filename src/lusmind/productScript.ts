@@ -38,41 +38,42 @@ export function initProduct(productId: string): () => void {
   const { document, window }: { document: any; window: any } = scope;
 
   const PRODUCTS: any = {
-    "royal-heat": {
-      index: "01",
-      name: "Royal Heat",
-      family: "Heat-stick portfolio",
-      headline: "Two formats. One unmistakable ritual.",
-      lede: "A coordinated slim-and-classic heat-stick range designed to give premium adult channels a coherent shelf story from single pack to master carton.",
+    "royal-slim": {
+      index: "01A",
+      name: "Royal Slim",
+      family: "Cigarette-format electronic product",
+      headline: "The slim proportion, precisely held.",
+      lede: "A cigarette-referenced electronic format built around a 2.2 mL reservoir and a 250 mAh cell, presented in a disciplined black-and-champagne system.",
       accent: "#d4a351",
       accentRgb: "212, 163, 81",
       layout: "left",
       campaign: "/assets/campaign/royal-heat-hero.webp",
-      campaignAlt: "Lusmind Royal Heat slim and classic products arranged in a black and gold hospitality setting",
+      campaignAlt: "Lusmind Royal Slim presented in a black and champagne hospitality setting",
+      campaignPosition: "62% 45%",
       board: "/assets/products/royal-slim.webp",
-      boardAlt: "Royal Heat slim product board showing formats, packout and principal features",
+      boardAlt: "Royal Slim finish family, packaging and format overview",
       boardPosition: "center",
       facts: [
-        ["Range", "Royal Slim + Royal Classic", "Two products, one family"],
-        ["E-liquid", "2.2 mL / 1.8 mL", "Slim / Classic"],
-        ["Battery", "250 mAh / 200 mAh", "Slim / Classic"],
+        ["E-liquid", "2.2 mL", "Preliminary specification"],
+        ["Battery", "250 mAh", "Preliminary specification"],
+        ["Coil type", "1.0 / 1.5 Ω", "Selectable"],
         ["Nicotine", "2% / 5%", "Market dependent"]
       ],
       intro: {
-        eyebrow: "Portfolio logic / 01",
-        title: "A premium language that scales across formats.",
-        copy: "Royal Heat turns a fragmented heat-stick shelf into a disciplined family. The visual system, finish hierarchy and pack architecture are designed to remain legible across retail, display and wholesale carton formats."
+        eyebrow: "Format logic / 01",
+        title: "A slim body that reads as familiar, not novel.",
+        copy: "Royal Slim keeps the silhouette close to a conventional cigarette so the shelf conversation stays simple. The largest reservoir in the Royal series sits inside that restrained proportion, supported by a selectable coil specification."
       },
       features: [
-        ["Consistent heat", "A controlled substrate structure supports stable, even heating through the session."],
-        ["Fast readiness", "The proposed system target is a ready state in approximately twenty seconds."],
-        ["Premium taste delivery", "Blend and airflow development are tuned for a smooth, composed sensory profile."],
-        ["Scalable pack system", "Single packs, inner cartons and master cartons share one recognizable trade language."]
+        ["Cigarette-referenced scale", "The body is dimensioned to read comparably to a conventional cigarette in hand and on shelf."],
+        ["2.2 mL reservoir", "The slim format carries the larger Royal liquid volume without widening the silhouette."],
+        ["Selectable coil", "1.0 Ω and 1.2—1.5 Ω directions allow the delivery profile to be tuned per market."],
+        ["Champagne finish system", "A black-and-champagne palette keeps the format premium across pack, display and carton."]
       ],
       specs: [
-        ["Products", "Royal Slim / Royal Classic"],
-        ["E-liquid capacity", "Royal Slim 2.2 mL; Royal Classic 1.8 mL"],
-        ["Battery", "Royal Slim 250 mAh; Royal Classic 200 mAh"],
+        ["Product class", "Cigarette-format electronic product"],
+        ["E-liquid capacity", "2.2 mL"],
+        ["Battery", "250 mAh"],
         ["Nicotine strength", "2% / 5%"],
         ["Coil type", "1.0 Ω / 1.5 Ω"],
         ["Size", "Comparable to a conventional cigarette"]
@@ -80,29 +81,94 @@ export function initProduct(productId: string): () => void {
       context: {
         eyebrow: "Channel context / 02",
         title: "Composed for elevated adult retail.",
-        copy: "The black-and-gold system is designed for premium tobacconists, hospitality-led adult channels and distributors building a more considered heat portfolio.",
+        copy: "The slim format suits premium tobacconists and hospitality-led adult channels where a discreet, familiar proportion matters more than device presence.",
         points: ["Premium tobacconist", "Travel retail", "Hospitality channel", "Curated convenience"]
       },
       options: [
-        { title: "Royal Slim", note: "Five finish directions", image: "/assets/products/royal-slim.webp", alt: "Royal Slim finish family and packaging", position: "27% center" },
-        { title: "Royal Classic", note: "Classic format system", image: "/assets/products/royal-classic.webp", alt: "Royal Classic product and red packaging in a yacht setting", position: "28% center" }
+        { title: "Royal Slim", note: "Five finish directions", image: "/assets/products/royal-slim.webp", alt: "Royal Slim finish family and packaging", position: "27% center" }
       ],
-      optionTitle: "One family, two shelf strategies.",
-      optionCopy: "Launch a focused hero format or coordinate Slim and Classic as one market family. Packaging compliance panels are adapted at artwork stage.",
+      optionTitle: "One format, five finish directions.",
+      optionCopy: "Finish, foil treatment and pack architecture are developed together. Compliance panels are adapted at artwork stage, market by market.",
       palette: [
-        ["Carbon", "#161817", "Slim"],
-        ["Champagne", "#b38a4b", "Slim"],
-        ["Burgundy", "#55272d", "Slim"],
-        ["Royal Red", "#8d1721", "Classic"]
+        ["Carbon", "#161817", "Body"],
+        ["Champagne", "#b38a4b", "Detail"],
+        ["Burgundy", "#55272d", "Pack"],
+        ["Ivory", "#e9e2d4", "Pack"]
       ],
       trade: {
         moq: "50 cartons / SKU",
         samples: "12–18 days",
         lead: "30–40 days",
-        customization: "Blend + full pack system"
+        customization: "Liquid + full pack system"
+      },
+      next: "royal-classic"
+    },
+    "royal-classic": {
+      index: "01B",
+      name: "Royal Classic",
+      family: "Cigarette-format electronic product",
+      headline: "The classic proportion, kept intact.",
+      lede: "A cigarette-referenced electronic format with a 1.8 mL reservoir and a 200 mAh cell, dressed in a royal red and warm ivory identity built for travel-led retail.",
+      accent: "#8d1721",
+      accentRgb: "141, 23, 33",
+      layout: "right",
+      campaign: "/assets/products/royal-classic.webp",
+      campaignAlt: "Lusmind Royal Classic and its red packaging presented in a warm travel setting",
+      campaignPosition: "50% 42%",
+      board: "/assets/products/royal-classic.webp",
+      boardAlt: "Royal Classic product, red packaging and format overview",
+      boardPosition: "center",
+      facts: [
+        ["E-liquid", "1.8 mL", "Preliminary specification"],
+        ["Battery", "200 mAh", "Preliminary specification"],
+        ["Coil type", "1.0 / 1.5 Ω", "Selectable"],
+        ["Nicotine", "2% / 5%", "Market dependent"]
+      ],
+      intro: {
+        eyebrow: "Format logic / 01",
+        title: "Familiar proportion, contemporary identity.",
+        copy: "Royal Classic holds the fuller classic cigarette proportion that many adult consumers already recognise. The identity moves away from champagne restraint toward royal red and warm ivory, giving distributors a clearly separate shelf signal from Royal Slim."
+      },
+      features: [
+        ["Classic cigarette proportion", "The fuller body is dimensioned to read comparably to a conventional cigarette format."],
+        ["1.8 mL reservoir", "A measured liquid volume matched to the 200 mAh energy specification."],
+        ["Selectable coil", "1.0 Ω and 1.5 Ω directions keep the delivery profile adjustable per market."],
+        ["Red and ivory system", "A warmer identity separates Classic from Slim at shelf without breaking the Royal family."]
+      ],
+      specs: [
+        ["Product class", "Cigarette-format electronic product"],
+        ["E-liquid capacity", "1.8 mL"],
+        ["Battery", "200 mAh"],
+        ["Nicotine strength", "2% / 5%"],
+        ["Coil type", "1.0 Ω / 1.5 Ω"],
+        ["Size", "Comparable to a conventional cigarette"]
+      ],
+      context: {
+        eyebrow: "Channel context / 02",
+        title: "Made for travel-led and gifting moments.",
+        copy: "The red-and-ivory pack architecture photographs strongly in travel retail, duty-free style displays and hospitality settings where the pack itself carries the story.",
+        points: ["Travel retail", "Duty-free style display", "Premium tobacconist", "Gifting programs"]
+      },
+      options: [
+        { title: "Royal Classic", note: "Classic format system", image: "/assets/products/royal-classic.webp", alt: "Royal Classic product and red packaging in a travel setting", position: "28% center" }
+      ],
+      optionTitle: "A warmer register for the same family.",
+      optionCopy: "Classic shares the Royal trade logic and carton language with Slim, so a distributor can run both formats through one operational program.",
+      palette: [
+        ["Royal Red", "#8d1721", "Pack"],
+        ["Burgundy", "#55272d", "Detail"],
+        ["Warm Ivory", "#e9e2d4", "Pack"],
+        ["Carbon", "#161817", "Body"]
+      ],
+      trade: {
+        moq: "50 cartons / SKU",
+        samples: "12–18 days",
+        lead: "30–40 days",
+        customization: "Liquid + full pack system"
       },
       next: "fusion-one"
     },
+
     "fusion-one": {
       index: "02",
       name: "Fusion One",
