@@ -38,41 +38,42 @@ export function initProduct(productId: string): () => void {
   const { document, window }: { document: any; window: any } = scope;
 
   const PRODUCTS: any = {
-    "royal-heat": {
-      index: "01",
-      name: "Royal Heat",
-      family: "Heat-stick portfolio",
-      headline: "Two formats. One unmistakable ritual.",
-      lede: "A coordinated slim-and-classic heat-stick range designed to give premium adult channels a coherent shelf story from single pack to master carton.",
+    "royal-slim": {
+      index: "01A",
+      name: "Royal Slim",
+      family: "Cigarette-format electronic product",
+      headline: "The slim proportion, precisely held.",
+      lede: "A cigarette-referenced electronic format built around a 2.2 mL reservoir and a 250 mAh cell, presented in a disciplined black-and-champagne system.",
       accent: "#d4a351",
       accentRgb: "212, 163, 81",
       layout: "left",
       campaign: "/assets/campaign/royal-heat-hero.webp",
-      campaignAlt: "Lusmind Royal Heat slim and classic products arranged in a black and gold hospitality setting",
+      campaignAlt: "Lusmind Royal Slim presented in a black and champagne hospitality setting",
+      campaignPosition: "62% 45%",
       board: "/assets/products/royal-slim.webp",
-      boardAlt: "Royal Heat slim product board showing formats, packout and principal features",
+      boardAlt: "Royal Slim finish family, packaging and format overview",
       boardPosition: "center",
       facts: [
-        ["Range", "Royal Slim + Royal Classic", "Two products, one family"],
-        ["E-liquid", "2.2 mL / 1.8 mL", "Slim / Classic"],
-        ["Battery", "250 mAh / 200 mAh", "Slim / Classic"],
+        ["E-liquid", "2.2 mL", "Preliminary specification"],
+        ["Battery", "250 mAh", "Preliminary specification"],
+        ["Coil type", "1.0 / 1.5 Ω", "Selectable"],
         ["Nicotine", "2% / 5%", "Market dependent"]
       ],
       intro: {
-        eyebrow: "Portfolio logic / 01",
-        title: "A premium language that scales across formats.",
-        copy: "Royal Heat turns a fragmented heat-stick shelf into a disciplined family. The visual system, finish hierarchy and pack architecture are designed to remain legible across retail, display and wholesale carton formats."
+        eyebrow: "Format logic / 01",
+        title: "A slim body that reads as familiar, not novel.",
+        copy: "Royal Slim keeps the silhouette close to a conventional cigarette so the shelf conversation stays simple. The largest reservoir in the Royal series sits inside that restrained proportion, supported by a selectable coil specification."
       },
       features: [
-        ["Consistent heat", "A controlled substrate structure supports stable, even heating through the session."],
-        ["Fast readiness", "The proposed system target is a ready state in approximately twenty seconds."],
-        ["Premium taste delivery", "Blend and airflow development are tuned for a smooth, composed sensory profile."],
-        ["Scalable pack system", "Single packs, inner cartons and master cartons share one recognizable trade language."]
+        ["Cigarette-referenced scale", "The body is dimensioned to read comparably to a conventional cigarette in hand and on shelf."],
+        ["2.2 mL reservoir", "The slim format carries the larger Royal liquid volume without widening the silhouette."],
+        ["Selectable coil", "1.0 Ω and 1.2—1.5 Ω directions allow the delivery profile to be tuned per market."],
+        ["Champagne finish system", "A black-and-champagne palette keeps the format premium across pack, display and carton."]
       ],
       specs: [
-        ["Products", "Royal Slim / Royal Classic"],
-        ["E-liquid capacity", "Royal Slim 2.2 mL; Royal Classic 1.8 mL"],
-        ["Battery", "Royal Slim 250 mAh; Royal Classic 200 mAh"],
+        ["Product class", "Cigarette-format electronic product"],
+        ["E-liquid capacity", "2.2 mL"],
+        ["Battery", "250 mAh"],
         ["Nicotine strength", "2% / 5%"],
         ["Coil type", "1.0 Ω / 1.5 Ω"],
         ["Size", "Comparable to a conventional cigarette"]
@@ -80,29 +81,94 @@ export function initProduct(productId: string): () => void {
       context: {
         eyebrow: "Channel context / 02",
         title: "Composed for elevated adult retail.",
-        copy: "The black-and-gold system is designed for premium tobacconists, hospitality-led adult channels and distributors building a more considered heat portfolio.",
+        copy: "The slim format suits premium tobacconists and hospitality-led adult channels where a discreet, familiar proportion matters more than device presence.",
         points: ["Premium tobacconist", "Travel retail", "Hospitality channel", "Curated convenience"]
       },
       options: [
-        { title: "Royal Slim", note: "Five finish directions", image: "/assets/products/royal-slim.webp", alt: "Royal Slim finish family and packaging", position: "27% center" },
-        { title: "Royal Classic", note: "Classic format system", image: "/assets/products/royal-classic.webp", alt: "Royal Classic product and red packaging in a yacht setting", position: "28% center" }
+        { title: "Royal Slim", note: "Five finish directions", image: "/assets/products/royal-slim.webp", alt: "Royal Slim finish family and packaging", position: "27% center" }
       ],
-      optionTitle: "One family, two shelf strategies.",
-      optionCopy: "Launch a focused hero format or coordinate Slim and Classic as one market family. Packaging compliance panels are adapted at artwork stage.",
+      optionTitle: "One format, five finish directions.",
+      optionCopy: "Finish, foil treatment and pack architecture are developed together. Compliance panels are adapted at artwork stage, market by market.",
       palette: [
-        ["Carbon", "#161817", "Slim"],
-        ["Champagne", "#b38a4b", "Slim"],
-        ["Burgundy", "#55272d", "Slim"],
-        ["Royal Red", "#8d1721", "Classic"]
+        ["Carbon", "#161817", "Body"],
+        ["Champagne", "#b38a4b", "Detail"],
+        ["Burgundy", "#55272d", "Pack"],
+        ["Ivory", "#e9e2d4", "Pack"]
       ],
       trade: {
         moq: "50 cartons / SKU",
         samples: "12–18 days",
         lead: "30–40 days",
-        customization: "Blend + full pack system"
+        customization: "Liquid + full pack system"
+      },
+      next: "royal-classic"
+    },
+    "royal-classic": {
+      index: "01B",
+      name: "Royal Classic",
+      family: "Cigarette-format electronic product",
+      headline: "The classic proportion, kept intact.",
+      lede: "A cigarette-referenced electronic format with a 1.8 mL reservoir and a 200 mAh cell, dressed in a royal red and warm ivory identity built for travel-led retail.",
+      accent: "#8d1721",
+      accentRgb: "141, 23, 33",
+      layout: "right",
+      campaign: "/assets/products/royal-classic.webp",
+      campaignAlt: "Lusmind Royal Classic and its red packaging presented in a warm travel setting",
+      campaignPosition: "50% 42%",
+      board: "/assets/products/royal-classic.webp",
+      boardAlt: "Royal Classic product, red packaging and format overview",
+      boardPosition: "center",
+      facts: [
+        ["E-liquid", "1.8 mL", "Preliminary specification"],
+        ["Battery", "200 mAh", "Preliminary specification"],
+        ["Coil type", "1.0 / 1.5 Ω", "Selectable"],
+        ["Nicotine", "2% / 5%", "Market dependent"]
+      ],
+      intro: {
+        eyebrow: "Format logic / 01",
+        title: "Familiar proportion, contemporary identity.",
+        copy: "Royal Classic holds the fuller classic cigarette proportion that many adult consumers already recognise. The identity moves away from champagne restraint toward royal red and warm ivory, giving distributors a clearly separate shelf signal from Royal Slim."
+      },
+      features: [
+        ["Classic cigarette proportion", "The fuller body is dimensioned to read comparably to a conventional cigarette format."],
+        ["1.8 mL reservoir", "A measured liquid volume matched to the 200 mAh energy specification."],
+        ["Selectable coil", "1.0 Ω and 1.5 Ω directions keep the delivery profile adjustable per market."],
+        ["Red and ivory system", "A warmer identity separates Classic from Slim at shelf without breaking the Royal family."]
+      ],
+      specs: [
+        ["Product class", "Cigarette-format electronic product"],
+        ["E-liquid capacity", "1.8 mL"],
+        ["Battery", "200 mAh"],
+        ["Nicotine strength", "2% / 5%"],
+        ["Coil type", "1.0 Ω / 1.5 Ω"],
+        ["Size", "Comparable to a conventional cigarette"]
+      ],
+      context: {
+        eyebrow: "Channel context / 02",
+        title: "Made for travel-led and gifting moments.",
+        copy: "The red-and-ivory pack architecture photographs strongly in travel retail, duty-free style displays and hospitality settings where the pack itself carries the story.",
+        points: ["Travel retail", "Duty-free style display", "Premium tobacconist", "Gifting programs"]
+      },
+      options: [
+        { title: "Royal Classic", note: "Classic format system", image: "/assets/products/royal-classic.webp", alt: "Royal Classic product and red packaging in a travel setting", position: "28% center" }
+      ],
+      optionTitle: "A warmer register for the same family.",
+      optionCopy: "Classic shares the Royal trade logic and carton language with Slim, so a distributor can run both formats through one operational program.",
+      palette: [
+        ["Royal Red", "#8d1721", "Pack"],
+        ["Burgundy", "#55272d", "Detail"],
+        ["Warm Ivory", "#e9e2d4", "Pack"],
+        ["Carbon", "#161817", "Body"]
+      ],
+      trade: {
+        moq: "50 cartons / SKU",
+        samples: "12–18 days",
+        lead: "30–40 days",
+        customization: "Liquid + full pack system"
       },
       next: "fusion-one"
     },
+
     "fusion-one": {
       index: "02",
       name: "Fusion One",
@@ -195,7 +261,7 @@ export function initProduct(productId: string): () => void {
       },
       features: [
         ["Curved viewing window", "The side opening makes liquid level checking quick while giving the silhouette a distinct signature."],
-        ["Mesh pod platform", "Proposed 0.6-ohm and 0.8-ohm directions support configurable delivery and repeatable replacement."],
+        ["Mesh pod platform", "Proposed 0.8-ohm and 1.2-ohm directions support configurable delivery and repeatable replacement."],
         ["Draw-led simplicity", "A minimal interaction model removes unnecessary controls for a clean everyday experience."],
         ["Two material families", "Choose a precise metallic shell or a warmer tactile wrap without changing the platform geometry."]
       ],
@@ -360,20 +426,78 @@ export function initProduct(productId: string): () => void {
         lead: "30–45 days",
         customization: "Flavor + UI + full-face art"
       },
-      next: "royal-heat"
+      next: "royal-slim"
     }
   };
 
   const PRODUCT_PATHS: any = {
     "royal-heat": "/products/royal-heat",
+    "royal-slim": "/products/royal-slim",
+    "royal-classic": "/products/royal-classic",
     "fusion-one": "/products/fusion-one",
     "arc-pod-s": "/products/arc-pod-s",
     "core-20": "/products/core-20",
     "ai-pulse": "/products/ai-pulse"
   };
 
+
+  const SERIES: any = {
+    index: "01",
+    name: "Royal Heat",
+    family: "Royal series overview",
+    headline: "One series. Two cigarette-format products.",
+    lede: "Royal Heat is a two-product series: Royal Slim and Royal Classic. Both are cigarette-referenced electronic formats sharing one trade language, separated by proportion, capacity and identity.",
+    accent: "#d4a351",
+    accentRgb: "212, 163, 81",
+    layout: "left",
+    campaign: "/assets/campaign/royal-heat-hero.webp",
+    campaignAlt: "Lusmind Royal Heat series presented in a black and champagne setting",
+    trade: {
+      moq: "50 cartons / SKU",
+      samples: "12–18 days",
+      lead: "30–40 days",
+      customization: "Liquid + full pack system"
+    },
+    members: [
+      {
+        id: "royal-slim",
+        code: "01A",
+        name: "Royal Slim",
+        image: "/assets/products/royal-slim.webp",
+        alt: "Royal Slim product, finishes and packaging",
+        position: "27% center",
+        positioning: "The slim proportion. The larger reservoir in the series, held inside a discreet cigarette-referenced body and a black-and-champagne identity.",
+        specs: [
+          ["E-liquid", "2.2 mL"],
+          ["Battery", "250 mAh"],
+          ["Nicotine", "2% / 5%"],
+          ["Coil type", "1.0 Ω / 1.5 Ω"],
+          ["Size", "Comparable to a conventional cigarette"]
+        ]
+      },
+      {
+        id: "royal-classic",
+        code: "01B",
+        name: "Royal Classic",
+        image: "/assets/products/royal-classic.webp",
+        alt: "Royal Classic product and red packaging in a travel setting",
+        position: "28% center",
+        positioning: "The familiar classic proportion, carried by a royal red and warm ivory pack system built for travel-led display.",
+        specs: [
+          ["E-liquid", "1.8 mL"],
+          ["Battery", "200 mAh"],
+          ["Nicotine", "2% / 5%"],
+          ["Coil type", "1.0 Ω / 1.5 Ω"],
+          ["Size", "Comparable to a conventional cigarette"]
+        ]
+      }
+    ],
+    next: "fusion-one"
+  };
+
   const currentId = productId;
-  const product = PRODUCTS[currentId];
+  const isSeries = currentId === "royal-heat";
+  const product = isSeries ? SERIES : PRODUCTS[currentId];
 
   if (!product) {
     throw new Error(`Unknown Lusmind product page: ${currentId || "missing id"}`);
@@ -429,9 +553,123 @@ export function initProduct(productId: string): () => void {
 
   const inquiryHref = `mailto:support@lusmind.com?subject=${encodeURIComponent(`Distributor inquiry — ${product.name}`)}&body=${encodeURIComponent(`Hello Lusmind team,\n\nI would like to discuss wholesale or customization options for ${product.name}.\n\nCompany:\nMarket:\nEstimated quantity:\nTarget launch date:\n`)}`;
 
-  productMain.innerHTML = `
+
+  const makeSeriesPanels = () => SERIES.members.map((m: any) => `
+    <article class="series-panel reveal">
+      <a class="series-panel__media" href="/products/${m.id}" aria-label="Explore ${m.name}">
+        <img src="${m.image}" alt="${m.alt}" loading="lazy" decoding="async" style="object-position:${m.position}" />
+      </a>
+      <div class="series-panel__body">
+        <p class="eyebrow">Product ${m.code}</p>
+        <h3>${m.name}</h3>
+        <p class="series-panel__copy">${m.positioning}</p>
+        <dl class="series-panel__specs">
+          ${m.specs.map(([label, value]: any) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("")}
+        </dl>
+        <a class="button button--accent" href="/products/${m.id}">Explore ${m.name} <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  `).join("");
+
+  const seriesMarkup = () => `
+    <section class="product-hero product-hero--series product-hero--left" id="overview" aria-labelledby="product-title">
+      <img class="product-hero__media" src="${SERIES.campaign}" alt="${SERIES.campaignAlt}" fetchpriority="high" decoding="async" data-parallax />
+      <div class="product-hero__shade" aria-hidden="true"></div>
+      <div class="product-hero__grid" aria-hidden="true"></div>
+      <div class="product-hero__inner">
+        <div class="product-hero__copy">
+          <a class="product-hero__crumb" href="/#collection"><span aria-hidden="true">←</span> Back to collection</a>
+          <p class="eyebrow">${SERIES.family} / ${SERIES.index}</p>
+          <h1 id="product-title">${SERIES.name} <span>${SERIES.headline}</span></h1>
+          <p class="product-hero__lede">${SERIES.lede}</p>
+          <div class="product-hero__actions">
+            <a class="button button--accent" href="/products/royal-slim">Explore Royal Slim <span aria-hidden="true">↗</span></a>
+            <a class="button button--line" href="/products/royal-classic">Explore Royal Classic <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="product-hero__index" aria-label="Series of two products">
+          Series<br /><strong>02</strong>products
+        </div>
+      </div>
+    </section>
+
+    <nav class="anchor-rail" aria-label="Section navigation">
+      <div class="anchor-rail__inner page-width">
+        <a href="#overview">Overview</a>
+        <a href="#details">Products</a>
+        <a href="#context">Compare</a>
+        <a href="#trade">Trade</a>
+      </div>
+    </nav>
+
+    <section class="product-section product-section--paper" id="details">
+      <div class="page-width">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">Series structure / 01</p>
+            <p class="section-head__copy">Royal Heat is not a single product page. Select the format that fits your channel; each product has its own specification, identity and page.</p>
+          </div>
+          <h2>Two formats, one trade language.</h2>
+        </header>
+        <div class="series-grid">${makeSeriesPanels()}</div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--dark" id="context">
+      <div class="page-width">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">Direct comparison / 02</p>
+            <p class="section-head__copy">Specifications are preliminary and market dependent. Nicotine configuration and saleability are reviewed market by market.</p>
+          </div>
+          <h2>Slim or Classic — where they differ.</h2>
+        </header>
+        <div class="series-compare reveal" role="table" aria-label="Royal Slim and Royal Classic comparison">
+          <div class="series-compare__row series-compare__row--head" role="row">
+            <span role="columnheader">Specification</span><span role="columnheader">Royal Slim</span><span role="columnheader">Royal Classic</span>
+          </div>
+          ${["E-liquid","Battery","Nicotine","Coil type","Size"].map((label, i) => `
+            <div class="series-compare__row" role="row">
+              <span role="cell">${label}</span>
+              <strong role="cell">${SERIES.members[0].specs[i][1]}</strong>
+              <strong role="cell">${SERIES.members[1].specs[i][1]}</strong>
+            </div>
+          `).join("")}
+        </div>
+        <p class="data-note data-note--dark">Preliminary specification. Values are indicative for planning and are confirmed at sampling.</p>
+      </div>
+    </section>
+
+    <section class="trade-section" id="trade" aria-labelledby="trade-title">
+      <div class="trade-layout page-width">
+        <div class="trade-copy reveal">
+          <p class="eyebrow">Distributor program / 03</p>
+          <h2 id="trade-title">One program across both formats.</h2>
+          <p>Royal Slim and Royal Classic share carton logic and commercial terms, so both formats can run through a single distributor program. Indicative values below apply to the series.</p>
+        </div>
+        <aside class="trade-panel reveal" aria-label="Indicative commercial terms">
+          <div class="trade-terms">${makeTerms()}</div>
+          <a class="button button--accent" href="${inquiryHref}">Start a Royal Heat inquiry <span aria-hidden="true">↗</span></a>
+          <small>Indicative development targets, not a binding quotation. Compliance, nicotine configuration and saleability are reviewed market by market.</small>
+        </aside>
+      </div>
+    </section>
+
+    <a class="next-product" href="/products/royal-slim" aria-label="View next product: Royal Slim">
+      <img src="/assets/products/royal-slim.webp" alt="" loading="lazy" decoding="async" />
+      <div class="next-product__inner page-width">
+        <div>
+          <p class="eyebrow">Next product / 01A</p>
+          <h2>Royal Slim</h2>
+        </div>
+        <span class="next-product__arrow" aria-hidden="true">↗</span>
+      </div>
+    </a>
+  `;
+
+  productMain.innerHTML = isSeries ? seriesMarkup() : `
     <section class="product-hero product-hero--${product.layout}" id="overview" aria-labelledby="product-title">
-      <img class="product-hero__media" src="${product.campaign}" alt="${product.campaignAlt}" fetchpriority="high" />
+      <img class="product-hero__media" src="${product.campaign}" alt="${product.campaignAlt}" fetchpriority="high" decoding="async" style="object-position:${product.campaignPosition || "center"}" data-parallax />
       <div class="product-hero__shade" aria-hidden="true"></div>
       <div class="product-hero__grid" aria-hidden="true"></div>
       <div class="product-hero__inner">
@@ -451,6 +689,16 @@ export function initProduct(productId: string): () => void {
       </div>
     </section>
 
+    <nav class="anchor-rail" aria-label="Section navigation">
+      <div class="anchor-rail__inner page-width">
+        <a href="#overview">Overview</a>
+        <a href="#details">Details</a>
+        <a href="#context">Context</a>
+        <a href="#options">Finishes</a>
+        <a href="#trade">Trade</a>
+      </div>
+    </nav>
+
     <section class="facts-rail" aria-label="Key product facts">
       <div class="facts-rail__grid page-width">${makeFacts()}</div>
     </section>
@@ -466,7 +714,7 @@ export function initProduct(productId: string): () => void {
         </header>
         <div class="breakdown">
           <figure class="breakdown__visual reveal">
-            <img src="${product.board}" alt="${product.boardAlt}" loading="lazy" style="object-position:${product.boardPosition || "center"}" />
+            <img src="${product.board}" alt="${product.boardAlt}" loading="lazy" decoding="async" style="object-position:${product.boardPosition || "center"}" />
             ${makeCallouts()}
           </figure>
           <div class="breakdown__content reveal">
@@ -480,8 +728,8 @@ export function initProduct(productId: string): () => void {
       </div>
     </section>
 
-    <section class="context-stage context-stage--${product.layout}" aria-labelledby="context-title">
-      <img src="${product.campaign}" alt="" loading="lazy" aria-hidden="true" />
+    <section class="context-stage context-stage--${product.layout}" id="context" aria-labelledby="context-title">
+      <img src="${product.campaign}" alt="" loading="lazy" decoding="async" aria-hidden="true" data-parallax />
       <div class="context-stage__inner page-width">
         <div class="context-stage__copy reveal">
           <p class="eyebrow">${product.context.eyebrow}</p>
@@ -649,8 +897,9 @@ export function initProduct(productId: string): () => void {
   });
 
   const revealItems = document.querySelectorAll(".reveal");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if ("IntersectionObserver" in window && !reduceMotion) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -663,7 +912,83 @@ export function initProduct(productId: string): () => void {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
-  const schema = {
+  // Staggered reveal for feature rows and specification values.
+  document.querySelectorAll(".feature-row").forEach((row, index) => {
+    row.style.setProperty("--stagger", `${Math.min(index, 6) * 60}ms`);
+  });
+  document.querySelectorAll(".spec-table dl > div").forEach((row, index) => {
+    row.style.setProperty("--stagger", `${Math.min(index, 6) * 45}ms`);
+  });
+
+  // Anchor rail active state.
+  const railLinks = [...document.querySelectorAll(".anchor-rail a")];
+  let railObserver: IntersectionObserver | null = null;
+  if (railLinks.length && "IntersectionObserver" in window) {
+    const targets = railLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+    railObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        railLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: "-30% 0px -60%", threshold: 0 });
+    targets.forEach((section) => railObserver.observe(section));
+  }
+
+  // Restrained rAF parallax for hero and context imagery (desktop, motion allowed).
+  const parallaxNodes = [...document.querySelectorAll("[data-parallax]")];
+  let parallaxFrame = 0;
+  let parallaxTicking = false;
+  const parallaxEnabled = !reduceMotion && window.matchMedia("(min-width: 900px)").matches;
+
+  function runParallax() {
+    parallaxTicking = false;
+    parallaxNodes.forEach((node) => {
+      const rect = node.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
+      const progress = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      node.style.transform = `translate3d(0, ${(progress * -22).toFixed(2)}px, 0) scale(1.06)`;
+    });
+  }
+
+  function onParallaxScroll() {
+    if (parallaxTicking) return;
+    parallaxTicking = true;
+    parallaxFrame = window.requestAnimationFrame(runParallax);
+  }
+
+  if (parallaxEnabled && parallaxNodes.length) {
+    window.addEventListener("scroll", onParallaxScroll, { passive: true });
+    runParallax();
+  }
+
+
+
+  const schema: any = isSeries ? {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Lusmind Royal Heat series",
+    description: SERIES.lede,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: SERIES.members.map((member: any, position: number) => ({
+        "@type": "ListItem",
+        position: position + 1,
+        item: {
+          "@type": "Product",
+          name: `Lusmind ${member.name}`,
+          category: "Cigarette-format electronic product",
+          description: member.positioning,
+          image: new URL(member.image, window.location.href).href,
+          url: new URL(`/products/${member.id}`, window.location.href).href,
+          brand: { "@type": "Brand", name: "Lusmind" }
+        }
+      }))
+    }
+  } : {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `Lusmind ${product.name}`,
@@ -683,6 +1008,8 @@ export function initProduct(productId: string): () => void {
 
   return () => {
     scope.dispose();
+    railObserver?.disconnect();
+    if (parallaxFrame) window.cancelAnimationFrame(parallaxFrame);
     schemaScript.remove();
     globalThis.document.body.classList.remove("is-locked");
   };

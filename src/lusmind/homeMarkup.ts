@@ -38,9 +38,11 @@ export const homeMarkup = String.raw`
               Products <span aria-hidden="true">+</span>
             </button>
             <div class="product-dropdown" id="product-dropdown" aria-hidden="true">
-              <p class="product-dropdown__label">The 2026 portfolio / 05 platforms</p>
+              <p class="product-dropdown__label">The 2026 portfolio / 05 platforms · 06 products</p>
               <div class="product-dropdown__grid">
-                <a href="/products/royal-heat"><img src="/assets/campaign/royal-heat-hero.webp" alt="" /><span><strong>Royal Heat</strong><small>Heat-stick formats</small></span><b>01</b></a>
+                <a href="/products/royal-slim"><img src="/assets/products/royal-slim.webp" alt="" /><span><strong>Royal Slim</strong><small>Royal Heat series · cigarette format</small></span><b>01A</b></a>
+                <a href="/products/royal-classic"><img src="/assets/products/royal-classic.webp" alt="" /><span><strong>Royal Classic</strong><small>Royal Heat series · cigarette format</small></span><b>01B</b></a>
+                <a href="/products/royal-heat"><img src="/assets/campaign/royal-heat-hero.webp" alt="" /><span><strong>Royal Heat</strong><small>Series overview</small></span><b>01</b></a>
                 <a href="/products/fusion-one"><img src="/assets/campaign/fusion-one-hero.webp" alt="" /><span><strong>Fusion One</strong><small>Hybrid device</small></span><b>02</b></a>
                 <a href="/products/arc-pod-s"><img src="/assets/campaign/arc-pod-s-hero.webp" alt="" /><span><strong>Arc Pod S</strong><small>Refillable pod</small></span><b>03</b></a>
                 <a href="/products/core-20"><img src="/assets/campaign/core-20-hero.webp" alt="" /><span><strong>Core 20</strong><small>Heat-not-burn</small></span><b>04</b></a>
@@ -64,7 +66,9 @@ export const homeMarkup = String.raw`
         <p class="eyebrow">Navigate / 00</p>
         <p class="mobile-menu__label">Products</p>
         <div class="mobile-products">
-          <a href="/products/royal-heat"><span>01</span><strong>Royal Heat</strong><small>Heat sticks</small></a>
+          <a href="/products/royal-slim"><span>01A</span><strong>Royal Slim</strong><small>Royal Heat series</small></a>
+          <a href="/products/royal-classic"><span>01B</span><strong>Royal Classic</strong><small>Royal Heat series</small></a>
+          <a href="/products/royal-heat"><span>01</span><strong>Royal Heat</strong><small>Series overview</small></a>
           <a href="/products/fusion-one"><span>02</span><strong>Fusion One</strong><small>Hybrid</small></a>
           <a href="/products/arc-pod-s"><span>03</span><strong>Arc Pod S</strong><small>Refillable</small></a>
           <a href="/products/core-20"><span>04</span><strong>Core 20</strong><small>Heat-not-burn</small></a>
@@ -88,7 +92,7 @@ export const homeMarkup = String.raw`
               <img class="hero__slide" src="/assets/campaign/hero-life-3.webp" alt="Lusmind pod device on a mountain drive" width="1400" height="1750" loading="lazy" />
               <img class="hero__slide" src="/assets/campaign/hero-life-4.webp" alt="Lusmind device on a forest trail" width="1400" height="1750" loading="lazy" />
               <img class="hero__slide" src="/assets/campaign/hero-life-5.webp" alt="Lusmind heat-not-burn device at a work desk" width="1400" height="1750" loading="lazy" />
-              <img class="hero__slide" src="/assets/campaign/hero-life-6.webp" alt="Lusmind Royal Heat sticks at an evening dinner" width="1400" height="1750" loading="lazy" />
+              <img class="hero__slide" src="/assets/campaign/hero-life-6.webp" alt="Lusmind product held at an evening dinner" width="1400" height="1750" loading="lazy" />
             </div>
             <span class="hero__scan"></span>
             <div class="hero__media-label">
@@ -102,7 +106,7 @@ export const homeMarkup = String.raw`
             <div class="hero__copy">
               <p class="eyebrow reveal">Lusmind product systems / 2026</p>
               <h1 id="hero-title" class="reveal reveal--delay-1">Designed to<br /><span>move markets.</span></h1>
-              <p class="hero__lede reveal reveal--delay-2">Five differentiated platforms for distributors who need shelf impact, flexible customization and a manufacturing path built to scale.</p>
+              <p class="hero__lede reveal reveal--delay-2">Five differentiated platforms and six distinct products for distributors who need shelf impact, flexible customization and a manufacturing path built to scale.</p>
               <div class="hero__actions reveal reveal--delay-3">
                 <a class="button button--acid" href="#visual-index">Explore the collection <span aria-hidden="true">↓</span></a>
                 <a class="button button--line" href="/products/ai-pulse">Discover AI Pulse <span aria-hidden="true">↗</span></a>
@@ -130,7 +134,7 @@ export const homeMarkup = String.raw`
             <div class="campaign-grid">
               <a class="campaign-card campaign-card--wide reveal" href="/products/royal-heat">
                 <img src="/assets/campaign/royal-heat-hero.webp" alt="Royal Heat black and gold campaign setting" width="1716" height="920" loading="lazy" />
-                <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>01 / Heat-stick formats</small><strong>Royal Heat</strong><em>Explore product ↗</em></span>
+                <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>01 / Series · Slim + Classic</small><strong>Royal Heat</strong><em>Explore series ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--tall reveal reveal--delay-1" href="/products/fusion-one">
                 <img src="/assets/campaign/fusion-one-hero.webp" alt="Fusion One precision laboratory campaign" width="1716" height="920" loading="lazy" />
@@ -167,7 +171,7 @@ export const homeMarkup = String.raw`
               <article class="metric reveal">
                 <span class="metric__number">05</span>
                 <h3>Distinct product platforms</h3>
-                <p>From heat-stick formats to refillable pods and AI-enabled disposables.</p>
+                <p>Five platforms, six products — from cigarette formats to refillable pods and AI-enabled disposables.</p>
               </article>
               <article class="metric reveal reveal--delay-1">
                 <span class="metric__number">03</span>
@@ -188,7 +192,7 @@ export const homeMarkup = String.raw`
           <div class="page-width">
             <div class="section-index section-index--dark reveal"><span>03</span><span>2026 collection</span></div>
             <div class="section-heading">
-              <h2 id="collection-title" class="reveal">Five platforms.<br /><span>One sharper portfolio.</span></h2>
+              <h2 id="collection-title" class="reveal">Five platforms.<br /><span>Six distinct products.</span></h2>
               <p class="reveal reveal--delay-1">Select a platform to review its positioning, provisional specification and partner terms.</p>
             </div>
 
@@ -211,8 +215,11 @@ export const homeMarkup = String.raw`
 
               <div class="product-explorer__content">
                 <div class="product-selector" aria-label="Choose a product platform">
-                  <a href="/products/royal-heat" data-product-id="royal">
-                    <span>01</span><strong>Royal Heat</strong><small>Heat sticks</small>
+                  <a href="/products/royal-slim" data-product-id="royal-slim">
+                    <span>01A</span><strong>Royal Slim</strong><small>Cigarette format</small>
+                  </a>
+                  <a href="/products/royal-classic" data-product-id="royal-classic">
+                    <span>01B</span><strong>Royal Classic</strong><small>Cigarette format</small>
                   </a>
                   <a href="/products/fusion-one" data-product-id="fusion">
                     <span>02</span><strong>Fusion One</strong><small>Hybrid device</small>
@@ -295,7 +302,7 @@ export const homeMarkup = String.raw`
               </a>
 
               <a class="bento bento--royal reveal reveal--delay-2" href="/products/royal-heat">
-                <img src="/assets/products/royal-slim.webp" alt="Royal Heat slim formats and packaging" width="1448" height="1086" loading="lazy" />
+                <img src="/assets/products/royal-slim.webp" alt="Royal Slim formats and packaging" width="1448" height="1086" loading="lazy" />
                 <span class="bento__number">T / 05</span>
                 <div class="bento__content"><h3>Dual-format system</h3><p>Slim and classic formats translated through one premium shelf language.</p></div>
               </a>
@@ -349,7 +356,8 @@ export const homeMarkup = String.raw`
                 <div class="commercial-row commercial-row--head" role="row">
                   <span role="columnheader">Platform</span><span role="columnheader">Standard MOQ</span><span role="columnheader">Customization</span><span role="columnheader">Indicative lead</span>
                 </div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/royal-heat">Royal Heat ↗</a></strong><span role="cell">50 cartons / SKU</span><span role="cell">Flavor · pack · format</span><span role="cell">30–40 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/royal-slim">Royal Slim ↗</a></strong><span role="cell">50 cartons / SKU</span><span role="cell">Liquid · pack · finish</span><span role="cell">30–40 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/royal-classic">Royal Classic ↗</a></strong><span role="cell">50 cartons / SKU</span><span role="cell">Liquid · pack · finish</span><span role="cell">30–40 days</span></div>
                 <div class="commercial-row" role="row"><strong role="cell"><a href="/products/fusion-one">Fusion One ↗</a></strong><span role="cell">1,000 units / color</span><span role="cell">CMF · logo · pack</span><span role="cell">35–45 days</span></div>
                 <div class="commercial-row" role="row"><strong role="cell"><a href="/products/arc-pod-s">Arc Pod S ↗</a></strong><span role="cell">1,000 units / finish</span><span role="cell">Shell · wrap · coil</span><span role="cell">30–40 days</span></div>
                 <div class="commercial-row" role="row"><strong role="cell"><a href="/products/core-20">Core 20 ↗</a></strong><span role="cell">800 units / color</span><span role="cell">CMF · UI · pack</span><span role="cell">40–50 days</span></div>
@@ -400,7 +408,7 @@ export const homeMarkup = String.raw`
 
         <section class="company" id="company" aria-labelledby="company-title">
           <div class="company__media">
-            <img src="/assets/products/royal-classic.webp" alt="Lusmind Royal Heat products presented in a premium travel setting" width="1448" height="1086" loading="lazy" />
+            <img src="/assets/products/royal-classic.webp" alt="Lusmind Royal Classic presented in a premium travel setting" width="1448" height="1086" loading="lazy" />
           </div>
           <div class="company__shade" aria-hidden="true"></div>
           <div class="company__content page-width">
@@ -409,7 +417,7 @@ export const homeMarkup = String.raw`
               <p class="eyebrow reveal">The Lusmind position</p>
               <h2 id="company-title" class="reveal reveal--delay-1">Curious by design.<br />Disciplined by delivery.</h2>
               <p class="reveal reveal--delay-2">Lusmind is a product-led nicotine brand and development partner. We combine a restless approach to form with a structured approach to getting products approved, produced and placed.</p>
-              <div class="company__actions reveal reveal--delay-3"><a class="button button--acid" href="#contact">Build your next range</a><a class="button button--line" href="/products/royal-heat">Explore Royal Heat ↗</a></div>
+              <div class="company__actions reveal reveal--delay-3"><a class="button button--acid" href="#contact">Build your next range</a><a class="button button--line" href="/products/royal-heat">Explore the Royal Heat series ↗</a></div>
             </div>
             <div class="company__values">
               <span>Industrial clarity</span><span>Market curiosity</span><span>Commercial discipline</span>
@@ -478,7 +486,7 @@ export const homeMarkup = String.raw`
                   <label>Product interest
                     <select name="product" id="product-interest" required>
                       <option value="">Select a platform</option>
-                      <option>Royal Heat</option><option>Fusion One</option><option>Arc Pod S</option><option>Core 20</option><option>AI Pulse</option><option>Multiple platforms</option>
+                      <option>Royal Slim</option><option>Royal Classic</option><option>Fusion One</option><option>Arc Pod S</option><option>Core 20</option><option>AI Pulse</option><option>Multiple platforms</option>
                     </select>
                   </label>
                   <label>Estimated quantity
@@ -507,7 +515,7 @@ export const homeMarkup = String.raw`
             <a class="footer__brand" href="#top"><img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="360" height="79" /></a>
             <p>Product systems for adult markets.<br />Built with intent. Scaled with discipline.</p>
             <div class="footer__nav">
-              <a href="/products/royal-heat">Royal Heat</a><a href="/products/fusion-one">Fusion One</a><a href="/products/arc-pod-s">Arc Pod S</a><a href="/products/core-20">Core 20</a><a href="/products/ai-pulse">AI Pulse</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
+              <a href="/products/royal-slim">Royal Slim</a><a href="/products/royal-classic">Royal Classic</a><a href="/products/royal-heat">Royal Heat series</a><a href="/products/fusion-one">Fusion One</a><a href="/products/arc-pod-s">Arc Pod S</a><a href="/products/core-20">Core 20</a><a href="/products/ai-pulse">AI Pulse</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
             </div>
           </div>
           <div class="footer__legal">
@@ -525,12 +533,13 @@ export const homeMarkup = String.raw`
 
     <dialog class="comparison-dialog" id="comparison-dialog" aria-labelledby="compare-title">
       <div class="dialog__header">
-        <div><p class="eyebrow">Portfolio matrix / 05</p><h2 id="compare-title">Compare platforms</h2></div>
+        <div><p class="eyebrow">Portfolio matrix / 06 products</p><h2 id="compare-title">Compare products</h2></div>
         <button class="dialog__close" type="button" data-compare-close aria-label="Close comparison">×</button>
       </div>
       <div class="dialog__body">
         <div class="comparison-grid">
-          <article><span>01</span><h3><a href="/products/royal-heat">Royal Heat ↗</a></h3><p>Royal Slim + Royal Classic</p><dl><div><dt>E-liquid</dt><dd>2.2 / 1.8 mL</dd></div><div><dt>Battery</dt><dd>250 / 200 mAh</dd></div><div><dt>Nicotine</dt><dd>2% / 5%</dd></div></dl></article>
+          <article><span>01A</span><h3><a href="/products/royal-slim">Royal Slim ↗</a></h3><p>Cigarette format</p><dl><div><dt>E-liquid</dt><dd>2.2 mL</dd></div><div><dt>Battery</dt><dd>250 mAh</dd></div><div><dt>Coil</dt><dd>1.0 / 1.5 Ω</dd></div></dl></article>
+          <article><span>01B</span><h3><a href="/products/royal-classic">Royal Classic ↗</a></h3><p>Cigarette format</p><dl><div><dt>E-liquid</dt><dd>1.8 mL</dd></div><div><dt>Battery</dt><dd>200 mAh</dd></div><div><dt>Coil</dt><dd>1.0 / 1.5 Ω</dd></div></dl></article>
           <article><span>02</span><h3><a href="/products/fusion-one">Fusion One ↗</a></h3><p>Hybrid device</p><dl><div><dt>Battery</dt><dd>300 mAh</dd></div><div><dt>Pod</dt><dd>2 mL</dd></div><div><dt>Coil</dt><dd>0.8 / 1.2 Ω</dd></div></dl></article>
           <article><span>03</span><h3><a href="/products/arc-pod-s">Arc Pod S ↗</a></h3><p>Refillable pod</p><dl><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Power</dt><dd>14 W</dd></div></dl></article>
           <article><span>04</span><h3><a href="/products/core-20">Core 20 ↗</a></h3><p>Heat-not-burn</p><dl><div><dt>Sessions</dt><dd>Up to 20</dd></div><div><dt>Preheat</dt><dd>20 sec</dd></div><div><dt>MOQ</dt><dd>800 / color</dd></div></dl></article>

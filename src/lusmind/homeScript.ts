@@ -38,37 +38,40 @@ export function initHome(): () => void {
   const { document, window }: { document: any; window: any } = scope;
 
   const PRODUCT_DATA: any = {
-    royal: {
-      url: "/products/royal-heat",
-      code: "HST / 01",
-      category: "Heat-stick formats",
-      kicker: "Two formats, one premium language",
-      name: "Royal Heat",
-      statement: "A coordinated heat-stick range that translates a premium visual system into slim and classic retail formats.",
+    "royal-slim": {
+      url: "/products/royal-slim",
+      code: "RYL / 01A",
+      category: "Cigarette format",
+      kicker: "Royal Heat series · slim proportion",
+      name: "Royal Slim",
+      statement: "A cigarette-referenced electronic format holding the larger Royal reservoir inside a discreet slim body and a black-and-champagne identity.",
       moq: "50 cartons / SKU",
       image: "/assets/products/royal-slim.webp",
-      alt: "Lusmind Royal Heat slim heat-stick range and packaging",
+      alt: "Lusmind Royal Slim product range and packaging",
       position: "center",
       tone: "dark",
-      variants: {
-        slim: {
-          label: "Slim",
-          image: "/assets/products/royal-slim.webp",
-          alt: "Lusmind Royal Heat slim heat-stick range and packaging",
-          position: "center",
-          tone: "dark"
-        },
-        classic: {
-          label: "Classic",
-          image: "/assets/products/royal-classic.webp",
-          alt: "Lusmind Royal Heat classic format and packaging",
-          position: "center",
-          tone: "light"
-        }
-      },
       specs: [
-        ["E-liquid", "Slim 2.2 mL / Classic 1.8 mL"],
-        ["Battery", "Slim 250 / Classic 200 mAh"],
+        ["E-liquid", "2.2 mL"],
+        ["Battery", "250 mAh"],
+        ["Nicotine", "2% / 5%"],
+        ["Coil", "1.0 / 1.5 Ω"]
+      ]
+    },
+    "royal-classic": {
+      url: "/products/royal-classic",
+      code: "RYL / 01B",
+      category: "Cigarette format",
+      kicker: "Royal Heat series · classic proportion",
+      name: "Royal Classic",
+      statement: "A cigarette-referenced electronic format in the familiar classic proportion, carried by a royal red and warm ivory pack system.",
+      moq: "50 cartons / SKU",
+      image: "/assets/products/royal-classic.webp",
+      alt: "Lusmind Royal Classic product and red packaging",
+      position: "center",
+      tone: "light",
+      specs: [
+        ["E-liquid", "1.8 mL"],
+        ["Battery", "200 mAh"],
         ["Nicotine", "2% / 5%"],
         ["Coil", "1.0 / 1.5 Ω"]
       ]
