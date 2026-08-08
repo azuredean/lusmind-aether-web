@@ -1,34 +1,34 @@
 @font-face {
   font-family: "Syne";
-  src: url("/assets/fonts/syne-600.ttf") format("truetype");
+  src: url("/assets/fonts/syne-600.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Syne";
-  src: url("/assets/fonts/syne-800.ttf") format("truetype");
+  src: url("/assets/fonts/syne-800.woff2") format("woff2");
   font-weight: 800;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Manrope";
-  src: url("/assets/fonts/manrope-400.ttf") format("truetype");
+  src: url("/assets/fonts/manrope-400.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Manrope";
-  src: url("/assets/fonts/manrope-600.ttf") format("truetype");
+  src: url("/assets/fonts/manrope-600.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: "IBM Plex Mono";
-  src: url("/assets/fonts/ibm-plex-mono-400.ttf") format("truetype");
+  src: url("/assets/fonts/ibm-plex-mono-400.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
@@ -699,7 +699,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
 .hero {
   position: relative;
-  min-height: max(680px, 100svh);
+  min-height: clamp(600px, 100svh, 960px);
   overflow: hidden;
   color: var(--white);
   background: var(--ink);
@@ -838,7 +838,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
   position: relative;
   z-index: 4;
   display: grid;
-  min-height: max(680px, 100svh);
+  min-height: clamp(600px, 100svh, 960px);
   grid-template-columns: 54% 46%;
   align-items: center;
   padding-top: var(--header-height);
@@ -1100,6 +1100,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
 .positioning {
   padding: 102px 0 90px;
+  background: var(--bone, #eeefe8);
+}
+
+.positioning.is-bg-ready {
   background:
     linear-gradient(90deg, rgba(238, 239, 232, 0.78), rgba(238, 239, 232, 0.92) 58%, rgba(238, 239, 232, 0.82)),
     url("/assets/campaign/brand-materials-bg.webp") left center / cover no-repeat;
@@ -1820,6 +1824,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
 .wholesale {
   overflow: clip;
   padding: 105px 0 105px;
+  background: var(--ink);
+}
+
+.wholesale.is-bg-ready {
   background:
     linear-gradient(90deg, rgba(5, 7, 6, 0.94), rgba(5, 7, 6, 0.82) 52%, rgba(5, 7, 6, 0.58)),
     url("/assets/campaign/partner-showroom-bg.webp") center / cover no-repeat,
@@ -2014,6 +2022,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
 .assurance {
   padding: 105px 0;
+  background: var(--bone, #eeefe8);
+}
+
+.assurance.is-bg-ready {
   background:
     linear-gradient(90deg, rgba(238, 239, 232, 0.9), rgba(238, 239, 232, 0.76) 58%, rgba(238, 239, 232, 0.84)),
     url("/assets/campaign/market-readiness-bg.webp") center / cover no-repeat;
@@ -2160,6 +2172,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
 .faq {
   padding: 105px 0;
+  background: var(--bone, #eeefe8);
+}
+
+.faq.is-bg-ready {
   background:
     linear-gradient(rgba(238, 239, 232, 0.82), rgba(238, 239, 232, 0.9)),
     url("/assets/campaign/faq-material-bg.webp") center / cover no-repeat;
@@ -2251,6 +2267,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
 .contact {
   overflow: hidden;
   padding: 105px 0 100px;
+  background: #080b08;
+}
+
+.contact.is-bg-ready {
   background:
     linear-gradient(90deg, rgba(5, 7, 6, 0.94), rgba(5, 7, 6, 0.72) 54%, rgba(5, 7, 6, 0.82)),
     url("/assets/campaign/contact-partnership-bg.webp") center / cover no-repeat,
@@ -2746,6 +2766,14 @@ body.is-locked:not(.is-menu-open) .site-shell {
     min-height: 100svh;
   }
 
+  /* Short landscape phones: let the hero shrink to the viewport. */
+  @media (orientation: landscape) and (max-height: 520px) {
+    .hero,
+    .hero__content {
+      min-height: 100svh;
+    }
+  }
+
   .hero__copy {
     padding: 28px 0 72px;
   }
@@ -3030,7 +3058,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
   }
 
   .hero {
-    min-height: max(760px, 100svh);
+    min-height: clamp(640px, 100svh, 900px);
     padding-bottom: 0;
   }
 
@@ -3057,7 +3085,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
   .hero__content {
     display: block;
-    min-height: max(760px, 100svh);
+    min-height: clamp(640px, 100svh, 900px);
     padding-top: 130px;
   }
 
@@ -3716,6 +3744,14 @@ body.is-locked:not(.is-menu-open) .site-shell {
   .hero,
   .hero__content {
     min-height: 100svh;
+  }
+
+  /* Short landscape phones: let the hero shrink to the viewport. */
+  @media (orientation: landscape) and (max-height: 520px) {
+    .hero,
+    .hero__content {
+      min-height: 100svh;
+    }
   }
 
   .hero__media {
