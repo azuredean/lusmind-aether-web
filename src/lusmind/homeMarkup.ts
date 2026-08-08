@@ -6,15 +6,15 @@ export const homeMarkup = String.raw`
     <div class="age-gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
       <div class="age-gate__slides" aria-hidden="true">
         <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-life-1.webp')"></span>
-        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-life-2.webp')"></span>
-        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-life-3.webp')"></span>
-        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-life-4.webp')"></span>
-        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-life-5.webp')"></span>
-        <span class="age-gate__slide" style="--age-image: url('/assets/campaign/age-life-6.webp')"></span>
+        <span class="age-gate__slide" data-age-image="/assets/campaign/age-life-2.webp"></span>
+        <span class="age-gate__slide" data-age-image="/assets/campaign/age-life-3.webp"></span>
+        <span class="age-gate__slide" data-age-image="/assets/campaign/age-life-4.webp"></span>
+        <span class="age-gate__slide" data-age-image="/assets/campaign/age-life-5.webp"></span>
+        <span class="age-gate__slide" data-age-image="/assets/campaign/age-life-6.webp"></span>
       </div>
       <div class="age-gate__signal" aria-hidden="true"></div>
       <div class="age-gate__panel">
-        <img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="360" height="79" />
+        <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" />
         <p class="eyebrow">Age verification / 01</p>
         <h1 id="age-title">For adults only.</h1>
         <p>This website contains information about nicotine products intended for adult trade professionals. You must be of legal smoking age in your jurisdiction to continue.</p>
@@ -29,7 +29,7 @@ export const homeMarkup = String.raw`
     <div class="site-shell" id="site-shell" aria-hidden="true">
       <header class="site-header" data-header>
         <a class="brand" href="#top" aria-label="Lusmind home">
-          <img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="260" height="57" />
+          <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" />
         </a>
 
         <nav class="desktop-nav" aria-label="Primary navigation">
@@ -40,13 +40,13 @@ export const homeMarkup = String.raw`
             <div class="product-dropdown" id="product-dropdown" aria-hidden="true">
               <p class="product-dropdown__label">The 2026 portfolio / 05 platforms · 06 products</p>
               <div class="product-dropdown__grid">
-                <a href="/products/royal-slim"><img src="/assets/products/royal-slim.webp" alt="" /><span><strong>Royal Slim</strong><small>Royal Heat series · cigarette format</small></span><b>01A</b></a>
-                <a href="/products/royal-classic"><img src="/assets/products/royal-classic.webp" alt="" /><span><strong>Royal Classic</strong><small>Royal Heat series · cigarette format</small></span><b>01B</b></a>
-                <a href="/products/royal-heat"><img src="/assets/campaign/royal-heat-hero.webp" alt="" /><span><strong>Royal Heat</strong><small>Series overview</small></span><b>01</b></a>
-                <a href="/products/fusion-one"><img src="/assets/campaign/fusion-one-hero.webp" alt="" /><span><strong>Fusion One</strong><small>Hybrid device</small></span><b>02</b></a>
-                <a href="/products/arc-pod-s"><img src="/assets/campaign/arc-pod-s-hero.webp" alt="" /><span><strong>Arc Pod S</strong><small>Refillable pod</small></span><b>03</b></a>
-                <a href="/products/core-20"><img src="/assets/campaign/core-20-hero.webp" alt="" /><span><strong>Core 20</strong><small>Heat-not-burn</small></span><b>04</b></a>
-                <a href="/products/ai-pulse"><img src="/assets/campaign/ai-pulse-hero.webp" alt="" /><span><strong>AI Pulse</strong><small>Smart disposable</small></span><b>05</b></a>
+                <a href="/products/royal-slim"><img data-src="/assets/products/royal-slim.webp" alt="" width="1400" height="900" loading="lazy" decoding="async" /><span><strong>Royal Slim</strong><small>Royal Heat series · cigarette format</small></span><b>01A</b></a>
+                <a href="/products/royal-classic"><img data-src="/assets/products/royal-classic.webp" alt="" width="1400" height="900" loading="lazy" decoding="async" /><span><strong>Royal Classic</strong><small>Royal Heat series · cigarette format</small></span><b>01B</b></a>
+                <a href="/products/royal-heat"><img data-src="/assets/campaign/royal-heat-hero.webp" alt="" width="1400" height="900" loading="lazy" decoding="async" /><span><strong>Royal Heat</strong><small>Series overview</small></span><b>01</b></a>
+                <a href="/products/fusion-one"><img data-src="/assets/campaign/fusion-one-hero.webp" alt="" width="1400" height="900" loading="lazy" decoding="async" /><span><strong>Fusion One</strong><small>Hybrid device</small></span><b>02</b></a>
+                <a href="/products/arc-pod-s"><img data-src="/assets/campaign/arc-pod-s-hero.webp" alt="" width="1400" height="900" loading="lazy" decoding="async" /><span><strong>Arc Pod S</strong><small>Refillable pod</small></span><b>03</b></a>
+                <a href="/products/core-20"><img data-src="/assets/campaign/core-20-hero.webp" alt="" width="1400" height="900" loading="lazy" decoding="async" /><span><strong>Core 20</strong><small>Heat-not-burn</small></span><b>04</b></a>
+                <a href="/products/ai-pulse"><img data-src="/assets/campaign/ai-pulse-hero.webp" alt="" width="1400" height="900" loading="lazy" decoding="async" /><span><strong>AI Pulse</strong><small>Smart disposable</small></span><b>05</b></a>
               </div>
               <a class="product-dropdown__all" href="#collection">Compare all platforms <span aria-hidden="true">↓</span></a>
             </div>
@@ -87,12 +87,12 @@ export const homeMarkup = String.raw`
           <div class="hero__glow" aria-hidden="true"></div>
           <a class="hero__media" href="/products/ai-pulse" aria-label="Discover the AI Pulse product page">
             <div class="hero__slideshow">
-              <img class="hero__slide" src="/assets/campaign/hero-life-1.webp" alt="Lusmind pod device shared at a Paris terrace" width="1400" height="1750" fetchpriority="high" />
-              <img class="hero__slide" src="/assets/campaign/hero-life-2.webp" alt="Lusmind smart disposable by a coastal pool" width="1400" height="1750" loading="lazy" />
-              <img class="hero__slide" src="/assets/campaign/hero-life-3.webp" alt="Lusmind pod device on a mountain drive" width="1400" height="1750" loading="lazy" />
-              <img class="hero__slide" src="/assets/campaign/hero-life-4.webp" alt="Lusmind device on a forest trail" width="1400" height="1750" loading="lazy" />
-              <img class="hero__slide" src="/assets/campaign/hero-life-5.webp" alt="Lusmind heat-not-burn device at a work desk" width="1400" height="1750" loading="lazy" />
-              <img class="hero__slide" src="/assets/campaign/hero-life-6.webp" alt="Lusmind product held at an evening dinner" width="1400" height="1750" loading="lazy" />
+              <img class="hero__slide" src="/assets/campaign/hero-life-1.webp" alt="Lusmind pod device shared at a Paris terrace" width="1400" height="1750" fetchpriority="high" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-2.webp" alt="Lusmind smart disposable by a coastal pool" width="1400" height="1750" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-3.webp" alt="Lusmind pod device on a mountain drive" width="1400" height="1750" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-4.webp" alt="Lusmind device on a forest trail" width="1400" height="1750" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-5.webp" alt="Lusmind heat-not-burn device at a work desk" width="1400" height="1750" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-6.webp" alt="Lusmind product held at an evening dinner" width="1400" height="1750" loading="lazy" decoding="async" />
             </div>
             <span class="hero__scan"></span>
             <div class="hero__media-label">
@@ -133,23 +133,23 @@ export const homeMarkup = String.raw`
             </div>
             <div class="campaign-grid">
               <a class="campaign-card campaign-card--wide reveal" href="/products/royal-heat">
-                <img src="/assets/campaign/royal-heat-hero.webp" alt="Royal Heat black and gold campaign setting" width="1716" height="920" loading="lazy" />
+                <img data-src="/assets/campaign/royal-heat-hero.webp" alt="Royal Heat black and gold campaign setting" width="1716" height="920" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>01 / Series · Slim + Classic</small><strong>Royal Heat</strong><em>Explore series ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--tall reveal reveal--delay-1" href="/products/fusion-one">
-                <img src="/assets/campaign/fusion-one-hero.webp" alt="Fusion One precision laboratory campaign" width="1716" height="920" loading="lazy" />
+                <img data-src="/assets/campaign/fusion-one-hero.webp" alt="Fusion One precision laboratory campaign" width="1716" height="920" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>02 / Hybrid device</small><strong>Fusion One</strong><em>Explore product ↗</em></span>
               </a>
               <a class="campaign-card reveal" href="/products/arc-pod-s">
-                <img src="/assets/campaign/arc-pod-s-hero.webp" alt="Arc Pod S material-led campaign setting" width="1716" height="920" loading="lazy" />
+                <img data-src="/assets/campaign/arc-pod-s-hero.webp" alt="Arc Pod S material-led campaign setting" width="1716" height="920" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>03 / Refillable pod</small><strong>Arc Pod S</strong><em>Explore product ↗</em></span>
               </a>
               <a class="campaign-card reveal reveal--delay-1" href="/products/core-20">
-                <img src="/assets/campaign/core-20-hero.webp" alt="Core 20 executive lounge campaign" width="1716" height="920" loading="lazy" />
+                <img data-src="/assets/campaign/core-20-hero.webp" alt="Core 20 executive lounge campaign" width="1716" height="920" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>04 / Heat-not-burn</small><strong>Core 20</strong><em>Explore product ↗</em></span>
               </a>
               <a class="campaign-card reveal reveal--delay-2" href="/products/ai-pulse">
-                <img src="/assets/campaign/ai-pulse-hero.webp" alt="AI Pulse digital materials campaign" width="1716" height="920" loading="lazy" />
+                <img data-src="/assets/campaign/ai-pulse-hero.webp" alt="AI Pulse digital materials campaign" width="1716" height="920" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>05 / Smart disposable</small><strong>AI Pulse</strong><em>Explore product ↗</em></span>
               </a>
             </div>
@@ -201,7 +201,7 @@ export const homeMarkup = String.raw`
                 <div class="product-stage" data-product-stage>
                   <a class="product-stage__media-link" href="/products/ai-pulse" data-product-page-link aria-label="Open the AI Pulse product page">
                     <span class="product-stage__grid" aria-hidden="true"></span>
-                    <img data-product-image src="/assets/products/ai-pulse.webp" alt="Lusmind AI Pulse product platform" width="1672" height="941" />
+                    <img data-product-image data-src="/assets/products/ai-pulse.webp" alt="Lusmind AI Pulse product platform" width="1672" height="941" />
                     <span class="product-stage__beam" aria-hidden="true"></span>
                     <span class="product-stage__topline"><span data-product-code>DSP / 05</span><span data-product-category>AI disposable</span></span>
                     <span class="product-stage__open">Full product story <b aria-hidden="true">↗</b></span>
@@ -266,7 +266,7 @@ export const homeMarkup = String.raw`
             <div class="bento-grid">
               <a class="bento bento--hero reveal" href="/products/fusion-one">
                 <div class="bento__media">
-                  <img src="/assets/products/fusion-one.webp" alt="Fusion One hybrid heat-stick and refillable pod device" width="1672" height="941" loading="lazy" />
+                  <img data-src="/assets/products/fusion-one.webp" alt="Fusion One hybrid heat-stick and refillable pod device" width="1672" height="941" loading="lazy" decoding="async" />
                 </div>
                 <div class="bento__content">
                   <span class="bento__number">T / 01</span>
@@ -302,7 +302,7 @@ export const homeMarkup = String.raw`
               </a>
 
               <a class="bento bento--royal reveal reveal--delay-2" href="/products/royal-heat">
-                <img src="/assets/products/royal-slim.webp" alt="Royal Slim formats and packaging" width="1448" height="1086" loading="lazy" />
+                <img data-src="/assets/products/royal-slim.webp" alt="Royal Slim formats and packaging" width="1448" height="1086" loading="lazy" decoding="async" />
                 <span class="bento__number">T / 05</span>
                 <div class="bento__content"><h3>Dual-format system</h3><p>Slim and classic formats translated through one premium shelf language.</p></div>
               </a>
@@ -408,7 +408,7 @@ export const homeMarkup = String.raw`
 
         <section class="company" id="company" aria-labelledby="company-title">
           <div class="company__media">
-            <img src="/assets/products/royal-classic.webp" alt="Lusmind Royal Classic presented in a premium travel setting" width="1448" height="1086" loading="lazy" />
+            <img data-src="/assets/products/royal-classic.webp" alt="Lusmind Royal Classic presented in a premium travel setting" width="1448" height="1086" loading="lazy" decoding="async" />
           </div>
           <div class="company__shade" aria-hidden="true"></div>
           <div class="company__content page-width">
@@ -512,7 +512,7 @@ export const homeMarkup = String.raw`
       <footer class="site-footer">
         <div class="page-width">
           <div class="footer__top">
-            <a class="footer__brand" href="#top"><img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="360" height="79" /></a>
+            <a class="footer__brand" href="#top"><img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" /></a>
             <p>Product systems for adult markets.<br />Built with intent. Scaled with discipline.</p>
             <div class="footer__nav">
               <a href="/products/royal-slim">Royal Slim</a><a href="/products/royal-classic">Royal Classic</a><a href="/products/royal-heat">Royal Heat series</a><a href="/products/fusion-one">Fusion One</a><a href="/products/arc-pod-s">Arc Pod S</a><a href="/products/core-20">Core 20</a><a href="/products/ai-pulse">AI Pulse</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
