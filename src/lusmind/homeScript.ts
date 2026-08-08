@@ -273,24 +273,40 @@ export function initHome(): () => void {
   }
 
   let ageSlidesScheduled = false;
+  const ageSlideTimers: any[] = [];
+
+  function ageGateDismissed() {
+    return ageGate.hidden || ageGate.classList.contains("is-accepted");
+  }
+
+  function cancelAgeSlides() {
+    ageSlideTimers.forEach((timer) => globalThis.window.clearTimeout(timer));
+    ageSlideTimers.length = 0;
+  }
   /** Age-gate backdrops beyond the first are fetched just before their turn. */
   function scheduleAgeSlides() {
     if (ageSlidesScheduled) return;
     ageSlidesScheduled = true;
     const slides = [...document.querySelectorAll(".age-gate__slide[data-age-image]")];
     slides.forEach((slide, index) => {
-      later(() => {
-        const src = slide.dataset.ageImage;
-        if (!src) return;
-        slide.style.setProperty("--age-image", `url('${src}')`);
-        delete slide.dataset.ageImage;
-      }, 1400 + index * 2400);
+      ageSlideTimers.push(
+        globalThis.window.setTimeout(() => {
+          // Never fetch a backdrop the visitor will no longer see.
+          if (ageGateDismissed()) return;
+          const src = slide.dataset.ageImage;
+          if (!src) return;
+          slide.style.setProperty("--age-image", `url('${src}')`);
+          delete slide.dataset.ageImage;
+        }, 1400 + index * 2400)
+      );
     });
   }
 
   function hydrateHeroSlides() {
     const slides = [...document.querySelectorAll(".hero__slide[data-src]")];
-    slides.forEach((slide, index) => later(() => hydrateImage(slide), index * 350));
+    const [first, ...rest] = slides;
+    hydrateImage(first);
+    rest.forEach((slide, index) => later(() => hydrateImage(slide), 400 + index * 350));
   }
 
   function unlockSite({ remember = false } = {}) {
@@ -299,10 +315,13 @@ export function initHome(): () => void {
     ageGate.setAttribute("aria-hidden", "true");
     siteShell.setAttribute("aria-hidden", "false");
     body.classList.remove("is-locked");
+    cancelAgeSlides();
+    // The first hero frame is requested at once so it can paint during the exit.
+    hydrateHeroSlides();
+    initHeroSlideshow();
     window.setTimeout(() => {
       if (ageGate.classList.contains("is-accepted")) ageGate.hidden = true;
     }, 520);
-    whenIdle(hydrateHeroSlides);
     // Page media only becomes relevant once the visitor is past the gate.
     whenIdle(initDeferredMedia);
   }
@@ -676,9 +695,12 @@ export function initHome(): () => void {
   }
 
   let heroTimer: any;
+  let heroSlideshowStarted = false;
   function initHeroSlideshow() {
+    if (heroSlideshowStarted) return;
     const slideshow = document.querySelector(".hero__slideshow");
     if (!slideshow) return;
+    heroSlideshowStarted = true;
     const slides = [...slideshow.querySelectorAll(".hero__slide")];
     if (slides.length < 2) {
       slides[0]?.classList.add("is-active");
@@ -720,12 +742,12 @@ export function initHome(): () => void {
   initProductExplorer();
   initActions();
   initInquiryForm();
-  initHeroSlideshow();
 
 
   return () => {
     scope.dispose();
     deferredTimers.forEach((timer) => globalThis.window.clearTimeout(timer));
+    cancelAgeSlides();
     observers.forEach((observer) => observer.disconnect());
     globalThis.window.clearTimeout(productSwapTimer);
     globalThis.window.clearInterval(heroTimer);
