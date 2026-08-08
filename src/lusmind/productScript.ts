@@ -897,8 +897,9 @@ export function initProduct(productId: string): () => void {
   });
 
   const revealItems = document.querySelectorAll(".reveal");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if ("IntersectionObserver" in window && !reduceMotion) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -910,6 +911,61 @@ export function initProduct(productId: string): () => void {
   } else {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
+
+  // Staggered reveal for feature rows and specification values.
+  document.querySelectorAll(".feature-row").forEach((row, index) => {
+    row.style.setProperty("--stagger", `${Math.min(index, 6) * 60}ms`);
+  });
+  document.querySelectorAll(".spec-table dl > div").forEach((row, index) => {
+    row.style.setProperty("--stagger", `${Math.min(index, 6) * 45}ms`);
+  });
+
+  // Anchor rail active state.
+  const railLinks = [...document.querySelectorAll(".anchor-rail a")];
+  let railObserver: IntersectionObserver | null = null;
+  if (railLinks.length && "IntersectionObserver" in window) {
+    const targets = railLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+    railObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        railLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: "-30% 0px -60%", threshold: 0 });
+    targets.forEach((section) => railObserver.observe(section));
+  }
+
+  // Restrained rAF parallax for hero and context imagery (desktop, motion allowed).
+  const parallaxNodes = [...document.querySelectorAll("[data-parallax]")];
+  let parallaxFrame = 0;
+  let parallaxTicking = false;
+  const parallaxEnabled = !reduceMotion && window.matchMedia("(min-width: 900px)").matches;
+
+  function runParallax() {
+    parallaxTicking = false;
+    parallaxNodes.forEach((node) => {
+      const rect = node.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
+      const progress = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      node.style.transform = `translate3d(0, ${(progress * -22).toFixed(2)}px, 0)`;
+    });
+  }
+
+  function onParallaxScroll() {
+    if (parallaxTicking) return;
+    parallaxTicking = true;
+    parallaxFrame = window.requestAnimationFrame(runParallax);
+  }
+
+  if (parallaxEnabled && parallaxNodes.length) {
+    window.addEventListener("scroll", onParallaxScroll, { passive: true });
+    runParallax();
+  }
+
+
 
   const schema: any = isSeries ? {
     "@context": "https://schema.org",
