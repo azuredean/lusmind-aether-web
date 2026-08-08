@@ -92,7 +92,7 @@ export const homeMarkup = String.raw`
               <img class="hero__slide" src="/assets/campaign/hero-life-3.webp" alt="Lusmind pod device on a mountain drive" width="1400" height="1750" loading="lazy" />
               <img class="hero__slide" src="/assets/campaign/hero-life-4.webp" alt="Lusmind device on a forest trail" width="1400" height="1750" loading="lazy" />
               <img class="hero__slide" src="/assets/campaign/hero-life-5.webp" alt="Lusmind heat-not-burn device at a work desk" width="1400" height="1750" loading="lazy" />
-              <img class="hero__slide" src="/assets/campaign/hero-life-6.webp" alt="Lusmind Royal Heat sticks at an evening dinner" width="1400" height="1750" loading="lazy" />
+              <img class="hero__slide" src="/assets/campaign/hero-life-6.webp" alt="Lusmind product held at an evening dinner" width="1400" height="1750" loading="lazy" />
             </div>
             <span class="hero__scan"></span>
             <div class="hero__media-label">
