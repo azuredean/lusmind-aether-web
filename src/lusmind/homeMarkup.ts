@@ -530,11 +530,11 @@ export const homeMarkup = String.raw`
       </div>
       <div class="dialog__body">
         <div class="comparison-grid">
-          <article><span>01</span><h3><a href="/products/royal-heat">Royal Heat ↗</a></h3><p>Heat-stick formats</p><dl><div><dt>Format</dt><dd>Slim + classic</dd></div><div><dt>Pack</dt><dd>20 sticks</dd></div><div><dt>MOQ</dt><dd>50 cartons / SKU</dd></div></dl></article>
-          <article><span>02</span><h3><a href="/products/fusion-one">Fusion One ↗</a></h3><p>Hybrid device</p><dl><div><dt>Battery</dt><dd>650 mAh</dd></div><div><dt>Pod</dt><dd>2.5 mL</dd></div><div><dt>MOQ</dt><dd>1,000 / color</dd></div></dl></article>
-          <article><span>03</span><h3><a href="/products/arc-pod-s">Arc Pod S ↗</a></h3><p>Refillable pod</p><dl><div><dt>Battery</dt><dd>1,000 mAh</dd></div><div><dt>Pod</dt><dd>3.0 mL</dd></div><div><dt>MOQ</dt><dd>1,000 / finish</dd></div></dl></article>
+          <article><span>01</span><h3><a href="/products/royal-heat">Royal Heat ↗</a></h3><p>Royal Slim + Royal Classic</p><dl><div><dt>E-liquid</dt><dd>2.2 / 1.8 mL</dd></div><div><dt>Battery</dt><dd>250 / 200 mAh</dd></div><div><dt>Nicotine</dt><dd>2% / 5%</dd></div></dl></article>
+          <article><span>02</span><h3><a href="/products/fusion-one">Fusion One ↗</a></h3><p>Hybrid device</p><dl><div><dt>Battery</dt><dd>300 mAh</dd></div><div><dt>Pod</dt><dd>2 mL</dd></div><div><dt>Coil</dt><dd>0.8 / 1.2 Ω</dd></div></dl></article>
+          <article><span>03</span><h3><a href="/products/arc-pod-s">Arc Pod S ↗</a></h3><p>Refillable pod</p><dl><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Power</dt><dd>14 W</dd></div></dl></article>
           <article><span>04</span><h3><a href="/products/core-20">Core 20 ↗</a></h3><p>Heat-not-burn</p><dl><div><dt>Sessions</dt><dd>Up to 20</dd></div><div><dt>Preheat</dt><dd>20 sec</dd></div><div><dt>MOQ</dt><dd>800 / color</dd></div></dl></article>
-          <article><span>05</span><h3><a href="/products/ai-pulse">AI Pulse ↗</a></h3><p>AI disposable</p><dl><div><dt>Capacity</dt><dd>22 mL</dd></div><div><dt>Battery</dt><dd>850 mAh</dd></div><div><dt>MOQ</dt><dd>3,000 / SKU</dd></div></dl></article>
+          <article><span>05</span><h3><a href="/products/ai-pulse">AI Pulse ↗</a></h3><p>AI disposable</p><dl><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>Power</dt><dd>14–22 W</dd></div></dl></article>
         </div>
         <p class="data-note">All specifications are provisional concept data pending final engineering, testing and commercial confirmation.</p>
       </div>
