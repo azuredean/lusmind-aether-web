@@ -1891,3 +1891,12 @@ img {
     transform: none;
   }
 }
+
+.product-dropdown__group,
+.mobile-menu__group {
+  margin: 0.4rem 0 0.2rem;
+  color: rgba(255, 255, 255, 0.55);
+  font: 400 0.62rem/1.2 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
