@@ -67,7 +67,7 @@ export function initProduct(productId: string): () => void {
       features: [
         ["Cigarette-referenced scale", "The body is dimensioned to read comparably to a conventional cigarette in hand and on shelf."],
         ["2.2 mL reservoir", "The slim format carries the larger Royal liquid volume without widening the silhouette."],
-        ["Selectable coil", "1.0 Ω and 1.2—1.5 Ω directions allow the delivery profile to be tuned per market."],
+        ["Selectable coil", "1.0 Ω and 1.5 Ω options allow the delivery profile to be tuned per market."],
         ["Champagne finish system", "A black-and-champagne palette keeps the format premium across pack, display and carton."]
       ],
       specs: [
