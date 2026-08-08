@@ -531,7 +531,7 @@ export function initProduct(productId: string): () => void {
 
   const makeOptions = () => product.options.map(({ title, note, image, alt, position }) => `
     <article class="option-card">
-      <img src="${image}" alt="${alt}" loading="lazy" style="object-position:${position || "center"}" />
+      <img src="${image}" alt="${alt}" loading="lazy" decoding="async" style="object-position:${position || "center"}" />
       <div class="option-card__label"><strong>${title}</strong><small>${note}</small></div>
     </article>
   `).join("");
@@ -779,7 +779,7 @@ export function initProduct(productId: string): () => void {
     </section>
 
     <a class="next-product" href="${PRODUCT_PATHS[product.next]}" aria-label="View next product: ${nextProduct.name}">
-      <img src="${nextProduct.campaign}" alt="" loading="lazy" />
+      <img src="${nextProduct.campaign}" alt="" loading="lazy" decoding="async" />
       <div class="next-product__inner page-width">
         <div>
           <p class="eyebrow">Next platform / ${nextProduct.index}</p>
@@ -888,7 +888,7 @@ export function initProduct(productId: string): () => void {
   document.querySelector("[data-age-deny]")?.addEventListener("click", () => {
     if (!agePanel) return;
     agePanel.innerHTML = `
-      <img src="/assets/brand/lusmind-logo.webp" alt="Lusmind" width="260" height="57" />
+      <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" />
       <p class="eyebrow">Access restricted</p>
       <h1>This site is not available to you.</h1>
       <p>You must be of legal smoking age in your jurisdiction to view information about these products.</p>
