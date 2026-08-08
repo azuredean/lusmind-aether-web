@@ -950,7 +950,7 @@ export function initProduct(productId: string): () => void {
       const rect = node.getBoundingClientRect();
       if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
       const progress = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
-      node.style.transform = `translate3d(0, ${(progress * -22).toFixed(2)}px, 0)`;
+      node.style.transform = `translate3d(0, ${(progress * -22).toFixed(2)}px, 0) scale(1.06)`;
     });
   }
 
