@@ -10,8 +10,10 @@
 //   Row 2: coffee-tobacco, tobacco-nut, orange-soda, caramel-custard,
 //          cinnamon-apple-pie, banana-nut, peach-ice, kiwi-passionfruit,
 //          mango-ice, arctic-sweet-ice, blueberry-raspberry, creamy-rainbow-candy
-// US artwork keeps its original label/body design; only the cap was replaced
-// with the smoked flat-top ribbed cap geometry from the same ME sheet.
+// US artwork keeps its original label/body design; only the cap/neck/collar
+// assembly was replaced with a registered flat-top ribbed cap master.
+// Both markets are regenerated deterministically by
+// scripts/rebuild-eliquid-assets.py (see the docstring in that file).
 export type EliquidFlavor = {
   slug: string;
   name: string;
