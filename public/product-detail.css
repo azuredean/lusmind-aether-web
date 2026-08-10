@@ -1242,28 +1242,29 @@ img {
 .age-gate__bottom-glow::before {
   background: linear-gradient(90deg,
       transparent 0%,
-      rgba(199, 255, 25, 0.04) 16%,
-      rgba(255, 255, 255, 0.08) 34%,
-      rgba(199, 255, 25, 0.06) 50%,
-      rgba(255, 255, 255, 0.05) 66%,
+      rgba(199, 255, 25, 0.08) 16%,
+      rgba(255, 255, 255, 0.14) 34%,
+      rgba(199, 255, 25, 0.10) 50%,
+      rgba(255, 255, 255, 0.09) 66%,
       transparent 100%);
   filter: blur(44px);
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent 76%);
   -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent 76%);
   animation: age-gate-glow 7.2s linear infinite;
+  mix-blend-mode: screen;
 }
 
 .age-gate__bottom-glow::after {
   background: linear-gradient(90deg,
       transparent 0%,
       rgba(255, 255, 255, 0) 28%,
-      rgba(255, 255, 255, 0.14) 50%,
+      rgba(255, 255, 255, 0.22) 50%,
       rgba(255, 255, 255, 0) 72%,
       transparent 100%);
   filter: blur(18px);
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
   -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
-  animation: age-gate-glow 5.2s linear infinite reverse;
+  animation: age-gate-glow 5.2s linear infinite;
 }
 
 @keyframes age-gate-glow {
