@@ -39,7 +39,17 @@ export function eliquidMarkup(inquiryHref: string): string {
 
   return `
     <section class="product-hero product-hero--left product-hero--eliquid" id="overview" aria-labelledby="product-title">
-      <img class="product-hero__media" src="/assets/eliquid/hero.webp" alt="Lusmind e-liquid bottle range presented as a still-life composition" fetchpriority="high" decoding="async" style="object-position:50% 46%" data-parallax />
+      <img
+        class="product-hero__media"
+        src="/assets/eliquid/hero-1920.webp"
+        srcset="/assets/eliquid/hero-1280.webp 1280w, /assets/eliquid/hero-1920.webp 1920w, /assets/eliquid/hero-2560.webp 2560w, /assets/eliquid/hero.webp 3840w"
+        sizes="100vw"
+        width="3840"
+        height="2160"
+        alt="Lusmind e-liquid bottle range presented on a black-glass campaign stage"
+        fetchpriority="high"
+        decoding="async"
+        data-parallax />
       <div class="product-hero__shade" aria-hidden="true"></div>
       <div class="product-hero__grid" aria-hidden="true"></div>
       <div class="product-hero__inner">
