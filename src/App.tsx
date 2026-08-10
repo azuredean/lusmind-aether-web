@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -33,6 +33,8 @@ const App = () => (
     <Suspense fallback={<RouteFallback />}>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* Legacy URL from the original e-liquid category. */}
+        <Route path="/e-liquid" element={<Navigate to="/products/e-liquid" replace />} />
         <Route path="/products/:productId" element={<ProductPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
