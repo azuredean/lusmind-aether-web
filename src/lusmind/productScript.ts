@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { eliquidMarkup, initEliquid } from "./eliquidSection";
+import { ELIQUID_FLAVORS } from "./eliquidData";
 // Adapted from the supplied Lusmind static site scripts.
 // The `document` / `window` bindings below are scoped proxies that record
 // listener registrations so the SPA can fully clean up on route changes.
@@ -426,6 +428,25 @@ export function initProduct(productId: string): () => void {
         lead: "30–45 days",
         customization: "Flavor + UI + full-face art"
       },
+      next: "e-liquid"
+    },
+    "e-liquid": {
+      index: "06",
+      name: "E-Liquid",
+      family: "Flavor platform",
+      headline: "Twenty-four flavors. One formulation discipline.",
+      lede: "A market-adaptive e-liquid range for distributors and private-label partners, with nicotine configuration, VG/PG balance, bottle format and artwork defined per program.",
+      accent: "#c7ff19",
+      accentRgb: "199, 255, 25",
+      layout: "left",
+      campaign: "/assets/eliquid/hero.webp",
+      campaignAlt: "Lusmind e-liquid bottle range presented as a still-life composition",
+      trade: {
+        moq: "On inquiry",
+        samples: "On inquiry",
+        lead: "Project dependent",
+        customization: "Flavor + formulation + pack"
+      },
       next: "royal-slim"
     }
   };
@@ -437,7 +458,8 @@ export function initProduct(productId: string): () => void {
     "fusion-one": "/products/fusion-one",
     "arc-pod-s": "/products/arc-pod-s",
     "core-20": "/products/core-20",
-    "ai-pulse": "/products/ai-pulse"
+    "ai-pulse": "/products/ai-pulse",
+    "e-liquid": "/products/e-liquid"
   };
 
 
