@@ -16,8 +16,8 @@ const MARKETS: Record<string, { label: string; short: string; note: string }> = 
   },
 };
 
-const cardMarkup = (flavor: (typeof ELIQUID_FLAVORS)[number], market: string, index: number) => `
-  <article class="elq-card reveal" data-flavor="${flavor.slug}" style="--stagger:${Math.min(index, 7) * 45}ms">
+const cardMarkup = (flavor: (typeof ELIQUID_FLAVORS)[number], market: string, index: number, extra = false) => `
+  <article class="elq-card reveal"${extra ? " data-flavor-extra" : ""} data-flavor="${flavor.slug}" style="--stagger:${Math.min(index, 7) * 45}ms">
     <div class="elq-card__media">
       <img
         src="${eliquidImage(flavor.slug, market as "us" | "me")}"
@@ -269,17 +269,34 @@ export function initEliquid(document: any, window: any): () => void {
     button.addEventListener("click", () => setMarket(button.getAttribute("data-market")));
   });
 
+  const setToggleLabel = () => {
+    if (!moreButton) return;
+    moreButton.innerHTML = expanded
+      ? `Collapse flavor list <span aria-hidden="true">↑</span>`
+      : `View all ${ELIQUID_FLAVORS.length} flavors <span aria-hidden="true">↓</span>`;
+    moreButton.setAttribute("aria-expanded", String(expanded));
+  };
+
   moreButton?.addEventListener("click", () => {
-    if (expanded || !grid) return;
-    expanded = true;
+    if (!grid) return;
+
+    if (expanded) {
+      grid.querySelectorAll("[data-flavor-extra]").forEach((card: any) => card.remove());
+      expanded = false;
+      if (counter) counter.textContent = String(ELIQUID_FLAVORS.filter((f) => f.curated).length);
+      setToggleLabel();
+      moreButton.focus?.();
+      return;
+    }
+
     const rest = ELIQUID_FLAVORS.filter((flavor) => !flavor.curated);
     grid.insertAdjacentHTML(
       "beforeend",
-      rest.map((flavor, index) => cardMarkup(flavor, market, index)).join("")
+      rest.map((flavor, index) => cardMarkup(flavor, market, index, true)).join("")
     );
+    expanded = true;
     if (counter) counter.textContent = String(ELIQUID_FLAVORS.length);
-    moreButton.setAttribute("aria-expanded", "true");
-    moreButton.hidden = true;
+    setToggleLabel();
     grid.querySelectorAll(".elq-card:not(.is-visible)").forEach((card: any) => card.classList.add("is-visible"));
     (grid.querySelector(`[data-flavor="${rest[0].slug}"] h3`) as HTMLElement | null)?.focus?.();
   });
