@@ -15,6 +15,7 @@ export const productShellMarkup = String.raw`
         </div>
         <small>Nicotine is an addictive chemical. Age restrictions and product rules vary by market.</small>
       </div>
+      <div class="age-gate__bottom-glow" aria-hidden="true"></div>
     </div>
 
     <header class="site-header" data-header>
