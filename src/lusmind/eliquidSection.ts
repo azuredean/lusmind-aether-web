@@ -28,7 +28,7 @@ const cardMarkup = (flavor: (typeof ELIQUID_FLAVORS)[number], market: string, in
       />
     </div>
     <div class="elq-card__body">
-      <h3>${flavor.name}</h3>
+      <h3 tabindex="-1">${flavor.name}</h3>
       <ul class="elq-card__notes">${flavor.notes.map((note) => `<li>${note}</li>`).join("")}</ul>
     </div>
   </article>
@@ -139,7 +139,7 @@ export function eliquidMarkup(inquiryHref: string): string {
           <p class="elq-market__note" data-market-note>${MARKETS.us.note}</p>
         </div>
 
-        <div class="elq-grid" data-flavor-grid>
+        <div class="elq-grid" id="flavor-grid-extra" data-flavor-grid>
           ${initial.map((flavor, index) => cardMarkup(flavor, "us", index)).join("")}
         </div>
 
