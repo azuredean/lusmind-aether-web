@@ -519,6 +519,7 @@ export function initProduct(productId: string): () => void {
 
   const currentId = productId;
   const isSeries = currentId === "royal-heat";
+  const isEliquid = currentId === "e-liquid";
   const product = isSeries ? SERIES : PRODUCTS[currentId];
 
   if (!product) {
@@ -689,7 +690,7 @@ export function initProduct(productId: string): () => void {
     </a>
   `;
 
-  productMain.innerHTML = isSeries ? seriesMarkup() : `
+  productMain.innerHTML = isEliquid ? eliquidMarkup(inquiryHref) : isSeries ? seriesMarkup() : `
     <section class="product-hero product-hero--${product.layout}" id="overview" aria-labelledby="product-title">
       <img class="product-hero__media" src="${product.campaign}" alt="${product.campaignAlt}" fetchpriority="high" decoding="async" style="object-position:${product.campaignPosition || "center"}" data-parallax />
       <div class="product-hero__shade" aria-hidden="true"></div>
