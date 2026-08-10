@@ -357,6 +357,61 @@ img {
   opacity: 0;
 }
 
+.age-gate__bottom-glow {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: min(26vh, 240px);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.age-gate__bottom-glow::before,
+.age-gate__bottom-glow::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220%;
+  height: 100%;
+  will-change: transform;
+  content: "";
+}
+
+.age-gate__bottom-glow::before {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(199, 255, 25, 0.08) 16%,
+      rgba(255, 255, 255, 0.14) 34%,
+      rgba(199, 255, 25, 0.10) 50%,
+      rgba(255, 255, 255, 0.09) 66%,
+      transparent 100%);
+  filter: blur(44px);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent 76%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent 76%);
+  animation: age-gate-glow 7.2s linear infinite;
+  mix-blend-mode: screen;
+}
+
+.age-gate__bottom-glow::after {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0) 28%,
+      rgba(255, 255, 255, 0.22) 50%,
+      rgba(255, 255, 255, 0) 72%,
+      transparent 100%);
+  filter: blur(18px);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
+  animation: age-gate-glow 5.2s linear infinite;
+}
+
+@keyframes age-gate-glow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .age-gate__signal {
   z-index: 2;
   position: absolute;

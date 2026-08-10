@@ -13,6 +13,7 @@ export const homeMarkup = String.raw`
         <span class="age-gate__slide" data-age-image="/assets/campaign/age-life-6.webp"></span>
       </div>
       <div class="age-gate__signal" aria-hidden="true"></div>
+      <div class="age-gate__bottom-glow" aria-hidden="true"></div>
       <div class="age-gate__panel">
         <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" />
         <p class="eyebrow">Age verification / 01</p>
