@@ -32,6 +32,7 @@ export const productShellMarkup = String.raw`
             <a href="/products/arc-pod-s" data-product-link="arc-pod-s"><small>03</small><span>Arc Pod S</span><i>Refillable</i></a>
             <a href="/products/core-20" data-product-link="core-20"><small>04</small><span>Core 20</span><i>Heat device</i></a>
             <a href="/products/ai-pulse" data-product-link="ai-pulse"><small>05</small><span>AI Pulse</span><i>AI disposable</i></a>
+            <a href="/products/e-liquid" data-product-link="e-liquid"><small>06</small><span>E-Liquid</span><i>24 flavors</i></a>
           </div>
         </div>
         <a href="/#technology">Technology</a>
@@ -43,7 +44,7 @@ export const productShellMarkup = String.raw`
     </header>
 
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
-      <p class="eyebrow">Lusmind collection / 05 platforms · 06 products</p>
+      <p class="eyebrow">Lusmind collection / 06 platforms · 07 products</p>
       <a class="mobile-menu__home" href="/"><span>00</span>Home<i>↗</i></a>
       <p class="mobile-menu__group">Royal Heat series</p>
       <a class="mobile-menu__product" href="/products/royal-slim" data-product-link="royal-slim"><span>01A</span>Royal Slim<i>↗</i></a>
@@ -53,6 +54,7 @@ export const productShellMarkup = String.raw`
       <a class="mobile-menu__product" href="/products/arc-pod-s" data-product-link="arc-pod-s"><span>03</span>Arc Pod S<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/core-20" data-product-link="core-20"><span>04</span>Core 20<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/ai-pulse" data-product-link="ai-pulse"><span>05</span>AI Pulse<i>↗</i></a>
+      <a class="mobile-menu__product" href="/products/e-liquid" data-product-link="e-liquid"><span>06</span>E-Liquid range<i>↗</i></a>
       <a class="button button--accent" href="mailto:support@lusmind.com" data-product-inquiry>Request distributor pricing</a>
     </nav>
 
@@ -61,7 +63,7 @@ export const productShellMarkup = String.raw`
     <footer class="site-footer">
       <div class="site-footer__inner page-width">
         <a href="/"><img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" /></a>
-        <nav aria-label="Footer navigation"><a href="/#collection">Collection</a><a href="/#wholesale">Wholesale</a><a href="mailto:support@lusmind.com">Contact</a></nav>
+        <nav aria-label="Footer navigation"><a href="/#collection">Collection</a><a href="/products/e-liquid">E-Liquid</a><a href="/#wholesale">Wholesale</a><a href="mailto:support@lusmind.com">Contact</a></nav>
         <small>© <span data-year>2026</span> Lusmind. For qualified adult-industry partners.</small>
       </div>
     </footer>
