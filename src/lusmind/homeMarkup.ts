@@ -48,7 +48,7 @@ export const homeMarkup = String.raw`
                 <a href="/products/arc-pod-s"><img data-src="/assets/campaign/arc-pod-s-hero.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" /><span><strong>Arc Pod S</strong><small>Refillable pod</small></span><b>03</b></a>
                 <a href="/products/core-20"><img data-src="/assets/campaign/core-20-hero.webp" alt="" width="1717" height="916" loading="lazy" decoding="async" /><span><strong>Core 20</strong><small>Heat-not-burn</small></span><b>04</b></a>
                 <a href="/products/ai-pulse"><img data-src="/assets/campaign/ai-pulse-hero.webp" alt="" width="1672" height="941" loading="lazy" decoding="async" /><span><strong>AI Pulse</strong><small>Smart disposable</small></span><b>05</b></a>
-                <a href="/products/e-liquid"><img data-src="/assets/eliquid/range.webp" alt="" width="1800" height="1200" loading="lazy" decoding="async" /><span><strong>E-Liquid</strong><small>24 flavors · US / ME</small></span><b>06</b></a>
+                <a href="/products/e-liquid"><img data-src="/assets/eliquid/nav-promo-480.webp" data-srcset="/assets/eliquid/nav-promo-480.webp 480w, /assets/eliquid/nav-promo-960.webp 960w" sizes="74px" alt="" width="480" height="320" loading="lazy" decoding="async" /><span><strong>E-Liquid</strong><small>24 flavors · US / ME</small></span><b>06</b></a>
               </div>
               <a class="product-dropdown__all" href="#collection">Compare all platforms <span aria-hidden="true">↓</span></a>
             </div>
@@ -156,7 +156,7 @@ export const homeMarkup = String.raw`
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>05 / Smart disposable</small><strong>AI Pulse</strong><em>Explore product ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--wide reveal reveal--delay-3" href="/products/e-liquid">
-                <img data-src="/assets/eliquid/range.webp" alt="Lusmind e-liquid bottle range" width="1800" height="1200" loading="lazy" decoding="async" />
+                <img data-src="/assets/eliquid/home-promo-1600.webp" data-srcset="/assets/eliquid/home-promo-960.webp 960w, /assets/eliquid/home-promo-1600.webp 1600w, /assets/eliquid/home-promo-2400.webp 2400w, /assets/eliquid/home-promo.webp 3840w" sizes="(max-width: 820px) 100vw, 66vw" alt="Lusmind e-liquid range on a black-glass campaign stage" width="3840" height="2160" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>06 / Flavor platform</small><strong>E-Liquid</strong><em>Explore range ↗</em></span>
               </a>
             </div>

@@ -176,7 +176,7 @@ export function initHome(): () => void {
       name: "E-Liquid",
       statement: "A 24-flavor library developed as a market-adaptive platform, with nicotine configuration, VG/PG balance, bottle format and artwork defined per program.",
       moq: "On inquiry",
-      image: "/assets/eliquid/range.webp",
+      image: "/assets/eliquid/home-promo-2400.webp",
       alt: "Lusmind e-liquid bottle range",
       position: "center",
       tone: "dark",
@@ -224,6 +224,10 @@ export function initHome(): () => void {
   /** Swap a deferred `data-src` image into a real request. */
   function hydrateImage(image) {
     if (!image || !image.dataset || !image.dataset.src) return;
+    if (image.dataset.srcset) {
+      image.srcset = image.dataset.srcset;
+      delete image.dataset.srcset;
+    }
     image.src = image.dataset.src;
     delete image.dataset.src;
   }
