@@ -38,7 +38,7 @@ export const homeMarkup = String.raw`
               Products <span aria-hidden="true">+</span>
             </button>
             <div class="product-dropdown" id="product-dropdown" aria-hidden="true">
-              <p class="product-dropdown__label">The 2026 portfolio / 05 platforms · 06 products</p>
+              <p class="product-dropdown__label">The 2026 portfolio / 06 platforms · 07 products</p>
               <div class="product-dropdown__grid">
                 <a href="/products/royal-slim"><img data-src="/assets/products/royal-slim.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async" /><span><strong>Royal Slim</strong><small>Royal Heat series · cigarette format</small></span><b>01A</b></a>
                 <a href="/products/royal-classic"><img data-src="/assets/products/royal-classic.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async" /><span><strong>Royal Classic</strong><small>Royal Heat series · cigarette format</small></span><b>01B</b></a>
@@ -47,6 +47,7 @@ export const homeMarkup = String.raw`
                 <a href="/products/arc-pod-s"><img data-src="/assets/campaign/arc-pod-s-hero.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" /><span><strong>Arc Pod S</strong><small>Refillable pod</small></span><b>03</b></a>
                 <a href="/products/core-20"><img data-src="/assets/campaign/core-20-hero.webp" alt="" width="1717" height="916" loading="lazy" decoding="async" /><span><strong>Core 20</strong><small>Heat-not-burn</small></span><b>04</b></a>
                 <a href="/products/ai-pulse"><img data-src="/assets/campaign/ai-pulse-hero.webp" alt="" width="1672" height="941" loading="lazy" decoding="async" /><span><strong>AI Pulse</strong><small>Smart disposable</small></span><b>05</b></a>
+                <a href="/products/e-liquid"><img data-src="/assets/eliquid/range.webp" alt="" width="1800" height="1200" loading="lazy" decoding="async" /><span><strong>E-Liquid</strong><small>24 flavors · US / ME</small></span><b>06</b></a>
               </div>
               <a class="product-dropdown__all" href="#collection">Compare all platforms <span aria-hidden="true">↓</span></a>
             </div>
@@ -73,6 +74,7 @@ export const homeMarkup = String.raw`
           <a href="/products/arc-pod-s"><span>03</span><strong>Arc Pod S</strong><small>Refillable</small></a>
           <a href="/products/core-20"><span>04</span><strong>Core 20</strong><small>Heat-not-burn</small></a>
           <a href="/products/ai-pulse"><span>05</span><strong>AI Pulse</strong><small>Smart disposable</small></a>
+          <a href="/products/e-liquid"><span>06</span><strong>E-Liquid</strong><small>24 flavors</small></a>
         </div>
         <div class="mobile-menu__sections">
           <a href="#collection">Collection</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#company">Company</a>
