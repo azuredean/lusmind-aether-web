@@ -38,7 +38,7 @@ export const homeMarkup = String.raw`
               Products <span aria-hidden="true">+</span>
             </button>
             <div class="product-dropdown" id="product-dropdown" aria-hidden="true">
-              <p class="product-dropdown__label">The 2026 portfolio / 05 platforms · 06 products</p>
+              <p class="product-dropdown__label">The 2026 portfolio / 06 platforms · 07 products</p>
               <div class="product-dropdown__grid">
                 <a href="/products/royal-slim"><img data-src="/assets/products/royal-slim.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async" /><span><strong>Royal Slim</strong><small>Royal Heat series · cigarette format</small></span><b>01A</b></a>
                 <a href="/products/royal-classic"><img data-src="/assets/products/royal-classic.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async" /><span><strong>Royal Classic</strong><small>Royal Heat series · cigarette format</small></span><b>01B</b></a>
@@ -47,6 +47,7 @@ export const homeMarkup = String.raw`
                 <a href="/products/arc-pod-s"><img data-src="/assets/campaign/arc-pod-s-hero.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" /><span><strong>Arc Pod S</strong><small>Refillable pod</small></span><b>03</b></a>
                 <a href="/products/core-20"><img data-src="/assets/campaign/core-20-hero.webp" alt="" width="1717" height="916" loading="lazy" decoding="async" /><span><strong>Core 20</strong><small>Heat-not-burn</small></span><b>04</b></a>
                 <a href="/products/ai-pulse"><img data-src="/assets/campaign/ai-pulse-hero.webp" alt="" width="1672" height="941" loading="lazy" decoding="async" /><span><strong>AI Pulse</strong><small>Smart disposable</small></span><b>05</b></a>
+                <a href="/products/e-liquid"><img data-src="/assets/eliquid/range.webp" alt="" width="1800" height="1200" loading="lazy" decoding="async" /><span><strong>E-Liquid</strong><small>24 flavors · US / ME</small></span><b>06</b></a>
               </div>
               <a class="product-dropdown__all" href="#collection">Compare all platforms <span aria-hidden="true">↓</span></a>
             </div>
@@ -73,6 +74,7 @@ export const homeMarkup = String.raw`
           <a href="/products/arc-pod-s"><span>03</span><strong>Arc Pod S</strong><small>Refillable</small></a>
           <a href="/products/core-20"><span>04</span><strong>Core 20</strong><small>Heat-not-burn</small></a>
           <a href="/products/ai-pulse"><span>05</span><strong>AI Pulse</strong><small>Smart disposable</small></a>
+          <a href="/products/e-liquid"><span>06</span><strong>E-Liquid</strong><small>24 flavors</small></a>
         </div>
         <div class="mobile-menu__sections">
           <a href="#collection">Collection</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#company">Company</a>
@@ -106,7 +108,7 @@ export const homeMarkup = String.raw`
             <div class="hero__copy">
               <p class="eyebrow reveal">Lusmind product systems / 2026</p>
               <h1 id="hero-title" class="reveal reveal--delay-1">Designed to<br /><span>move markets.</span></h1>
-              <p class="hero__lede reveal reveal--delay-2">Five differentiated platforms and six distinct products for distributors who need shelf impact, flexible customization and a manufacturing path built to scale.</p>
+              <p class="hero__lede reveal reveal--delay-2">Six differentiated platforms and seven distinct products for distributors who need shelf impact, flexible customization and a manufacturing path built to scale.</p>
               <div class="hero__actions reveal reveal--delay-3">
                 <a class="button button--acid" href="#visual-index">Explore the collection <span aria-hidden="true">↓</span></a>
                 <a class="button button--line" href="/products/ai-pulse">Discover AI Pulse <span aria-hidden="true">↗</span></a>
@@ -128,7 +130,7 @@ export const homeMarkup = String.raw`
           <div class="page-width">
             <div class="section-index section-index--dark reveal"><span>01</span><span>Product stories</span></div>
             <div class="visual-index__intro">
-              <h2 id="visual-index-title" class="reveal">Five platforms.<br /><span>Six distinct products.</span></h2>
+              <h2 id="visual-index-title" class="reveal">Six platforms.<br /><span>Seven distinct products.</span></h2>
               <p class="reveal reveal--delay-1">Open any story to see its architecture, finishes, provisional specifications and distributor program.</p>
             </div>
             <div class="campaign-grid">
@@ -152,6 +154,10 @@ export const homeMarkup = String.raw`
                 <img data-src="/assets/campaign/ai-pulse-hero.webp" alt="AI Pulse digital materials campaign" width="1672" height="941" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>05 / Smart disposable</small><strong>AI Pulse</strong><em>Explore product ↗</em></span>
               </a>
+              <a class="campaign-card campaign-card--wide reveal reveal--delay-3" href="/products/e-liquid">
+                <img data-src="/assets/eliquid/range.webp" alt="Lusmind e-liquid bottle range" width="1800" height="1200" loading="lazy" decoding="async" />
+                <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>06 / Flavor platform</small><strong>E-Liquid</strong><em>Explore range ↗</em></span>
+              </a>
             </div>
           </div>
         </section>
@@ -169,9 +175,9 @@ export const homeMarkup = String.raw`
 
             <div class="positioning__metrics" aria-label="Business model highlights">
               <article class="metric reveal">
-                <span class="metric__number">05</span>
+                <span class="metric__number">06</span>
                 <h3>Distinct product platforms</h3>
-                <p>Five platforms, six products — from cigarette formats to refillable pods and AI-enabled disposables.</p>
+                <p>Six platforms, seven products — from cigarette formats and refillable pods to AI-enabled disposables and a 24-flavor e-liquid range.</p>
               </article>
               <article class="metric reveal reveal--delay-1">
                 <span class="metric__number">03</span>
@@ -192,7 +198,7 @@ export const homeMarkup = String.raw`
           <div class="page-width">
             <div class="section-index section-index--dark reveal"><span>03</span><span>2026 collection</span></div>
             <div class="section-heading">
-              <h2 id="collection-title" class="reveal">Five platforms.<br /><span>Six distinct products.</span></h2>
+              <h2 id="collection-title" class="reveal">Six platforms.<br /><span>Seven distinct products.</span></h2>
               <p class="reveal reveal--delay-1">Select a platform to review its positioning, provisional specification and partner terms.</p>
             </div>
 
@@ -232,6 +238,9 @@ export const homeMarkup = String.raw`
                   </a>
                   <a class="is-active" href="/products/ai-pulse" aria-current="true" data-product-id="pulse">
                     <span>05</span><strong>AI Pulse</strong><small>AI disposable</small>
+                  </a>
+                  <a href="/products/e-liquid" data-product-id="eliquid">
+                    <span>06</span><strong>E-Liquid</strong><small>Flavor platform</small>
                   </a>
                 </div>
 
@@ -362,6 +371,7 @@ export const homeMarkup = String.raw`
                 <div class="commercial-row" role="row"><strong role="cell"><a href="/products/arc-pod-s">Arc Pod S ↗</a></strong><span role="cell">1,000 units / finish</span><span role="cell">Shell · wrap · coil</span><span role="cell">30–40 days</span></div>
                 <div class="commercial-row" role="row"><strong role="cell"><a href="/products/core-20">Core 20 ↗</a></strong><span role="cell">800 units / color</span><span role="cell">CMF · UI · pack</span><span role="cell">40–50 days</span></div>
                 <div class="commercial-row" role="row"><strong role="cell"><a href="/products/ai-pulse">AI Pulse ↗</a></strong><span role="cell">3,000 units / SKU</span><span role="cell">Flavor · UI · artwork</span><span role="cell">30–45 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/e-liquid">E-Liquid ↗</a></strong><span role="cell">On inquiry</span><span role="cell">Flavor · formulation · pack</span><span role="cell">Project dependent</span></div>
               </div>
               <p class="data-note data-note--dark">Terms are non-binding estimates for planning only. Final MOQ, lead time, specifications and available customization depend on configuration, market and compliance requirements.</p>
             </div>
@@ -486,7 +496,7 @@ export const homeMarkup = String.raw`
                   <label>Product interest
                     <select name="product" id="product-interest" required>
                       <option value="">Select a platform</option>
-                      <option>Royal Slim</option><option>Royal Classic</option><option>Fusion One</option><option>Arc Pod S</option><option>Core 20</option><option>AI Pulse</option><option>Multiple platforms</option>
+                      <option>Royal Slim</option><option>Royal Classic</option><option>Fusion One</option><option>Arc Pod S</option><option>Core 20</option><option>AI Pulse</option><option>E-Liquid range</option><option>Multiple platforms</option>
                     </select>
                   </label>
                   <label>Estimated quantity
@@ -515,7 +525,7 @@ export const homeMarkup = String.raw`
             <a class="footer__brand" href="#top"><img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" /></a>
             <p>Product systems for adult markets.<br />Built with intent. Scaled with discipline.</p>
             <div class="footer__nav">
-              <a href="/products/royal-slim">Royal Slim</a><a href="/products/royal-classic">Royal Classic</a><a href="/products/royal-heat">Royal Heat series</a><a href="/products/fusion-one">Fusion One</a><a href="/products/arc-pod-s">Arc Pod S</a><a href="/products/core-20">Core 20</a><a href="/products/ai-pulse">AI Pulse</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
+              <a href="/products/royal-slim">Royal Slim</a><a href="/products/royal-classic">Royal Classic</a><a href="/products/royal-heat">Royal Heat series</a><a href="/products/fusion-one">Fusion One</a><a href="/products/arc-pod-s">Arc Pod S</a><a href="/products/core-20">Core 20</a><a href="/products/ai-pulse">AI Pulse</a><a href="/products/e-liquid">E-Liquid</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
             </div>
           </div>
           <div class="footer__legal">
@@ -533,7 +543,7 @@ export const homeMarkup = String.raw`
 
     <dialog class="comparison-dialog" id="comparison-dialog" aria-labelledby="compare-title">
       <div class="dialog__header">
-        <div><p class="eyebrow">Portfolio matrix / 06 products</p><h2 id="compare-title">Compare products</h2></div>
+        <div><p class="eyebrow">Portfolio matrix / 07 products</p><h2 id="compare-title">Compare products</h2></div>
         <button class="dialog__close" type="button" data-compare-close aria-label="Close comparison">×</button>
       </div>
       <div class="dialog__body">
@@ -544,6 +554,7 @@ export const homeMarkup = String.raw`
           <article><span>03</span><h3><a href="/products/arc-pod-s">Arc Pod S ↗</a></h3><p>Refillable pod</p><dl><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Power</dt><dd>14 W</dd></div></dl></article>
           <article><span>04</span><h3><a href="/products/core-20">Core 20 ↗</a></h3><p>Heat-not-burn</p><dl><div><dt>Sessions</dt><dd>Up to 20</dd></div><div><dt>Preheat</dt><dd>20 sec</dd></div><div><dt>MOQ</dt><dd>800 / color</dd></div></dl></article>
           <article><span>05</span><h3><a href="/products/ai-pulse">AI Pulse ↗</a></h3><p>AI disposable</p><dl><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>Power</dt><dd>14–22 W</dd></div></dl></article>
+          <article><span>06</span><h3><a href="/products/e-liquid">E-Liquid ↗</a></h3><p>Flavor platform</p><dl><div><dt>Flavors</dt><dd>24 profiles</dd></div><div><dt>Nicotine</dt><dd>On inquiry</dd></div><div><dt>Artwork</dt><dd>US / ME</dd></div></dl></article>
         </div>
         <p class="data-note">All specifications are provisional concept data pending final engineering, testing and commercial confirmation.</p>
       </div>

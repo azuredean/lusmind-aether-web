@@ -42,6 +42,11 @@ const PRODUCT_META: Record<string, { title: string; description: string }> = {
     description:
       "AI Pulse: 2 mL + 10 mL configuration, 600 mAh battery, dual-mesh coil and 14–22 W Eco / Boost output with a full-face graphic and status interface.",
   },
+  "e-liquid": {
+    title: "E-Liquid Range — 24 Flavors, US & ME Artwork | Lusmind",
+    description:
+      "The Lusmind e-liquid range: 24 flavor profiles with US and Middle East artwork directions. Nicotine configuration, VG/PG balance and packaging are project dependent.",
+  },
 };
 
 const ProductPage = () => {

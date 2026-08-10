@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { eliquidMarkup, initEliquid } from "./eliquidSection";
+import { ELIQUID_FLAVORS } from "./eliquidData";
 // Adapted from the supplied Lusmind static site scripts.
 // The `document` / `window` bindings below are scoped proxies that record
 // listener registrations so the SPA can fully clean up on route changes.
@@ -426,6 +428,25 @@ export function initProduct(productId: string): () => void {
         lead: "30–45 days",
         customization: "Flavor + UI + full-face art"
       },
+      next: "e-liquid"
+    },
+    "e-liquid": {
+      index: "06",
+      name: "E-Liquid",
+      family: "Flavor platform",
+      headline: "Twenty-four flavors. One formulation discipline.",
+      lede: "A market-adaptive e-liquid range for distributors and private-label partners, with nicotine configuration, VG/PG balance, bottle format and artwork defined per program.",
+      accent: "#c7ff19",
+      accentRgb: "199, 255, 25",
+      layout: "left",
+      campaign: "/assets/eliquid/hero.webp",
+      campaignAlt: "Lusmind e-liquid bottle range presented as a still-life composition",
+      trade: {
+        moq: "On inquiry",
+        samples: "On inquiry",
+        lead: "Project dependent",
+        customization: "Flavor + formulation + pack"
+      },
       next: "royal-slim"
     }
   };
@@ -437,7 +458,8 @@ export function initProduct(productId: string): () => void {
     "fusion-one": "/products/fusion-one",
     "arc-pod-s": "/products/arc-pod-s",
     "core-20": "/products/core-20",
-    "ai-pulse": "/products/ai-pulse"
+    "ai-pulse": "/products/ai-pulse",
+    "e-liquid": "/products/e-liquid"
   };
 
 
@@ -497,6 +519,7 @@ export function initProduct(productId: string): () => void {
 
   const currentId = productId;
   const isSeries = currentId === "royal-heat";
+  const isEliquid = currentId === "e-liquid";
   const product = isSeries ? SERIES : PRODUCTS[currentId];
 
   if (!product) {
@@ -667,7 +690,7 @@ export function initProduct(productId: string): () => void {
     </a>
   `;
 
-  productMain.innerHTML = isSeries ? seriesMarkup() : `
+  productMain.innerHTML = isEliquid ? eliquidMarkup(inquiryHref) : isSeries ? seriesMarkup() : `
     <section class="product-hero product-hero--${product.layout}" id="overview" aria-labelledby="product-title">
       <img class="product-hero__media" src="${product.campaign}" alt="${product.campaignAlt}" fetchpriority="high" decoding="async" style="object-position:${product.campaignPosition || "center"}" data-parallax />
       <div class="product-hero__shade" aria-hidden="true"></div>
@@ -789,6 +812,10 @@ export function initProduct(productId: string): () => void {
       </div>
     </a>
   `;
+
+  const disposeEliquid = isEliquid ? initEliquid(document, window) : null;
+
+
 
   document.querySelectorAll(`[data-product-link="${currentId}"]`).forEach((link) => {
     link.setAttribute("aria-current", "page");
@@ -967,7 +994,28 @@ export function initProduct(productId: string): () => void {
 
 
 
-  const schema: any = isSeries ? {
+  const schema: any = isEliquid ? {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Lusmind E-Liquid range",
+    description: product.lede,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: ELIQUID_FLAVORS.length,
+      itemListElement: ELIQUID_FLAVORS.map((flavor, position) => ({
+        "@type": "ListItem",
+        position: position + 1,
+        item: {
+          "@type": "Product",
+          name: `Lusmind ${flavor.name} E-Liquid`,
+          category: "E-liquid",
+          description: `Flavor notes: ${flavor.notes.join(", ")}. Nicotine configuration and formulation are market dependent.`,
+          image: new URL(`/assets/eliquid/us/${flavor.slug}.webp`, window.location.href).href,
+          brand: { "@type": "Brand", name: "Lusmind" }
+        }
+      }))
+    }
+  } : isSeries ? {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Lusmind Royal Heat series",
@@ -1007,6 +1055,7 @@ export function initProduct(productId: string): () => void {
   document.querySelector("[data-year]").textContent = String(new Date().getFullYear());
 
   return () => {
+    disposeEliquid?.();
     scope.dispose();
     railObserver?.disconnect();
     if (parallaxFrame) window.cancelAnimationFrame(parallaxFrame);
