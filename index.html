@@ -22,7 +22,7 @@
       // above-the-fold image the current route actually needs.
       (function () {
         var path = location.pathname;
-        var isProduct = /^\/products\//.test(path);
+        var isProduct = /^\/products\//.test(path) || /^\/e-liquid\/?$/.test(path);
         var sheet = isProduct ? "/product-detail.css" : "/styles.css";
         var link = document.createElement("link");
         link.rel = "stylesheet";
@@ -38,7 +38,8 @@
           "/products/arc-pod-s": "/assets/campaign/arc-pod-s-hero.webp",
           "/products/core-20": "/assets/campaign/core-20-hero.webp",
           "/products/ai-pulse": "/assets/campaign/ai-pulse-hero.webp",
-          "/products/e-liquid": "/assets/eliquid/hero.webp"
+          "/products/e-liquid": "/assets/eliquid/hero.webp",
+          "/e-liquid": "/assets/eliquid/hero.webp"
         };
         var hero = isProduct ? HERO[path.replace(/\/$/, "")] : "/assets/campaign/age-life-1.webp";
         if (hero) {
