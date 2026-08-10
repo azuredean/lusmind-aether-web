@@ -260,8 +260,9 @@ def build_us(me_assets, us_orig_dir):
         out = tgt.copy()
         out[..., :3] = tgt[..., :3] * (1 - blend) + layer[..., :3] * blend
         # alpha: union of the original body and the registered cap assembly
-        out[..., 3] = np.maximum(tgt[..., 3] * (1 - m) + np.maximum(tgt[..., 3], layer[..., 3]) * m,
-                                 layer[..., 3] * m[:, None])
+        mc = m[:, None]
+        out[..., 3] = np.maximum(tgt[..., 3] * (1 - mc) + np.maximum(tgt[..., 3], layer[..., 3]) * mc,
+                                 layer[..., 3] * mc)
         out = np.clip(out, 0, 255)
 
         # kill any residual of the OLD cap that pokes outside the new one
