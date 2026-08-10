@@ -1360,6 +1360,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
   mix-blend-mode: normal;
 }
 
+.product-stage__variants[hidden] {
+  display: none !important;
+}
+
 .product-stage__variants {
   position: absolute;
   z-index: 5;
