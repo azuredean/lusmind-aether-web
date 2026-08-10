@@ -90,12 +90,12 @@ export const homeMarkup = String.raw`
           <div class="hero__glow" aria-hidden="true"></div>
           <a class="hero__media" href="/products/ai-pulse" aria-label="Discover the AI Pulse product page">
             <div class="hero__slideshow">
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-1.webp" alt="Lusmind pod device shared at a Paris terrace" width="1400" height="1750" fetchpriority="high" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-2.webp" alt="Lusmind smart disposable by a coastal pool" width="1400" height="1750" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-3.webp" alt="Lusmind pod device on a mountain drive" width="1400" height="1750" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-4.webp" alt="Lusmind device on a forest trail" width="1400" height="1750" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-5.webp" alt="Lusmind heat-not-burn device at a work desk" width="1400" height="1750" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-6.webp" alt="Lusmind product held at an evening dinner" width="1400" height="1750" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-1.webp" alt="Lusmind Arc Pod S leather edition at a Paris riverside cafe" width="1600" height="900" fetchpriority="high" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-2.webp" alt="Lusmind AI Pulse smart disposable held on a Mediterranean beach" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-3.webp" alt="Lusmind Arc Pod S metal edition on a coastal mountain drive" width="1600" height="898" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-4.webp" alt="Lusmind Fusion One carried on an alpine forest trail" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-5.webp" alt="Lusmind Core 20 heat device on a night-time city desk" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-6.webp" alt="Lusmind Royal Heat held at an evening terrace dinner" width="1600" height="900" loading="lazy" decoding="async" />
             </div>
             <span class="hero__scan"></span>
             <div class="hero__media-label">
