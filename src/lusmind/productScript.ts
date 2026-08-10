@@ -813,6 +813,10 @@ export function initProduct(productId: string): () => void {
     </a>
   `;
 
+  const disposeEliquid = isEliquid ? initEliquid(document, window) : null;
+
+
+
   document.querySelectorAll(`[data-product-link="${currentId}"]`).forEach((link) => {
     link.setAttribute("aria-current", "page");
   });
