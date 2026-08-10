@@ -255,7 +255,7 @@ def build_us(me_assets, us_orig_dir):
         seam = tlm["seam"]
         feather = max(10.0, (tlm["bottom"] - seam) * 0.035)      # 10-14 px
         m = np.clip((seam + feather * 0.6 - yy) / feather, 0, 1)
-        blend = m[:, None] * (layer[..., 3:4] / 255.0)
+        blend = m[:, None, None] * (layer[..., 3:4] / 255.0)
 
         out = tgt.copy()
         out[..., :3] = tgt[..., :3] * (1 - blend) + layer[..., :3] * blend
