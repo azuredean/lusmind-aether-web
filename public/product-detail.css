@@ -2172,3 +2172,38 @@ img {
     transform: none;
   }
 }
+
+@media (max-width: 420px) {
+  .elq-market {
+    gap: 18px;
+  }
+
+  .elq-market__switch {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .elq-market__button {
+    display: flex;
+    min-width: 0;
+    justify-content: center;
+    align-items: baseline;
+    gap: 7px;
+    padding: 11px 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .elq-market__button b {
+    font-size: 0.7rem;
+  }
+
+  .elq-market__button span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
