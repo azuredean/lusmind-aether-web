@@ -167,6 +167,25 @@ export function initHome(): () => void {
         ["Coil", "Dual mesh"],
         ["Power", "14–22 W"]
       ]
+    },
+    eliquid: {
+      url: "/products/e-liquid",
+      code: "LIQ / 06",
+      category: "Flavor platform",
+      kicker: "Market-adaptive e-liquid range",
+      name: "E-Liquid",
+      statement: "A 24-flavor library developed as a market-adaptive platform, with nicotine configuration, VG/PG balance, bottle format and artwork defined per program.",
+      moq: "On inquiry",
+      image: "/assets/eliquid/range.webp",
+      alt: "Lusmind e-liquid bottle range",
+      position: "center",
+      tone: "dark",
+      specs: [
+        ["Flavors", "24 profiles"],
+        ["Nicotine", "On inquiry"],
+        ["VG / PG", "Project dependent"],
+        ["Artwork", "US / ME"]
+      ]
     }
   };
 
