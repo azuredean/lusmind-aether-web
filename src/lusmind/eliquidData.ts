@@ -1,5 +1,17 @@
-// Lusmind e-liquid range data. Imagery recovered from the original
-// e-liquid category and re-encoded to WebP under /assets/eliquid/.
+// Lusmind e-liquid range data. Imagery is stored as transparent WebP under
+// /assets/eliquid/<market>/<slug>.webp.
+//
+// Middle East artwork source: the 2752x1536 ME design sheet (24 bottles, two
+// rows of twelve). Each bottle was cut by silhouette and mapped to an existing
+// slug by label/colour cue. Sheet order (row-major, left to right):
+//   Row 1: melon-yogurt-ice, strawberry-cake, watermelon-strawberry, watermelon-ice,
+//          double-apple-shisha, pineapple-coconut-ice, cool-yuzu-cedar, niagara-grape,
+//          green-coconut, green-apple, cool-peppermint, monster-drink
+//   Row 2: coffee-tobacco, tobacco-nut, orange-soda, caramel-custard,
+//          cinnamon-apple-pie, banana-nut, peach-ice, kiwi-passionfruit,
+//          mango-ice, arctic-sweet-ice, blueberry-raspberry, creamy-rainbow-candy
+// US artwork keeps its original label/body design; only the cap was replaced
+// with the smoked flat-top ribbed cap geometry from the same ME sheet.
 export type EliquidFlavor = {
   slug: string;
   name: string;
