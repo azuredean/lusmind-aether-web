@@ -994,7 +994,28 @@ export function initProduct(productId: string): () => void {
 
 
 
-  const schema: any = isSeries ? {
+  const schema: any = isEliquid ? {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Lusmind E-Liquid range",
+    description: product.lede,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: ELIQUID_FLAVORS.length,
+      itemListElement: ELIQUID_FLAVORS.map((flavor, position) => ({
+        "@type": "ListItem",
+        position: position + 1,
+        item: {
+          "@type": "Product",
+          name: `Lusmind ${flavor.name} E-Liquid`,
+          category: "E-liquid",
+          description: `Flavor notes: ${flavor.notes.join(", ")}. Nicotine configuration and formulation are market dependent.`,
+          image: new URL(`/assets/eliquid/us/${flavor.slug}.webp`, window.location.href).href,
+          brand: { "@type": "Brand", name: "Lusmind" }
+        }
+      }))
+    }
+  } : isSeries ? {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Lusmind Royal Heat series",
@@ -1034,6 +1055,7 @@ export function initProduct(productId: string): () => void {
   document.querySelector("[data-year]").textContent = String(new Date().getFullYear());
 
   return () => {
+    disposeEliquid?.();
     scope.dispose();
     railObserver?.disconnect();
     if (parallaxFrame) window.cancelAnimationFrame(parallaxFrame);
