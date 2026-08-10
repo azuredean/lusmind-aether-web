@@ -10,10 +10,15 @@
 //   Row 2: coffee-tobacco, tobacco-nut, orange-soda, caramel-custard,
 //          cinnamon-apple-pie, banana-nut, peach-ice, kiwi-passionfruit,
 //          mango-ice, arctic-sweet-ice, blueberry-raspberry, creamy-rainbow-candy
-// US artwork keeps its original label/body design; only the cap/neck/collar
-// assembly was replaced with a registered flat-top ribbed cap master.
+// US artwork keeps its original label/body design, but every US bottle is now
+// built on ONE standardized physical bottle template: a single master supplies
+// the smoked flat cap, neck, collar, shoulder, black-glass silhouette and the
+// alpha channel (pixel-identical across all 24), and only the original lower
+// body / label artwork is registered into it, blended 40px below the collar
+// inside the uniform black-glass header region.
 // Both markets are regenerated deterministically by
 // scripts/rebuild-eliquid-assets.py (see the docstring in that file).
+
 export type EliquidFlavor = {
   slug: string;
   name: string;
