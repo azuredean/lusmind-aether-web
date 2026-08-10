@@ -16,8 +16,8 @@ const MARKETS: Record<string, { label: string; short: string; note: string }> = 
   },
 };
 
-const cardMarkup = (flavor: (typeof ELIQUID_FLAVORS)[number], market: string, index: number) => `
-  <article class="elq-card reveal" data-flavor="${flavor.slug}" style="--stagger:${Math.min(index, 7) * 45}ms">
+const cardMarkup = (flavor: (typeof ELIQUID_FLAVORS)[number], market: string, index: number, extra = false) => `
+  <article class="elq-card reveal"${extra ? " data-flavor-extra" : ""} data-flavor="${flavor.slug}" style="--stagger:${Math.min(index, 7) * 45}ms">
     <div class="elq-card__media">
       <img
         src="${eliquidImage(flavor.slug, market as "us" | "me")}"
