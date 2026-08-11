@@ -554,7 +554,7 @@ export const homeMarkup = String.raw`
           <article><span>02</span><h3><a href="/products/fusion-one">Fusion One ↗</a></h3><p>Hybrid device</p><dl><div><dt>Battery</dt><dd>300 mAh</dd></div><div><dt>Pod</dt><dd>2 mL</dd></div><div><dt>Coil</dt><dd>0.8 / 1.2 Ω</dd></div></dl></article>
           <article><span>03</span><h3><a href="/products/arc-pod-s">Arc Pod S ↗</a></h3><p>Refillable pod</p><dl><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Power</dt><dd>14 W</dd></div></dl></article>
           <article><span>04</span><h3><a href="/products/core-20">Core 20 ↗</a></h3><p>Heat-not-burn</p><dl><div><dt>Sessions</dt><dd>Up to 20</dd></div><div><dt>Preheat</dt><dd>20 sec</dd></div><div><dt>MOQ</dt><dd>800 / color</dd></div></dl></article>
-          <article><span>05</span><h3><a href="/products/ai-pulse">AI Pulse ↗</a></h3><p>AI disposable</p><dl><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>Power</dt><dd>14–22 W</dd></div></dl></article>
+          <article><span>05</span><h3><a href="/products/ai-pulse">AI Pulse ↗</a></h3><p>AI disposable</p><dl><div><dt>E-liquid</dt><dd>30 mL</dd></div><div><dt>Battery</dt><dd>850 mAh</dd></div><div><dt>Power</dt><dd>25 W</dd></div></dl></article>
           <article><span>06</span><h3><a href="/products/e-liquid">E-Liquid ↗</a></h3><p>Flavor platform</p><dl><div><dt>Flavors</dt><dd>24 profiles</dd></div><div><dt>Nicotine</dt><dd>On inquiry</dd></div><div><dt>Artwork</dt><dd>US / ME</dd></div></dl></article>
         </div>
         <p class="data-note">All specifications are provisional concept data pending final engineering, testing and commercial confirmation.</p>
