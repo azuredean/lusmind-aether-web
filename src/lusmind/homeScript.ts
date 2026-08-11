@@ -162,10 +162,10 @@ export function initHome(): () => void {
       position: "center",
       tone: "light",
       specs: [
-        ["E-liquid", "2 mL + 10 mL"],
-        ["Battery", "600 mAh"],
+        ["E-liquid", "30 mL"],
+        ["Battery", "850 mAh"],
         ["Coil", "Dual mesh"],
-        ["Power", "14–22 W"]
+        ["Power", "25 W"]
       ]
     },
     eliquid: {

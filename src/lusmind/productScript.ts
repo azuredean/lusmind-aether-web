@@ -381,10 +381,10 @@ export function initProduct(productId: string): () => void {
       boardAlt: "AI Pulse product board showing three graphic treatments and digital status interface",
       boardPosition: "center",
       facts: [
-        ["E-liquid", "2 mL + 10 mL", "Pod + refill reservoir"],
-        ["Battery", "600 mAh", "USB-C rechargeable"],
+        ["E-liquid", "30 mL", "Pre-filled reservoir"],
+        ["Battery", "850 mAh", "USB-C rechargeable"],
         ["Coil type", "Dual mesh", "Balanced flavor delivery"],
-        ["Power", "14–22 W", "Eco / Boost range"]
+        ["Power", "25 W", "Maximum output"]
       ],
       intro: {
         eyebrow: "Interface system / 01",
@@ -399,11 +399,11 @@ export function initProduct(productId: string): () => void {
       ],
       specs: [
         ["Product class", "Rechargeable disposable"],
-        ["E-liquid capacity", "2 mL + 10 mL"],
-        ["Battery", "600 mAh rechargeable"],
+        ["E-liquid capacity", "30 mL"],
+        ["Battery", "850 mAh rechargeable"],
         ["Nicotine strength", "2% / 5%"],
         ["Coil type", "Dual mesh"],
-        ["Power", "14–22 W (Eco / Boost)"]
+        ["Power", "25 W maximum"]
       ],
       context: {
         eyebrow: "Channel context / 02",
