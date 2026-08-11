@@ -99,7 +99,15 @@ export function eliquidMarkup(inquiryHref: string): string {
         </header>
         <div class="breakdown">
           <figure class="breakdown__visual reveal">
-            <img src="/assets/eliquid/range.webp" alt="Lusmind e-liquid bottles arranged as a range overview" loading="lazy" decoding="async" />
+            <img
+              src="/assets/eliquid/formulation-1600.webp"
+              srcset="/assets/eliquid/formulation-960.webp 960w, /assets/eliquid/formulation-1600.webp 1600w, /assets/eliquid/formulation-2400.webp 2400w"
+              sizes="(max-width: 1080px) 100vw, 54vw"
+              width="2400"
+              height="1600"
+              alt="Lusmind e-liquid formulation platform presented on a controlled black-glass lab stage"
+              loading="lazy"
+              decoding="async" />
             <span class="visual-callout">Ingredient control</span>
             <span class="visual-callout">Batch documentation</span>
             <span class="visual-callout">Market artwork</span>
