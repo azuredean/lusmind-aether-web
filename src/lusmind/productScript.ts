@@ -317,10 +317,10 @@ export function initProduct(productId: string): () => void {
       boardAlt: "Core 20 product board showing four finishes, display and internal heating architecture",
       boardPosition: "center",
       facts: [
-        ["Battery", "1,200 mAh", "Draft development target"],
-        ["Heat range", "200–320°C", "Configurable control window"],
-        ["Display", "Dual status", "Temperature + battery"],
-        ["Charging", "USB-C", "Bottom-mounted port"]
+        ["Battery", "1,300 mAh", "USB-C rechargeable"],
+        ["Support", "16–20 sticks", "Per full charge"],
+        ["Smoking time", "190 s", "Per session"],
+        ["Charging time", "90 min", "Full charge"]
       ],
       intro: {
         eyebrow: "Control system / 01",
@@ -335,10 +335,12 @@ export function initProduct(productId: string): () => void {
       ],
       specs: [
         ["Product class", "Heat-stick device"],
-        ["Battery target", "1,200 mAh rechargeable"],
-        ["Temperature target", "200–320°C adjustable"],
-        ["Session time", "Up to 300 seconds"],
-        ["Charging", "USB-C"],
+        ["Battery", "1,300 mAh rechargeable"],
+        ["Support", "16–20 sticks"],
+        ["Smoking time", "190 seconds"],
+        ["Product size", "99.9 × 30.2 × 20 mm"],
+        ["Net weight", "65 g"],
+        ["Charging time", "90 minutes"],
         ["Interface", "Button + status display"]
       ],
       context: {
