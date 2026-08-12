@@ -35,7 +35,7 @@ const PRODUCT_META: Record<string, { title: string; description: string }> = {
   "core-20": {
     title: "Core 20 — Heat-Not-Burn Platform | Lusmind",
     description:
-      "Core 20: a compact heat-stick platform with a status display, one-button operation and a configurable temperature window. Provisional specification.",
+      "Core 20: a compact heat-stick platform with a 1,300 mAh battery, 16–20 sticks per charge, 190 s sessions and 90 min charging, with a status display and one-button operation.",
   },
   "ai-pulse": {
     title: "AI Pulse — Smart Disposable Platform | Lusmind",
