@@ -98,7 +98,7 @@ export function initProduct(productId: string): () => void {
         ["Ivory", "#e9e2d4", "Pack"]
       ],
       trade: {
-        moq: "50 cartons / SKU",
+        moq: "5,000 units",
         samples: "12–18 days",
         lead: "30–40 days",
         customization: "Liquid + full pack system"
@@ -163,7 +163,7 @@ export function initProduct(productId: string): () => void {
         ["Carbon", "#161817", "Body"]
       ],
       trade: {
-        moq: "50 cartons / SKU",
+        moq: "5,000 units",
         samples: "12–18 days",
         lead: "30–40 days",
         customization: "Liquid + full pack system"
@@ -229,7 +229,7 @@ export function initProduct(productId: string): () => void {
         ["Signal Lime", "#c7ff19", "Detail"]
       ],
       trade: {
-        moq: "1,000 devices / color",
+        moq: "5,000 units",
         samples: "18–25 days",
         lead: "35–45 days",
         customization: "Finish + interface + pack"
@@ -295,7 +295,7 @@ export function initProduct(productId: string): () => void {
         ["Night Blue", "#243c5c", "Metal / wrap"]
       ],
       trade: {
-        moq: "1,000 devices / finish",
+        moq: "5,000 units",
         samples: "15–22 days",
         lead: "30–40 days",
         customization: "CMF + pod + packaging"
@@ -361,7 +361,7 @@ export function initProduct(productId: string): () => void {
         ["Night Blue", "#263451", "Tactile"]
       ],
       trade: {
-        moq: "800 devices / color",
+        moq: "5,000 units",
         samples: "20–28 days",
         lead: "40–50 days",
         customization: "UI + temperature + CMF"
@@ -425,7 +425,7 @@ export function initProduct(productId: string): () => void {
         ["Gloss Black", "#090b0d", "Chassis"]
       ],
       trade: {
-        moq: "3,000 devices / SKU",
+        moq: "5,000 units",
         samples: "18–25 days",
         lead: "30–45 days",
         customization: "Flavor + UI + full-face art"
@@ -444,7 +444,7 @@ export function initProduct(productId: string): () => void {
       campaign: "/assets/eliquid/hero.webp",
       campaignAlt: "Lusmind e-liquid bottle range presented as a still-life composition",
       trade: {
-        moq: "On inquiry",
+        moq: "5,000 units",
         samples: "On inquiry",
         lead: "Project dependent",
         customization: "Flavor + formulation + pack"
@@ -477,7 +477,7 @@ export function initProduct(productId: string): () => void {
     campaign: "/assets/campaign/royal-heat-hero.webp",
     campaignAlt: "Lusmind Royal Heat series presented in a black and champagne setting",
     trade: {
-      moq: "50 cartons / SKU",
+      moq: "5,000 units",
       samples: "12–18 days",
       lead: "30–40 days",
       customization: "Liquid + full pack system"

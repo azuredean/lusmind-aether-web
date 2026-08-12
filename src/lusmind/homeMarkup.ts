@@ -118,7 +118,7 @@ export const homeMarkup = String.raw`
 
             <div class="hero__rail" aria-label="Portfolio summary">
               <div><span>Platforms</span><strong>05</strong></div>
-              <div><span>Wholesale MOQ</span><strong>800+</strong></div>
+              <div><span>Wholesale MOQ</span><strong>5,000+</strong></div>
               <div><span>Customization</span><strong>OEM / ODM</strong></div>
               <div><span>Launch support</span><strong>End to end</strong></div>
             </div>
@@ -252,7 +252,7 @@ export const homeMarkup = String.raw`
                   <div class="product-specs" data-product-specs></div>
                   <div class="product-commercial">
                     <span>Indicative MOQ</span>
-                    <strong data-product-moq>3,000 units / SKU</strong>
+                    <strong data-product-moq>5,000 units</strong>
                   </div>
                   <div class="product-detail__actions">
                     <a class="button button--line" href="/products/ai-pulse" data-product-page-link>View full product <span aria-hidden="true">↗</span></a>
@@ -385,13 +385,13 @@ export const homeMarkup = String.raw`
                 <div class="commercial-row commercial-row--head" role="row">
                   <span role="columnheader">Platform</span><span role="columnheader">Standard MOQ</span><span role="columnheader">Customization</span><span role="columnheader">Indicative lead</span>
                 </div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/royal-slim">Royal Slim ↗</a></strong><span role="cell">50 cartons / SKU</span><span role="cell">Liquid · pack · finish</span><span role="cell">30–40 days</span></div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/royal-classic">Royal Classic ↗</a></strong><span role="cell">50 cartons / SKU</span><span role="cell">Liquid · pack · finish</span><span role="cell">30–40 days</span></div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/fusion-one">Fusion One ↗</a></strong><span role="cell">1,000 units / color</span><span role="cell">CMF · logo · pack</span><span role="cell">35–45 days</span></div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/arc-pod-s">Arc Pod S ↗</a></strong><span role="cell">1,000 units / finish</span><span role="cell">Shell · wrap · coil</span><span role="cell">30–40 days</span></div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/core-20">Core 20 ↗</a></strong><span role="cell">800 units / color</span><span role="cell">CMF · UI · pack</span><span role="cell">40–50 days</span></div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/ai-pulse">AI Pulse ↗</a></strong><span role="cell">3,000 units / SKU</span><span role="cell">Flavor · UI · artwork</span><span role="cell">30–45 days</span></div>
-                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/e-liquid">E-Liquid ↗</a></strong><span role="cell">On inquiry</span><span role="cell">Flavor · formulation · pack</span><span role="cell">Project dependent</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/royal-slim">Royal Slim ↗</a></strong><span role="cell">5,000 units</span><span role="cell">Liquid · pack · finish</span><span role="cell">30–40 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/royal-classic">Royal Classic ↗</a></strong><span role="cell">5,000 units</span><span role="cell">Liquid · pack · finish</span><span role="cell">30–40 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/fusion-one">Fusion One ↗</a></strong><span role="cell">5,000 units</span><span role="cell">CMF · logo · pack</span><span role="cell">35–45 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/arc-pod-s">Arc Pod S ↗</a></strong><span role="cell">5,000 units</span><span role="cell">Shell · wrap · coil</span><span role="cell">30–40 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/core-20">Core 20 ↗</a></strong><span role="cell">5,000 units</span><span role="cell">CMF · UI · pack</span><span role="cell">40–50 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/ai-pulse">AI Pulse ↗</a></strong><span role="cell">5,000 units</span><span role="cell">Flavor · UI · artwork</span><span role="cell">30–45 days</span></div>
+                <div class="commercial-row" role="row"><strong role="cell"><a href="/products/e-liquid">E-Liquid ↗</a></strong><span role="cell">5,000 units</span><span role="cell">Flavor · formulation · pack</span><span role="cell">Project dependent</span></div>
               </div>
               <p class="data-note data-note--dark">Terms are non-binding estimates for planning only. Final MOQ, lead time, specifications and available customization depend on configuration, market and compliance requirements.</p>
             </div>
@@ -522,7 +522,7 @@ export const homeMarkup = String.raw`
                   <label>Estimated quantity
                     <select name="quantity" required>
                       <option value="">Select a range</option>
-                      <option>800–2,999 units</option><option>3,000–9,999 units</option><option>10,000–49,999 units</option><option>50,000+ units</option><option>Carton program</option>
+                      <option>5,000–9,999 units</option><option>10,000–49,999 units</option><option>50,000+ units</option><option>Carton program</option>
                     </select>
                   </label>
                 </div>
@@ -572,7 +572,7 @@ export const homeMarkup = String.raw`
           <article><span>01B</span><h3><a href="/products/royal-classic">Royal Classic ↗</a></h3><p>Cigarette format</p><dl><div><dt>E-liquid</dt><dd>1.8 mL</dd></div><div><dt>Battery</dt><dd>200 mAh</dd></div><div><dt>Coil</dt><dd>1.0 / 1.5 Ω</dd></div></dl></article>
           <article><span>02</span><h3><a href="/products/fusion-one">Fusion One ↗</a></h3><p>Hybrid device</p><dl><div><dt>Battery</dt><dd>300 mAh</dd></div><div><dt>Pod</dt><dd>2 mL</dd></div><div><dt>Coil</dt><dd>0.8 / 1.2 Ω</dd></div></dl></article>
           <article><span>03</span><h3><a href="/products/arc-pod-s">Arc Pod S ↗</a></h3><p>Refillable pod</p><dl><div><dt>Battery</dt><dd>600 mAh</dd></div><div><dt>E-liquid</dt><dd>2 mL + 10 mL</dd></div><div><dt>Power</dt><dd>14 W</dd></div></dl></article>
-          <article><span>04</span><h3><a href="/products/core-20">Core 20 ↗</a></h3><p>Heat-not-burn</p><dl><div><dt>Sessions</dt><dd>Up to 20</dd></div><div><dt>Preheat</dt><dd>20 sec</dd></div><div><dt>MOQ</dt><dd>800 / color</dd></div></dl></article>
+          <article><span>04</span><h3><a href="/products/core-20">Core 20 ↗</a></h3><p>Heat-not-burn</p><dl><div><dt>Sessions</dt><dd>Up to 20</dd></div><div><dt>Preheat</dt><dd>20 sec</dd></div><div><dt>MOQ</dt><dd>5,000 units</dd></div></dl></article>
           <article><span>05</span><h3><a href="/products/ai-pulse">AI Pulse ↗</a></h3><p>AI disposable</p><dl><div><dt>E-liquid</dt><dd>30 mL</dd></div><div><dt>Battery</dt><dd>850 mAh</dd></div><div><dt>Power</dt><dd>25 W</dd></div></dl></article>
           <article><span>06</span><h3><a href="/products/e-liquid">E-Liquid ↗</a></h3><p>Flavor platform</p><dl><div><dt>Flavors</dt><dd>24 profiles</dd></div><div><dt>Nicotine</dt><dd>On inquiry</dd></div><div><dt>Artwork</dt><dd>US / ME</dd></div></dl></article>
         </div>

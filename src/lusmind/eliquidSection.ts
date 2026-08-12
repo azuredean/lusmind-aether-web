@@ -215,7 +215,7 @@ export function eliquidMarkup(inquiryHref: string): string {
         </div>
         <aside class="trade-panel reveal" aria-label="Indicative commercial terms">
           <div class="trade-terms">
-            <div class="trade-term"><span>Opening MOQ</span><strong>On inquiry</strong></div>
+            <div class="trade-term"><span>Opening MOQ</span><strong>5,000 units</strong></div>
             <div class="trade-term"><span>Sample target</span><strong>On inquiry</strong></div>
             <div class="trade-term"><span>Production target</span><strong>Project dependent</strong></div>
             <div class="trade-term"><span>Program scope</span><strong>Flavor + formulation + pack</strong></div>
