@@ -524,9 +524,10 @@ img {
 
 .product-hero__copy h1 span {
   display: block;
+  margin-top: 1.15em;
   color: var(--accent);
   font-size: 0.22em;
-  line-height: 1.4;
+  line-height: 1.45;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
