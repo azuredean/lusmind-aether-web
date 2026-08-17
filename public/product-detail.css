@@ -524,9 +524,10 @@ img {
 
 .product-hero__copy h1 span {
   display: block;
+  margin-top: 1.15em;
   color: var(--accent);
   font-size: 0.22em;
-  line-height: 1.4;
+  line-height: 1.45;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -2291,5 +2292,40 @@ img {
       rgba(3, 5, 4, 0.95) 80%,
       #050706 100%
     );
+  }
+}
+
+/* ==========================================================================
+   Hero typography collision repairs (title descenders vs. sub-title)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .product-hero__copy h1 {
+    line-height: 0.88;
+  }
+
+  .product-hero__copy h1 span {
+    margin-top: 1.35em;
+  }
+
+  /* Deeper mid-scrim so the lede stays readable over bright packaging */
+  .product-hero__shade,
+  .product-hero--right .product-hero__shade {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 5, 4, 0.44) 0%,
+      rgba(3, 5, 4, 0.3) 24%,
+      rgba(3, 5, 4, 0.62) 46%,
+      rgba(3, 5, 4, 0.86) 66%,
+      rgba(3, 5, 4, 0.96) 84%,
+      #050706 100%
+    );
+  }
+}
+
+@media (max-width: 620px) {
+  .product-hero__copy h1 span {
+    margin-top: 1.5em;
+    font-size: 0.2em;
   }
 }
