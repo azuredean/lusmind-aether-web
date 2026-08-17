@@ -3983,3 +3983,50 @@ body.is-locked:not(.is-menu-open) .site-shell {
 @media(max-width:70rem){.mystery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:51.25rem){.mystery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:47.5rem){.mystery-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(82vw,25rem);gap:.75rem;border:0;background:transparent}.mystery-card{border:0}}
+
+/* ==========================================================================
+   Mobile layout repairs
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  /* Platform selector: single-row horizontal snap rail (7 items no longer wrap) */
+  .product-selector {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(132px, 1fr);
+    scroll-snap-type: inline proximity;
+    overscroll-behavior-inline: contain;
+  }
+
+  .product-selector > a {
+    min-width: 132px;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 620px) {
+  /* Bento grid falls back to block flow; anchors must become block-level or
+     they collapse to ~2px wide and stack on top of each other. */
+  .bento-grid > .bento {
+    display: block;
+    width: 100%;
+  }
+
+  .bento--hero .bento__content,
+  .bento--royal .bento__content {
+    position: relative;
+  }
+
+  .technology__intro,
+  .technology__intro > p {
+    min-width: 0;
+  }
+
+  .product-selector {
+    grid-auto-columns: minmax(124px, 68vw);
+  }
+
+  .product-selector > a {
+    min-width: 124px;
+  }
+}
