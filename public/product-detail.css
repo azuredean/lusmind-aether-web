@@ -1132,6 +1132,7 @@ img {
 
 .site-footer img {
   width: 128px;
+  height: auto;
 }
 
 .site-footer nav {

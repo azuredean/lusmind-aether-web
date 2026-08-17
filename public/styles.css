@@ -2531,6 +2531,11 @@ body.is-locked:not(.is-menu-open) .site-shell {
   width: min(280px, 100%);
 }
 
+.footer__brand img {
+  width: 100%;
+  height: auto;
+}
+
 .footer__top > p {
   margin: 0;
   color: #8c9389;
