@@ -2269,3 +2269,27 @@ img {
     text-overflow: ellipsis;
   }
 }
+
+/* ==========================================================================
+   Mobile layout repairs
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  /* Sticky rail must clear the fixed site header instead of hiding behind it */
+  .anchor-rail {
+    top: var(--header, 64px);
+  }
+
+  /* Stronger scrim so hero type stays legible over busy product photography */
+  .product-hero__shade,
+  .product-hero--right .product-hero__shade {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 5, 4, 0.42) 0%,
+      rgba(3, 5, 4, 0.26) 28%,
+      rgba(3, 5, 4, 0.72) 56%,
+      rgba(3, 5, 4, 0.95) 80%,
+      #050706 100%
+    );
+  }
+}
