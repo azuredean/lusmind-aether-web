@@ -2483,3 +2483,10 @@ img {
   .elq-packaging__visual img { transition: none; }
   .elq-packaging__visual:hover img { transform: none; }
 }
+
+/* Keep the desktop module within common laptop viewport heights. */
+.elq-packaging { padding-block: clamp(3.2rem, 6vh, 5.2rem); }
+.elq-packaging__visual--formats { height: clamp(460px, 58vh, 600px); aspect-ratio: auto; }
+@media (max-width: 900px) {
+  .elq-packaging__visual--formats { height: auto; aspect-ratio: 3 / 2; }
+}
