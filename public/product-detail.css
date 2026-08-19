@@ -2497,3 +2497,7 @@ img {
 @media (max-width: 900px) {
   .elq-packaging__visual--formats { height: auto; }
 }
+
+/* Final section chrome reduction; visual stage remains unchanged. */
+.elq-packaging { padding-block: clamp(2rem, 3.5vh, 3rem); }
+.elq-packaging .section-head { margin-bottom: clamp(1.6rem, 3vh, 2.5rem); }
