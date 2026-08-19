@@ -73,6 +73,7 @@ export function eliquidMarkup(inquiryHref: string): string {
       <div class="anchor-rail__inner page-width">
         <a href="#overview">Overview</a>
         <a href="#details">Formulation</a>
+        <a href="#bottle-architecture">Bottle formats</a>
         <a href="#flavors">Flavors</a>
         <a href="#customization">Customization</a>
         <a href="#trade">Trade</a>
@@ -136,11 +137,61 @@ export function eliquidMarkup(inquiryHref: string): string {
       </div>
     </section>
 
+    <section class="product-section product-section--dark elq-packaging" id="bottle-architecture" aria-labelledby="bottle-architecture-title">
+      <div class="page-width">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">Packaging architecture / 02</p>
+            <p class="section-head__copy">Select the bottle proportion that fits your channel, shelf system and artwork direction. Both formats retain the same restrained smoked-body language and are confirmed through physical sampling.</p>
+          </div>
+          <h2 id="bottle-architecture-title">Two bottle forms. One precise fill path.</h2>
+        </header>
+
+        <div class="elq-packaging__grid">
+          <figure class="elq-packaging__visual elq-packaging__visual--formats reveal">
+            <img
+              src="/assets/eliquid/bottle-architecture/bottle-formats-1600.webp"
+              srcset="/assets/eliquid/bottle-architecture/bottle-formats-960.webp 960w, /assets/eliquid/bottle-architecture/bottle-formats-1600.webp 1600w, /assets/eliquid/bottle-architecture/bottle-formats-2400.webp 2400w"
+              sizes="(max-width: 900px) 100vw, 68vw"
+              width="2400"
+              height="1600"
+              alt="Tall and compact smoked e-liquid bottle formats presented together"
+              loading="lazy"
+              decoding="async" />
+            <span class="elq-packaging__tag">Bottle format options / Partner configured</span>
+            <figcaption class="elq-packaging__formats-caption">
+              <div><span>01 / Tall</span><strong>Elongated bottle</strong><p>A slender proportion with an extended vertical canvas for range architecture and market artwork.</p></div>
+              <div><span>02 / Compact</span><strong>Compact bottle</strong><p>A shorter silhouette designed for a denser shelf presence and flexible secondary-pack planning.</p></div>
+            </figcaption>
+          </figure>
+
+          <figure class="elq-packaging__visual elq-packaging__visual--nozzle reveal reveal--delay-1">
+            <img
+              src="/assets/eliquid/bottle-architecture/fill-nozzle-1024.webp"
+              srcset="/assets/eliquid/bottle-architecture/fill-nozzle-640.webp 640w, /assets/eliquid/bottle-architecture/fill-nozzle-1024.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 32vw"
+              width="1024"
+              height="1536"
+              alt="Close-up of the e-liquid bottle neck and extended fill nozzle"
+              loading="lazy"
+              decoding="async" />
+            <figcaption class="elq-packaging__nozzle-caption">
+              <span>Detail / 03</span>
+              <strong>Extended fill nozzle</strong>
+              <p>The narrow application tube supports controlled transfer into compact filling ports. Final component fit is verified against the target device.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="data-note data-note--dark">Bottle volume, resin, closure, nozzle geometry and market labelling remain program-specific and are confirmed during packaging sampling.</p>
+      </div>
+    </section>
+
     <section class="product-section product-section--dark elq-section" id="flavors">
       <div class="page-width">
         <header class="section-head reveal">
           <div>
-            <p class="eyebrow">Flavor catalogue / 02</p>
+            <p class="eyebrow">Flavor catalogue / 03</p>
             <p class="section-head__copy">Artwork shown reflects the selected market direction. Availability of individual flavors is confirmed per market during registration review.</p>
           </div>
           <h2>Twenty-four profiles, two market directions.</h2>
@@ -174,7 +225,7 @@ export function eliquidMarkup(inquiryHref: string): string {
       <div class="page-width">
         <header class="section-head reveal">
           <div>
-            <p class="eyebrow">Private label / 03</p>
+            <p class="eyebrow">Private label / 04</p>
             <p class="section-head__copy">The range can be delivered as Lusmind-branded stock or developed as a dedicated program under a partner brand.</p>
           </div>
           <h2>Build a range that belongs to your market.</h2>
@@ -192,7 +243,7 @@ export function eliquidMarkup(inquiryHref: string): string {
       <div class="page-width">
         <div class="elq-compliance__layout">
           <div class="reveal">
-            <p class="eyebrow">Compliance / 04</p>
+            <p class="eyebrow">Compliance / 05</p>
             <h2>Availability is decided market by market.</h2>
             <p class="elq-compliance__copy">Nicotine-containing products are regulated differently in every destination. Flavor availability, permitted nicotine configuration, labelling and registration are reviewed before any program is confirmed. Lusmind supplies qualified adult-trade partners only.</p>
           </div>
@@ -209,7 +260,7 @@ export function eliquidMarkup(inquiryHref: string): string {
     <section class="trade-section" id="trade" aria-labelledby="trade-title">
       <div class="trade-layout page-width">
         <div class="trade-copy reveal">
-          <p class="eyebrow">Distributor program / 05</p>
+          <p class="eyebrow">Distributor program / 06</p>
           <h2 id="trade-title">Start with a market, not a shopping cart.</h2>
           <p>Share your destination market, the devices the liquid needs to run in and the shelf position you are targeting. Our commercial team will return with the relevant flavor shortlist and formulation path.</p>
         </div>
