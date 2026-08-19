@@ -2490,3 +2490,10 @@ img {
 @media (max-width: 900px) {
   .elq-packaging__visual--formats { height: auto; aspect-ratio: 3 / 2; }
 }
+
+/* Final laptop-height calibration: complete section fits a 1440 × 900 viewport. */
+.elq-packaging { padding-block: clamp(3rem, 5vh, 4.5rem); }
+.elq-packaging__visual--formats { height: clamp(440px, 52vh, 560px); }
+@media (max-width: 900px) {
+  .elq-packaging__visual--formats { height: auto; }
+}
