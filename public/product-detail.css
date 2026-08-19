@@ -2330,3 +2330,156 @@ img {
     font-size: 0.2em;
   }
 }
+/* E-Liquid / Bottle architecture — Codex source of truth */
+.elq-packaging {
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(circle at 84% 12%, rgba(68, 226, 255, .075), transparent 30rem),
+    radial-gradient(circle at 8% 82%, rgba(var(--accent-rgb), .075), transparent 26rem),
+    var(--ink);
+}
+
+.elq-packaging::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .15;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent 2%, #000 26%, #000 78%, transparent 98%);
+  content: "";
+}
+
+.elq-packaging > .page-width { position: relative; }
+
+.elq-packaging__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(300px, .58fr);
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.elq-packaging__visual {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #050706;
+}
+
+.elq-packaging__visual--formats { aspect-ratio: 3 / 2; }
+
+.elq-packaging__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .9s var(--ease), filter .6s var(--ease);
+}
+
+.elq-packaging__visual::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(3,5,4,.96) 0, rgba(3,5,4,.28) 36%, transparent 62%);
+  content: "";
+}
+
+.elq-packaging__visual:hover img { transform: scale(1.018); }
+
+.elq-packaging__tag {
+  position: absolute;
+  z-index: 2;
+  top: clamp(16px, 2vw, 28px);
+  left: clamp(16px, 2vw, 28px);
+  padding: 9px 12px;
+  border: 1px solid rgba(247,248,242,.2);
+  color: rgba(247,248,242,.72);
+  background: rgba(4,6,5,.58);
+  backdrop-filter: blur(10px);
+  font: 500 .62rem/1 var(--mono);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.elq-packaging__formats-caption,
+.elq-packaging__nozzle-caption {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: var(--white);
+}
+
+.elq-packaging__formats-caption {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.elq-packaging__formats-caption > div,
+.elq-packaging__nozzle-caption {
+  padding: clamp(18px, 2.2vw, 30px);
+  border-top: 1px solid rgba(247,248,242,.16);
+}
+
+.elq-packaging__formats-caption > div + div {
+  border-left: 1px solid rgba(247,248,242,.16);
+}
+
+.elq-packaging__formats-caption span,
+.elq-packaging__nozzle-caption span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--accent);
+  font: 500 .62rem/1 var(--mono);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.elq-packaging__formats-caption strong,
+.elq-packaging__nozzle-caption strong {
+  display: block;
+  font: 600 clamp(1rem, 1.5vw, 1.28rem)/1.08 var(--display);
+  letter-spacing: -.025em;
+}
+
+.elq-packaging__formats-caption p,
+.elq-packaging__nozzle-caption p {
+  max-width: 38ch;
+  margin: 10px 0 0;
+  color: rgba(247,248,242,.62);
+  font-size: clamp(.7rem, .85vw, .84rem);
+  line-height: 1.55;
+}
+
+.elq-packaging__visual--nozzle img { object-position: 50% 46%; }
+
+.elq-packaging .data-note { margin-top: clamp(22px, 3vw, 36px); }
+
+@media (max-width: 900px) {
+  .elq-packaging__grid { grid-template-columns: 1fr; }
+  .elq-packaging__visual--nozzle { aspect-ratio: 16 / 10; }
+  .elq-packaging__visual--nozzle img { object-position: 50% 43%; }
+  .elq-packaging__nozzle-caption { max-width: 58%; border-right: 1px solid rgba(247,248,242,.16); background: rgba(3,5,4,.58); backdrop-filter: blur(10px); }
+}
+
+@media (max-width: 620px) {
+  .elq-packaging__visual--formats { aspect-ratio: 4 / 5; }
+  .elq-packaging__visual--formats img { object-position: 61% 50%; }
+  .elq-packaging__formats-caption { grid-template-columns: 1fr; }
+  .elq-packaging__formats-caption > div { padding: 15px 16px; }
+  .elq-packaging__formats-caption > div + div { border-left: 0; }
+  .elq-packaging__formats-caption p { display: none; }
+  .elq-packaging__visual--nozzle { aspect-ratio: 4 / 5; }
+  .elq-packaging__nozzle-caption { max-width: none; border-right: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elq-packaging__visual img { transition: none; }
+  .elq-packaging__visual:hover img { transform: none; }
+}
