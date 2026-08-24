@@ -585,7 +585,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
   width: min(760px, 78vw);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 24px;
-  background: rgba(6, 9, 7, 0.96);
+  background: #060907;
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.46);
   opacity: 0;
   pointer-events: none;
@@ -4810,6 +4810,13 @@ body.is-locked:not(.is-menu-open) .site-shell {
 
   .flavor-proposition__system > div {
     grid-template-columns: 130px 1fr;
+  }
+
+  .site-header .product-dropdown {
+    position: fixed;
+    top: calc(var(--header-height) - 1px);
+    left: 50%;
+    width: min(900px, 92vw);
   }
 }
 
