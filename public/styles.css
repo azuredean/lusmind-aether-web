@@ -4811,6 +4811,13 @@ body.is-locked:not(.is-menu-open) .site-shell {
   .flavor-proposition__system > div {
     grid-template-columns: 130px 1fr;
   }
+
+  .site-header .product-dropdown {
+    position: fixed;
+    top: calc(var(--header-height) - 1px);
+    left: 50%;
+    width: min(900px, 92vw);
+  }
 }
 
 @media (min-width: 901px) and (max-height: 820px) {
