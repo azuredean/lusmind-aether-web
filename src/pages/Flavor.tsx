@@ -526,7 +526,7 @@ const Flavor = () => {
               alt="Transparent flavor streams carrying citrus, berry, botanical and tobacco notes"
               loading="eager"
               fetchPriority="high"
-              sizes="(max-width: 900px) 100vw, 58vw"
+              sizes="100vw"
             />
             <div className="flavor-hero__legend" aria-label="Flavor dimensions">
               <span>Sweetness</span>
@@ -567,7 +567,7 @@ const Flavor = () => {
             <FlavorImage
               name="flavor-atlas"
               alt="A circular flavor atlas containing watermelon, citrus, cooling botanicals, berry, amber and tobacco directions"
-              sizes="(max-width: 900px) 100vw, 62vw"
+              sizes="(max-width: 900px) 100vw, 92vw"
             />
             <p>
               A visual language for profile families, contrast and balance.
