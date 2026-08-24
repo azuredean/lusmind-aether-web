@@ -53,6 +53,7 @@ export const homeMarkup = String.raw`
               <a class="product-dropdown__all" href="#collection">Compare all platforms <span aria-hidden="true">↓</span></a>
             </div>
           </div>
+          <a href="/flavor">Flavor</a>
           <a href="#technology">Technology</a>
           <a href="#wholesale">Wholesale</a>
           <a href="#company">Company</a>
@@ -78,7 +79,7 @@ export const homeMarkup = String.raw`
           <a href="/products/e-liquid"><span>06</span><strong>E-Liquid</strong><small>24 flavors</small></a>
         </div>
         <div class="mobile-menu__sections">
-          <a href="#collection">Collection</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#company">Company</a>
+          <a href="#collection">Collection</a><a href="/flavor">Flavor</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#company">Company</a>
         </div>
         <button class="button button--acid" type="button" data-inquiry>Start an inquiry</button>
         <p class="mobile-menu__note">Available for qualified distributors, wholesalers and private-label partners.</p>
@@ -163,35 +164,32 @@ export const homeMarkup = String.raw`
           </div>
         </section>
 
-        <section class="positioning light-section" id="positioning">
+        <section class="positioning flavor-proposition light-section" id="positioning" aria-labelledby="flavor-proposition-title">
           <div class="page-width">
-            <div class="section-index reveal"><span>02</span><span>Brand proposition</span></div>
-            <div class="positioning__headline">
-              <h2 class="reveal">Not another catalog.<br /><em>A portfolio with intent.</em></h2>
-              <div class="positioning__copy reveal reveal--delay-1">
-                <p>Lusmind connects industrial design, flavor systems and scalable production into products made for real distribution channels—not concept shelves.</p>
-                <a class="text-link" href="#wholesale">See the partner program <span aria-hidden="true">↗</span></a>
+            <div class="section-index reveal"><span>02</span><span>Flavor proposition</span></div>
+            <div class="flavor-proposition__grid">
+              <div class="flavor-proposition__copy">
+                <p class="eyebrow reveal">Why flavor leads</p>
+                <h2 id="flavor-proposition-title" class="reveal reveal--delay-1">Hardware earns attention.<br /><em>Flavor earns the reorder.</em></h2>
+                <p class="reveal reveal--delay-2">At Lusmind, flavor is not a final layer added to hardware. It is a system that connects sensory architecture, formulation, delivery behavior and market fit.</p>
+                <div class="flavor-proposition__actions reveal reveal--delay-3">
+                  <a class="button button--ink" href="/flavor">Explore the flavor system <span aria-hidden="true">↗</span></a>
+                  <a class="text-link" href="/products/e-liquid">View the e-liquid range <span aria-hidden="true">↗</span></a>
+                </div>
               </div>
-            </div>
 
-            <div class="positioning__metrics" aria-label="Business model highlights">
-              <article class="metric reveal">
-                <span class="metric__number">06</span>
-                <h3>Distinct product platforms</h3>
-                <p>Six platforms, seven products — from cigarette formats and refillable pods to AI-enabled disposables and a 24-flavor e-liquid range.</p>
-              </article>
-              <article class="metric reveal reveal--delay-1">
-                <span class="metric__number">03</span>
-                <h3>Routes to market</h3>
-                <p>Lusmind brand distribution, private label, or joint product development.</p>
-              </article>
-              <article class="metric reveal reveal--delay-2">
-                <span class="metric__number">01</span>
-                <h3>Accountable workflow</h3>
-                <p>One commercial team from first brief through mass-production handoff.</p>
-              </article>
+              <a class="flavor-proposition__media reveal reveal--delay-1" href="/flavor" aria-label="Explore the Lusmind flavor system">
+                <img data-src="/assets/flavor/flavor-streams-1672.webp" data-srcset="/assets/flavor/flavor-streams-960.webp 960w, /assets/flavor/flavor-streams-1672.webp 1672w" sizes="(max-width: 900px) 100vw, 58vw" alt="Transparent flavor streams carrying citrus, berry, botanical and tobacco notes" width="1672" height="941" loading="lazy" decoding="async" />
+                <span class="flavor-proposition__caption"><span>Flavor is the system</span><span>Profile · Device · Market</span></span>
+              </a>
+
+              <dl class="flavor-proposition__system">
+                <div class="reveal"><dt>Sensory architecture</dt><dd>Sweetness, cooling, acidity, body, aroma and finish shaped as one profile.</dd></div>
+                <div class="reveal reveal--delay-1"><dt>Device calibration</dt><dd>Flavor direction reviewed against delivery geometry, power and coil behavior.</dd></div>
+                <div class="reveal reveal--delay-2"><dt>Market localization</dt><dd>Directions adapted around channel, climate and regional preference.</dd></div>
+                <div class="reveal reveal--delay-3"><dt>Production reference</dt><dd>Approved samples guide scale-up, documentation and repeat batch review.</dd></div>
+              </dl>
             </div>
-            <p class="data-note">Commercial figures and technical specifications on this website are preliminary planning data and remain subject to final quotation, engineering validation and market requirements.</p>
           </div>
         </section>
 
@@ -545,7 +543,7 @@ export const homeMarkup = String.raw`
             <a class="footer__brand" href="#top"><img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" /></a>
             <p>Product systems for adult markets.<br />Built with intent. Scaled with discipline.</p>
             <div class="footer__nav">
-              <a href="/products/royal-slim">Royal Slim</a><a href="/products/royal-classic">Royal Classic</a><a href="/products/royal-heat">Royal Heat series</a><a href="/products/fusion-one">Fusion One</a><a href="/products/arc-pod-s">Arc Pod S</a><a href="/products/core-20">Core 20</a><a href="/products/ai-pulse">AI Pulse</a><a href="/products/e-liquid">E-Liquid</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
+              <a href="/products/royal-slim">Royal Slim</a><a href="/products/royal-classic">Royal Classic</a><a href="/products/royal-heat">Royal Heat series</a><a href="/products/fusion-one">Fusion One</a><a href="/products/arc-pod-s">Arc Pod S</a><a href="/products/core-20">Core 20</a><a href="/products/ai-pulse">AI Pulse</a><a href="/products/e-liquid">E-Liquid</a><a href="/flavor">Flavor</a><a href="#technology">Technology</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
             </div>
           </div>
           <div class="footer__legal">
