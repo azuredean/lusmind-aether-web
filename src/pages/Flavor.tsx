@@ -83,6 +83,9 @@ function FlavorImage({
   fetchPriority = "auto",
   sizes = "(max-width: 900px) 100vw, 50vw",
 }: FlavorImageProps) {
+  const priorityProps =
+    fetchPriority === "auto" ? {} : { fetchpriority: fetchPriority };
+
   return (
     <picture className={className}>
       <source
