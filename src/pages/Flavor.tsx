@@ -99,7 +99,7 @@ function FlavorImage({
         width="1672"
         height="941"
         loading={loading}
-        fetchPriority={fetchPriority}
+        {...priorityProps}
         decoding="async"
       />
     </picture>
