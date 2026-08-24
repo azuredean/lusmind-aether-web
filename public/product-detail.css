@@ -2501,3 +2501,11 @@ img {
 /* Final section chrome reduction; visual stage remains unchanged. */
 .elq-packaging { padding-block: clamp(2rem, 3.5vh, 3rem); }
 .elq-packaging .section-head { margin-bottom: clamp(1.6rem, 3vh, 2.5rem); }
+
+
+/* Flavor navigation addition: preserve the full desktop menu through the 861px breakpoint. */
+@media (min-width: 861px) {
+  .desktop-nav {
+    gap: clamp(0.85rem, 1.5vw, 1.8rem);
+  }
+}
