@@ -36,6 +36,7 @@ export const productShellMarkup = String.raw`
             <a href="/products/e-liquid" data-product-link="e-liquid"><small>06</small><span>E-Liquid</span><i>24 flavors</i></a>
           </div>
         </div>
+        <a href="/flavor">Flavor</a>
         <a href="/#technology">Technology</a>
         <a href="/#wholesale">Wholesale</a>
         <a href="/#company">Company</a>
@@ -47,6 +48,7 @@ export const productShellMarkup = String.raw`
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
       <p class="eyebrow">Lusmind collection / 06 platforms · 07 products</p>
       <a class="mobile-menu__home" href="/"><span>00</span>Home<i>↗</i></a>
+      <a class="mobile-menu__home" href="/flavor"><span>FL</span>Flavor system<i>↗</i></a>
       <p class="mobile-menu__group">Royal Heat series</p>
       <a class="mobile-menu__product" href="/products/royal-slim" data-product-link="royal-slim"><span>01A</span>Royal Slim<i>↗</i></a>
       <a class="mobile-menu__product" href="/products/royal-classic" data-product-link="royal-classic"><span>01B</span>Royal Classic<i>↗</i></a>
@@ -64,7 +66,7 @@ export const productShellMarkup = String.raw`
     <footer class="site-footer">
       <div class="site-footer__inner page-width">
         <a href="/"><img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" /></a>
-        <nav aria-label="Footer navigation"><a href="/#collection">Collection</a><a href="/products/e-liquid">E-Liquid</a><a href="/#wholesale">Wholesale</a><a href="mailto:support@lusmind.com">Contact</a></nav>
+        <nav aria-label="Footer navigation"><a href="/#collection">Collection</a><a href="/products/e-liquid">E-Liquid</a><a href="/flavor">Flavor</a><a href="/#wholesale">Wholesale</a><a href="mailto:support@lusmind.com">Contact</a></nav>
         <small>© <span data-year>2026</span> Lusmind. For qualified adult-industry partners.</small>
       </div>
     </footer>
