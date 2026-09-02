@@ -1,0 +1,2 @@
+# Cloudflare static assets evaluates redirects before matching an asset.
+/e-liquid /products/e-liquid 301

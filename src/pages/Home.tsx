@@ -12,7 +12,6 @@ const Home = () => {
   useInternalLinks(ref);
 
   useEffect(() => {
-    document.title = "Lusmind — Wholesale Vape & Heat Platforms";
     const dispose = initHome();
     return dispose;
   }, []);

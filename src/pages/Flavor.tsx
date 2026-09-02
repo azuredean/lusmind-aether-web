@@ -109,6 +109,7 @@ function FlavorImage({
 function AgeGate() {
   const [denied, setDenied] = useState(false);
   const [verified, setVerified] = useState(() => {
+    if (typeof window === "undefined") return false;
     try {
       return window.localStorage.getItem("lusmind-age-verified-v1") === "true";
     } catch {
@@ -378,7 +379,7 @@ function DeferredFlavorStream() {
   const hostRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
   const [staticOnly] = useState(() =>
-    window.matchMedia(
+    typeof window === "undefined" || window.matchMedia(
       "(prefers-reduced-motion: reduce), (max-width: 767px), (pointer: coarse)",
     ).matches,
   );
@@ -420,22 +421,7 @@ const Flavor = () => {
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    document.title = "Flavor System | LUSMIND";
-    let tag = document.head.querySelector<HTMLMetaElement>(
-      'meta[name="description"]',
-    );
-    if (!tag) {
-      tag = document.createElement("meta");
-      tag.name = "description";
-      document.head.appendChild(tag);
-    }
-    const previous = tag.content;
-    tag.content =
-      "Explore the LUSMIND flavor system: sensory architecture, device calibration, market localization and production reference control for adult-market partners.";
     window.scrollTo(0, 0);
-    return () => {
-      tag.content = previous;
-    };
   }, []);
 
   useEffect(() => {

@@ -3,19 +3,24 @@
 #########################
 name = "lusmind-worker"
 account_id = "b1017ac840af8b716615e56a48ea599c"
-compatibility_date = "2025-08-01"
+compatibility_date = "2026-09-02"
 
 # ---------- 静态产物 ---------- #
 [build]
 command = "npm ci && npm run build"   # 安装依赖并产出 dist
-upload.format = "directory"
-upload.dir    = "./dist"              # dist/ 为上传目录
+
+[assets]
+directory = "./dist"
+html_handling = "drop-trailing-slash"
+not_found_handling = "404-page"
 
 ############ ENVIRONMENTS ############
 [env.production]
 workers_dev = false
-route   = "lusmind.com/*"
-zone_id = "357c4caee95302d2e3ed22f6c3e63a90"
+
+  [env.production.route]
+  pattern = "lusmind.com/*"
+  zone_id = "357c4caee95302d2e3ed22f6c3e63a90"
 
 [env.preview]
 workers_dev = true

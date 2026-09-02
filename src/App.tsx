@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import SeoHead from "./components/SeoHead";
 
 const Home = lazy(() => import("./pages/Home"));
 const Flavor = lazy(() => import("./pages/Flavor"));
@@ -31,6 +32,7 @@ const RouteFallback = () => (
 
 const App = () => (
   <BrowserRouter>
+    <SeoHead />
     <Suspense fallback={<RouteFallback />}>
       <Routes>
         <Route path="/" element={<Home />} />

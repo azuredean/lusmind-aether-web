@@ -10,6 +10,7 @@ const ATTR = "data-lusmind-sheet";
 const loaded = new Set<string>();
 
 function findLink(href: string): HTMLLinkElement | null {
+  if (typeof document === "undefined") return null;
   return document.head.querySelector<HTMLLinkElement>(`link[${ATTR}="${href}"]`);
 }
 
@@ -20,7 +21,11 @@ function setActive(href: string) {
 }
 
 export function useStylesheet(href: string): boolean {
-  const [ready, setReady] = useState(() => (href ? loaded.has(href) : false));
+  const [ready, setReady] = useState(() => {
+    if (!href) return false;
+    if (typeof document === "undefined") return true;
+    return loaded.has(href) || document.getElementById("root")?.dataset.prerendered === "true";
+  });
 
   useEffect(() => {
     if (!href) {
@@ -32,7 +37,9 @@ export function useStylesheet(href: string): boolean {
 
     // Adopt a sheet injected by the boot script in index.html, or one kept from
     // an earlier visit to this route.
-    if (existing && (loaded.has(href) || (existing.sheet && existing.sheet.cssRules))) {
+    const prerendered =
+      document.getElementById("root")?.dataset.prerendered === "true";
+    if (existing && (prerendered || loaded.has(href) || (existing.sheet && existing.sheet.cssRules))) {
       loaded.add(href);
       setActive(href);
       setReady(true);
