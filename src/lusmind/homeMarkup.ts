@@ -17,7 +17,7 @@ export const homeMarkup = String.raw`
       <div class="age-gate__panel">
         <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" />
         <p class="eyebrow">Age verification / 01</p>
-        <h1 id="age-title">For adults only.</h1>
+        <h2 id="age-title">For adults only.</h2>
         <p>This website contains information about nicotine products intended for adult trade professionals. You must be of legal smoking age in your jurisdiction to continue.</p>
         <div class="age-gate__actions">
           <button class="button button--acid" type="button" data-age-confirm>I am 21 or older</button>

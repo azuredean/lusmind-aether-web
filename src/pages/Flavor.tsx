@@ -156,9 +156,9 @@ function AgeGate() {
           height="79"
         />
         <p className="eyebrow">Age verification / Trade site</p>
-        <h1 id="flavor-age-title">
+        <h2 id="flavor-age-title">
           {denied ? "Access restricted." : "For adults only."}
-        </h1>
+        </h2>
         <p>
           {denied
             ? "You must be of legal smoking age in your jurisdiction to view this website."
