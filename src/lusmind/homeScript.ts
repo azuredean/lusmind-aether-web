@@ -365,7 +365,7 @@ export function initHome(): () => void {
       panel.innerHTML = `
         <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="360" height="79" />
         <p class="eyebrow">Access restricted</p>
-        <h1>Not available.</h1>
+        <h2>Not available.</h2>
         <p>You must be of legal smoking age in your jurisdiction to view this website.</p>
         <a class="button button--ghost" href="https://www.google.com/">Leave website</a>
       `;

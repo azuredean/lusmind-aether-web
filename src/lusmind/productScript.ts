@@ -919,7 +919,7 @@ export function initProduct(productId: string): () => void {
     agePanel.innerHTML = `
       <img src="/assets/brand/lusmind-logo-720.webp" alt="Lusmind" width="260" height="57" />
       <p class="eyebrow">Access restricted</p>
-      <h1>This site is not available to you.</h1>
+      <h2>This site is not available to you.</h2>
       <p>You must be of legal smoking age in your jurisdiction to view information about these products.</p>
       <a class="button button--line" href="https://www.google.com/">Leave website</a>
     `;
