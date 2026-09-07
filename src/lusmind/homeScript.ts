@@ -752,7 +752,7 @@ export function initHome(): () => void {
     };
     const start = () => {
       globalThis.window.clearInterval(heroTimer);
-      heroTimer = globalThis.window.setInterval(() => show(index + 1), 2000);
+      heroTimer = globalThis.window.setInterval(() => show(index + 1), 5000);
     };
     show(0);
     start();
