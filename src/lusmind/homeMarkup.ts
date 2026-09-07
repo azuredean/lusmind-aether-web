@@ -100,8 +100,8 @@ export const homeMarkup = String.raw`
             </div>
             <span class="hero__scan"></span>
             <div class="hero__media-label" aria-live="polite">
-              <strong class="hero__media-label__title">COMPANION</strong>
-              <span class="hero__media-label__line">With you, wherever life leads.</span>
+              <strong class="hero__media-label__title">ENJOY</strong>
+              <span class="hero__media-label__line">Make the moment yours.</span>
             </div>
           </a>
 

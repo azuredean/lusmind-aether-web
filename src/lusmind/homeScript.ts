@@ -725,14 +725,30 @@ export function initHome(): () => void {
     if (!slideshow) return;
     heroSlideshowStarted = true;
     const slides = [...slideshow.querySelectorAll(".hero__slide")];
+    const label = document.querySelector(".hero__media-label");
+    const labelTitle = document.querySelector(".hero__media-label__title");
+    const labelLine = document.querySelector(".hero__media-label__line");
     if (slides.length < 2) {
       slides[0]?.classList.add("is-active");
       return;
     }
     let index = 0;
+    const updateLabel = () => {
+      const activeSlide = slides[index];
+      const title = activeSlide?.dataset.sloganTitle || "";
+      const line = activeSlide?.dataset.sloganLine || "";
+      if (!label || !labelTitle || !labelLine) return;
+      label.classList.add("is-changing");
+      globalThis.window.setTimeout(() => {
+        labelTitle.textContent = title;
+        labelLine.textContent = line;
+        label.classList.remove("is-changing");
+      }, 180);
+    };
     const show = (next) => {
       index = (next + slides.length) % slides.length;
       slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+      updateLabel();
     };
     const start = () => {
       globalThis.window.clearInterval(heroTimer);
