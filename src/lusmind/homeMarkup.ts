@@ -91,18 +91,17 @@ export const homeMarkup = String.raw`
           <div class="hero__glow" aria-hidden="true"></div>
           <a class="hero__media" href="/products/ai-pulse" aria-label="Discover the AI Pulse product page">
             <div class="hero__slideshow">
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-1.webp" alt="Lusmind Arc Pod S leather edition at a Paris riverside cafe" width="1600" height="900" fetchpriority="high" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-2.webp" alt="Lusmind AI Pulse smart disposable held on a Mediterranean beach" width="1600" height="900" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-3.webp" alt="Lusmind Arc Pod S metal edition on a coastal mountain drive" width="1600" height="898" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-4.webp" alt="Lusmind Fusion One carried on an alpine forest trail" width="1600" height="900" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-5.webp" alt="Lusmind Core 20 heat device on a night-time city desk" width="1600" height="900" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-6.webp" alt="Lusmind Royal Heat held at an evening terrace dinner" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-1.webp" data-slogan-title="ENJOY" data-slogan-line="Make the moment yours." alt="Lusmind Arc Pod S leather edition at a Paris riverside cafe" width="1600" height="900" fetchpriority="high" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-2.webp" data-slogan-title="COMPANION" data-slogan-line="With you, wherever life leads." alt="Lusmind AI Pulse smart disposable held on a Mediterranean beach" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-3.webp" data-slogan-title="ENJOY" data-slogan-line="Make the moment yours." alt="Lusmind Arc Pod S metal edition on a coastal mountain drive" width="1600" height="898" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-4.webp" data-slogan-title="COMPANION" data-slogan-line="With you, wherever life leads." alt="Lusmind Fusion One carried on an alpine forest trail" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-5.webp" data-slogan-title="FOCUS" data-slogan-line="Stay with what matters." alt="Lusmind Core 20 heat device on a night-time city desk" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-6.webp" data-slogan-title="PASSION" data-slogan-line="Follow what moves you." alt="Lusmind Royal Heat held at an evening terrace dinner" width="1600" height="900" loading="lazy" decoding="async" />
             </div>
             <span class="hero__scan"></span>
-            <div class="hero__media-label">
-              <span>New platform</span>
-              <strong>AI Pulse</strong>
-              <span>2026 / 05</span>
+            <div class="hero__media-label" aria-live="polite">
+              <strong class="hero__media-label__title">ENJOY</strong>
+              <span class="hero__media-label__line">Make the moment yours.</span>
             </div>
           </a>
 
