@@ -864,30 +864,38 @@ body.is-locked:not(.is-menu-open) .site-shell {
   z-index: 3;
   right: 4vw;
   bottom: 36px;
-  display: grid;
-  width: 180px;
-  grid-template-columns: 1fr auto;
-  gap: 6px 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  padding-top: 10px;
+  display: flex;
+  max-width: 300px;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
   color: var(--white);
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.1em;
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.hero__media-label.is-changing {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.hero__media-label__title {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.1vw, 34px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
   text-transform: uppercase;
 }
 
-.hero__media-label strong {
-  grid-column: 1 / -1;
-  font-family: var(--display);
-  font-size: 20px;
-  letter-spacing: -0.03em;
+.hero__media-label__line {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--body);
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
   text-transform: none;
-}
-
-.hero__media-label span:last-child {
-  grid-column: 2;
-  grid-row: 1;
 }
 
 .hero__content {
