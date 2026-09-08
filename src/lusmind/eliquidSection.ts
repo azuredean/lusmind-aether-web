@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ELIQUID_FLAVORS, eliquidImage } from "./eliquidData";
+import eliquidStageAsset from "@/assets/lusmind-eliquid-stage.png.asset.json";
 
 const MARKET_KEY = "lusmind-eliquid-market-v1";
 
@@ -41,12 +42,10 @@ export function eliquidMarkup(inquiryHref: string): string {
     <section class="product-hero product-hero--left product-hero--eliquid" id="overview" aria-labelledby="product-title">
       <img
         class="product-hero__media"
-        src="/assets/eliquid/hero-1920.webp"
-        srcset="/assets/eliquid/hero-1280.webp 1280w, /assets/eliquid/hero-1920.webp 1920w, /assets/eliquid/hero-2560.webp 2560w, /assets/eliquid/hero.webp 3840w"
-        sizes="100vw"
-        width="3840"
-        height="2160"
-        alt="Lusmind e-liquid bottle range presented on a black-glass campaign stage"
+        src="${eliquidStageAsset.url}"
+        width="1672"
+        height="941"
+        alt="Lusmind e-liquid bottle range displayed on illuminated black and glass plinths"
         fetchpriority="high"
         decoding="async"
         data-parallax />
@@ -101,12 +100,10 @@ export function eliquidMarkup(inquiryHref: string): string {
         <div class="breakdown">
           <figure class="breakdown__visual reveal">
             <img
-              src="/assets/eliquid/formulation-1600.webp"
-              srcset="/assets/eliquid/formulation-960.webp 960w, /assets/eliquid/formulation-1600.webp 1600w, /assets/eliquid/formulation-2400.webp 2400w"
-              sizes="(max-width: 1080px) 100vw, 54vw"
-              width="2400"
-              height="1600"
-              alt="Lusmind e-liquid formulation platform presented on a controlled black-glass lab stage"
+              src="${eliquidStageAsset.url}"
+              width="1672"
+              height="941"
+              alt="Lusmind e-liquid selection displayed on illuminated black and glass plinths"
               loading="lazy"
               decoding="async" />
             <span class="visual-callout">Ingredient control</span>

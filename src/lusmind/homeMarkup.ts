@@ -1,3 +1,5 @@
+import eliquidStageAsset from "@/assets/lusmind-eliquid-stage.png.asset.json";
+
 // Generated from the supplied Lusmind static homepage (index.html).
 export const homeMarkup = String.raw`
     <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +158,7 @@ export const homeMarkup = String.raw`
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>05 / Smart disposable</small><strong>AI Pulse</strong><em>Explore product ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--wide reveal reveal--delay-3" href="/products/e-liquid">
-                <img data-src="/assets/eliquid/home-promo-1600.webp" data-srcset="/assets/eliquid/home-promo-960.webp 960w, /assets/eliquid/home-promo-1600.webp 1600w, /assets/eliquid/home-promo-2400.webp 2400w, /assets/eliquid/home-promo.webp 3840w" sizes="(max-width: 820px) 100vw, 66vw" alt="Lusmind e-liquid range on a black-glass campaign stage" width="3840" height="2160" loading="lazy" decoding="async" />
+                <img data-src="${eliquidStageAsset.url}" alt="Lusmind e-liquid range displayed on illuminated black and glass plinths" width="1672" height="941" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>06 / Flavor platform</small><strong>E-Liquid</strong><em>Explore range ↗</em></span>
               </a>
             </div>
