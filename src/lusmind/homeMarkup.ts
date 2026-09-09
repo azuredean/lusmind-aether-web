@@ -139,7 +139,7 @@ export const homeMarkup = String.raw`
             </div>
             <div class="campaign-grid">
               <a class="campaign-card campaign-card--wide reveal" href="/products/royal-heat">
-                <img data-src="/assets/campaign/royal-heat-hero.webp" alt="Royal Heat black and gold campaign setting" width="1672" height="941" loading="lazy" decoding="async" />
+                <img data-src="${royalHeatStageAsset.url}" alt="Royal Heat series with Royal Slim and Classic devices and packaging" width="1672" height="941" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>01 / Series · Slim + Classic</small><strong>Royal Heat</strong><em>Explore series ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--tall reveal reveal--delay-1" href="/products/fusion-one">
