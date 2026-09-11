@@ -2,6 +2,7 @@
 // Adapted from the supplied Lusmind static site scripts.
 // The `document` / `window` bindings below are scoped proxies that record
 // listener registrations so the SPA can fully clean up on route changes.
+import fusionOneCollectionAsset from "@/assets/fusion-one-2026-collection.png.asset.json";
 function createScope() {
   const listeners: Array<[EventTarget, string, any, any]> = [];
   const wrap = (target: any) =>
