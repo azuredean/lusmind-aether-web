@@ -86,7 +86,7 @@ export function initHome(): () => void {
       statement: "A cylindrical hybrid concept combining a refillable oil-pod architecture with a central socket for selected heat-stick formats.",
       moq: "5,000 units",
       image: fusionOneCollectionAsset.url,
-      alt: "Lusmind Fusion One hybrid device in a moonlit coastal scene with three-part modular design callouts",
+      alt: "Lusmind Fusion One hybrid device collection showing detail finishes and six color variants on a coastal stone surface",
       position: "center",
       tone: "dark",
       specs: [

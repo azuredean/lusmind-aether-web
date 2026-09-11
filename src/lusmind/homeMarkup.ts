@@ -145,7 +145,7 @@ export const homeMarkup = String.raw`
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>01 / Series · Slim + Classic</small><strong>Royal Heat</strong><em>Explore series ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--tall reveal reveal--delay-1" href="/products/fusion-one">
-                <img data-src="${fusionOneCollectionAsset.url}" alt="Fusion One hybrid device in a moonlit coastal scene with three-part modular design callouts" width="1672" height="941" loading="lazy" decoding="async" />
+                <img data-src="${fusionOneCollectionAsset.url}" alt="Fusion One hybrid device collection showing detail finishes and six color variants on a coastal stone surface" width="1672" height="941" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>02 / Hybrid device</small><strong>Fusion One</strong><em>Explore product ↗</em></span>
               </a>
               <a class="campaign-card reveal" href="/products/arc-pod-s">
