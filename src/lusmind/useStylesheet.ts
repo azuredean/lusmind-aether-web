@@ -23,7 +23,8 @@ function setActive(href: string) {
 export function useStylesheet(href: string): boolean {
   const [ready, setReady] = useState(() => {
     if (!href) return false;
-    if (typeof document === "undefined") return true;
+    // Prerendered HTML must stay hidden until the route stylesheet is real.
+    if (typeof document === "undefined") return false;
     const existing = findLink(href);
     return loaded.has(href) || Boolean(existing?.sheet);
   });
@@ -54,7 +55,6 @@ export function useStylesheet(href: string): boolean {
       link.setAttribute(ATTR, href);
       document.head.append(link);
     }
-    setActive(href);
     setReady(false);
 
     const done = () => {
