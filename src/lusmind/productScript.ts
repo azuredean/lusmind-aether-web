@@ -218,16 +218,17 @@ export function initProduct(productId: string): () => void {
         points: ["Specialist vape", "Adult convenience", "Distributor showcase", "New-category pilot"]
       },
       options: [
-        { title: "Fusion Finish System", note: "Five anodized directions", image: "/assets/products/fusion-one.webp", alt: "Fusion One devices in navy, black, silver, violet and green", position: "24% center" }
+        { title: "Anodized Color Collection", note: "Six anodized directions", image: fusionOneFinishCollection.url, alt: "Fusion One Anodized Color Collection in black, graphite, navy, orange, violet and silver", position: "center" }
       ],
-      optionTitle: "A technical palette with one signal color.",
-      optionCopy: "The platform pairs quiet anodized finishes with an acid-lime identity signal. Branding and status-light color can be aligned to a distributor program.",
+      optionTitle: "A technical palette across six anodized finishes.",
+      optionCopy: "The Anodized Color Collection spans quiet metallics and two expressive accents. Branding and status-light color can be aligned to a distributor program.",
       palette: [
-        ["Midnight Navy", "#17233c", "Anodized"],
-        ["Obsidian", "#111312", "Anodized"],
-        ["Machine Silver", "#8f9290", "Anodized"],
-        ["Forest", "#183a31", "Anodized"],
-        ["Signal Lime", "#c7ff19", "Detail"]
+        ["Obsidian Black", "#1b1c1e", "Anodized"],
+        ["Graphite", "#6f7276", "Anodized"],
+        ["Midnight Navy", "#2c3f5e", "Anodized"],
+        ["Ember Orange", "#c96a26", "Anodized"],
+        ["Violet Haze", "#8a7c99", "Anodized"],
+        ["Machine Silver", "#b9bcbd", "Anodized"]
       ],
       trade: {
         moq: "5,000 units",
