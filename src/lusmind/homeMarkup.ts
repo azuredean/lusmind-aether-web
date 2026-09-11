@@ -1,5 +1,6 @@
 import eliquidStageAsset from "@/assets/lusmind-eliquid-stage.png.asset.json";
 import fusionOneCollectionAsset from "@/assets/fusion-one-2026-collection.png.asset.json";
+import fusionOnePlatformThinkingAsset from "@/assets/fusion-one-platform-thinking.png.asset.json";
 import royalHeatStageAsset from "@/assets/royal-heat-stage.png.asset.json";
 
 // Generated from the supplied Lusmind static homepage (index.html).
@@ -296,7 +297,7 @@ export const homeMarkup = String.raw`
             <div class="bento-grid">
               <a class="bento bento--hero reveal" href="/products/fusion-one">
                 <div class="bento__media">
-                  <img data-src="/assets/products/fusion-one.webp" alt="Fusion One hybrid heat-stick and refillable pod device" width="1672" height="941" loading="lazy" decoding="async" />
+                  <img data-src="${fusionOnePlatformThinkingAsset.url}" alt="Fusion One system architecture diagram showing cigarette filter, removable oil pod, smoking rod, embedded white light indicator and Type-C port with six anodized color variants" width="1672" height="941" loading="lazy" decoding="async" />
                 </div>
                 <div class="bento__content">
                   <span class="bento__number">T / 01</span>
