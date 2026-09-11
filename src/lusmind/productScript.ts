@@ -183,8 +183,8 @@ export function initProduct(productId: string): () => void {
       layout: "left",
       campaign: "/assets/campaign/fusion-one-hero.webp",
       campaignAlt: "Lusmind Fusion One devices in a dark precision materials laboratory",
-      board: "/assets/products/fusion-one.webp",
-      boardAlt: "Fusion One product board with device colors and component callouts",
+      board: fusionOneSystemArchitecture.url,
+      boardAlt: "Fusion One system architecture diagram showing cigarette filter, removable oil pod, smoking rod, embedded white light indicator and Type-C port",
       boardPosition: "center",
       facts: [
         ["Pod", "2 mL", "Replaceable cartridge"],
