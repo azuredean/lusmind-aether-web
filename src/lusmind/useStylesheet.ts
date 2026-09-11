@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 /**
  * Loads one of the supplied Lusmind stylesheets for the lifetime of a route.
@@ -23,11 +23,15 @@ function setActive(href: string) {
 export function useStylesheet(href: string): boolean {
   const [ready, setReady] = useState(() => {
     if (!href) return false;
-    if (typeof document === "undefined") return true;
-    return loaded.has(href) || document.getElementById("root")?.dataset.prerendered === "true";
+    // Prerendered HTML must stay hidden until the route stylesheet is real.
+    if (typeof document === "undefined") return false;
+    const existing = findLink(href);
+    return loaded.has(href) || Boolean(existing?.sheet);
   });
 
-  useEffect(() => {
+  // This must run before paint. A normal effect leaves one frame where the new
+  // route is visible while the previous route's stylesheet is still active.
+  useLayoutEffect(() => {
     if (!href) {
       setReady(false);
       return;
@@ -37,9 +41,7 @@ export function useStylesheet(href: string): boolean {
 
     // Adopt a sheet injected by the boot script in index.html, or one kept from
     // an earlier visit to this route.
-    const prerendered =
-      document.getElementById("root")?.dataset.prerendered === "true";
-    if (existing && (prerendered || loaded.has(href) || (existing.sheet && existing.sheet.cssRules))) {
+    if (existing && (loaded.has(href) || existing.sheet)) {
       loaded.add(href);
       setActive(href);
       setReady(true);
@@ -53,7 +55,6 @@ export function useStylesheet(href: string): boolean {
       link.setAttribute(ATTR, href);
       document.head.append(link);
     }
-    setActive(href);
     setReady(false);
 
     const done = () => {
@@ -63,6 +64,9 @@ export function useStylesheet(href: string): boolean {
     };
     link.addEventListener("load", done);
     link.addEventListener("error", done);
+
+    // The sheet can finish between the initial check and listener attachment.
+    if (link.sheet) done();
 
     return () => {
       link.removeEventListener("load", done);
