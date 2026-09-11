@@ -297,7 +297,7 @@ export const homeMarkup = String.raw`
             <div class="bento-grid">
               <a class="bento bento--hero reveal" href="/products/fusion-one">
                 <div class="bento__media">
-                  <img data-src="/assets/products/fusion-one.webp" alt="Fusion One hybrid heat-stick and refillable pod device" width="1672" height="941" loading="lazy" decoding="async" />
+                  <img data-src="${fusionOnePlatformThinkingAsset.url}" alt="Fusion One system architecture diagram showing cigarette filter, removable oil pod, smoking rod, embedded white light indicator and Type-C port with six anodized color variants" width="1672" height="941" loading="lazy" decoding="async" />
                 </div>
                 <div class="bento__content">
                   <span class="bento__number">T / 01</span>
