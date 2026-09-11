@@ -1,4 +1,5 @@
 import eliquidStageAsset from "@/assets/lusmind-eliquid-stage.png.asset.json";
+import fusionOneCollectionAsset from "@/assets/fusion-one-2026-collection.png.asset.json";
 import royalHeatStageAsset from "@/assets/royal-heat-stage.png.asset.json";
 
 // Generated from the supplied Lusmind static homepage (index.html).
