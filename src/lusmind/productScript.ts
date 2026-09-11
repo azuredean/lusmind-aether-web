@@ -2,6 +2,7 @@
 import { eliquidMarkup, initEliquid } from "./eliquidSection";
 import { ELIQUID_FLAVORS } from "./eliquidData";
 import fusionOneSystemArchitecture from "@/assets/fusion-one-system-architecture.png.asset.json";
+import fusionOneFinishCollection from "@/assets/fusion-one-finish-collection.png.asset.json";
 // Adapted from the supplied Lusmind static site scripts.
 // The `document` / `window` bindings below are scoped proxies that record
 // listener registrations so the SPA can fully clean up on route changes.
