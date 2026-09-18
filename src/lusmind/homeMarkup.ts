@@ -132,7 +132,7 @@ export const homeMarkup = String.raw`
               <img class="hero__slide" data-src="/assets/campaign/hero-life-3.webp" data-slogan-title="ENJOY" data-slogan-line="Make the moment yours." alt="Lusmind Arc Pod S metal edition on a coastal mountain drive" width="1600" height="898" loading="lazy" decoding="async" />
               <img class="hero__slide" data-src="/assets/campaign/hero-life-4.webp" data-slogan-title="COMPANION" data-slogan-line="With you, wherever life leads." alt="Lusmind Fusion One carried on an alpine forest trail" width="1600" height="900" loading="lazy" decoding="async" />
               <img class="hero__slide" data-src="/assets/campaign/hero-life-5.webp" data-slogan-title="FOCUS" data-slogan-line="Stay with what matters." alt="Lusmind Core 20 heat device on a night-time city desk" width="1600" height="900" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="${royalClassicYachtAsset.url}" data-slogan-title="PASSION" data-slogan-line="Follow what moves you." alt="Lusmind Royal Classic presented aboard a yacht" width="1365" height="768" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="/assets/campaign/hero-life-6.webp" data-slogan-title="PASSION" data-slogan-line="Follow what moves you." alt="Lusmind Royal Heat held at an evening terrace dinner" width="1600" height="900" loading="lazy" decoding="async" />
             </div>
             <span class="hero__scan"></span>
             <div class="hero__media-label" aria-live="polite">
