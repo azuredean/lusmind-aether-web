@@ -161,7 +161,7 @@ export const homeMarkup = String.raw`
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>05 / Smart disposable</small><strong>AI Pulse</strong><em>Explore product ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--wide reveal reveal--delay-3" href="/products/e-liquid">
-                <img data-src="${eliquidStageAsset.url}" alt="Lusmind e-liquid range displayed on illuminated black and glass plinths" width="1672" height="941" loading="lazy" decoding="async" />
+                <img class="eliquid-stage-image" data-src="${eliquidStageAsset.url}" alt="Lusmind e-liquid range displayed on illuminated black and glass plinths" width="1672" height="941" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>06 / Flavor platform</small><strong>E-Liquid</strong><em>Explore range ↗</em></span>
               </a>
             </div>

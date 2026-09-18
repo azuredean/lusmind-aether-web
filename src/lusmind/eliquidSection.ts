@@ -41,7 +41,7 @@ export function eliquidMarkup(inquiryHref: string): string {
   return `
     <section class="product-hero product-hero--left product-hero--eliquid" id="overview" aria-labelledby="product-title">
       <img
-        class="product-hero__media"
+        class="product-hero__media eliquid-stage-image"
         src="${eliquidStageAsset.url}"
         width="1672"
         height="941"
@@ -100,6 +100,7 @@ export function eliquidMarkup(inquiryHref: string): string {
         <div class="breakdown">
           <figure class="breakdown__visual reveal">
             <img
+              class="eliquid-stage-image"
               src="${eliquidStageAsset.url}"
               width="1672"
               height="941"
