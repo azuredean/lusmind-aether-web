@@ -1,3 +1,7 @@
+import royalHeatSeriesAsset from "@/assets/royal-heat-series-2026.png.asset.json";
+import royalSlimAsset from "@/assets/royal-slim-2026.png.asset.json";
+import royalClassicCityAsset from "@/assets/royal-classic-city-2026.png.asset.json";
+
 export type RouteMeta = {
   title: string;
   description: string;
@@ -36,19 +40,19 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     "Royal Heat Series — Royal Slim & Royal Classic | LusMind",
     "Royal Heat is a two-product LusMind series: Royal Slim and Royal Classic. Compare both cigarette-format product platforms for qualified trade partners.",
     "/products/royal-heat",
-    "/assets/campaign/royal-heat-hero.webp",
+    royalHeatSeriesAsset.url,
   ),
   "/products/royal-slim": indexable(
     "Royal Slim — Cigarette-Format Electronic Product | LusMind",
     "Royal Slim is a cigarette-referenced electronic product platform with a 2.2 mL reservoir, 250 mAh battery and selectable 1.0 Ω or 1.5 Ω coil specification.",
     "/products/royal-slim",
-    "/assets/products/royal-slim.webp",
+    royalSlimAsset.url,
   ),
   "/products/royal-classic": indexable(
     "Royal Classic — Cigarette-Format Electronic Product | LusMind",
     "Royal Classic is a cigarette-referenced electronic product platform with a 1.8 mL reservoir, 200 mAh battery and selectable 1.0 Ω or 1.5 Ω coil specification.",
     "/products/royal-classic",
-    "/assets/products/royal-classic.webp",
+    royalClassicCityAsset.url,
   ),
   "/products/fusion-one": indexable(
     "Fusion One — Hybrid Device Platform | LusMind",

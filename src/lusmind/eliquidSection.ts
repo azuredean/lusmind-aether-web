@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ELIQUID_FLAVORS, eliquidImage } from "./eliquidData";
 import eliquidStageAsset from "@/assets/lusmind-eliquid-stage.png.asset.json";
+import royalSlimAsset from "@/assets/royal-slim-2026.png.asset.json";
 
 const MARKET_KEY = "lusmind-eliquid-market-v1";
 
@@ -276,7 +277,7 @@ export function eliquidMarkup(inquiryHref: string): string {
     </section>
 
     <a class="next-product" href="/products/royal-slim" aria-label="View next product: Royal Slim">
-      <img src="/assets/products/royal-slim.webp" alt="" loading="lazy" decoding="async" />
+      <img src="${royalSlimAsset.url}" alt="" loading="lazy" decoding="async" />
       <div class="next-product__inner page-width">
         <div>
           <p class="eyebrow">Next product / 01A</p>
