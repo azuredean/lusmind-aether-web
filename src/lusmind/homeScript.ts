@@ -198,6 +198,9 @@ export function initHome(): () => void {
   const header = document.querySelector("[data-header]");
   const menuToggle = document.querySelector(".menu-toggle");
   const mobileMenu = document.querySelector("#mobile-menu");
+  const searchToggle = document.querySelector(".search-toggle");
+  const siteSearch = document.querySelector("#site-search");
+  const searchInput = document.querySelector("[data-search-input]");
   const scrollProgress = document.querySelector(".scroll-progress span");
   const productsToggle = document.querySelector("[data-products-toggle]");
   const productDropdown = document.querySelector("#product-dropdown");
@@ -392,6 +395,37 @@ export function initHome(): () => void {
     if (open) hydrateWithin(productDropdown);
   }
 
+  function setSearch(open) {
+    if (!searchToggle || !siteSearch) return;
+    if (open) {
+      setMenu(false);
+      setProductsMenu(false);
+    }
+    searchToggle.setAttribute("aria-expanded", String(open));
+    siteSearch.setAttribute("aria-hidden", String(!open));
+    siteSearch.classList.toggle("is-open", open);
+    if (open) globalThis.window.setTimeout(() => searchInput?.focus(), 80);
+    else if (searchInput) searchInput.value = "";
+    siteSearch.querySelectorAll("[data-search-terms]").forEach((item) => {
+      item.hidden = false;
+    });
+    const empty = siteSearch.querySelector("[data-search-empty]");
+    if (empty) empty.hidden = true;
+  }
+
+  function filterSearchResults() {
+    if (!siteSearch || !searchInput) return;
+    const query = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    siteSearch.querySelectorAll("[data-search-terms]").forEach((item) => {
+      const matches = !query || item.dataset.searchTerms.includes(query);
+      item.hidden = !matches;
+      if (matches) visible += 1;
+    });
+    const empty = siteSearch.querySelector("[data-search-empty]");
+    if (empty) empty.hidden = visible > 0;
+  }
+
   function initNavigation() {
     menuToggle.addEventListener("click", () => {
       setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
@@ -400,6 +434,17 @@ export function initHome(): () => void {
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => setMenu(false));
     });
+
+    searchToggle?.addEventListener("click", () => {
+      setSearch(searchToggle.getAttribute("aria-expanded") !== "true");
+    });
+    siteSearch?.querySelectorAll("[data-search-close]").forEach((button) => {
+      button.addEventListener("click", () => setSearch(false));
+    });
+    siteSearch?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setSearch(false));
+    });
+    searchInput?.addEventListener("input", filterSearchResults);
 
     productsToggle?.addEventListener("click", () => {
       setProductsMenu(productsToggle.getAttribute("aria-expanded") !== "true");
@@ -417,6 +462,7 @@ export function initHome(): () => void {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") setMenu(false);
       if (event.key === "Escape") setProductsMenu(false);
+      if (event.key === "Escape") setSearch(false);
     });
 
     const navLinks = [...document.querySelectorAll(".desktop-nav > a[href^='#']")];

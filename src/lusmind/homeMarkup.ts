@@ -64,11 +64,39 @@ export const homeMarkup = String.raw`
           <a href="#company">Company</a>
         </nav>
 
-        <button class="header-cta" type="button" data-inquiry>Partner with us <span aria-hidden="true">↗</span></button>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-          <span></span><span></span>
-        </button>
+        <div class="header-tools">
+          <button class="header-cta" type="button" data-inquiry>Partner with us <span aria-hidden="true">↗</span></button>
+          <button class="search-toggle" type="button" aria-expanded="false" aria-controls="site-search" aria-label="Search products">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+          </button>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </div>
       </header>
+
+      <div class="site-search" id="site-search" aria-hidden="true">
+        <button class="site-search__backdrop" type="button" data-search-close aria-label="Close search"></button>
+        <div class="site-search__panel" role="search">
+          <div class="site-search__field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            <label class="site-search__label" for="product-search">Search products</label>
+            <input id="product-search" type="search" autocomplete="off" placeholder="Search by product or category" data-search-input />
+            <button class="site-search__close" type="button" data-search-close aria-label="Close search">×</button>
+          </div>
+          <div class="site-search__results" data-search-results>
+            <a href="/products/royal-slim" data-search-terms="royal slim royal heat cigarette slim disposable"><strong>Royal Slim</strong><span>Cigarette format</span><b>↗</b></a>
+            <a href="/products/royal-classic" data-search-terms="royal classic royal heat cigarette disposable"><strong>Royal Classic</strong><span>Cigarette format</span><b>↗</b></a>
+            <a href="/products/royal-heat" data-search-terms="royal heat series slim classic cigarette"><strong>Royal Heat</strong><span>Series overview</span><b>↗</b></a>
+            <a href="/products/fusion-one" data-search-terms="fusion one hybrid pod heat stick device"><strong>Fusion One</strong><span>Hybrid device</span><b>↗</b></a>
+            <a href="/products/arc-pod-s" data-search-terms="arc pod s refillable pod metal leather vape"><strong>Arc Pod S</strong><span>Refillable pod</span><b>↗</b></a>
+            <a href="/products/core-20" data-search-terms="core 20 heat not burn hnb tobacco device"><strong>Core 20</strong><span>Heat-not-burn</span><b>↗</b></a>
+            <a href="/products/ai-pulse" data-search-terms="ai pulse smart disposable display vape"><strong>AI Pulse</strong><span>Smart disposable</span><b>↗</b></a>
+            <a href="/products/e-liquid" data-search-terms="e liquid eliquid flavor flavours juice 24 us middle east"><strong>E-Liquid</strong><span>24-flavor platform</span><b>↗</b></a>
+            <p class="site-search__empty" data-search-empty hidden>No matching products found.</p>
+          </div>
+        </div>
+      </div>
 
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
         <p class="eyebrow">Navigate / 00</p>
@@ -134,7 +162,7 @@ export const homeMarkup = String.raw`
 
         <section class="visual-index dark-section" id="visual-index" aria-labelledby="visual-index-title">
           <div class="page-width">
-            <div class="section-index section-index--dark reveal"><span>01</span><span>Product stories</span></div>
+            <div class="section-index section-index--dark reveal"><span>Product stories</span></div>
             <div class="visual-index__intro">
               <h2 id="visual-index-title" class="reveal">Six platforms.<br /><span>Seven distinct products.</span></h2>
               <p class="reveal reveal--delay-1">Open any story to see its architecture, finishes, provisional specifications and distributor program.</p>
@@ -170,12 +198,11 @@ export const homeMarkup = String.raw`
 
         <section class="positioning flavor-proposition light-section" id="positioning" aria-labelledby="flavor-proposition-title">
           <div class="page-width">
-            <div class="section-index reveal"><span>02</span><span>Flavor proposition</span></div>
+            <div class="section-index reveal"><span>Flavor proposition</span></div>
             <div class="flavor-proposition__grid">
               <div class="flavor-proposition__copy">
                 <p class="eyebrow reveal">Why flavor leads</p>
                 <h2 id="flavor-proposition-title" class="reveal reveal--delay-1">Hardware earns attention.<br /><em>Flavor earns the reorder.</em></h2>
-                <p class="reveal reveal--delay-2">At Lusmind, flavor is not a final layer added to hardware. It is a system that connects sensory architecture, formulation, delivery behavior and market fit.</p>
                 <div class="flavor-proposition__actions reveal reveal--delay-3">
                   <a class="button button--ink" href="/flavor">Explore the flavor system <span aria-hidden="true">↗</span></a>
                   <a class="text-link" href="/products/e-liquid">View the e-liquid range <span aria-hidden="true">↗</span></a>
@@ -186,6 +213,8 @@ export const homeMarkup = String.raw`
                 <img data-src="/assets/flavor/flavor-streams-1672.webp" data-srcset="/assets/flavor/flavor-streams-960.webp 960w, /assets/flavor/flavor-streams-1672.webp 1672w" sizes="(max-width: 900px) 100vw, 58vw" alt="Transparent flavor streams carrying citrus, berry, botanical and tobacco notes" width="1672" height="941" loading="lazy" decoding="async" />
                 <span class="flavor-proposition__caption"><span>Flavor is the system</span><span>Profile · Device · Market</span></span>
               </a>
+
+              <p class="flavor-proposition__description reveal reveal--delay-2">At Lusmind, flavor is not a final layer added to hardware. It is a system that connects sensory architecture, formulation, delivery behavior and market fit.</p>
 
               <dl class="flavor-proposition__system">
                 <div class="reveal"><dt>Sensory architecture</dt><dd>Sweetness, cooling, acidity, body, aroma and finish shaped as one profile.</dd></div>
@@ -199,7 +228,7 @@ export const homeMarkup = String.raw`
 
         <section class="collection dark-section" id="collection" aria-labelledby="collection-title">
           <div class="page-width">
-            <div class="section-index section-index--dark reveal"><span>03</span><span>2026 collection</span></div>
+            <div class="section-index section-index--dark reveal"><span>2026 collection</span></div>
             <div class="section-heading">
               <h2 id="collection-title" class="reveal">Six platforms.<br /><span>Seven distinct products.</span></h2>
               <p class="reveal reveal--delay-1">Select a platform to review its positioning, provisional specification and partner terms.</p>
@@ -269,7 +298,7 @@ export const homeMarkup = String.raw`
 
         <section class="mystery-editions dark-section" id="custom-appearance" aria-labelledby="mystery-title">
           <div class="page-width">
-            <div class="section-index section-index--dark reveal"><span>03B</span><span>Custom appearance</span></div>
+            <div class="section-index section-index--dark reveal"><span>Custom appearance</span></div>
             <div class="mystery-editions__intro">
               <div><p class="eyebrow reveal">Mystery editions / 05 silhouettes</p><h2 id="mystery-title" class="reveal reveal--delay-1">Your product.<br /><span>Still under wraps.</span></h2></div>
               <div class="mystery-editions__copy reveal reveal--delay-2"><p>Every Lusmind device can become a market-specific edition. Color, surface treatment, graphic language and packaging are developed around your channel while the underlying product architecture stays recognizable.</p><span><b>05</b> customizable product forms</span></div>
@@ -288,7 +317,7 @@ export const homeMarkup = String.raw`
 
         <section class="technology light-section" id="technology" aria-labelledby="technology-title">
           <div class="page-width">
-            <div class="section-index reveal"><span>04</span><span>Platform thinking</span></div>
+            <div class="section-index reveal"><span>Platform thinking</span></div>
             <div class="technology__intro">
               <h2 id="technology-title" class="reveal">Innovation that earns<br /><em>its place on the shelf.</em></h2>
               <p class="reveal reveal--delay-1">Every feature must improve one of three things: the adult user experience, retail differentiation, or operating confidence for the distributor.</p>
@@ -343,7 +372,7 @@ export const homeMarkup = String.raw`
 
         <section class="wholesale dark-section" id="wholesale" aria-labelledby="wholesale-title">
           <div class="page-width">
-            <div class="section-index section-index--dark reveal"><span>05</span><span>Wholesale program</span></div>
+            <div class="section-index section-index--dark reveal"><span>Wholesale program</span></div>
             <div class="wholesale__hero">
               <div>
                 <p class="eyebrow reveal">Built for qualified partners</p>
@@ -418,7 +447,7 @@ export const homeMarkup = String.raw`
 
         <section class="assurance light-section" aria-labelledby="assurance-title">
           <div class="page-width">
-            <div class="section-index reveal"><span>06</span><span>Market readiness</span></div>
+            <div class="section-index reveal"><span>Market readiness</span></div>
             <div class="assurance__grid">
               <div class="assurance__title">
                 <h2 id="assurance-title" class="reveal">Evidence before<br /><em>ambition.</em></h2>
@@ -444,7 +473,7 @@ export const homeMarkup = String.raw`
           </div>
           <div class="company__shade" aria-hidden="true"></div>
           <div class="company__content page-width">
-            <div class="section-index section-index--dark reveal"><span>07</span><span>Loose your mind</span></div>
+            <div class="section-index section-index--dark reveal"><span>Loose your mind</span></div>
             <div class="company__statement">
               <p class="eyebrow reveal">The Lusmind position</p>
               <h2 id="company-title" class="reveal reveal--delay-1">Curious by design.<br />Disciplined by delivery.</h2>
@@ -460,7 +489,7 @@ export const homeMarkup = String.raw`
         <section class="faq light-section" aria-labelledby="faq-title">
           <div class="page-width faq__grid">
             <div class="faq__intro">
-              <div class="section-index reveal"><span>08</span><span>Partner FAQ</span></div>
+              <div class="section-index reveal"><span>Partner FAQ</span></div>
               <h2 id="faq-title" class="reveal">Before we<br /><em>start talking.</em></h2>
               <p class="reveal reveal--delay-1">The short answers to the questions most wholesale partners ask first.</p>
             </div>
@@ -492,7 +521,7 @@ export const homeMarkup = String.raw`
         <section class="contact dark-section" id="contact" aria-labelledby="contact-title">
           <div class="contact__signal" aria-hidden="true"></div>
           <div class="page-width">
-            <div class="section-index section-index--dark reveal"><span>09</span><span>Open a project</span></div>
+            <div class="section-index section-index--dark reveal"><span>Open a project</span></div>
             <div class="contact__grid">
               <div class="contact__intro">
                 <p class="eyebrow reveal">Distributor · Wholesale · OEM / ODM</p>
