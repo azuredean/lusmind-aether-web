@@ -3479,8 +3479,8 @@ body.is-locked:not(.is-menu-open) .site-shell {
     height: 42%;
   }
 
-  .hero__media img {
-    object-position: 50% center;
+  .hero__media .hero__slide {
+    object-position: 100% center;
   }
 
   .hero__media-label {
