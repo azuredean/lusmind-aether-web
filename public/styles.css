@@ -3542,6 +3542,10 @@ body.is-locked:not(.is-menu-open) .site-shell {
     object-position: 35% center;
   }
 
+  .campaign-card .eliquid-stage-image {
+    object-position: 85% center;
+  }
+
   .positioning__headline,
   .section-heading,
   .technology__intro,

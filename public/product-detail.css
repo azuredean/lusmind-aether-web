@@ -1978,6 +1978,13 @@ img {
   }
 }
 
+@media (max-width: 620px) {
+  .product-hero--eliquid .eliquid-stage-image,
+  .breakdown__visual .eliquid-stage-image {
+    object-position: 85% center;
+  }
+}
+
 .elq-market {
   display: flex;
   flex-wrap: wrap;
