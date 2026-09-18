@@ -1,7 +1,10 @@
 import eliquidStageAsset from "@/assets/lusmind-eliquid-stage.png.asset.json";
 import fusionOneCollectionAsset from "@/assets/fusion-one-2026-collection.png.asset.json";
 import fusionOnePlatformThinkingAsset from "@/assets/fusion-one-platform-thinking.png.asset.json";
-import royalHeatStageAsset from "@/assets/royal-heat-stage.png.asset.json";
+import royalHeatSeriesAsset from "@/assets/royal-heat-series-2026.png.asset.json";
+import royalSlimAsset from "@/assets/royal-slim-2026.png.asset.json";
+import royalClassicCityAsset from "@/assets/royal-classic-city-2026.png.asset.json";
+import royalClassicYachtAsset from "@/assets/royal-classic-yacht-2026.png.asset.json";
 
 // Generated from the supplied Lusmind static homepage (index.html).
 export const homeMarkup = String.raw`
@@ -46,9 +49,9 @@ export const homeMarkup = String.raw`
             <div class="product-dropdown" id="product-dropdown" aria-hidden="true">
               <p class="product-dropdown__label">The 2026 portfolio / 06 platforms · 07 products</p>
               <div class="product-dropdown__grid">
-                <a href="/products/royal-slim"><img data-src="/assets/products/royal-slim.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async" /><span><strong>Royal Slim</strong><small>Royal Heat series · cigarette format</small></span><b>01A</b></a>
-                <a href="/products/royal-classic"><img data-src="/assets/products/royal-classic.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async" /><span><strong>Royal Classic</strong><small>Royal Heat series · cigarette format</small></span><b>01B</b></a>
-                <a href="/products/royal-heat"><img data-src="/assets/campaign/royal-heat-hero.webp" alt="" width="1672" height="941" loading="lazy" decoding="async" /><span><strong>Royal Heat</strong><small>Series overview</small></span><b>01</b></a>
+                <a href="/products/royal-slim"><img data-src="${royalSlimAsset.url}" alt="" width="1365" height="768" loading="lazy" decoding="async" /><span><strong>Royal Slim</strong><small>Royal Heat series · cigarette format</small></span><b>01A</b></a>
+                <a href="/products/royal-classic"><img data-src="${royalClassicCityAsset.url}" alt="" width="1365" height="768" loading="lazy" decoding="async" /><span><strong>Royal Classic</strong><small>Royal Heat series · cigarette format</small></span><b>01B</b></a>
+                <a href="/products/royal-heat"><img data-src="${royalHeatSeriesAsset.url}" alt="" width="1365" height="768" loading="lazy" decoding="async" /><span><strong>Royal Heat</strong><small>Series overview</small></span><b>01</b></a>
                 <a href="/products/fusion-one"><img data-src="/assets/campaign/fusion-one-hero.webp" alt="" width="1672" height="941" loading="lazy" decoding="async" /><span><strong>Fusion One</strong><small>Hybrid device</small></span><b>02</b></a>
                 <a href="/products/arc-pod-s"><img data-src="/assets/campaign/arc-pod-s-hero.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" /><span><strong>Arc Pod S</strong><small>Refillable pod</small></span><b>03</b></a>
                 <a href="/products/core-20"><img data-src="/assets/campaign/core-20-hero.webp" alt="" width="1717" height="916" loading="lazy" decoding="async" /><span><strong>Core 20</strong><small>Heat-not-burn</small></span><b>04</b></a>
@@ -129,7 +132,7 @@ export const homeMarkup = String.raw`
               <img class="hero__slide" data-src="/assets/campaign/hero-life-3.webp" data-slogan-title="ENJOY" data-slogan-line="Make the moment yours." alt="Lusmind Arc Pod S metal edition on a coastal mountain drive" width="1600" height="898" loading="lazy" decoding="async" />
               <img class="hero__slide" data-src="/assets/campaign/hero-life-4.webp" data-slogan-title="COMPANION" data-slogan-line="With you, wherever life leads." alt="Lusmind Fusion One carried on an alpine forest trail" width="1600" height="900" loading="lazy" decoding="async" />
               <img class="hero__slide" data-src="/assets/campaign/hero-life-5.webp" data-slogan-title="FOCUS" data-slogan-line="Stay with what matters." alt="Lusmind Core 20 heat device on a night-time city desk" width="1600" height="900" loading="lazy" decoding="async" />
-              <img class="hero__slide" data-src="/assets/campaign/hero-life-6.webp" data-slogan-title="PASSION" data-slogan-line="Follow what moves you." alt="Lusmind Royal Heat held at an evening terrace dinner" width="1600" height="900" loading="lazy" decoding="async" />
+              <img class="hero__slide" data-src="${royalClassicYachtAsset.url}" data-slogan-title="PASSION" data-slogan-line="Follow what moves you." alt="Lusmind Royal Classic presented aboard a yacht" width="1365" height="768" loading="lazy" decoding="async" />
             </div>
             <span class="hero__scan"></span>
             <div class="hero__media-label" aria-live="polite">
@@ -169,7 +172,7 @@ export const homeMarkup = String.raw`
             </div>
             <div class="campaign-grid">
               <a class="campaign-card campaign-card--wide reveal" href="/products/royal-heat">
-                <img data-src="${royalHeatStageAsset.url}" alt="Royal Heat series with Royal Slim packaging and slim cigarettes displayed on polished marble blocks" width="1672" height="941" loading="lazy" decoding="async" />
+                <img data-src="${royalHeatSeriesAsset.url}" alt="Royal Heat series with Royal Slim and Royal Classic products displayed on illuminated marble" width="1365" height="768" loading="lazy" decoding="async" />
                 <span class="campaign-card__shade"></span><span class="campaign-card__meta"><small>01 / Series · Slim + Classic</small><strong>Royal Heat</strong><em>Explore series ↗</em></span>
               </a>
               <a class="campaign-card campaign-card--tall reveal reveal--delay-1" href="/products/fusion-one">
@@ -304,7 +307,7 @@ export const homeMarkup = String.raw`
               <div class="mystery-editions__copy reveal reveal--delay-2"><p>Every Lusmind device can become a market-specific edition. Color, surface treatment, graphic language and packaging are developed around your channel while the underlying product architecture stays recognizable.</p><span><b>05</b> customizable product forms</span></div>
             </div>
             <div class="mystery-grid">
-              <a class="mystery-card reveal" href="/products/royal-heat" aria-label="Explore Royal Heat customization"><span class="mystery-card__media"><img data-src="/assets/mystery/royal-heat-700.webp" data-srcset="/assets/mystery/royal-heat-700.webp 700w, /assets/mystery/royal-heat.webp 1400w" sizes="(max-width:760px) 82vw,(max-width:820px) 44vw,(max-width:1120px) 30vw,18vw" width="1400" height="1400" alt="Royal Heat custom appearance edition" loading="lazy" decoding="async" /></span><span class="mystery-card__name">Royal Heat</span></a>
+              <a class="mystery-card reveal" href="/products/royal-heat" aria-label="Explore Royal Heat customization"><span class="mystery-card__media"><img data-src="${royalHeatSeriesAsset.url}" sizes="(max-width:760px) 82vw,(max-width:820px) 44vw,(max-width:1120px) 30vw,18vw" width="1365" height="768" alt="Royal Heat series product and packaging collection" loading="lazy" decoding="async" /></span><span class="mystery-card__name">Royal Heat</span></a>
               <a class="mystery-card reveal reveal--delay-1" href="/products/fusion-one" aria-label="Explore Fusion One customization"><span class="mystery-card__media"><img data-src="/assets/mystery/fusion-one-700.webp" data-srcset="/assets/mystery/fusion-one-700.webp 700w, /assets/mystery/fusion-one.webp 1400w" sizes="(max-width:760px) 82vw,(max-width:820px) 44vw,(max-width:1120px) 30vw,18vw" width="1400" height="1400" alt="Fusion One custom appearance edition" loading="lazy" decoding="async" /></span><span class="mystery-card__name">Fusion One</span></a>
               <a class="mystery-card reveal reveal--delay-2" href="/products/arc-pod-s" aria-label="Explore Arc Pod S customization"><span class="mystery-card__media"><img data-src="/assets/mystery/arc-pod-s-700.webp" data-srcset="/assets/mystery/arc-pod-s-700.webp 700w, /assets/mystery/arc-pod-s.webp 1400w" sizes="(max-width:760px) 82vw,(max-width:820px) 44vw,(max-width:1120px) 30vw,18vw" width="1400" height="1400" alt="Arc Pod S custom appearance edition" loading="lazy" decoding="async" /></span><span class="mystery-card__name">Arc Pod S</span></a>
               <a class="mystery-card reveal" href="/products/core-20" aria-label="Explore Core 20 customization"><span class="mystery-card__media"><img data-src="/assets/mystery/core-20-700.webp" data-srcset="/assets/mystery/core-20-700.webp 700w, /assets/mystery/core-20.webp 1400w" sizes="(max-width:760px) 82vw,(max-width:820px) 44vw,(max-width:1120px) 30vw,18vw" width="1400" height="1400" alt="Core 20 custom appearance edition" loading="lazy" decoding="async" /></span><span class="mystery-card__name">Core 20</span></a>
@@ -362,7 +365,7 @@ export const homeMarkup = String.raw`
               </a>
 
               <a class="bento bento--royal reveal reveal--delay-2" href="/products/royal-heat">
-                <img data-src="/assets/products/royal-slim.webp" alt="Royal Slim formats and packaging" width="1448" height="1086" loading="lazy" decoding="async" />
+                <img data-src="${royalHeatSeriesAsset.url}" alt="Royal Slim and Royal Classic dual-format system" width="1365" height="768" loading="lazy" decoding="async" />
                 <span class="bento__number">T / 05</span>
                 <div class="bento__content"><h3>Dual-format system</h3><p>Slim and classic formats translated through one premium shelf language.</p></div>
               </a>
@@ -469,7 +472,7 @@ export const homeMarkup = String.raw`
 
         <section class="company" id="company" aria-labelledby="company-title">
           <div class="company__media">
-            <img data-src="/assets/products/royal-classic.webp" alt="Lusmind Royal Classic presented in a premium travel setting" width="1448" height="1086" loading="lazy" decoding="async" />
+            <img data-src="${royalClassicYachtAsset.url}" alt="Lusmind Royal Classic presented aboard a yacht" width="1365" height="768" loading="lazy" decoding="async" />
           </div>
           <div class="company__shade" aria-hidden="true"></div>
           <div class="company__content page-width">

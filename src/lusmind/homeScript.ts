@@ -3,6 +3,8 @@
 // The `document` / `window` bindings below are scoped proxies that record
 // listener registrations so the SPA can fully clean up on route changes.
 import fusionOneCollectionAsset from "@/assets/fusion-one-2026-collection.png.asset.json";
+import royalSlimAsset from "@/assets/royal-slim-2026.png.asset.json";
+import royalClassicCityAsset from "@/assets/royal-classic-city-2026.png.asset.json";
 function createScope() {
   const listeners: Array<[EventTarget, string, any, any]> = [];
   const wrap = (target: any) =>
@@ -47,7 +49,7 @@ export function initHome(): () => void {
       name: "Royal Slim",
       statement: "A cigarette-referenced electronic format holding the larger Royal reservoir inside a discreet slim body and a black-and-champagne identity.",
       moq: "5,000 units",
-      image: "/assets/products/royal-slim.webp",
+      image: royalSlimAsset.url,
       alt: "Lusmind Royal Slim product range and packaging",
       position: "center",
       tone: "dark",
@@ -66,7 +68,7 @@ export function initHome(): () => void {
       name: "Royal Classic",
       statement: "A cigarette-referenced electronic format in the familiar classic proportion, carried by a royal red and warm ivory pack system.",
       moq: "5,000 units",
-      image: "/assets/products/royal-classic.webp",
+      image: royalClassicCityAsset.url,
       alt: "Lusmind Royal Classic product and red packaging",
       position: "center",
       tone: "light",

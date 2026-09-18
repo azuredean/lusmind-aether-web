@@ -3,6 +3,10 @@ import { eliquidMarkup, initEliquid } from "./eliquidSection";
 import { ELIQUID_FLAVORS } from "./eliquidData";
 import fusionOneSystemArchitecture from "@/assets/fusion-one-system-architecture.png.asset.json";
 import fusionOneFinishCollection from "@/assets/fusion-one-finish-collection.png.asset.json";
+import royalHeatSeriesAsset from "@/assets/royal-heat-series-2026.png.asset.json";
+import royalSlimAsset from "@/assets/royal-slim-2026.png.asset.json";
+import royalClassicCityAsset from "@/assets/royal-classic-city-2026.png.asset.json";
+import royalClassicYachtAsset from "@/assets/royal-classic-yacht-2026.png.asset.json";
 // Adapted from the supplied Lusmind static site scripts.
 // The `document` / `window` bindings below are scoped proxies that record
 // listener registrations so the SPA can fully clean up on route changes.
@@ -51,10 +55,10 @@ export function initProduct(productId: string): () => void {
       accent: "#d4a351",
       accentRgb: "212, 163, 81",
       layout: "left",
-      campaign: "/assets/campaign/royal-heat-hero.webp",
+      campaign: royalSlimAsset.url,
       campaignAlt: "Lusmind Royal Slim presented in a black and champagne hospitality setting",
       campaignPosition: "62% 45%",
-      board: "/assets/products/royal-slim.webp",
+      board: royalSlimAsset.url,
       boardAlt: "Royal Slim finish family, packaging and format overview",
       boardPosition: "center",
       facts: [
@@ -89,7 +93,7 @@ export function initProduct(productId: string): () => void {
         points: ["Premium tobacconist", "Travel retail", "Hospitality channel", "Curated convenience"]
       },
       options: [
-        { title: "Royal Slim", note: "Five finish directions", image: "/assets/products/royal-slim.webp", alt: "Royal Slim finish family and packaging", position: "27% center" }
+        { title: "Royal Slim", note: "Five finish directions", image: royalSlimAsset.url, alt: "Royal Slim finish family and packaging", position: "center" }
       ],
       optionTitle: "One format, five finish directions.",
       optionCopy: "Finish, foil treatment and pack architecture are developed together. Compliance panels are adapted at artwork stage, market by market.",
@@ -116,10 +120,10 @@ export function initProduct(productId: string): () => void {
       accent: "#8d1721",
       accentRgb: "141, 23, 33",
       layout: "right",
-      campaign: "/assets/products/royal-classic.webp",
+      campaign: royalClassicCityAsset.url,
       campaignAlt: "Lusmind Royal Classic and its red packaging presented in a warm travel setting",
       campaignPosition: "50% 42%",
-      board: "/assets/products/royal-classic.webp",
+      board: royalClassicYachtAsset.url,
       boardAlt: "Royal Classic product, red packaging and format overview",
       boardPosition: "center",
       facts: [
@@ -154,7 +158,7 @@ export function initProduct(productId: string): () => void {
         points: ["Travel retail", "Duty-free style display", "Premium tobacconist", "Gifting programs"]
       },
       options: [
-        { title: "Royal Classic", note: "Classic format system", image: "/assets/products/royal-classic.webp", alt: "Royal Classic product and red packaging in a travel setting", position: "28% center" }
+        { title: "Royal Classic", note: "Classic format system", image: royalClassicYachtAsset.url, alt: "Royal Classic product and red packaging aboard a yacht", position: "center" }
       ],
       optionTitle: "A warmer register for the same family.",
       optionCopy: "Classic shares the Royal trade logic and carton language with Slim, so a distributor can run both formats through one operational program.",
@@ -477,7 +481,7 @@ export function initProduct(productId: string): () => void {
     accent: "#d4a351",
     accentRgb: "212, 163, 81",
     layout: "left",
-    campaign: "/assets/campaign/royal-heat-hero.webp",
+    campaign: royalHeatSeriesAsset.url,
     campaignAlt: "Lusmind Royal Heat series presented in a black and champagne setting",
     trade: {
       moq: "5,000 units",
@@ -490,9 +494,9 @@ export function initProduct(productId: string): () => void {
         id: "royal-slim",
         code: "01A",
         name: "Royal Slim",
-        image: "/assets/products/royal-slim.webp",
+        image: royalSlimAsset.url,
         alt: "Royal Slim product, finishes and packaging",
-        position: "27% center",
+        position: "center",
         positioning: "The slim proportion. The larger reservoir in the series, held inside a discreet cigarette-referenced body and a black-and-champagne identity.",
         specs: [
           ["E-liquid", "2.2 mL"],
@@ -506,9 +510,9 @@ export function initProduct(productId: string): () => void {
         id: "royal-classic",
         code: "01B",
         name: "Royal Classic",
-        image: "/assets/products/royal-classic.webp",
+        image: royalClassicCityAsset.url,
         alt: "Royal Classic product and red packaging in a travel setting",
-        position: "28% center",
+        position: "center",
         positioning: "The familiar classic proportion, carried by a royal red and warm ivory pack system built for travel-led display.",
         specs: [
           ["E-liquid", "1.8 mL"],
@@ -684,7 +688,7 @@ export function initProduct(productId: string): () => void {
     </section>
 
     <a class="next-product" href="/products/royal-slim" aria-label="View next product: Royal Slim">
-      <img src="/assets/products/royal-slim.webp" alt="" loading="lazy" decoding="async" />
+      <img src="${royalSlimAsset.url}" alt="" loading="lazy" decoding="async" />
       <div class="next-product__inner page-width">
         <div>
           <p class="eyebrow">Next product / 01A</p>

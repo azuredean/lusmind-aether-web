@@ -9,6 +9,8 @@ import {
 import { Link } from "react-router-dom";
 import { startFlavorHeadingDecode } from "@/lusmind/articleHeadingDecode";
 import { useStylesheet } from "@/lusmind/useStylesheet";
+import royalSlimAsset from "@/assets/royal-slim-2026.png.asset.json";
+import royalClassicCityAsset from "@/assets/royal-classic-city-2026.png.asset.json";
 
 const LiquidFlavorBackground = lazy(
   () => import("@/lusmind/LiquidFlavorBackground"),
@@ -17,14 +19,14 @@ const LiquidFlavorBackground = lazy(
 const PRODUCTS = [
   {
     href: "/products/royal-slim",
-    image: "/assets/products/royal-slim.webp",
+    image: royalSlimAsset.url,
     name: "Royal Slim",
     note: "Royal Heat series",
     code: "01A",
   },
   {
     href: "/products/royal-classic",
-    image: "/assets/products/royal-classic.webp",
+    image: royalClassicCityAsset.url,
     name: "Royal Classic",
     note: "Royal Heat series",
     code: "01B",
