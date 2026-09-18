@@ -5289,7 +5289,7 @@ body.is-locked:not(.is-menu-open) .site-shell {
   }
 
   .hero__media .hero__slide:nth-child(4) {
-    object-position: 100% center;
+    object-position: 75% center;
   }
 
   .hero__media .hero__slide:nth-child(5) {
@@ -5297,6 +5297,6 @@ body.is-locked:not(.is-menu-open) .site-shell {
   }
 
   .hero__media .hero__slide:nth-child(6) {
-    object-position: 68% center;
+    object-position: 90% center;
   }
 }
